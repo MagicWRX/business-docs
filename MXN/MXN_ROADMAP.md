@@ -1,10 +1,10 @@
 # MXN.CHAT Master Roadmap (SSOT)
 
-**Document Date:** December 10, 2025 23:40 CST  
-**Last Updated:** December 10, 2025  
-**Version:** 2.0.0  
-**Status:** Phase 1 Active  
-**Next Review:** December 17, 2025 (Weekly)
+**Document Date:** December 11, 2025 12:00 CST  
+**Last Updated:** December 11, 2025  
+**Version:** 1.3 (Critical Bug + Desktop Features Added)  
+**Status:** Phase 1 Active - LEAN MVP (Critical Bug Identified)  
+**Next Review:** December 12, 2025 (Daily)
 
 ---
 
@@ -58,39 +58,179 @@ Week 2: Core Loop ✅
 **Image Uploads:** ✅ Implemented and deployed
 **Next:** Complete auth testing and profile management
 
-PHASE 1 — REFINED MVP (4 Weeks) 🚧 ACTIVE
+PHASE 1 — LEAN MVP (2 Weeks) 🚧 ACTIVE
 
-Goal: Usable product for early adopters.
+Goal: Clean, functional MVP with core chat features for early users.
+
+**Core Features (LEAN MVP):**
+	•	[✅] Email and Password Login/Signup (Join flow)
+	•	[✅] Google Sign-In Account Creation (URLs configured)
+	•	[✅] Email Verification Required Before Account Creation
+	•	[✅] Send Invites by Email Address
+	•	[ ] Create Alias on Account Creation (Editable via Icons Anytime)
+	•	[ ] Create and Delete Rooms (Conversations) - Create implemented, Delete needs implementation
+	•	[✅] Post Messages to Rooms and View Other Users' Messages
+	•	[✅] User Logout
+
+**🚨 CRITICAL BLOCKERS (Must Fix Immediately):**
+	•	[✅] **FIX GOOGLE OAUTH LOGIN** - URLs and URIs updated in Supabase and Google Cloud Console
+	•	[ ] **ENABLE EMAIL RECEIVING** - Can send but NOT receive emails to admin@mxn.chat
+		- ✅ DKIM records already configured and working
+		- ✅ Email sending via Brevo API working
+		- ❌ NO MX RECORDS on mxn.chat domain (emails will bounce)
+		- **SOLUTION:** Enable Cloudflare Email Routing (free)
+		  1. Go to Cloudflare Dashboard → mxn.chat → Email → Email Routing
+		  2. Add destination: magicwrxstudio@gmail.com (verify)
+		  3. Create rule: admin@mxn.chat → magicwrxstudio@gmail.com
+		  4. Test: Send email to admin@mxn.chat
+		- See: MXN_DNS_EMAIL_SETUP.md for step-by-step guide
+	•	[ ] **TEST END-TO-END USER FLOW** - Signup → Email Verification → Login → Send Message
+	•	[ ] **FIX CHAT MESSAGES NOT APPEARING** - Chats are not appearing in #General or Latest Created Chat Room
+		- **Issue:** Messages sent to rooms are not displaying in the chat interface
+		- **Impact:** Core functionality broken - users cannot see their messages
+		- **Priority:** CRITICAL - blocks all chat functionality
 
 **Immediate Next Steps (Week 1):**
 	•	[✅] Fix Supabase OAuth redirect URLs (currently redirects to old domain)
 	•	[ ] Test Google OAuth login flow
 	•	[ ] Verify email/password auth works end-to-end
 	•	[ ] Add basic error handling for auth failures
-	•	[✅] Remove launch game button from start/login page
-	•	[✅] Change "IndieGame Chat" to "mxn.chat" throughout the app
-	•	[✅] Remove envelope and person icons from input fields
-	•	[✅] Remove 🎮 from title and change welcome text
-	•	[✅] Change email placeholder to "name@example.com"
-	•	[✅] Remove lock icon from password fields
-	•	[✅] Update signup toggle text to "Join mxn.chat?"
+	•	[ ] Implement Alias Creation and Editing (via Icons)
+	•	[ ] Add Room Creation and Deletion Functionality
+	•	[ ] Ensure Logout Works Properly
 
-Features:
-	•	[✅] Image Uploads (Supabase Storage) - Basic implementation complete
-	•	[✅] Push Notifications - Browser notifications for new messages
-	•	[✅] Push Notification Controls - User preferences for notifications
-	•	[✅] Email Invitations - Invite friends via email with personalized messages
-	•	Basic Profile Management
+**Deferred to Phase 2:**
+	•	Image Uploads
+	•	Push Notifications
 	•	Mobile Responsive Polish
-	•	50 Beta Users
+	•	50 Beta Users Onboarding
 
 Milestones:
 	•	Deploy Supabase project ✅
-	•	Configure storage buckets + RLS
 	•	Realtime channels working ✅
-	•	Mobile-first UI complete
+	•	Core auth flows working
+	•	Room management implemented
+	•	Alias editing functional
 
-Release target: Early Alpha
+Release target: Clean MVP
+
+PHASE 1.5 — Desktop Experience Enhancement
+
+Goal: Add desktop-specific features for power users and multitasking.
+
+Features:
+	•	Popout chat windows for multitasking
+	•	Window focus management (above/below content)
+	•	Resizable windows (standard and mini versions)
+	•	Hide debug panel with reactivation instructions
+
+Milestones:
+	•	Implement Electron wrapper or browser popout API
+	•	Add window management controls
+	•	Create mini chat widget
+	•	Document debug reactivation in MXN_DEBUG.md
+
+Release target: Enhanced Desktop Experience
+
+## 🔧 Recommended Actions (Based on Dec 11 Review)
+
+### Authentication Debugging
+1. **Check Supabase Connection:**
+   ```bash
+   grep NEXT_PUBLIC_SUPABASE_URL .env.local
+   grep NEXT_PUBLIC_SUPABASE_ANON_KEY .env.local
+   ```
+
+2. **Review Auth State Listener:**
+   - File: `/src/contexts/ChatContext.tsx`
+   - Line: 168 - `supabase.auth.onAuthStateChange()`
+   - Add console logging to track auth events
+
+3. **Verify Google OAuth Setup:**
+   - Google Cloud Console → Credentials → OAuth 2.0 Client IDs
+   - Authorized redirect URIs must include:
+     - `http://localhost:3000/auth/v1/callback`
+     - `https://mxn-chat-git-develop-magicwrxs-projects.vercel.app/auth/v1/callback`
+     - `https://mxn-chat-dcgsy3rde-magicwrxs-projects.vercel.app/auth/v1/callback`
+     - `https://mxn.chat/auth/v1/callback`
+     - `https://auth.mxn.chat/auth/v1/callback`
+     - `https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback`
+
+4. **Test Authentication Locally:**
+   ```bash
+   cd /Users/brianlindahl/Development/Business/Websites/mxn-chat
+   ./start-local.sh
+   # Open http://localhost:3000
+   # Try signup with new email
+   # Check browser console for errors
+   ```
+
+### Email Configuration (CRITICAL)
+**Status Check Completed:** December 11, 2025 14:17 CST
+
+**Current Status:**
+- ✅ Email SENDING: Working via Brevo API
+- ✅ DKIM Records: Already configured and propagated
+- ✅ SPF/DMARC: Already configured
+- ❌ Email RECEIVING: NOT working (no MX records)
+
+**Immediate Action Required:**
+
+1. **Enable Cloudflare Email Routing (10 minutes):**
+   - Go to: https://dash.cloudflare.com → mxn.chat → Email
+   - Click: "Enable Email Routing"
+   - Add destination: `magicwrxstudio@gmail.com`
+   - Verify Gmail address (check inbox for verification email)
+   - Create routing rule: `admin@mxn.chat` → `magicwrxstudio@gmail.com`
+   - Cloudflare will automatically add MX records
+
+2. **Test Email Receiving:**
+   ```bash
+   # Send test email from any account to:
+   admin@mxn.chat
+   
+   # Check Gmail inbox:
+   magicwrxstudio@gmail.com
+   
+   # Should arrive within 1-2 minutes
+   ```
+
+3. **Verify MX Records:**
+   ```bash
+   dig MX mxn.chat +short
+   # Expected: Cloudflare MX servers (isaac, linda, amir)
+   ```
+
+**Complete Setup Guide:** See [MXN_DNS_EMAIL_SETUP.md](MXN_DNS_EMAIL_SETUP.md)
+
+### Testing Priority Order
+1. Fix Google OAuth authentication (blocking users)
+2. Enable email receiving via Cloudflare Email Routing (10 min)
+3. Test invite system (working but verify)
+4. Test message posting (working but verify)
+5. Test complete user journey end-to-end
+
+### Quick Diagnostic
+```bash
+# Run comprehensive DNS & Auth check
+cd /Users/brianlindahl/Development/Business/Websites/mxn-chat
+./check-auth-dns.sh
+
+# Expected output:
+# ✅ Email SENDING working
+# ✅ DKIM records configured
+# ✅ Environment variables set
+# ❌ NO MX RECORDS (need Cloudflare Email Routing)
+```
+
+### Documentation References
+- **DNS & Email Setup:** See [MXN_DNS_EMAIL_SETUP.md](MXN_DNS_EMAIL_SETUP.md) ⭐ NEW
+- **Authentication:** See [MXN_AUTH_SETUP.md](MXN_AUTH_SETUP.md)
+- **Email Configuration:** See [MXN_EMAIL_SETUP.md](MXN_EMAIL_SETUP.md)
+- **Security:** See [MXN_SECURITY.md](MXN_SECURITY.md)
+- **System Overview:** See [MXN_SYSTEM.md](MXN_SYSTEM.md)
+
+---
 
 PHASE 2 — Monetization & Scaling Prep
 
@@ -246,15 +386,16 @@ MXN.CHAT becomes:
 	•	Need to update Site URL and Redirect URLs in Supabase Dashboard
 	•	Test all auth flows (email/password, Google OAuth)
 
-**Next Development Sprint:**
+**Next Development Sprint (LEAN MVP Focus):**
 	•	[✅] Fix message sending/display issues (database column names)
-	•	[🚧] Test Google OAuth login flow (user working on this)
+	•	[✅] Update Supabase URLs and Google OAuth URIs (completed)
+	•	[ ] Test Google OAuth login flow (should now work)
 	•	[✅] Verify email/password auth works end-to-end (Logic implemented; SMTP pending)
-	•	[✅] Implement basic user profile management (display name editing) - Already implemented!
-	•	[ ] Add push notifications
+	•	[ ] Implement Alias Creation and Editing (via Icons)
+	•	[ ] Add Room Creation and Deletion Functionality
 	•	[✅] Implement email invitation system (Database schema + API + UI complete)
-	•	[ ] Improve mobile responsiveness
-	•	[ ] Prepare for beta user onboarding (50 users)
+	•	[ ] Ensure Logout Works Properly
+	•	[ ] Test Complete End-to-End MVP Flow
 
 **Notes:**
 	•	Use `magicwrxstudio@gmail.com` for all email requirements/testing until custom domain is fully active.

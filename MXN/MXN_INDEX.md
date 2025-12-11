@@ -1,47 +1,98 @@
 # MXN.CHAT Master Index (SSOT)
 
-**Last Updated:** December 10, 2025 23:45 CST  
-**Version:** 2.0.0 - LEAN Documentation
-
-This document serves as the central index for all MXN.CHAT documentation, scripts, and resources.
-
----
-
-## 📋 Core Documentation (LEAN & KISS)
-
-### 🔴 Critical (Must Read)
-- **[MXN_SECURITY.md](MXN_SECURITY.md)** - Security practices, key management, E2E testing ⭐
-- **[MXN_ROADMAP.md](MXN_ROADMAP.md)** - Development phases, milestones, priorities ⭐
-- **[MXN_TREE.md](MXN_TREE.md)** - Technical architecture and file structure ⭐
-
-### 🟡 Important (Reference)
-- **[MXN_SYSTEM.md](MXN_SYSTEM.md)** - Complete system overview
-- **[MXN_BUSINESS_PLAN.md](MXN_BUSINESS_PLAN.md)** - Business strategy and revenue
-- **[MXN_SUPABASE_SCHEMA.md](MXN_SUPABASE_SCHEMA.md)** - Database schema and migrations
-- **[MXN_AUTH_SETUP.md](MXN_AUTH_SETUP.md)** - Authentication configuration guide
-
-### 🟢 Operational (As Needed)
-- **[MXN_SPECS.md](MXN_SPECS.md)** - Technical specifications
-- **[MXN_DEPLOYMENT_CICD.md](MXN_DEPLOYMENT_CICD.md)** - Deployment and CI/CD
-- **[MXN_ARCHITECTURE_DIAGRAM.md](MXN_ARCHITECTURE_DIAGRAM.md)** - Visual architecture
-- **[MXN_1.0_MARKETING.md](MXN_1.0_MARKETING.md)** - Marketing materials
-- **[MXN_GOOGLE_ADS_SETUP.md](MXN_GOOGLE_ADS_SETUP.md)** - Ad setup guide
+**Document Date:** December 11, 2025  
+**Last Updated:** December 11, 2025  
+**Version:** 1.0 (MVP Pre-Release)  
+**Status:** Active - MVP Development  
+**Compliance:** AI_STANDARDS.md
 
 ---
 
-## 🔧 Scripts & Tools
+## 🎯 Purpose
+
+This document serves as the **Single Source of Truth (SSOT)** index for all MXN.CHAT documentation, enforcing compliance with AI_STANDARDS.md and providing quick navigation across the technical architecture, business strategy, and operational procedures.
+
+---
+
+## 📋 Required Documents (AI_STANDARDS Compliance)
+
+### Layer 1: Harmony Overview
+- **[MXN_INDEX.md](MXN_INDEX.md)** ⭐ **(This Document)** - Central index with executive summary
+
+### Layer 2: Executive Summary & Goals
+- **[MXN_SYSTEM.md](MXN_SYSTEM.md)** - Complete system overview, goals, constraints
+
+### Layer 3: Data Flow Diagrams
+- **[MXN_ARCHITECTURE_DIAGRAM.md](MXN_ARCHITECTURE_DIAGRAM.md)** - Visual architecture with Mermaid diagrams
+- **[MXN_EMAIL_SETUP.md](MXN_EMAIL_SETUP.md)** - Email flow architecture (Brevo API)
+
+### Layer 4: Linux Tree Snapshots
+- **[MXN_TREE.md](MXN_TREE.md)** - Complete file structure and component mapping
+
+### Layer 5: Standards Log
+- **[MXN_ROADMAP.md](MXN_ROADMAP.md)** - Development phases, sign-off matrix, acceptance criteria
+
+---
+
+## 🔴 Critical Documents (Must Read)
+
+| Document | Purpose | Last Updated | Status |
+|----------|---------|--------------|--------|
+| **[MXN_SECURITY.md](MXN_SECURITY.md)** | Key management, rotation, E2E testing, SSH setup | Dec 10, 2025 | ✅ Active |
+| **[MXN_ROADMAP.md](MXN_ROADMAP.md)** | Development phases, milestones, priorities | Dec 11, 2025 | ✅ Active |
+| **[MXN_TREE.md](MXN_TREE.md)** | Technical architecture, file structure SSOT | Dec 10, 2025 | ✅ Active |
+| **[MXN_INDEX.md](MXN_INDEX.md)** | This document - central navigation | Dec 11, 2025 | ✅ Active |
+
+---
+
+## 🟡 Important Reference Documents
+
+| Document | Purpose | Last Updated | Status |
+|----------|---------|--------------|--------|
+| **[MXN_SYSTEM.md](MXN_SYSTEM.md)** | Complete system overview | Dec 10, 2025 | ✅ Active |
+| **[MXN_AUTH_SETUP.md](MXN_AUTH_SETUP.md)** | Authentication config (Google OAuth, Supabase) - Complete URL/URI documentation for all environments | Dec 10, 2025 | ✅ Active |
+| **[MXN_EMAIL_SETUP.md](MXN_EMAIL_SETUP.md)** | Email configuration (Brevo API, DNS) | Dec 11, 2025 | ✅ Active |
+| **[MXN_DEPLOYMENT_CICD.md](MXN_DEPLOYMENT_CICD.md)** | Deployment procedures, CI/CD setup | Dec 6, 2025 | ✅ Active |
+| **[MXN_SUPABASE_SCHEMA.md](MXN_SUPABASE_SCHEMA.md)** | Database schema, migrations, RLS policies | Dec 10, 2025 | ✅ Active |
+
+---
+
+## 🟢 Operational Documents (As Needed)
+
+| Document | Purpose | Last Updated | Status |
+|----------|---------|--------------|--------|
+| **[MXN_BUSINESS_PLAN.md](MXN_BUSINESS_PLAN.md)** | Business strategy, revenue streams | Dec 10, 2025 | ✅ Active |
+| **[MXN_SPECS.md](MXN_SPECS.md)** | Technical specifications | Dec 10, 2025 | ✅ Active |
+| **[MXN_ARCHITECTURE_DIAGRAM.md](MXN_ARCHITECTURE_DIAGRAM.md)** | Visual system architecture | Dec 10, 2025 | ✅ Active |
+| **[MXN_1.0_MARKETING.md](MXN_1.0_MARKETING.md)** | Marketing materials | Dec 10, 2025 | ✅ Active |
+| **[MXN_GOOGLE_ADS_SETUP.md](MXN_GOOGLE_ADS_SETUP.md)** | Ad campaign configuration | Dec 10, 2025 | ✅ Active |
+
+---
+
+## 🛠️ Scripts & Tools
 
 ### Development Scripts
-- **`start-local.sh`** - Start Next.js dev server (http://localhost:3000)
-  - Location: `/Users/brianlindahl/Development/Business/Websites/mxn-chat/`
-  - Purpose: Smart development server with dependency checking
+```bash
+# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/
+./start-local.sh              # Start Next.js dev server (http://localhost:3000)
+```
 
 ### Email & DNS Scripts
-- **`check-dns.sh`** - Verify DNS records for email delivery
-- **`verify-brevo-dns.sh`** - Check Brevo domain authentication status
+```bash
+./check-dns.sh                # Verify DNS records for email delivery
+./verify-brevo-dns.sh         # Check Brevo domain authentication
+```
 
 ### Database Scripts
-- **`supabase-debug-signup.sql`** - Debug signup errors with logging
+```bash
+supabase-debug-signup.sql     # Debug signup errors with logging
+```
+
+### E2E Testing
+```bash
+# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/scripts/
+node scripts/e2e_test.js      # End-to-end smoke tests (manual workflow)
+```
 
 ---
 
@@ -62,23 +113,30 @@ This document serves as the central index for all MXN.CHAT documentation, script
 
 ## 📊 Current Status
 
+### Project Phase
 - **Phase:** 1 - Refined MVP (Active)
 - **Version:** v1.0.0
 - **Last Deploy:** December 10, 2025
-- **Next Milestone:** Email domain verification (DKIM setup)
 
-### ✅ Recently Completed
+### ✅ Recently Completed (December 2025)
 - [x] Email delivery via Brevo API (working!)
-- [x] Documentation consolidation (LEAN approach)
-- [x] MXN_TREE.md updated with current structure
-- [x] Timestamps added to SECURITY and ROADMAP
+- [x] Documentation consolidation to DOCs/MXN (SSOT)
+- [x] MXN_TREE.md updated with current file structure
+- [x] Timestamps added to all core documents
 - [x] Legacy Firebase files removed
-- [x] White text on test page fixed
+- [x] AI_STANDARDS.md compliance layer implemented
+- [x] MXN_INDEX.md updated with 5-layer structure
 
 ### 🚧 In Progress
 - [ ] DKIM records configuration in Cloudflare
 - [ ] Domain verification in Brevo
-- [ ] Testing email delivery to inbox (not spam)
+- [ ] Login authentication debugging
+- [ ] Email inbox delivery testing (not spam)
+
+### 🔜 Next Milestone
+- Complete authentication troubleshooting
+- Deploy DKIM records for inbox delivery
+- User onboarding flow refinement
 
 ---
 
@@ -93,23 +151,56 @@ This document serves as the central index for all MXN.CHAT documentation, script
 - [Cloudflare DNS](https://dash.cloudflare.com)
 - [Google Cloud Console](https://console.cloud.google.com/)
 
-### Documentation
-- [Email Setup Guide](/mxn-chat/docs/EMAIL_SETUP.md) - Complete email configuration
-- [Supabase Migrations](/mxn-chat/supabase/migrations/) - Database migration scripts
+### Repository
+- [GitHub Repository](https://github.com/MagicWRX/mxn-chat)
+- [Project Files](/Users/brianlindahl/Development/Business/Websites/mxn-chat/)
+- [Documentation Root](/Users/brianlindahl/Development/Business/DOCs/MXN/)
 
 ---
 
-## 🗑️ Removed Documentation (December 10, 2025)
+## 🗂️ Document Organization Principles
 
-**Consolidated/Deleted for LEAN compliance:**
-- ❌ MXN_DEBUG.md (merged into MXN_TREE.md)
-- ❌ MXN_SITES.md (outdated)
-- ❌ SECURITY_NOTES.md (consolidated into MXN_SECURITY.md)
-- ❌ MXN.md (generic, info in MXN_SYSTEM.md)
-- ❌ MXN_REVIEW.md (outdated strategic review)
-- ❌ MULTI_USER_CHAT_PLAN.md (superseded by ROADMAP)
+### SSOT Enforcement
+1. **Single Location:** All authoritative docs in `DOCs/MXN/`
+2. **No Duplication:** Remove redundant copies in project directories
+3. **Versioning:** Semantic versioning (MAJOR.MINOR.PATCH)
+4. **Timestamps:** ISO 8601 format (YYYY-MM-DD)
+5. **Status Tags:** Active, Deprecated, Archived, WIP
 
-**Legacy Systems Deleted:**
+### Naming Conventions
+```
+MXN_<CATEGORY>_<SUBCATEGORY>.md    # Multi-word topics
+MXN_<CATEGORY>.md                  # Single-word topics
+```
+
+**Examples:**
+- `MXN_EMAIL_SETUP.md` (email + setup)
+- `MXN_SECURITY.md` (single category)
+- `MXN_DEPLOYMENT_CICD.md` (deployment + CI/CD)
+
+### Review Schedule
+- **Daily:** MXN_ROADMAP.md (during active sprints)
+- **Weekly:** MXN_SECURITY.md (key rotation, access review)
+- **Monthly:** MXN_TREE.md (architecture changes)
+- **Quarterly:** Full documentation audit (this index)
+
+---
+
+## 🗑️ Deprecated & Removed Documentation
+
+### Consolidated into SSOT (December 11, 2025)
+- ❌ `/mxn-chat/docs/EMAIL_SETUP.md` → Moved to `DOCs/MXN/MXN_EMAIL_SETUP.md`
+- ❌ `/mxn-chat/docs/SECURITY_NOTES.md` → Consolidated into `MXN_SECURITY.md`
+- ❌ DOC_INDEX.md → Consolidated into MXN_INDEX.md
+
+### Deleted (Outdated/Redundant)
+- ❌ `PROJECT_STATUS.md` - References deprecated Firebase (project uses Supabase)
+- ❌ `DEPLOYMENT.md` - Empty file, covered by `MXN_DEPLOYMENT_CICD.md`
+- ❌ `MXN_DEBUG.md` - Merged into `MXN_TREE.md`
+- ❌ `MXN_SITES.md` - Outdated
+- ❌ `MULTI_USER_CHAT_PLAN.md` - Superseded by `MXN_ROADMAP.md`
+
+### Legacy Systems Removed
 - ❌ Firebase configuration files
 - ❌ Firestore rules and indexes
 - ❌ Firebase DataConnect
@@ -117,23 +208,88 @@ This document serves as the central index for all MXN.CHAT documentation, script
 
 ---
 
-## 📝 Documentation Maintenance
+## 📝 Documentation Maintenance Protocol
 
-### Review Schedule
-- **Daily:** MXN_ROADMAP.md (during active development)
-- **Weekly:** MXN_SECURITY.md (key rotation, access review)
-- **Monthly:** MXN_TREE.md (architecture changes)
-- **Quarterly:** Full documentation audit
+### Before Making Changes
+1. ✅ Check this index for current document location
+2. ✅ Review AI_STANDARDS.md for compliance requirements
+3. ✅ Verify document is not deprecated
 
-### Update Protocol
-1. Make code/architecture change
-2. Update relevant SSOT document IMMEDIATELY
-3. Add timestamp to document header
-4. Update this index if needed
-5. Commit documentation WITH code changes
+### During Changes
+1. ✅ Update relevant SSOT document
+2. ✅ Add timestamp to document header
+3. ✅ Update version number if needed
+4. ✅ Ensure data flow diagrams reflect changes
+
+### After Changes
+1. ✅ Update this index if new docs added
+2. ✅ Commit documentation WITH code changes
+2. ✅ Verify cross-references still valid
+3. ✅ Run validation checklist in document
 
 ---
 
-*This index ensures all MXN.CHAT resources are discoverable and compliant with LEAN/KISS/SSOT principles.*
+## ✅ AI_STANDARDS.md Compliance Matrix
 
-**Next Index Review:** December 17, 2025
+| Layer | Requirement | Document | Status |
+|-------|-------------|----------|--------|
+| **1** | Harmony Overview | MXN_INDEX.md | ✅ Complete |
+| **2** | Executive Summary | MXN_SYSTEM.md | ✅ Complete |
+| **3** | Data Flow Diagrams | MXN_ARCHITECTURE_DIAGRAM.md, MXN_EMAIL_SETUP.md | ✅ Complete |
+| **4** | Linux Tree Snapshot | MXN_TREE.md | ✅ Complete |
+| **5** | Standards Log | MXN_ROADMAP.md | ✅ Complete |
+
+**Additional Compliance:**
+- ✅ SOLID, DRY, KISS, YAGNI, SSOT principles documented
+- ✅ Visual aids (tables, diagrams, ASCII boxes) in all docs
+- ✅ Accessibility-friendly formatting (short sentences, active voice)
+- ✅ Validation checklists in operational docs
+- ✅ Timestamps and version numbers standardized
+
+---
+
+## 🧭 Quick Navigation Flowchart
+
+```
+┌─────────────────────────────────────────────────┐
+│  New to MXN.CHAT?                               │
+│  Start Here: MXN_SYSTEM.md                      │
+└──────────────────┬──────────────────────────────┘
+                   │
+        ┌──────────┴──────────┐
+        │                     │
+        ▼                     ▼
+┌───────────────┐     ┌───────────────┐
+│  Development  │     │   Business    │
+│  MXN_TREE.md  │     │  MXN_BUSINESS │
+│  MXN_ROADMAP  │     │  _PLAN.md     │
+└───────┬───────┘     └───────────────┘
+        │
+        ├─── Authentication? → MXN_AUTH_SETUP.md
+        │
+        ├─── Email Setup? → MXN_EMAIL_SETUP.md
+        │
+        ├─── Security? → MXN_SECURITY.md
+        │
+        ├─── Deployment? → MXN_DEPLOYMENT_CICD.md
+        │
+        └─── Database? → MXN_SUPABASE_SCHEMA.md
+```
+
+---
+
+## 📌 Action Reminders
+
+> **Before coding:** Review this index and relevant SSOT documents to ensure alignment with current architecture and standards.
+
+> **After coding:** Update documentation immediately. Never commit code without updating relevant docs.
+
+> **Weekly:** Review MXN_SECURITY.md for key rotation and access control updates.
+
+> **Monthly:** Run documentation audit against this index to identify drift.
+
+---
+
+**Document Owner:** MagicWRX Development Team  
+**Next Index Review:** December 18, 2025  
+**Compliance Validation:** ✅ Passed AI_STANDARDS.md checklist

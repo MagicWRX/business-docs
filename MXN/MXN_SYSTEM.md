@@ -1,9 +1,9 @@
 # MXN_SYSTEM.md - v1.0 Complete System Overview (SSOT)
 
-**Document Date:** December 8, 2025
-**Version:** 1.0.0
-**Status:** Production Ready
-**Last Updated:** December 8, 2025
+**Document Date:** December 11, 2025
+**Version:** 1.0.1
+**Status:** Production Ready (Critical Bug Identified)
+**Last Updated:** December 11, 2025
 
 ---
 
@@ -138,6 +138,7 @@ MXN System Documentation (SSOT)
 ├── MXN_AUTH_SETUP.md (Authentication configuration)
 ├── MXN_SPECS.md (Technical specifications)
 ├── MXN_DEPLOYMENT_CICD.md (DevOps & deployment)
+├── MXN_DEBUG.md (Debug panel documentation)
 └── MXN_INDEX.md (Quick reference guide)
 ```
 
@@ -411,12 +412,13 @@ CREATE TABLE invitations (
 
 ## 📈 Roadmap & Future Versions
 
-### v1.0 (Current) - ✅ Production Ready
+### v1.0 (Current) - ⚠️ Production Ready (Critical Bug)
 - Core chat functionality
 - Secure authentication
 - Email invitations
 - Mobile responsive
 - Production deployment
+- **CRITICAL BUG:** Messages not appearing in chat rooms
 
 ### v1.1 (Next Sprint) - 🔄 In Development
 - Push notifications
@@ -424,6 +426,12 @@ CREATE TABLE invitations (
 - Message reactions
 - Advanced search
 - Admin dashboard
+
+### v1.5 (Desktop Enhancement) - 📋 Planned
+- Popout chat windows
+- Window focus management
+- Resizable chat widgets
+- Debug panel controls
 
 ### v1.2 (Q1 2026) - 📋 Planned
 - Voice messages

@@ -79,13 +79,34 @@ When users sign in with Google, they see `https://opcsbfwqazyzsskuuooz.supabase.
     *   Select your project
     *   Go to **APIs & Services** -> **Credentials**
     *   Edit your **OAuth 2.0 Client ID**
-    *   Add `https://auth.mxn.chat/auth/v1/callback` to **Authorized redirect URIs**
+    *   Add the following to **Authorized redirect URIs:**
+        - `http://localhost:3000/auth/v1/callback` *(Development)*
+        - `https://mxn-chat-git-develop-magicwrxs-projects.vercel.app/auth/v1/callback` *(Staging)*
+        - `https://mxn-chat-dcgsy3rde-magicwrxs-projects.vercel.app/auth/v1/callback` *(Current Production)*
+        - `https://mxn.chat/auth/v1/callback` *(Future Main Domain)*
+        - `https://auth.mxn.chat/auth/v1/callback` *(Future Auth Domain)*
+        - `https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback` *(Supabase Auth)*
     *   Click **Save**
 
 3.  **Update Supabase Auth Settings:**
     *   In Supabase Dashboard -> **Authentication** -> **URL Configuration**
     *   Set **Site URL** to `https://mxn.chat`
     *   Add `https://mxn.chat/**` to **Redirect URLs**
+
+### 🔗 Complete URL Configuration for All Environments
+
+**Supabase Dashboard → Authentication → URL Configuration:**
+
+**Site URL:** `https://mxn-chat-dcgsy3rde-magicwrxs-projects.vercel.app` *(Current Production)*
+
+**Redirect URLs (Add all of these):**
+- `http://localhost:3000/**` *(Development)*
+- `https://mxn-chat-git-develop-magicwrxs-projects.vercel.app/**` *(Staging)*
+- `https://mxn-chat-dcgsy3rde-magicwrxs-projects.vercel.app/**` *(Current Production)*
+- `https://mxn.chat/**` *(Future Main Domain)*
+- `https://auth.mxn.chat/**` *(Future Auth Domain - Custom Domain)*
+
+**Note:** The `/**` wildcard allows redirects to any path on these domains. This is required for OAuth flows to work properly across all environments.
 
 ### 💡 Free Alternative (Proxy)
 If you don't want to upgrade to Supabase Pro, you can't change the underlying URL, but you can make it less noticeable:
