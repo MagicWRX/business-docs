@@ -1,0 +1,1255 @@
+# AMAZING BUSINESS PLATFORM MVP ROADMAP
+
+**Document Date:** October 12, 2025  
+**Version:** 1.0.0  
+**Status:** Active Development  
+**Last Updated:** October 12, 2025
+
+---
+
+## 🎯 CODE QUALITY PRINCIPLES
+
+All code—human or AI-generated—**must** comply with:
+
+1. **SOLID** and **DRY** at all layers.
+2. **KISS** – Favor the simplest solution that works.
+3. **YAGNI** – No speculative features or unused abstractions.
+4. **Single Source of Truth** – Centralize shared data/configuration.
+5. **Composition over Inheritance** – Prefer components and interfaces.
+6. **Separation of Concerns** – Each script has one primary reason to change.
+7. **Law of Demeter** – Classes only talk to their immediate collaborators.
+8. **Explicitness Over Implicitness** – No hidden side effects.
+9. **Clean Architecture Boundaries** – `Core` layer must not depend on `UI` or external SDKs.
+10. **Immutable Core** – Core data structures are readonly unless explicitly mutable.
+
+### 🤖 AI Prompt Standard
+
+All AI prompts must include:  
+```
+Follow BUSINESS_ROADMAP.md, use KISS + YAGNI, and write unit tests.
+```
+
+---
+
+## 📊 VISUAL FLOW DIAGRAM
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  AMAZING BUSINESS ECOSYSTEM                     │
+│   Zero-to-Scale Gaming Empire & Web Tools Platform              │
+└─────────────────────────────────────────────────────────────────┘
+                                 │
+                    ┌────────────┴────────────┐
+                    │                         │
+         ┌──────────▼──────────┐   ┌─────────▼──────────┐
+         │   AMAZING (Holding) │   │   INFRASTRUCTURE   │
+         │   Master Platform   │   │   Supabase/Vercel  │
+         └──────────┬──────────┘   └─────────┬──────────┘
+                    │                        │
+         ┌──────────┴────────────────────────┴──────────┐
+         │                                               │
+    ┌────▼─────┐                                   ┌────▼─────┐
+    │  MAGIC   │                                   │ MONSTER  │
+    │  (Tools) │                                   │ (Gaming) │
+    └────┬─────┘                                   └────┬─────┘
+         │                                               │
+         │                                               │
+    ┌────▼────────────────────┐              ┌──────────▼──────────┐
+    │  MAGIC WRX Platform     │              │  Gaming Portfolio   │
+    ├─────────────────────────┤              ├─────────────────────┤
+    │  • Freemium SaaS        │              │  • 5 Live Games     │
+    │  • Template Marketplace │              │  • Unity Backend    │
+    │  • Site Builder         │              │  • Leaderboards     │
+    │  • Hosting Services     │              │  • IAP + Ads        │
+    │  • White-label Options  │              │  • Tournaments      │
+    └─────────────────────────┘              └─────────────────────┘
+         │                                               │
+         │                                               │
+    ┌────▼────────────────────┐              ┌──────────▼──────────┐
+    │  REVENUE STREAMS        │              │  REVENUE STREAMS    │
+    ├─────────────────────────┤              ├─────────────────────┤
+    │  • Subscriptions        │              │  • In-App Purchases │
+    │    - Free: $0           │              │  • Ad Revenue       │
+    │    - Starter: $29/mo    │              │  • Tournaments      │
+    │    - Pro: $99/mo        │              │  • Subscriptions    │
+    │    - Enterprise: $299   │              │  • Sponsorships     │
+    │  • Templates: $19-199   │              │                     │
+    │  • Hosting: $19-199/mo  │              │                     │
+    │  • Dev Services: $2k+   │              │                     │
+    └─────────────────────────┘              └─────────────────────┘
+         │                                               │
+         └───────────────────┬───────────────────────────┘
+                             │
+                    ┌────────▼──────────┐
+                    │  TARGET METRICS   │
+                    ├───────────────────┤
+                    │  Month 6: $1k MRR │
+                    │  Year 1: $30k MRR │
+                    │  Year 2: $150k    │
+                    │  Year 3: $2M ARR  │
+                    └───────────────────┘
+```
+
+---
+
+## 🗂️ DIRECTORY STRUCTURE (Linux Tree Format)
+
+```
+Business/                                       # 🏢 AMAZING BUSINESS ROOT
+├── DOCs/                                       # 📚 Master Documentation Hub
+│   ├── BUSINESS_ROADMAP.md                     # This file
+│   ├── BUSINESS_AI_PROMPT.md                   # AI assistant guide
+│   ├── amazing_business_strategy.md            # Core business strategy
+│   ├── amazing_business_strategy copy.md       # Gaming-focused strategy
+│   └── amazing_tech_stack_guide.md             # Technical architecture
+│
+├── Websites/                                   # 🌐 WEB PLATFORMS
+│   │
+│   ├── MagicWRX/                              # ⭐ PRIMARY PLATFORM
+│   │   ├── src/                               # Application source
+│   │   │   ├── app/                           # Next.js 15 App Router
+│   │   │   │   ├── page.tsx                   # Homepage
+│   │   │   │   ├── layout.tsx                 # Root layout
+│   │   │   │   ├── globals.css                # Global styles
+│   │   │   │   ├── admin/                     # Admin dashboard
+│   │   │   │   ├── login/                     # Authentication
+│   │   │   │   ├── signup/                    # User registration
+│   │   │   │   ├── demo-login/                # Demo mode
+│   │   │   │   ├── dashboard/                 # User dashboard
+│   │   │   │   ├── pricing/                   # Pricing tiers
+│   │   │   │   ├── templates/                 # Template showcase
+│   │   │   │   ├── contact/                   # Contact form
+│   │   │   │   └── sites/                     # Site builder
+│   │   │   │       ├── new/                   # Create new site
+│   │   │   │       └── [id]/builder/          # Site editor
+│   │   │   │
+│   │   │   ├── components/                    # ♻️ Reusable Components
+│   │   │   │   ├── Header.tsx                 # Navigation
+│   │   │   │   ├── Footer.tsx                 # Footer
+│   │   │   │   ├── Hero.tsx                   # Hero section
+│   │   │   │   ├── Features.tsx               # Features grid
+│   │   │   │   ├── CTA.tsx                    # Call-to-action
+│   │   │   │   ├── TemplateCard.tsx           # Template cards
+│   │   │   │   ├── SiteCard.tsx               # User sites
+│   │   │   │   ├── SubscriptionManager.tsx    # Payment UI
+│   │   │   │   ├── DragDropEditor.tsx         # Site builder
+│   │   │   │   └── UsageStats.tsx             # Dashboard stats
+│   │   │   │
+│   │   │   ├── hooks/                         # 🪝 Custom Hooks
+│   │   │   │   └── useAuth.ts                 # Authentication
+│   │   │   │
+│   │   │   ├── lib/                           # 🔧 Utilities
+│   │   │   │   ├── firebase.ts                # Firebase config
+│   │   │   │   ├── supabase.ts                # Supabase client
+│   │   │   │   ├── stripe.ts                  # Stripe integration
+│   │   │   │   └── database.ts                # Database helpers
+│   │   │   │
+│   │   │   └── types/                         # 📝 TypeScript Types
+│   │   │       ├── user.ts                    # User types
+│   │   │       ├── site.ts                    # Site types
+│   │   │       └── subscription.ts            # Subscription types
+│   │   │
+│   │   ├── public/                            # 🌐 Static Assets
+│   │   │   ├── templates/                     # Template previews
+│   │   │   │   ├── ecommerce.svg
+│   │   │   │   ├── saas.svg
+│   │   │   │   ├── portfolio.svg
+│   │   │   │   ├── restaurant.svg
+│   │   │   │   └── corporate.svg
+│   │   │   └── hero-images/                   # Hero section images
+│   │   │
+│   │   ├── 📋 CONFIGURATION FILES
+│   │   ├── package.json                       # Dependencies
+│   │   ├── tsconfig.json                      # TypeScript config
+│   │   ├── next.config.js                     # Next.js config
+│   │   ├── tailwind.config.js                 # Tailwind CSS
+│   │   ├── postcss.config.js                  # PostCSS
+│   │   ├── .env.local                         # Environment variables
+│   │   ├── firebase.json                      # Firebase hosting
+│   │   ├── .firebaserc                        # Firebase projects
+│   │   ├── firestore.rules                    # Firestore security
+│   │   ├── storage.rules                      # Storage security
+│   │   ├── vercel.json                        # Vercel config
+│   │   │
+│   │   ├── 🔧 DEPLOYMENT SCRIPTS
+│   │   ├── deploy-vercel.sh                   # Vercel deployment
+│   │   ├── deploy.sh                          # Firebase deployment
+│   │   ├── start-dev.sh                       # Dev server
+│   │   ├── start-emulators.sh                 # Firebase emulators
+│   │   ├── firebase-status.sh                 # Check Firebase
+│   │   ├── verify-setup.sh                    # System verification
+│   │   ├── test-script.sh                     # Functionality tests
+│   │   ├── test-integrations.sh               # Integration tests
+│   │   ├── push-to-github.sh                  # Git automation
+│   │   │
+│   │   └── 📚 DOCUMENTATION
+│   │       ├── README.md                      # Main readme
+│   │       ├── SETUP.md                       # Setup guide
+│   │       ├── FIREBASE_SETUP.md              # Firebase guide
+│   │       ├── VERCEL_SETUP.md                # Vercel guide
+│   │       ├── VERCEL_COMMANDS.md             # Vercel CLI
+│   │       ├── STRIPE_INTEGRATION_PLAN.md     # Stripe setup
+│   │       ├── STRIPE_INTEGRATION_SETUP.md    # Stripe config
+│   │       ├── FREEMIUM_PLATFORM_TRANSFORMATION.md
+│   │       ├── IMMEDIATE_IMPLEMENTATION_STEPS.md
+│   │       ├── TEMPLATE_INTEGRATION_GUIDE.md
+│   │       ├── TOOLS_ADVANCEMENT_PLAN.md
+│   │       ├── SITE_BUILDER_IMPLEMENTATION.md
+│   │       ├── MAGIC_WRX_MASTER_CONTROL_GUIDE.md
+│   │       ├── NODEJS_SERVICE_PROTOCOLS.md
+│   │       ├── SERVICE_STATUS_DASHBOARD.md
+│   │       └── test-results.md                # Test outputs
+│   │
+│   ├── mxn-chat/                              # 🎮 GAMING CHAT PLATFORM
+│   │   ├── src/                               # Chat application
+│   │   ├── functions/                         # Firebase Functions
+│   │   ├── dataconnect/                       # Firebase Data Connect
+│   │   └── public/                            # Static assets
+│   │
+│   └── [Future Web Projects]                  # 🚀 Additional platforms
+│
+└── 📊 BUSINESS ANALYTICS
+    ├── Revenue Tracking                        # Financial metrics
+    ├── User Analytics                          # User behavior
+    ├── Conversion Funnels                      # Sales optimization
+    └── Growth Metrics                          # KPI dashboard
+```
+
+---
+
+## 🎯 MVP SCOPE & OBJECTIVES
+
+### **Mission Statement**
+Transform from a gaming/web tools company into a monopolized template-based web hosting empire.
+**Strategic Pivot:** Use **MXN.CHAT** as the "Spearhead" product to drive immediate user acquisition and revenue, validating the platform infrastructure before scaling the full MagicWRX hosting solution.
+
+### **Core Value Propositions**
+
+#### **MAGIC (Web Tools Platform)**
+- **Speed**: Launch professional websites in minutes
+- **Flexibility**: 5+ premium templates with full customization
+- **Scalability**: Freemium model from $0 to $299/month
+- **Revenue**: Multiple streams (subscriptions, templates, hosting, services)
+
+#### **MONSTER (Gaming Platform)**
+- **Unification**: Single account across 5+ mobile games
+- **Engagement**: Cross-game achievements and tournaments
+- **Monetization**: IAP, ads, subscriptions, and sponsorships
+- **Growth**: Viral mechanics and cross-promotion
+
+### **Success Metrics**
+
+#### **Phase 1 (Months 1-6) - MVP Foundation (MXN Spearhead)**
+- ✅ **Deploy MXN.CHAT MVP (Primary Focus)**
+- ✅ Deploy Magic WRX freemium platform (Infrastructure)
+- ✅ 1,000 free users acquired (MXN + MagicWRX)
+- ✅ $1,000 MRR achieved (Driven by MXN Premium)
+- ✅ 5% free-to-paid conversion rate
+- ✅ 10 premium templates available
+- ✅ < 5% monthly churn rate
+
+#### **Phase 2 (Months 7-12) - Revenue Traction**
+- 🎯 $10,000 MRR achieved
+- 🎯 10,000 total users (1,000 paid)
+- 🎯 100 templates in marketplace
+- 🎯 5 enterprise clients acquired
+- 🎯 10x gaming revenue (from $2.50/day to $25/day)
+
+#### **Phase 3 (Months 13-18) - Scale & Optimization**
+- 🎯 $50,000 MRR achieved
+- 🎯 Cloudflare migration complete
+- 🎯 Global CDN deployment
+- 🎯 15+ games in portfolio
+- 🎯 100+ paying enterprise clients
+
+---
+
+## 📅 ACTION ITEMS: NOW, NEXT, LATER
+
+## 🔥 NOW (Current Sprint - Week of Oct 12, 2025)
+
+### **Priority 0: Scalable Foundation & Immediate Features** 🚀
+*See `DOCs/SCALABLE_FOUNDATION_PATHWAY.md` for detailed implementation plan.*
+
+- [x] **AI Assistant Integration** 🤖
+  - [x] Scaffold `<AIAssistant />` component in MagicWRX
+  - [x] Set up Vercel AI SDK route
+  - **Status**: 🟢 Complete
+
+- [x] **Security & SEO Foundation** 🛡️
+  - [x] Add security middleware to `base-template`
+  - [x] Implement dynamic metadata in `base-template`
+  - **Status**: 🟢 Complete
+
+- [ ] **Media & Commerce Prep** 🛒
+  - [ ] Configure Supabase Storage buckets
+  - [ ] Design Shopping Cart context
+  - **Status**: 🔴 Not Started
+
+### **Priority 1: Magic WRX - Critical Stripe Integration** ⚠️
+
+- [ ] **Create Stripe Products & Pricing** 🚨
+  - [ ] Log into Stripe Dashboard (https://dashboard.stripe.com)
+  - [ ] Create 4 subscription products:
+    - Free: $0/month (placeholder, no Stripe product)
+    - Starter: $29/month
+    - Pro: $99/month
+    - Enterprise: $299/month
+  - [ ] Copy price IDs and update `src/app/pricing/page.tsx`
+  - [ ] Test checkout flow with Stripe test cards
+  - **Dependencies**: Stripe account access
+  - **Blockers**: Revenue generation blocked
+  - **Estimate**: 1-2 hours
+  - **Owner**: Business/Dev Team
+  - **Status**: 🔴 Critical
+
+- [ ] **Fix Production Deployment Access** 🔧
+  - [ ] Investigate 401 errors on production URLs
+  - [ ] Make homepage publicly accessible (remove auth middleware)
+  - [ ] Test all public routes (/, /pricing, /templates, /contact)
+  - [ ] Update environment variables on Vercel
+  - **Dependencies**: None
+  - **Blockers**: User acquisition blocked
+  - **Estimate**: 1-2 hours
+  - **Owner**: DevOps
+  - **Status**: 🔴 Critical
+
+- [ ] **Update Stripe Webhook URLs** 📡
+  - [ ] Update webhook endpoint to production URL
+  - [ ] Get new webhook signing secret from Stripe
+  - [ ] Add to Vercel environment variables
+  - [ ] Test webhook delivery with Stripe CLI
+  - **Dependencies**: Production deployment working
+  - **Blockers**: Payment processing
+  - **Estimate**: 30 minutes
+  - **Owner**: DevOps
+  - **Status**: 🟡 High Priority
+
+### **Priority 2: Magic WRX - Core Functionality Testing** 🧪
+
+- [ ] **Authentication Flow Validation** 🔐
+  - [ ] Test user registration via Firebase
+  - [ ] Test login with email/password
+  - [ ] Test Google OAuth integration
+  - [ ] Test demo mode access (no Firebase required)
+  - [ ] Verify session persistence across page reloads
+  - **Dependencies**: Firebase Auth configured
+  - **Blockers**: None (demo mode available)
+  - **Estimate**: 1 hour
+  - **Owner**: QA Lead
+  - **Status**: 🟡 High Priority
+
+- [ ] **Template System Testing** 🎨
+  - [ ] Test template gallery page loads all 5 templates
+  - [ ] Verify tier restrictions (free vs paid templates)
+  - [ ] Test template download functionality
+  - [ ] Test template preview generation
+  - **Dependencies**: None
+  - **Blockers**: None
+  - **Estimate**: 1 hour
+  - **Owner**: QA Lead
+  - **Status**: 🟡 High Priority
+
+- [ ] **Email Service Verification** 📧
+  - [ ] Create test email endpoint using Resend API
+  - [ ] Test welcome email delivery
+  - [ ] Test password reset email
+  - [ ] Test subscription confirmation email
+  - [ ] Monitor email delivery logs
+  - **Dependencies**: Resend API key configured
+  - **Blockers**: None
+  - **Estimate**: 1 hour
+  - **Owner**: Backend Team
+  - **Status**: 🟢 Medium Priority
+
+### **Priority 3: Documentation & Knowledge Base** 📚
+
+- [ ] **Create Business Dashboard Documentation** 📊
+  - [ ] Document all revenue streams
+  - [ ] Create KPI tracking spreadsheet
+  - [ ] Set up weekly metrics review process
+  - [ ] Define success criteria for each phase
+  - **Dependencies**: None
+  - **Blockers**: None
+  - **Estimate**: 2 hours
+  - **Owner**: Business Team
+  - **Status**: 🟢 Medium Priority
+
+- [ ] **Update README with Current State** ✍️
+  - [ ] Update Magic WRX README with freemium model
+  - [ ] Add deployment status and URLs
+  - [ ] Document environment setup process
+  - [ ] Add troubleshooting section
+  - **Dependencies**: None
+  - **Blockers**: None
+  - **Estimate**: 1 hour
+  - **Owner**: Tech Writer
+  - **Status**: 🟢 Medium Priority
+
+### **Priority 4: Gaming Platform - Backend Foundation** 🎮
+
+- [ ] **Unity Backend Integration Planning** 🏗️
+  - [ ] Review amazing_tech_stack_guide.md for Unity architecture
+  - [ ] Define Supabase schema for gaming data
+  - [ ] Create authentication flow for Unity clients
+  - [ ] Design leaderboard and achievement systems
+  - **Dependencies**: Supabase configured
+  - **Blockers**: None (planning phase)
+  - **Estimate**: 3-4 hours
+  - **Owner**: Gaming Team
+  - **Status**: 🟢 Medium Priority
+
+- [ ] **Existing Games Analysis** 📱
+  - [ ] Audit current 5 mobile games for integration readiness
+  - [ ] Document current AdMob revenue ($0.25-$0.50/day per game)
+  - [ ] Identify integration points for unified backend
+  - [ ] Create migration plan for each game
+  - **Dependencies**: None
+  - **Blockers**: None
+  - **Estimate**: 2-3 hours
+  - **Owner**: Gaming Team
+  - **Status**: 🟢 Medium Priority
+
+---
+
+## 🚀 NEXT (Sprint 2 - Week of Oct 19, 2025)
+
+### **Magic WRX - Freemium Platform Features** 💎
+
+- [ ] **User Dashboard Development** 📊
+  - [ ] Create user dashboard with site management
+  - [ ] Display current subscription tier and usage stats
+  - [ ] Add upgrade prompts for free users
+  - [ ] Implement billing management (Stripe Customer Portal)
+  - [ ] Show template download history
+  - **Dependencies**: Authentication working
+  - **Estimate**: 1 week
+  - **Owner**: Frontend Team
+
+- [ ] **Site Builder MVP** 🏗️
+  - [ ] Implement drag-and-drop page builder
+  - [ ] Create component library (headers, heroes, galleries, etc.)
+  - [ ] Add real-time preview panel
+  - [ ] Build customization panel (colors, fonts, layouts)
+  - [ ] Add save/publish functionality
+  - **Dependencies**: Dashboard complete
+  - **Estimate**: 2 weeks
+  - **Owner**: Full-stack Team
+
+- [ ] **Template Marketplace Enhancements** 🎨
+  - [ ] Create 10 additional premium templates
+  - [ ] Add template categories and filtering
+  - [ ] Implement template ratings and reviews
+  - [ ] Add "Try Demo" buttons with live preview
+  - [ ] Build template analytics (downloads, usage)
+  - **Dependencies**: Base templates working
+  - **Estimate**: 1.5 weeks
+  - **Owner**: Design + Frontend Team
+
+### **Gaming Platform - Cross-Game Integration** 🎮
+
+- [ ] **Unified Player Account System** 🔐
+  - [ ] Create universal authentication for all games
+  - [ ] Implement cross-game profile and avatar
+  - [ ] Build unified currency system
+  - [ ] Add global friend list and social features
+  - **Dependencies**: Backend architecture defined
+  - **Estimate**: 2 weeks
+  - **Owner**: Gaming Backend Team
+
+- [ ] **Leaderboard & Achievements** 🏆
+  - [ ] Design global leaderboard system
+  - [ ] Create cross-game achievement framework
+  - [ ] Implement real-time leaderboard updates
+  - [ ] Add tournament system with entry fees
+  - **Dependencies**: Unified accounts
+  - **Estimate**: 1.5 weeks
+  - **Owner**: Gaming Backend Team
+
+- [ ] **First Game Integration** 🎯
+  - [ ] Select one of 5 existing games for pilot integration
+  - [ ] Integrate unified authentication
+  - [ ] Add cloud save functionality
+  - [ ] Implement cross-game rewards
+  - [ ] Test and validate integration
+  - **Dependencies**: Backend systems ready
+  - **Estimate**: 1 week
+  - **Owner**: Gaming Integration Team
+
+### **Marketing & User Acquisition** 📢
+
+- [ ] **Content Marketing Launch** ✍️
+  - [ ] Create developer blog with technical tutorials
+  - [ ] Write case studies for each template type
+  - [ ] Publish YouTube tutorials for site builder
+  - [ ] Create social media content calendar
+  - **Dependencies**: None
+  - **Estimate**: Ongoing
+  - **Owner**: Marketing Team
+
+- [ ] **SEO Optimization** 🔍
+  - [ ] Optimize all pages for search engines
+  - [ ] Create sitemap and robots.txt
+  - [ ] Implement structured data markup
+  - [ ] Build backlink strategy
+  - **Dependencies**: Content created
+  - **Estimate**: 1 week
+  - **Owner**: Marketing + Dev
+
+- [ ] **Referral Program** 🎁
+  - [ ] Design referral rewards system
+  - [ ] Build referral tracking and attribution
+  - [ ] Create shareable referral links
+  - [ ] Implement reward delivery automation
+  - **Dependencies**: Payment system working
+  - **Estimate**: 1 week
+  - **Owner**: Backend + Marketing
+
+### **Analytics & Monitoring** 📈
+
+- [ ] **Comprehensive Analytics Setup** 📊
+  - [ ] Integrate Google Analytics 4
+  - [ ] Set up Firebase Performance Monitoring
+  - [ ] Add Sentry for error tracking
+  - [ ] Create custom analytics dashboard
+  - **Dependencies**: Deployment stable
+  - **Estimate**: 3 days
+  - **Owner**: DevOps + Data Team
+
+- [ ] **Business Metrics Dashboard** 💰
+  - [ ] Track MRR, ARR, and churn rate
+  - [ ] Monitor CAC and CLV
+  - [ ] Create conversion funnel analytics
+  - [ ] Set up automated weekly reports
+  - **Dependencies**: Analytics integrated
+  - **Estimate**: 1 week
+  - **Owner**: Data + Business Team
+
+---
+
+## 🔮 LATER (Backlog - Post-MVP)
+
+### **Magic WRX - Advanced Features** 🚀
+
+- [ ] **AI-Powered Site Builder** 🤖
+  - [ ] Implement AI content generation
+  - [ ] Add AI image selection and optimization
+  - [ ] Create AI-powered SEO suggestions
+  - [ ] Build conversational site builder chatbot
+  - **Priority**: High (competitive advantage)
+  - **Estimate**: 6 weeks
+
+- [ ] **White-Label Solution** 🏷️
+  - [ ] Remove all branding options
+  - [ ] Enable custom domain per customer
+  - [ ] Create multi-tenant architecture
+  - [ ] Build reseller partnership program
+  - **Priority**: High (revenue potential)
+  - **Estimate**: 4 weeks
+
+- [ ] **E-commerce Integration** 🛒
+  - [ ] Integrate Stripe Checkout for products
+  - [ ] Add inventory management system
+  - [ ] Build order fulfillment dashboard
+  - [ ] Create shipping and tax calculators
+  - **Priority**: Medium
+  - **Estimate**: 5 weeks
+
+- [ ] **Advanced Analytics Dashboard** 📊
+  - [ ] Add heatmaps and session recordings
+  - [ ] Implement A/B testing framework
+  - [ ] Create predictive analytics
+  - [ ] Build custom reporting tools
+  - **Priority**: Medium
+  - **Estimate**: 4 weeks
+
+### **Gaming Platform - Portfolio Expansion** 🎮
+
+- [ ] **Game Development Factory** 🏭
+  - [ ] Create game development templates
+  - [ ] Build automated testing pipeline
+  - [ ] Launch 10 new games using templates
+  - [ ] Implement rapid prototyping framework
+  - **Priority**: High
+  - **Estimate**: 12 weeks
+
+- [ ] **Esports & Tournaments** 🏆
+  - [ ] Build tournament hosting platform
+  - [ ] Create sponsorship marketplace
+  - [ ] Add live streaming integration
+  - [ ] Implement prize pool management
+  - **Priority**: Medium
+  - **Estimate**: 8 weeks
+
+- [ ] **Subscription Gaming Service** 💎
+  - [ ] Launch "Amazing Games Premium" ($9.99/mo)
+  - [ ] Provide access to all current + future games
+  - [ ] Remove ads for subscribers
+  - [ ] Add exclusive content and features
+  - **Priority**: High (recurring revenue)
+  - **Estimate**: 6 weeks
+
+- [ ] **Custom Game Development Services** 🎨
+  - [ ] Build B2B game development service
+  - [ ] Create educational institution packages
+  - [ ] Offer corporate training games
+  - [ ] Develop marketing game solutions
+  - **Priority**: High (high-value contracts)
+  - **Estimate**: Ongoing
+
+### **Infrastructure & Scale** 🏗️
+
+- [ ] **Cloudflare Migration (Phase 3)** ☁️
+  - [ ] Migrate to Cloudflare Pages and Workers
+  - [ ] Implement edge computing for global performance
+  - [ ] Add Cloudflare D1 for database
+  - [ ] Set up Cloudflare R2 for storage
+  - **Priority**: Medium (cost optimization)
+  - **Estimate**: 8 weeks
+  - **Trigger**: $50k MRR achieved
+
+- [ ] **Multi-Region Deployment** 🌍
+  - [ ] Deploy to multiple geographic regions
+  - [ ] Implement data residency compliance
+  - [ ] Add localization for 10+ languages
+  - [ ] Create region-specific pricing
+  - **Priority**: Low (international expansion)
+  - **Estimate**: 10 weeks
+
+### **Community & Ecosystem** 🤝
+
+- [ ] **Developer API Platform** 🔌
+  - [ ] Build RESTful API for all services
+  - [ ] Create GraphQL endpoint
+  - [ ] Publish SDK for popular languages
+  - [ ] Build API marketplace
+  - **Priority**: Medium
+  - **Estimate**: 8 weeks
+
+- [ ] **Community Platform** 👥
+  - [ ] Launch community forum
+  - [ ] Create user showcase gallery
+  - [ ] Implement voting and contests
+  - [ ] Build contributor recognition program
+  - **Priority**: Low
+  - **Estimate**: 6 weeks
+
+---
+
+## 🏗️ TECHNICAL ARCHITECTURE
+
+### **Technology Stack**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                   PRESENTATION LAYER                    │
+├─────────────────────────────────────────────────────────┤
+│  Next.js 15 (App Router)                                │
+│  React 19 (Server Components)                           │
+│  TypeScript 5                                           │
+│  Tailwind CSS 3.4                                       │
+│  Unity 2022+ (for gaming)                               │
+└─────────────────────────────────────────────────────────┘
+                           ↕️
+┌─────────────────────────────────────────────────────────┐
+│                   APPLICATION LAYER                     │
+├─────────────────────────────────────────────────────────┤
+│  Custom Hooks (useAuth, useSubscription)                │
+│  State Management (React Context + Zustand)             │
+│  Form Validation (React Hook Form + Zod)                │
+│  API Routes (Next.js API + tRPC)                        │
+└─────────────────────────────────────────────────────────┘
+                           ↕️
+┌─────────────────────────────────────────────────────────┐
+│                    BUSINESS LAYER                       │
+├─────────────────────────────────────────────────────────┤
+│  Authentication & Authorization                         │
+│  Subscription Management                                │
+│  Template Generation & Customization                    │
+│  Payment Processing                                     │
+│  Gaming Backend Services                                │
+│  Analytics & Reporting                                  │
+└─────────────────────────────────────────────────────────┘
+                           ↕️
+┌─────────────────────────────────────────────────────────┐
+│                 INFRASTRUCTURE LAYER                    │
+├─────────────────────────────────────────────────────────┤
+│  Vercel (Frontend Hosting)                              │
+│  Firebase (Auth, Firestore, Storage, Analytics)         │
+│  Supabase (PostgreSQL, Auth, Realtime)                  │
+│  Stripe (Payments & Subscriptions)                      │
+│  Resend (Email Service)                                 │
+│  Cloudflare (CDN & Edge - Phase 3)                      │
+└─────────────────────────────────────────────────────────┘
+```
+
+### **Clean Architecture Compliance**
+
+```
+Core/                           # 🎯 Business Logic (No External Dependencies)
+├── entities/                   # Domain models
+│   ├── User.ts                 # User entity
+│   ├── Site.ts                 # Site entity
+│   ├── Template.ts             # Template entity
+│   ├── Subscription.ts         # Subscription entity
+│   └── Game.ts                 # Game entity
+├── use-cases/                  # Business rules
+│   ├── CreateSite.ts           # Site creation logic
+│   ├── UpgradeSubscription.ts  # Subscription upgrade
+│   ├── ProcessPayment.ts       # Payment processing
+│   └── UnifyGameAccount.ts     # Cross-game integration
+└── interfaces/                 # Contracts
+    ├── IPaymentGateway.ts      # Payment interface
+    ├── IDatabase.ts            # Database interface
+    └── IAuthProvider.ts        # Auth interface
+
+Application/                    # 🔧 Application Services
+├── services/                   # Service implementations
+│   ├── SubscriptionService.ts  # Subscription management
+│   ├── TemplateService.ts      # Template operations
+│   └── EmailService.ts         # Email notifications
+├── validators/                 # Input validation
+│   ├── SiteValidator.ts        # Site input validation
+│   └── UserValidator.ts        # User input validation
+└── dto/                        # Data transfer objects
+    ├── CreateSiteDto.ts        # Site creation DTO
+    └── UpdateUserDto.ts        # User update DTO
+
+Infrastructure/                 # 🏗️ External Integrations
+├── firebase/                   # Firebase SDK
+│   ├── auth.ts                 # Firebase Auth
+│   └── firestore.ts            # Firestore client
+├── supabase/                   # Supabase client
+│   └── client.ts               # Supabase setup
+├── stripe/                     # Stripe integration
+│   ├── checkout.ts             # Checkout sessions
+│   └── webhooks.ts             # Webhook handlers
+└── resend/                     # Email service
+    └── client.ts               # Resend client
+
+Presentation/                   # 🎨 UI Layer
+├── components/                 # React components
+│   ├── auth/                   # Auth components
+│   ├── dashboard/              # Dashboard components
+│   └── builder/                # Site builder components
+├── pages/                      # Next.js pages
+│   └── app/                    # App router pages
+└── hooks/                      # React hooks
+    ├── useAuth.ts              # Authentication hook
+    └── useSubscription.ts      # Subscription hook
+```
+
+**Dependency Rule**: Core → Application → Infrastructure → Presentation  
+*(Inner layers never depend on outer layers)*
+
+---
+
+## 💰 REVENUE MODEL & FINANCIAL PROJECTIONS
+
+### **Revenue Streams**
+
+#### **Magic WRX Platform**
+```
+Free Tier ($0/month):
+- 1 site
+- Basic templates only
+- Subdomain hosting
+- Ads displayed
+- 500MB storage
+- Community support
+→ User acquisition & conversion funnel
+
+Starter Tier ($29/month):
+- 5 sites
+- Premium templates
+- Custom domain
+- No ads
+- 2GB storage
+- Email support
+→ Target: Small businesses & freelancers
+
+Pro Tier ($99/month):
+- Unlimited sites
+- All templates + white-label
+- Advanced analytics
+- 10GB storage
+- Priority support
+- API access
+→ Target: Agencies & growing businesses
+
+Enterprise Tier ($299/month):
+- Everything in Pro
+- Dedicated account manager
+- Custom integrations
+- SLA guarantees
+- Onboarding included
+→ Target: Large agencies & corporations
+```
+
+#### **Additional Revenue Streams**
+```
+Template Marketplace:
+- Individual templates: $19-$199
+- Template bundles: $49-$499
+- Custom template development: $2,000-$10,000
+
+Hosting Services:
+- Basic hosting: $19/month
+- Pro hosting: $99/month
+- Enterprise hosting: $499/month
+
+Development Services:
+- Website development: $2,000-$10,000
+- Custom integrations: $1,000-$5,000
+- Consulting: $150/hour
+
+Gaming Platform:
+- In-app purchases: $0.99-$79.99
+- Ad revenue: $1-3 RPM
+- Tournament entry fees: $1-$5
+- Premium subscription: $9.99/month
+```
+
+### **Financial Projections**
+
+#### **Phase 1: Months 1-6 (MVP Foundation)**
+```
+Month 1:  $0 MRR      (0 paid users, 100 free users)
+Month 2:  $150 MRR    (5 Starter users)
+Month 3:  $450 MRR    (10 Starter, 2 Pro users)
+Month 4:  $750 MRR    (15 Starter, 5 Pro users)
+Month 5:  $1,200 MRR  (20 Starter, 8 Pro, 1 Enterprise)
+Month 6:  $2,000 MRR  (30 Starter, 12 Pro, 2 Enterprise)
+
+Total Users: 1,000 (50 paid = 5% conversion)
+Revenue: $5,550 total in 6 months
+```
+
+#### **Phase 2: Months 7-12 (Revenue Traction)**
+```
+Month 7:  $3,500 MRR
+Month 8:  $5,000 MRR
+Month 9:  $7,000 MRR
+Month 10: $9,000 MRR
+Month 11: $12,000 MRR
+Month 12: $15,000 MRR
+
+Total Users: 10,000 (500 paid = 5% conversion)
+Revenue: $51,500 for months 7-12
+Annual Run Rate: $180,000
+```
+
+#### **Phase 3: Months 13-18 (Scale)**
+```
+Month 13: $20,000 MRR
+Month 14: $25,000 MRR
+Month 15: $32,000 MRR
+Month 16: $40,000 MRR
+Month 17: $48,000 MRR
+Month 18: $60,000 MRR
+
+Total Users: 25,000 (1,250 paid)
+Revenue: $225,000 for months 13-18
+Annual Run Rate: $720,000
+```
+
+#### **Year 2-3 Projections**
+```
+Year 2 Q1: $80,000 MRR
+Year 2 Q2: $100,000 MRR
+Year 2 Q3: $125,000 MRR
+Year 2 Q4: $150,000 MRR
+→ Year 2 ARR: $1,365,000
+
+Year 3 Target: $2,000,000 ARR
+Year 4 Target: $10,000,000 ARR
+Year 5 Target: $50,000,000 ARR (IPO Ready)
+```
+
+### **Cost Structure**
+
+#### **Phase 1 (Months 1-6): $0-$100/month**
+```
+Infrastructure:
+- Vercel Free Tier: $0
+- Firebase Free Tier: $0
+- Supabase Free Tier: $0
+- Stripe (2.9% + $0.30): ~$50/month at $2k MRR
+- Resend Free Tier: $0
+
+Total Monthly Costs: $0-$50
+Profit Margin: 97%+
+```
+
+#### **Phase 2 (Months 7-12): $200-$500/month**
+```
+Infrastructure:
+- Vercel Pro: $20/month
+- Supabase Pro: $25/month
+- Stripe fees: ~$300/month at $15k MRR
+- Email service: $9/month
+- Monitoring: $0 (free tiers)
+
+Total Monthly Costs: $354
+Profit Margin: 97%+ (at $15k MRR)
+```
+
+#### **Phase 3 (Months 13-18): $500-$2,000/month**
+```
+Infrastructure:
+- Vercel Enterprise: $150/month
+- Supabase Pro: $25/month
+- Cloudflare: $200/month
+- Stripe fees: ~$1,500/month at $60k MRR
+- Monitoring & Analytics: $200/month
+
+Total Monthly Costs: $2,075
+Profit Margin: 96%+ (at $60k MRR)
+```
+
+---
+
+## 🧪 TESTING STRATEGY
+
+### **Test Coverage Goals**
+- Unit Tests: 80%+ coverage
+- Integration Tests: Key user flows
+- E2E Tests: Critical paths (auth, payment, deployment)
+
+### **Testing Pyramid**
+
+```
+        ╱╲
+       ╱ E2E╲            10%  ← Playwright/Cypress
+      ╱──────╲
+     ╱ INTEG. ╲          20%  ← Testing Library + Supertest
+    ╱──────────╲
+   ╱   UNIT     ╲        70%  ← Jest + Vitest
+  ╱──────────────╲
+```
+
+### **Test Examples**
+
+```typescript
+// Unit Test Example (SubscriptionService.test.ts)
+import { SubscriptionService } from '@/application/services/SubscriptionService';
+import { User } from '@/core/entities/User';
+
+describe('SubscriptionService', () => {
+  it('should upgrade user from free to starter tier', async () => {
+    const service = new SubscriptionService();
+    const user = new User({ tier: 'free' });
+    
+    await service.upgrade(user, 'starter');
+    
+    expect(user.subscription.tier).toBe('starter');
+    expect(user.subscription.status).toBe('active');
+  });
+  
+  it('should enforce usage limits based on tier', async () => {
+    const service = new SubscriptionService();
+    const user = new User({ tier: 'free', usage: { sites: 1 } });
+    
+    const canCreateSite = service.canCreateSite(user);
+    
+    expect(canCreateSite).toBe(false);
+  });
+});
+
+// Integration Test Example (stripe-checkout.test.ts)
+import { POST } from '@/app/api/stripe/checkout/route';
+import { NextRequest } from 'next/server';
+
+describe('Stripe Checkout API', () => {
+  it('should create checkout session for starter tier', async () => {
+    const request = new NextRequest('http://localhost:3000/api/stripe/checkout', {
+      method: 'POST',
+      body: JSON.stringify({ priceId: 'price_starter', userId: 'test-user' })
+    });
+    
+    const response = await POST(request);
+    const data = await response.json();
+    
+    expect(response.status).toBe(200);
+    expect(data.url).toContain('checkout.stripe.com');
+  });
+});
+
+// E2E Test Example (user-journey.spec.ts)
+import { test, expect } from '@playwright/test';
+
+test('complete user signup and subscription flow', async ({ page }) => {
+  // 1. Visit homepage
+  await page.goto('http://localhost:3000');
+  
+  // 2. Click "Get Started"
+  await page.click('text=Get Started');
+  
+  // 3. Fill signup form
+  await page.fill('input[name="email"]', 'test@example.com');
+  await page.fill('input[name="password"]', 'SecurePass123!');
+  await page.click('button[type="submit"]');
+  
+  // 4. Navigate to pricing
+  await page.click('text=Pricing');
+  
+  // 5. Select Starter plan
+  await page.click('text=Start Free Trial >> button');
+  
+  // 6. Complete Stripe checkout (test mode)
+  await expect(page).toHaveURL(/checkout\.stripe\.com/);
+  
+  // Fill Stripe test card
+  const stripeFrame = page.frameLocator('iframe').first();
+  await stripeFrame.locator('input[name="cardnumber"]').fill('4242424242424242');
+  await stripeFrame.locator('input[name="exp-date"]').fill('12/34');
+  await stripeFrame.locator('input[name="cvc"]').fill('123');
+  await stripeFrame.locator('input[name="postal"]').fill('12345');
+  
+  await page.click('text=Subscribe');
+  
+  // 7. Verify redirect to dashboard
+  await expect(page).toHaveURL(/dashboard/);
+  await expect(page.locator('text=Starter Plan')).toBeVisible();
+});
+```
+
+---
+
+## 📊 CURRENT STATUS & HEALTH CHECK
+
+### **System Status** (as of Oct 12, 2025)
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| **Magic WRX** |  |  |
+| Frontend | 🟢 Working | Next.js 15 deployed successfully |
+| Authentication | 🟢 Working | Firebase Auth + Demo mode functional |
+| Templates | 🟢 Working | 5 templates available and accessible |
+| Pricing Page | 🟢 Working | Displays all tiers correctly |
+| Dashboard | 🟡 Partial | Basic structure, needs enhancements |
+| Site Builder | 🔴 Not Started | Planned for Sprint 2 |
+| Stripe Integration | 🔴 Critical | Products not created, webhooks not configured |
+| Email Service | 🟡 Configured | Resend API ready, needs testing |
+| Production Access | 🔴 Issues | 401 errors on production URLs |
+|  |  |  |
+| **Monster Gaming** |  |  |
+| Existing Games | 🟢 Live | 5 mobile games generating $2.50/day |
+| AdMob Integration | 🟢 Working | Basic monetization active |
+| Backend Services | 🔴 Not Started | Unified backend not implemented |
+| Cross-game Features | 🔴 Not Started | Planned for Phase 2 |
+|  |  |  |
+| **Infrastructure** |  |  |
+| Vercel Hosting | 🟢 Working | Latest deployment successful |
+| Firebase | 🟡 Partial | APIs need enablement |
+| Supabase | 🟢 Configured | Database and auth ready |
+| Stripe | 🟡 Configured | Account ready, products needed |
+| GitHub | 🟢 Working | Repository synced |
+|  |  |  |
+| **Testing** |  |  |
+| Unit Tests | 🔴 None | No test suite implemented |
+| Integration Tests | 🔴 None | Testing framework needed |
+| E2E Tests | 🔴 None | Playwright not configured |
+|  |  |  |
+| **Documentation** |  |  |
+| Business Strategy | 🟢 Complete | 3 comprehensive strategy docs |
+| Technical Guides | 🟢 Complete | 15+ implementation guides |
+| Roadmap | 🟢 Complete | This document |
+| API Documentation | 🔴 Missing | Needs creation |
+
+**Legend**: 🟢 Working | 🟡 Partial | 🔴 Issues/Missing | ⚫ Not Started
+
+### **Known Issues & Blockers**
+
+#### **Critical 🚨**
+1. **Stripe Products Not Created**
+   - Impact: Cannot process payments or subscriptions
+   - Blocker: Revenue generation completely blocked
+   - Priority: P0 - Immediate
+   - Owner: Business Team
+   
+2. **Production URLs Returning 401**
+   - Impact: Users cannot access the site
+   - Blocker: User acquisition blocked
+   - Priority: P0 - Immediate
+   - Owner: DevOps
+
+3. **Stripe Webhook URLs Not Updated**
+   - Impact: Payment confirmations won't be received
+   - Blocker: Subscription lifecycle management
+   - Priority: P0 - Immediate
+   - Owner: DevOps
+
+#### **High Priority ⚠️**
+4. **No Testing Infrastructure**
+   - Impact: Cannot validate features reliably
+   - Risk: Bugs in production
+   - Priority: P1 - This week
+   - Owner: QA Lead
+
+5. **Firebase Service Account Key Placeholder**
+   - Impact: Server-side Firebase operations may fail
+   - Risk: Admin features not working
+   - Priority: P1 - This week
+   - Owner: Backend Team
+
+6. **Email Service Not Tested**
+   - Impact: User notifications may not send
+   - Risk: Poor user experience
+   - Priority: P1 - This week
+   - Owner: Backend Team
+
+#### **Medium Priority 📋**
+7. **Site Builder Not Implemented**
+   - Impact: Core feature missing
+   - Blocker: Full freemium value proposition
+   - Priority: P2 - Sprint 2
+   - Owner: Full-stack Team
+
+8. **Gaming Backend Not Started**
+   - Impact: Cannot unify game portfolio
+   - Blocker: Gaming revenue growth
+   - Priority: P2 - Sprint 2
+   - Owner: Gaming Team
+
+---
+
+## 🎓 LEARNING RESOURCES
+
+### **For New Contributors**
+
+#### **Prerequisites**
+1. **Web Development**
+   - Next.js 15: https://nextjs.org/docs
+   - React 19: https://react.dev
+   - TypeScript: https://www.typescriptlang.org/docs
+   - Tailwind CSS: https://tailwindcss.com/docs
+
+2. **Backend & Services**
+   - Firebase: https://firebase.google.com/docs
+   - Supabase: https://supabase.com/docs
+   - Stripe: https://stripe.com/docs
+   - Resend: https://resend.com/docs
+
+3. **Gaming Development**
+   - Unity: https://learn.unity.com
+   - Mobile Game Monetization: Unity Ads, AdMob documentation
+
+#### **Code Standards**
+- Read: Clean Code by Robert C. Martin
+- Read: Clean Architecture by Robert C. Martin
+- Follow: SOLID principles in every component
+- Apply: DRY, KISS, YAGNI religiously
+
+#### **Onboarding Checklist**
+- [ ] Clone MagicWRX repository from GitHub
+- [ ] Run `npm install` in MagicWRX directory
+- [ ] Read all documentation in `DOCs/` folder
+- [ ] Review `BUSINESS_ROADMAP.md` (this file)
+- [ ] Set up local development environment
+- [ ] Test demo mode (`/demo-login`)
+- [ ] Make first contribution (fix documentation typo!)
+- [ ] Review test results in `test-results.md`
+
+---
+
+## 📞 SUPPORT & COMMUNICATION
+
+### **Channels**
+- **Issues**: GitHub Issues for bug reports and feature requests
+- **Discussions**: GitHub Discussions for questions and ideas
+- **Email**: business@magicwrx.com (if configured)
+- **Slack**: Internal team communication (if configured)
+
+### **SLA Commitments**
+- **Critical bugs** (P0): Immediate response, 4-hour fix
+- **High priority bugs** (P1): 24-hour response, 48-hour fix
+- **Feature requests**: 1-week triage, roadmap prioritization
+- **Documentation**: 48-hour updates for critical changes
+- **Security issues**: Immediate attention, embargo if needed
+
+### **Decision-Making Process**
+1. **Strategic decisions**: Business team lead
+2. **Technical architecture**: CTO/Tech Lead
+3. **Feature prioritization**: Product Manager
+4. **Code reviews**: 2+ approvals required
+5. **Deployment approval**: Tech Lead sign-off
+
+---
+
+## 🏁 SUCCESS CRITERIA
+
+### **Phase 1 Success (Month 6)**
+- ✅ Magic WRX deployed and accessible to public
+- ✅ Stripe integration working with test cards
+- ✅ 1,000+ free users acquired
+- ✅ $1,000+ MRR achieved (50+ paid users)
+- ✅ 5% free-to-paid conversion rate
+- ✅ < 5% monthly churn rate
+- ✅ All critical bugs resolved (P0/P1)
+- ✅ 80%+ unit test coverage on new code
+
+### **Phase 2 Success (Month 12)**
+- 🎯 $10,000+ MRR achieved
+- 🎯 10,000+ total users (1,000+ paid)
+- 🎯 Site builder MVP launched
+- 🎯 100+ templates in marketplace
+- 🎯 5+ enterprise clients acquired
+- 🎯 Gaming revenue 10x (from $2.50/day to $25/day)
+- 🎯 First game integrated with unified backend
+- 🎯 Lighthouse score > 90 across all metrics
+
+### **Phase 3 Success (Month 18)**
+- 🎯 $50,000+ MRR achieved
+- 🎯 25,000+ total users
+- 🎯 Cloudflare migration complete
+- 🎯 15+ games in portfolio
+- 🎯 100+ enterprise clients
+- 🎯 Multi-region deployment active
+- 🎯 Series A fundraising initiated (if desired)
+
+---
+
+## 📜 VERSION HISTORY
+
+| Version | Date | Changes | Author |
+|---------|------|---------|--------|
+| 1.0.0 | Oct 12, 2025 | Initial roadmap creation with NOW/NEXT/LATER action items | AI Assistant |
+
+---
+
+## 🚀 NEXT REVIEW DATE
+
+**Next Roadmap Review**: October 19, 2025  
+**Quarterly Business Review**: January 12, 2026
+
+---
+
+## 🎯 CONCLUSION
+
+This roadmap is a **living document** and should be updated weekly as the business evolves. All contributors must:
+
+1. **Review this roadmap** before starting new work
+2. **Update action items** as they are completed (move from NOW → NEXT → LATER)
+3. **Add new tasks** as they are discovered
+4. **Follow code quality principles** religiously (SOLID, DRY, KISS, YAGNI)
+5. **Write unit tests** for all new features (80%+ coverage)
+6. **Document all decisions** in appropriate guides
+7. **Track metrics** weekly (MRR, users, conversion, churn)
+
+### **Core Philosophy**
+
+> "Build features users will pay for, not features we think are cool."
+
+> "Revenue is the best validator of product-market fit."
+
+> "Code quality today prevents technical debt tomorrow."
+
+### **Remember**
+
+> "Make it work, make it right, make it fast — in that order."  
+> — Kent Beck
+
+---
+
+**Follow BUSINESS_ROADMAP.md, use KISS + YAGNI, and write unit tests.** 🚀
