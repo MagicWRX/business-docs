@@ -1,8 +1,8 @@
-# MXN_SYSTEM.md - v1.0 Complete System Overview (SSOT)
+# MXN_SYSTEM.md - v1.0.1 Complete System Overview (SSOT)
 
 **Document Date:** December 11, 2025
 **Version:** 1.0.1
-**Status:** Production Ready (Critical Bug Identified)
+**Status:** Production Ready
 **Last Updated:** December 11, 2025
 
 ---
@@ -412,13 +412,13 @@ CREATE TABLE invitations (
 
 ## 📈 Roadmap & Future Versions
 
-### v1.0 (Current) - ⚠️ Production Ready (Critical Bug)
+### v1.0.1 (Current) - ✅ Production Ready
 - Core chat functionality
 - Secure authentication
 - Email invitations
 - Mobile responsive
 - Production deployment
-- **CRITICAL BUG:** Messages not appearing in chat rooms
+- MVP enhancements (alias creation, delete account, terms/privacy, online users)
 
 ### v1.1 (Next Sprint) - 🔄 In Development
 - Push notifications

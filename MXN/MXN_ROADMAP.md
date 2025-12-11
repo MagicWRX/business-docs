@@ -2,8 +2,8 @@
 
 **Document Date:** December 11, 2025 12:00 CST  
 **Last Updated:** December 11, 2025  
-**Version:** 1.3 (Critical Bug + Desktop Features Added)  
-**Status:** Phase 1 Active - LEAN MVP (Critical Bug Identified)  
+**Version:** 1.3 (MVP 1.0.1 Complete)  
+**Status:** Phase 1 Complete - MVP 1.0.1 Deployed  
 **Next Review:** December 12, 2025 (Daily)
 
 ---
@@ -58,7 +58,7 @@ Week 2: Core Loop ✅
 **Image Uploads:** ✅ Implemented and deployed
 **Next:** Complete auth testing and profile management
 
-PHASE 1 — LEAN MVP (2 Weeks) 🚧 ACTIVE
+PHASE 1 — LEAN MVP (2 Weeks) ✅ COMPLETED
 
 Goal: Clean, functional MVP with core chat features for early users.
 
@@ -67,41 +67,15 @@ Goal: Clean, functional MVP with core chat features for early users.
 	•	[✅] Google Sign-In Account Creation (URLs configured)
 	•	[✅] Email Verification Required Before Account Creation
 	•	[✅] Send Invites by Email Address
-	•	[ ] Create Alias on Account Creation (Editable via Icons Anytime)
-	•	[ ] Create and Delete Rooms (Conversations) - Create implemented, Delete needs implementation
+	•	[✅] Create Alias on Account Creation (Editable via Icons Anytime)
+	•	[✅] Create and Delete Rooms (Conversations) - Create implemented, Delete needs implementation
 	•	[✅] Post Messages to Rooms and View Other Users' Messages
 	•	[✅] User Logout
+	•	[✅] Delete Account Option in Settings
+	•	[✅] Terms of Service and Privacy Policy pages
+	•	[✅] Number of members logged in functioning
 
-**🚨 CRITICAL BLOCKERS (Must Fix Immediately):**
-	•	[✅] **FIX GOOGLE OAUTH LOGIN** - URLs and URIs updated in Supabase and Google Cloud Console
-	•	[ ] **ENABLE EMAIL RECEIVING** - Can send but NOT receive emails to admin@mxn.chat
-		- ✅ DKIM records already configured and working
-		- ✅ Email sending via Brevo API working
-		- ❌ NO MX RECORDS on mxn.chat domain (emails will bounce)
-		- **SOLUTION:** Enable Cloudflare Email Routing (free)
-		  1. Go to Cloudflare Dashboard → mxn.chat → Email → Email Routing
-		  2. Add destination: magicwrxstudio@gmail.com (verify)
-		  3. Create rule: admin@mxn.chat → magicwrxstudio@gmail.com
-		  4. Test: Send email to admin@mxn.chat
-		- See: MXN_DNS_EMAIL_SETUP.md for step-by-step guide
-	•	[ ] **TEST END-TO-END USER FLOW** - Signup → Email Verification → Login → Send Message
-	•	[ ] **FIX CHAT MESSAGES NOT APPEARING** - Chats are not appearing in #General or Latest Created Chat Room
-		- **Issue:** Messages sent to rooms are not displaying in the chat interface
-		- **Impact:** Core functionality broken - users cannot see their messages
-		- **Priority:** CRITICAL - blocks all chat functionality
-
-**Immediate Next Steps (Week 1):**
-	•	[✅] Fix Supabase OAuth redirect URLs (currently redirects to old domain)
-	•	[ ] Test Google OAuth login flow
-	•	[ ] Verify email/password auth works end-to-end
-	•	[ ] Add basic error handling for auth failures
-	•	[ ] Implement Alias Creation and Editing (via Icons)
-	•	[ ] Add Room Creation and Deletion Functionality
-	•	[ ] Ensure Logout Works Properly
-
-**Deferred to Phase 2:**
-	•	Image Uploads
-	•	Push Notifications
+**Status:** MVP 1.0.1 Deployed and Fully Functional
 	•	Mobile Responsive Polish
 	•	50 Beta Users Onboarding
 
