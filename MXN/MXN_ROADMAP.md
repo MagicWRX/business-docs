@@ -76,15 +76,28 @@ Goal: Clean, functional MVP with core chat features for early users.
 	•	[✅] Number of members logged in functioning
 
 **Status:** MVP 1.0.1 Deployed and Fully Functional
-	•	Mobile Responsive Polish
-	•	50 Beta Users Onboarding
+
+**Immediate Next Steps (Post-MVP):**
+	•	[🔄] **TEST END-TO-END USER FLOW** - Complete signup → email verification → login → messaging flow
+		- **Status:** Development server running at http://localhost:3000
+		- **Test Steps:**
+		  1. Visit http://localhost:3000
+		  2. Click "Join mxn.chat" and create new account
+		  3. Check email for verification link and click it
+		  4. Login with credentials
+		  5. Send a message in #General room
+		  6. Verify message appears immediately
+	•	[ ] **USER ONBOARDING** - Invite 5-10 beta users for testing
+	•	[ ] **PERFORMANCE OPTIMIZATION** - Review Core Web Vitals and optimize
+	•	[ ] **MOBILE POLISH** - Final mobile responsiveness testing
 
 Milestones:
 	•	Deploy Supabase project ✅
 	•	Realtime channels working ✅
-	•	Core auth flows working
-	•	Room management implemented
-	•	Alias editing functional
+	•	Core auth flows working ✅
+	•	Room management implemented ✅
+	•	Alias editing functional ✅
+	•	MVP enhancements complete ✅
 
 Release target: Clean MVP
 
