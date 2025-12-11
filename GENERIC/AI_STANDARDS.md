@@ -7,8 +7,14 @@
 - Applies to every repository, branch, feature, and experiment without exception.
 - Embeds visual quick references (tables, diagrams, trees) for rapid comprehension by dyslexic and neurodivergent teammates.
 
-**Date Created:** October 16, 2025  \
-**Last Updated:** October 16, 2025
+**Date Created:** October 16, 2025  
+**Last Updated:** December 11, 2025  
+**Version:** 1.1.0
+
+**Active Projects:**
+- MXN.CHAT (Next.js, Supabase, Brevo) - `/DOCs/MXN/`
+- MagicWRX (Next.js, Firebase) - `/DOCs/MagicWRX/` (planned)
+- Template-WRX (Multi-template system) - `/DOCs/Template-WRX/` (planned)
 
 ---
 
@@ -96,14 +102,31 @@ Customize the node names per project. Every diagram update propagates to the roa
 ```bash
 $ tree -L 2 Docs
 Docs
-├── AI_STANDARDS.md          # This file
-├── TITLE_ProjectName.md     # Project-specific overview
-├── DOC_INDEX.md             # Document inventory with summaries
-├── ROADMAP.md               # NOW/NEXT/LATER, acceptance criteria
-└── AI_PROMPT.md             # Canonical AI orchestration prompt
+├── GENERIC/                      # Cross-project standards
+│   ├── AI_STANDARDS.md           # This file
+│   ├── GENERIC_AI_PROMPT.md      # AI orchestration template
+│   └── GENERIC_DOC_INDEX.md      # Generic index template
+│
+├── MXN/                          # MXN.CHAT project (ACTIVE)
+│   ├── DOC_INDEX.md              # MXN documentation index (SSOT)
+│   ├── MXN_SYSTEM.md             # System overview
+│   ├── MXN_TREE.md               # File structure
+│   ├── MXN_ROADMAP.md            # Development phases
+│   ├── MXN_SECURITY.md           # Security practices
+│   ├── MXN_EMAIL_SETUP.md        # Email configuration
+│   ├── MXN_AUTH_SETUP.md         # Authentication setup
+│   ├── MXN_DEPLOYMENT_CICD.md    # Deployment procedures
+│   └── MXN_SUPABASE_SCHEMA.md    # Database schema
+│
+└── [ProjectName]/                # Future projects follow this pattern
+    ├── DOC_INDEX.md              # Project-specific index
+    ├── [PROJECT]_SYSTEM.md       # System overview
+    ├── [PROJECT]_TREE.md         # File structure
+    ├── [PROJECT]_ROADMAP.md      # Development phases
+    └── [PROJECT]_SECURITY.md     # Security practices
 ```
 
-Each repository **must** maintain this structure. Missing files halt releases.
+**Enforcement Rule:** Each repository **must** maintain this structure. Missing files halt releases.
 
 ---
 
@@ -148,12 +171,19 @@ Record checklist outcomes inside pull requests and sprint notes.
 
 ## 🔗 Required Companion Documents
 
-- `Docs/GENERIC_DOC_INDEX.md` (or project-specific variant)
-- `Docs/GENERIC_ROADMAP.md`
-- `Docs/GENERIC_AI_PROMPT.md`
-- `Docs/TITLE_<Project>.md`
+### Generic (Cross-Project)
+- `Docs/GENERIC/AI_STANDARDS.md` (this document)
+- `Docs/GENERIC/GENERIC_AI_PROMPT.md`
+- `Docs/GENERIC/GENERIC_DOC_INDEX.md`
 
-Each derivative document references this standard in its first section.
+### Project-Specific (Example: MXN.CHAT)
+- `Docs/MXN/MXN_INDEX.md` - Central navigation and SSOT index
+- `Docs/MXN/MXN_SYSTEM.md` - Executive summary and goals
+- `Docs/MXN/MXN_TREE.md` - File structure and architecture
+- `Docs/MXN/MXN_ROADMAP.md` - Development phases and milestones
+- `Docs/MXN/MXN_SECURITY.md` - Security practices and key management
+
+Each project directory references this standard in its DOC_INDEX.md first section.
 
 ---
 
