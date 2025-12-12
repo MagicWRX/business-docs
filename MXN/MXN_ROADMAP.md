@@ -2,7 +2,7 @@
 
 **Document Date:** December 12, 2025 12:00 CST  
 **Last Updated:** December 12, 2025  
-**Version:** 1.4.4 (Desktop Input Visibility Fix + Sliding Behavior)  
+**Version:** 1.4.5 (Tab Visibility Reconnection Fix)  
 **Status:** Phase 1 Complete - MVP 1.1.0 Deployed, MVP 2.0 Planned  
 **Next Review:** December 13, 2025 (Daily)
 
@@ -100,6 +100,10 @@ Goal: Clean, functional MVP with core chat features for early users.
 	•	[✅] **DESKTOP INPUT VISIBILITY** - Fixed input field disappearing on short windows
 		- **Status:** ✅ IMPLEMENTED - Input now slides down when window height < 600px, hover brings it back
 		- **Features:** Sticky positioning, smooth transitions, visual hover indicator
+	•	[✅] **TAB VISIBILITY RECONNECTION** - Fixed messages disappearing when switching desktops
+		- **Status:** ✅ IMPLEMENTED - Added visibilitychange handler that refreshes realtime connection
+		- **Features:** Automatic reconnection, loading state reset, detailed logging
+		- **Triggers:** Detects when browser tab becomes visible after being hidden
 
 Milestones:
 	•	Deploy Supabase project ✅
