@@ -2,7 +2,7 @@
 
 **Document Date:** December 12, 2025 12:00 CST  
 **Last Updated:** December 12, 2025  
-**Version:** 1.4.3 (Mobile Input Fix, Alias Modal Fix, Session Timeout Note Added)  
+**Version:** 1.4.4 (Desktop Input Visibility Fix + Sliding Behavior)  
 **Status:** Phase 1 Complete - MVP 1.1.0 Deployed, MVP 2.0 Planned  
 **Next Review:** December 13, 2025 (Daily)
 
@@ -97,7 +97,9 @@ Goal: Clean, functional MVP with core chat features for early users.
 			- [ ] **Mobile Responsiveness:** Test on various device sizes, ensure touch targets meet 44px minimum
 			- [ ] **Bundle Size:** Analyze with `npm run build --analyze`, optimize imports and lazy loading
 			- [ ] **Runtime Performance:** Monitor React DevTools Profiler, optimize re-renders and memoization
-	•	[ ] **MOBILE POLISH** - Final mobile responsiveness testing
+	•	[✅] **DESKTOP INPUT VISIBILITY** - Fixed input field disappearing on short windows
+		- **Status:** ✅ IMPLEMENTED - Input now slides down when window height < 600px, hover brings it back
+		- **Features:** Sticky positioning, smooth transitions, visual hover indicator
 
 Milestones:
 	•	Deploy Supabase project ✅
