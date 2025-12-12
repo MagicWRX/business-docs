@@ -2,8 +2,8 @@
 
 **Document Date:** December 12, 2025 12:00 CST  
 **Last Updated:** December 12, 2025  
-**Version:** 1.4 (MVP 2.0 Cross-Platform Apps Added)  
-**Status:** Phase 1 Complete - MVP 1.0.1 Deployed, MVP 2.0 Planned  
+**Version:** 1.4.3 (Mobile Input Fix, Alias Modal Fix, Session Timeout Note Added)  
+**Status:** Phase 1 Complete - MVP 1.1.0 Deployed, MVP 2.0 Planned  
 **Next Review:** December 13, 2025 (Daily)
 
 ---
@@ -12,8 +12,10 @@
 
 MXN.CHAT is a lean, secure, fast real-time chat platform designed for:
 	•	Private 1:1 and small-group conversations
-	•	Minimalist UX
-	•	Ephemeral media (auto-deletes)
+	•	Minimalist UX with ephemeral content
+	•	Exclusive aliases (30-day expiry, anti-hoarding)
+	•	Vibe-based rooms with colored user indicators
+	•	Auto-deletes: Messages/Pictures after 24h, Rooms after 3 days
 	•	Low-cost scaling (Supabase + Vercel)
 	•	Seamless integration into MagicWRX Hosting
 
@@ -26,9 +28,9 @@ MXN is both:
 2. 🏗 Core Architecture Summary (High-Level)
 	•	Frontend: Next.js (App Router), Tailwind, ShadCN, Vercel Edge Middleware
 	•	Backend: Supabase Postgres + Realtime Channels
-	•	Auth: Supabase Auth with email verification
-	•	Storage: Supabase buckets with strict RLS
-	•	Ephemeral Media Logic: Cron-based cleanup via Vercel/Edge Functions
+	•	Auth: Supabase Auth with email verification + exclusive aliases (30-day expiry)
+	•	Storage: Supabase buckets with strict RLS + 24h auto-delete
+	•	Ephemeral Logic: Messages/Pictures delete after 24h, Vibes after 3 days
 	•	Payments: Stripe (standalone + MagicWRX-integrated)
 	•	Analytics: Vercel Web Analytics + optional GA4
 	•	AI: OpenAI (Blog assist, message suggestions, analytics summaries)
@@ -67,28 +69,34 @@ Goal: Clean, functional MVP with core chat features for early users.
 	•	[✅] Google Sign-In Account Creation (URLs configured)
 	•	[✅] Email Verification Required Before Account Creation
 	•	[✅] Send Invites by Email Address
-	•	[✅] Create Alias on Account Creation (Editable via Icons Anytime)
-	•	[✅] Create and Delete Rooms (Conversations) - Create implemented, Delete needs implementation
-	•	[✅] Post Messages to Rooms and View Other Users' Messages
+	•	[✅] Create Exclusive Alias on Account Creation (30-day expiry, Editable via Icons Anytime)
+	•	[✅] Create and Delete Vibes (Conversations) - Create implemented, Delete needs implementation
+	•	[✅] Post Messages to Vibes and View Other Users' Messages (24h auto-delete)
 	•	[✅] User Logout
 	•	[✅] Delete Account Option in Settings
 	•	[✅] Terms of Service and Privacy Policy pages
 	•	[✅] Number of members logged in functioning
+	•	[✅] Sidebar search for #topics and aliases
+	•	[✅] Colored circle avatar for current vibe
 
 **Status:** MVP 1.0.1 Deployed and Fully Functional
 
 **Immediate Next Steps (Post-MVP):**
-	•	[🔄] **TEST END-TO-END USER FLOW** - Complete signup → email verification → login → messaging flow
-		- **Status:** Development server running at http://localhost:3000
-		- **Test Steps:**
-		  1. Visit http://localhost:3000
-		  2. Click "Join mxn.chat" and create new account
-		  3. Check email for verification link and click it
-		  4. Login with credentials
-		  5. Send a message in #General room
-		  6. Verify message appears immediately
+	•	[✅] **TEST END-TO-END USER FLOW** - Complete signup → email verification → login → messaging flow
+		- **Status:** ✅ PASSED - E2E test script ran successfully on Dec 12, 2025
+		- **Details:** Created test user, signed in, posted message, verified in database, cleaned up
+		- **Database Check:** ✅ All tables accessible (rooms:1, messages:1, users:1)
+		- **DNS/Auth Check:** ✅ MX records configured, DKIM/SPF/DMARC set, environment variables loaded
 	•	[ ] **USER ONBOARDING** - Invite 5-10 beta users for testing
 	•	[ ] **PERFORMANCE OPTIMIZATION** - Review Core Web Vitals and optimize
+		- **Lighthouse Audit Checklist:**
+			- [ ] **Performance Score > 90:** Optimize Largest Contentful Paint (LCP), First Input Delay (FID), Cumulative Layout Shift (CLS)
+			- [ ] **Accessibility Score > 95:** Ensure proper ARIA labels, keyboard navigation, color contrast ratios
+			- [ ] **Best Practices Score > 95:** Remove console logs, implement HTTPS, avoid deprecated APIs
+			- [ ] **SEO Score > 90:** Add meta descriptions, structured data, proper heading hierarchy
+			- [ ] **Mobile Responsiveness:** Test on various device sizes, ensure touch targets meet 44px minimum
+			- [ ] **Bundle Size:** Analyze with `npm run build --analyze`, optimize imports and lazy loading
+			- [ ] **Runtime Performance:** Monitor React DevTools Profiler, optimize re-renders and memoization
 	•	[ ] **MOBILE POLISH** - Final mobile responsiveness testing
 
 Milestones:
@@ -253,6 +261,15 @@ Release target: Multi-Platform MVP 2.0
 3. Test invite system (working but verify)
 4. Test message posting (working but verify)
 5. Test complete user journey end-to-end
+
+### Session Timeout Extension
+**Issue:** Login sessions timing out too quickly (user reports)
+**Solution:** Update Supabase Authentication Settings
+- Go to Supabase Dashboard → Authentication → Settings
+- Under "Session Configuration":
+  - Set JWT Expiry to 24 hours (from default 1 hour)
+  - Set Refresh Token Expiry to 30 days (default)
+- This will keep users logged in longer without frequent re-authentication
 
 ### Quick Diagnostic
 ```bash
