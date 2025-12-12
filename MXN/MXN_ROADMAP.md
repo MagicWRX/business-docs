@@ -1,10 +1,10 @@
 # MXN.CHAT Master Roadmap (SSOT)
 
-**Document Date:** December 11, 2025 12:00 CST  
-**Last Updated:** December 11, 2025  
-**Version:** 1.3 (MVP 1.0.1 Complete)  
-**Status:** Phase 1 Complete - MVP 1.0.1 Deployed  
-**Next Review:** December 12, 2025 (Daily)
+**Document Date:** December 12, 2025 12:00 CST  
+**Last Updated:** December 12, 2025  
+**Version:** 1.4 (MVP 2.0 Cross-Platform Apps Added)  
+**Status:** Phase 1 Complete - MVP 1.0.1 Deployed, MVP 2.0 Planned  
+**Next Review:** December 13, 2025 (Daily)
 
 ---
 
@@ -118,6 +118,63 @@ Milestones:
 	•	Document debug reactivation in MXN_DEBUG.md
 
 Release target: Enhanced Desktop Experience
+
+PHASE 1.75 — MVP 2.0: Cross-Platform Apps
+
+Goal: Transform MXN.CHAT from web-only to full cross-platform application ecosystem.
+
+**Desktop Apps (Electron):**
+	•	Native Windows, macOS, and Linux applications
+	•	System tray integration with notifications
+	•	Global keyboard shortcuts and hotkeys
+	•	Popout chat windows for multitasking
+	•	Window focus management (always-on-top, mini mode)
+	•	Auto-updater for seamless updates
+	•	Offline message queuing
+
+**Mobile Apps (Capacitor):**
+	•	Native iOS and Android applications
+	•	Push notifications with rich media
+	•	Camera integration for media uploads
+	•	Native file system access
+	•	Device vibration for message alerts
+	•	App store distribution (Apple App Store, Google Play)
+	•	Biometric authentication (Face ID, Touch ID, Fingerprint)
+
+**Cross-Platform Features:**
+	•	Unified user experience across all platforms
+	•	Real-time sync between web, desktop, and mobile
+	•	Platform-specific optimizations
+	•	Shared codebase with 95%+ code reuse
+	•	Consistent branding and UI/UX
+
+**Technical Implementation:**
+	•	Electron wrapper for desktop (2-3 weeks effort)
+	•	Capacitor integration for mobile (1-2 weeks effort)
+	•	Shared build pipeline and CI/CD
+	•	Code signing and app store submission
+	•	Cross-platform testing and QA
+
+**Business Impact:**
+	•	Unlocks desktop power users and gaming communities
+	•	Captures mobile users for on-the-go communication
+	•	Increases user engagement and retention
+	•	Creates premium app store revenue streams
+	•	Positions MXN as professional communication platform
+
+**Milestones:**
+	•	Implement Electron desktop wrapper
+	•	Add Capacitor mobile integration
+	•	Configure native build pipelines
+	•	Test cross-platform compatibility
+	•	Submit to app stores (Apple App Store, Google Play, Microsoft Store)
+	•	Launch coordinated multi-platform release
+
+**Timeline:** 4-6 weeks total development
+**Effort:** Medium (leverages existing web codebase)
+**Priority:** High (unlocks new user segments and revenue)
+
+Release target: Multi-Platform MVP 2.0
 
 ## 🔧 Recommended Actions (Based on Dec 11 Review)
 
