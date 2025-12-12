@@ -2,11 +2,14 @@
 
 **Document Date:** December 12, 2025  
 **Last Updated:** December 12, 2025  
-**Version:** 1.1 (MVP 1.1.0 Release)  
-**Status:** Active - MVP 1.1.0 Released  
+**Version:** 1.2 (MVP 1.1.0 + Vibe System Planning)  
+**Status:** Active - MVP 1.1.0 Released, Phase 1.6+ Planned  
 **Compliance:** AI_STANDARDS.md
 
 ---
+
+## Prompt Phrase
+Review MXN_INDEX.md continue with MXN_ROADMAP.md.
 
 ## 🎯 Purpose
 
@@ -146,17 +149,25 @@ node scripts/verify-brevo-key.js # Verify Brevo API key validity
 - [x] Legacy Firebase files removed
 - [x] AI_STANDARDS.md compliance layer implemented
 - [x] MXN_INDEX.md updated with 5-layer structure
+- [x] Mobile input visibility fix with sliding behavior
+- [x] Alias modal one-time display fix
+- [x] Desktop input sticky positioning
+- [x] Tab visibility reconnection handling
+- [x] E2E testing automation validated
 
 ### 🚧 In Progress
-- [ ] DKIM records configuration in Cloudflare
-- [ ] Domain verification in Brevo
-- [ ] Login authentication debugging
-- [ ] Email inbox delivery testing (not spam)
+- [ ] Lighthouse audit and performance optimization
+- [ ] Beta user onboarding (5-10 users)
+- [ ] Session timeout configuration in Supabase
+- [ ] Mobile responsiveness final polish
 
-### 🔜 Next Milestone
-- Complete authentication troubleshooting
-- Deploy DKIM records for inbox delivery
-- User onboarding flow refinement
+### 🔜 Next Milestone - Phase 1.6: Vibe System
+- **Message Interaction:** Hover delete for own messages (Desktop + Mobile)
+- **Room Control:** Creator deletion rights with confirmation
+- **Visual Identity:** Colored vibe bullets replacing hashtags
+- **Terminology:** Rooms → Topics UI update
+- **Vibe Settings:** Triggers, Boundary, Off-Limits framework
+- **Anonymity Core:** Vibe alias selection system (30-day expiry)
 
 ---
 

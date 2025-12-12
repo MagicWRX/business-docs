@@ -2,8 +2,8 @@
 
 **Document Date:** December 12, 2025 12:00 CST  
 **Last Updated:** December 12, 2025  
-**Version:** 1.4.5 (Tab Visibility Reconnection Fix)  
-**Status:** Phase 1 Complete - MVP 1.1.0 Deployed, MVP 2.0 Planned  
+**Version:** 1.5.0 (Vibe-Based Features & Next Steps Strategy)  
+**Status:** Phase 1 Complete - MVP 1.1.0 Deployed, Phase 1.6+ Vibe System Planned  
 **Next Review:** December 13, 2025 (Daily)
 
 ---
@@ -466,5 +466,351 @@ MXN.CHAT becomes:
 
 **Notes:**
 	•	Use `magicwrxstudio@gmail.com` for all email requirements/testing until custom domain is fully active.
+
+⸻
+
+## 10. 🎨 NEXT STEPS: Vibe-Based Features & UX Enhancements
+
+### 10.1 Message Interaction & Deletion
+**Feature:** Hoverable/clickable messages with delete functionality
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** High (User Control)
+
+**Implementation Strategy:**
+```typescript
+// MessageList.tsx - Add hover state and delete UI
+interface MessageItemProps {
+  message: Message;
+  isOwnMessage: boolean;
+  onDelete: (messageId: string) => Promise<void>;
+}
+
+// Desktop: Hover shows X button in top-right corner
+// Mobile: Swipe left/right to reveal delete action
+// Constraint: Users can ONLY delete their own messages
+```
+
+**Coding Steps:**
+1. Add hover state management to MessageList component
+2. Conditionally render delete button (X) only for `message.authorId === currentUser.id`
+3. Enhance existing swipe gesture for mobile (already partially implemented)
+4. Add confirmation dialog before deletion
+5. Update Supabase RLS policies to enforce author-only deletion
+
+**Database RLS Policy:**
+```sql
+-- Only message author can delete
+CREATE POLICY "Users can delete own messages"
+ON messages FOR DELETE
+USING (auth.uid() = author_id);
+```
+
+---
+
+### 10.2 Room/Topic Control & Ownership
+**Feature:** Room creators have full control to delete their rooms
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** High (User Autonomy)
+
+**Implementation Strategy:**
+```typescript
+// Room ownership tracked in rooms table
+interface ChatRoom {
+  id: string;
+  name: string;
+  createdBy: string; // User ID of creator
+  admins: string[];  // Array of admin user IDs
+  // ... existing fields
+}
+
+// Only creator or admins can delete room
+const canDeleteRoom = (room: ChatRoom, userId: string) => {
+  return room.createdBy === userId || room.admins.includes(userId);
+};
+```
+
+**Coding Steps:**
+1. Add delete button to RoomSidebar for rooms where user is creator
+2. Implement `deleteRoom` function in ChatContext (already exists, needs UI hookup)
+3. Add confirmation dialog with room name
+4. Handle edge case: Auto-select another room after deletion
+5. Update Supabase RLS to enforce creator-only deletion
+
+---
+
+### 10.3 Visual Identity: Colored Vibe Bullets
+**Feature:** Replace hashtag (#) with colored circle bullets based on Vibe
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** Medium (Visual Polish)
+
+**Implementation Strategy:**
+```typescript
+// Vibe color mapping
+const VIBE_COLORS = {
+  chill: '#3b82f6',      // Blue
+  energetic: '#f59e0b',  // Orange
+  focused: '#8b5cf6',    // Purple
+  creative: '#ec4899',   // Pink
+  social: '#10b981',     // Green
+  reflective: '#6366f1', // Indigo
+  default: '#64748b'     // Gray
+} as const;
+
+// Room component renders colored bullet
+<div 
+  className="w-3 h-3 rounded-full flex-shrink-0"
+  style={{ backgroundColor: VIBE_COLORS[room.vibe || 'default'] }}
+/>
+```
+
+**Coding Steps:**
+1. Add `vibe` field to rooms table schema
+2. Update RoomSidebar to render colored circles instead of hash symbols
+3. Create Vibe selector UI in CreateChannelDialog
+4. Store vibe preference in room metadata
+5. Update room list styling for visual consistency
+
+**Database Migration:**
+```sql
+ALTER TABLE rooms ADD COLUMN vibe TEXT DEFAULT 'default';
+ALTER TABLE rooms ADD COLUMN vibe_settings JSONB DEFAULT '{}';
+```
+
+---
+
+### 10.4 Terminology Update: Rooms → Topics
+**Feature:** Dual terminology support (Rooms/Topics interchangeable)
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** Low (UX Clarity)
+
+**Implementation Strategy:**
+```typescript
+// Use "Topics" in UI, "rooms" in code/database
+const UI_LABELS = {
+  room: 'Topic',
+  rooms: 'Topics',
+  createRoom: 'Create Topic',
+  deleteRoom: 'Delete Topic'
+};
+
+// Keep database table name as "rooms" for stability
+// Update UI copy throughout components
+```
+
+**Coding Steps:**
+1. Create UI label constants file
+2. Replace hardcoded "room" text in components
+3. Update placeholder text and tooltips
+4. Keep database schema unchanged (rooms table)
+5. Document terminology mapping in MXN_TREE.md
+
+---
+
+### 10.5 Vibe Settings: Triggers, Boundary, Off-Limits
+**Feature:** Privacy controls for topic discussions
+**Status:** 🔴 Concept Phase - Needs Architecture Design
+**Priority:** High (Core Differentiation)
+
+**Concept Overview:**
+Allow topic creators to set discussion parameters:
+- **Triggers:** Topics that require content warnings (e.g., "mental health", "politics")
+- **Boundary:** What's allowed in the discussion (e.g., "respectful debate only")
+- **Off-Limits:** Explicitly forbidden topics (e.g., "no personal attacks", "no spam")
+
+**Proposed Data Model:**
+```typescript
+interface VibeSettings {
+  triggers: string[];      // Array of trigger warning keywords
+  boundary: {
+    allowedTopics: string[];
+    rulesText: string;
+  };
+  offLimits: {
+    forbiddenTopics: string[];
+    autoModerate: boolean;  // AI-assisted moderation
+  };
+  privacyLevel: 'open' | 'invite-only' | 'private';
+  moderationLevel: 'relaxed' | 'standard' | 'strict';
+}
+
+// Stored in rooms.vibe_settings JSONB column
+```
+
+**Implementation Phases:**
+1. **Phase 1 (Manual):** Creator sets text rules, displayed in room description
+2. **Phase 2 (AI-Assisted):** OpenAI API checks messages against Off-Limits topics
+3. **Phase 3 (Advanced):** Real-time content filtering with user warnings
+
+**Coding Strategy:**
+```typescript
+// Room creation/edit dialog
+const VibeSettingsForm = () => {
+  const [settings, setSettings] = useState<VibeSettings>({
+    triggers: [],
+    boundary: { allowedTopics: [], rulesText: '' },
+    offLimits: { forbiddenTopics: [], autoModerate: false },
+    privacyLevel: 'open',
+    moderationLevel: 'standard'
+  });
+
+  // Tag input for triggers and forbidden topics
+  // Rich text editor for rules
+  // Privacy toggle switches
+};
+
+// Message validation before sending
+const validateMessage = async (text: string, roomSettings: VibeSettings) => {
+  if (roomSettings.offLimits.autoModerate) {
+    const containsForbidden = await checkWithAI(text, roomSettings.offLimits.forbiddenTopics);
+    if (containsForbidden) {
+      return { allowed: false, reason: 'Message contains off-limits content' };
+    }
+  }
+  return { allowed: true };
+};
+```
+
+**UI Components Needed:**
+- `VibeSettingsPanel.tsx` - Settings configuration interface
+- `TriggerWarningBadge.tsx` - Display trigger warnings on room entry
+- `ModeratedMessageNotice.tsx` - Show when message is blocked
+
+**Database Schema:**
+```sql
+-- Already added in migration above
+-- rooms.vibe_settings JSONB stores all settings
+
+-- Message moderation log
+CREATE TABLE moderation_logs (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  message_id UUID REFERENCES messages(id),
+  room_id UUID REFERENCES rooms(id),
+  user_id UUID REFERENCES users(id),
+  action TEXT, -- 'blocked', 'warned', 'flagged'
+  reason TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+---
+
+### 10.6 Anonymity & Vibe Alias System
+**Feature:** Mood-based alias selection for privacy
+**Status:** 🟡 Planned - Phase 1.7
+**Priority:** High (Core Value Proposition)
+
+**Concept:**
+Users can switch their display alias based on current mood/vibe without changing account.
+
+**Implementation Strategy:**
+```typescript
+// User can have multiple aliases tied to vibes
+interface VibeAlias {
+  id: string;
+  userId: string;
+  alias: string;        // Display name
+  vibe: keyof typeof VIBE_COLORS;
+  avatar: string;       // Optional custom avatar
+  isActive: boolean;
+  createdAt: Date;
+  expiresAt: Date;      // 30-day expiry
+}
+
+// User selects active alias on login or switches mid-session
+const currentAlias = userAliases.find(a => a.isActive);
+```
+
+**Coding Steps:**
+1. Create `vibe_aliases` table in Supabase
+2. Add alias selector UI to ChatInterface (dropdown or modal)
+3. Store active alias in local state + session
+4. Messages show alias name instead of account email
+5. Implement 30-day expiry with background cleanup job
+
+**Database Schema:**
+```sql
+CREATE TABLE vibe_aliases (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  alias TEXT NOT NULL,
+  vibe TEXT DEFAULT 'default',
+  avatar_url TEXT,
+  is_active BOOLEAN DEFAULT false,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  expires_at TIMESTAMPTZ DEFAULT NOW() + INTERVAL '30 days',
+  UNIQUE(user_id, alias)
+);
+
+-- Ensure only one active alias per user
+CREATE UNIQUE INDEX one_active_alias_per_user 
+ON vibe_aliases(user_id) 
+WHERE is_active = true;
+```
+
+**UI Flow:**
+1. After login → "Choose your vibe" modal
+2. User picks from preset vibes (chill, energetic, etc.) or custom
+3. Enter alias name (availability check)
+4. Alias appears in chat with colored indicator
+5. Settings panel allows switching aliases or creating new ones
+
+**Privacy Considerations:**
+- Aliases are NOT linked to email in UI
+- Room members see aliases only, not underlying accounts
+- Admin/creator can see account IDs for moderation (backend only)
+- Expired aliases auto-release for others to claim
+
+---
+
+### 10.7 Implementation Timeline
+
+**Phase 1.6 - UX Polish (2 weeks)**
+- ✅ Message hover/delete (Desktop + Mobile)
+- ✅ Room deletion by creator
+- ✅ Colored vibe bullets instead of hashtags
+- ✅ Rooms → Topics terminology update
+
+**Phase 1.7 - Vibe Settings Foundation (3 weeks)**
+- ✅ Basic Vibe Settings UI (Triggers, Boundary, Off-Limits text)
+- ✅ Privacy level controls (Open, Invite-Only, Private)
+- ✅ Vibe Alias creation and selection
+- ✅ 30-day alias expiry logic
+
+**Phase 1.8 - AI-Powered Moderation (2 weeks)**
+- ✅ OpenAI integration for Off-Limits enforcement
+- ✅ Real-time message validation
+- ✅ Moderation logging and analytics
+
+**Phase 2+ - Advanced Features**
+- Community reporting system
+- Custom vibe color picker
+- Vibe-based room discovery
+- Reputation system tied to aliases
+
+---
+
+### 10.8 Technical Debt & Considerations
+
+**Security:**
+- Alias system must prevent impersonation
+- Vibe settings require creator authentication
+- RLS policies must enforce ownership rules
+
+**Performance:**
+- AI moderation adds latency (cache common checks)
+- Alias lookups should be optimized (indexed queries)
+- Real-time updates for vibe changes
+
+**Scalability:**
+- JSONB vibe_settings allows flexible schema evolution
+- Message validation should be async (don't block send)
+- Consider rate limiting for alias creation
+
+**User Education:**
+- Onboarding flow to explain vibe system
+- Visual indicators for room privacy levels
+- Help text for Vibe Settings configuration
+
+---
 
 ⸻
