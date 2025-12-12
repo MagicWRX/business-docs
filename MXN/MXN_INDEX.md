@@ -1,9 +1,9 @@
 # MXN.CHAT Master Index (SSOT)
 
-**Document Date:** December 11, 2025  
-**Last Updated:** December 11, 2025  
-**Version:** 1.0 (MVP Pre-Release)  
-**Status:** Active - MVP Development  
+**Document Date:** December 12, 2025  
+**Last Updated:** December 12, 2025  
+**Version:** 1.1 (MVP 1.1.0 Release)  
+**Status:** Active - MVP 1.1.0 Released  
 **Compliance:** AI_STANDARDS.md
 
 ---
@@ -39,9 +39,9 @@ This document serves as the **Single Source of Truth (SSOT)** index for all MXN.
 | Document | Purpose | Last Updated | Status |
 |----------|---------|--------------|--------|
 | **[MXN_SECURITY.md](MXN_SECURITY.md)** | Key management, rotation, E2E testing, SSH setup | Dec 10, 2025 | ✅ Active |
-| **[MXN_ROADMAP.md](MXN_ROADMAP.md)** | Development phases, milestones, priorities | Dec 11, 2025 | ✅ Active |
-| **[MXN_TREE.md](MXN_TREE.md)** | Technical architecture, file structure SSOT | Dec 10, 2025 | ✅ Active |
-| **[MXN_INDEX.md](MXN_INDEX.md)** | This document - central navigation | Dec 11, 2025 | ✅ Active |
+| **[MXN_ROADMAP.md](MXN_ROADMAP.md)** | Development phases, milestones, priorities | Dec 12, 2025 | ✅ Active |
+| **[MXN_TREE.md](MXN_TREE.md)** | Technical architecture, file structure SSOT | Dec 12, 2025 | ✅ Active |
+| **[MXN_INDEX.md](MXN_INDEX.md)** | This document - central navigation | Dec 12, 2025 | ✅ Active |
 
 ---
 
@@ -69,29 +69,46 @@ This document serves as the **Single Source of Truth (SSOT)** index for all MXN.
 
 ---
 
-## 🛠️ Scripts & Tools
+## 🛠️ CLI Tools & Scripts
 
 ### Development Scripts
 ```bash
 # Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/
 ./start-local.sh              # Start Next.js dev server (http://localhost:3000)
+./setup-recaptcha.sh          # Setup and configure reCAPTCHA for the application
 ```
 
 ### Email & DNS Scripts
 ```bash
 ./check-dns.sh                # Verify DNS records for email delivery
-./verify-brevo-dns.sh         # Check Brevo domain authentication
+./check-auth-dns.sh           # Check authentication and DNS configuration
+./verify-brevo-dns.sh         # Validate Brevo domain authentication and DNS setup
+```
+
+### Deployment Scripts
+```bash
+# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/scripts/
+./scripts/deploy.sh           # Deploy application to production environment
 ```
 
 ### Database Scripts
 ```bash
-supabase-debug-signup.sql     # Debug signup errors with logging
+supabase-debug-signup.sql     # Debug signup errors with detailed logging
 ```
 
-### E2E Testing
+### Testing Scripts
 ```bash
 # Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/scripts/
 node scripts/e2e_test.js      # End-to-end smoke tests (manual workflow)
+node scripts/check_db.js      # Check database connectivity and health
+node scripts/init-rooms.js    # Initialize default chat rooms/vibes
+node scripts/verify-brevo-key.js # Verify Brevo API key validity
+```
+
+### Email DNS Scripts
+```bash
+# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/scripts/
+./scripts/check-email-dns.sh  # Comprehensive email DNS verification
 ```
 
 ---
@@ -107,7 +124,10 @@ node scripts/e2e_test.js      # End-to-end smoke tests (manual workflow)
 ### Development
 - **Local:** http://localhost:3000
 - **Test Email:** http://localhost:3000/test-brevo-direct
+- **Test-Page:** http://localhost:3000/test-suite.html
+- **Test-Suite:** http://localhost:3000/test-page.html
 - **Debug Panel:** http://localhost:3000 (bottom-right icon)
+- ** Local Server
 
 ---
 
