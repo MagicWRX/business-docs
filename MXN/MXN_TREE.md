@@ -1,8 +1,8 @@
 # MXN.CHAT Technical Architecture & File Structure (SSOT)
 
-**Document Date:** December 10, 2025 23:35 CST  
-**Last Updated:** December 10, 2025  
-**Version:** 2.0.0  
+**Document Date:** December 13, 2025 12:00 CST  
+**Last Updated:** December 13, 2025  
+**Version:** 2.2.0  
 **Status:** Production Active
 
 ---
@@ -18,20 +18,47 @@ This document provides the complete technical architecture and file structure fo
 ### Root Level
 ```
 mxn-chat/
+├── .DS_Store
+├── .env.example
 ├── .env.local                    # Environment variables (gitignored, server-side keys)
+├── .env.local.example
+├── .firebaserc
+├── .git/
+├── .github/
 ├── .gitignore                    # Git ignore rules
-├── package.json                  # Dependencies and scripts
-├── tsconfig.json                 # TypeScript configuration
-├── next.config.js                # Next.js configuration
-├── tailwind.config.ts            # Tailwind CSS configuration
-├── firebase.json                 # Firebase configuration (legacy, can be removed)
-├── firestore.rules               # Firestore rules (legacy, can be removed)
-├── firestore.indexes.json        # Firestore indexes (legacy, can be removed)
-├── start-local.sh                # Development server launcher
+├── .next/
+├── .vercel/
+├── README.md                     # Project documentation
+├── SUPABASE_MIGRATION.md
+├── _legacy/                      # Old implementation files
+├── check-auth-dns.sh
 ├── check-dns.sh                  # DNS verification script for email
+├── docs/                         # Documentation
+├── next-env.d.ts
+├── next.config.js                # Next.js configuration
+├── node_modules/
+├── out/                          # Build output
+├── package-lock.json
+├── package.json                  # Dependencies and scripts
+├── postcss.config.js
+├── public/                       # Static assets
+├── scripts/                      # Utility scripts
+├── server.log
+├── setup-recaptcha.sh
+├── src/                          # Source code
+├── start-local.sh                # Development server launcher
+├── supabase/                     # Database migrations and config
+├── supabase-debug-signup.sql     # Supabase debugging script
+├── supabase-fix-all.sql
+├── tailwind.config.js            # Tailwind CSS configuration
+├── test-firestore.js
+├── test-message.js
+├── tmp/
+├── trace-config.sh
+├── tsconfig.json                 # TypeScript configuration
+├── tsconfig.tsbuildinfo
 ├── verify-brevo-dns.sh           # Brevo DNS verification script
-├── supabase-debug-signup.sql     # Supabase debugging script (can be archived)
-└── README.md                     # Project documentation
+└── verify-deployment.js
 
 ### Source Code (/src)
 ```
@@ -44,9 +71,14 @@ src/
 │   ├── global-error.tsx          # Global error handler
 │   │
 │   ├── api/                      # API Routes (Server-side)
+│   │   ├── contact/route.ts      # Contact form submission
+│   │   ├── delete-account/route.ts # Account deletion
 │   │   ├── test-email/route.ts   # Email testing endpoint (Supabase)
 │   │   ├── test-brevo-direct/route.ts  # Direct Brevo email test
 │   │   └── send-invite/route.ts  # Send email invitations
+│   │
+│   ├── contact/                  # Contact page
+│   │   └── page.tsx              # Contact form UI
 │   │
 │   ├── test-email/page.tsx       # Email test UI
 │   ├── test-brevo-direct/page.tsx # Brevo direct test UI
@@ -61,36 +93,97 @@ src/
 │
 ├── components/                   # React Components
 │   ├── AuthForm.tsx              # Login/Signup form with Google OAuth
+│   ├── BillingDashboard.tsx      # Billing and subscription management
 │   ├── ChatInterface.tsx         # Main chat UI
-│   ├── RoomSidebar.tsx           # Room list sidebar
-│   ├── MessageList.tsx           # Message display
-│   ├── MessageInput.tsx          # Message composition
+│   ├── CreateChannelDialog.tsx   # Dialog for creating new channels
 │   ├── DebugPanel.tsx            # System diagnostics panel
+│   ├── FileUpload.tsx            # File upload with drag-and-drop
+│   ├── FriendsPanel.tsx          # Friends list panel
+│   ├── ImageGallery.tsx          # Image gallery viewer
+│   ├── InvitationPage.tsx        # Invitation acceptance page
 │   ├── InviteFriendsDialog.tsx   # Email invitation dialog
-│   └── NotificationManager.tsx   # Push notification handler
+│   ├── LinkPreview.tsx           # Rich link previews
+│   ├── MessageInput.tsx          # Message composition
+│   ├── MessageList.tsx           # Message display
+│   ├── MessageSearch.tsx         # Message search interface
+│   ├── NotificationSettings.tsx  # Notification preferences
+│   ├── PaymentModal.tsx          # Payment processing modal
+│   ├── ProfileSettings.tsx       # User profile management
+│   ├── ReactionPicker.tsx        # Emoji reaction selector
+│   ├── ReportUserDialog.tsx      # User reporting interface
+│   ├── RoomSidebar.tsx           # Room list sidebar
+│   ├── SearchInterface.tsx       # Global search component
+│   ├── ThemeSelector.tsx         # Theme selection component
+│   ├── TypingIndicator.tsx       # "User is typing..." display
+│   └── UserBlockMute.tsx         # Block/mute user controls
 │
 ├── contexts/                     # React Contexts
 │   └── ChatContext.tsx           # Global chat state management
 │
 ├── hooks/                        # Custom React Hooks
-│   ├── useAuth.ts                # Authentication hook
-│   ├── useRooms.ts               # Room management
-│   ├── useMessages.ts            # Message handling
-│   └── useNotifications.ts       # Notification preferences
+│   ├── usePushNotifications.ts   # Push notification hook
+│   ├── useFileUpload.ts          # File upload management
+│   ├── useMessageSearch.ts       # Message search functionality
+│   ├── useTypingIndicator.ts     # Typing indicator logic
+│   ├── useMessageReactions.ts    # Message reactions handling
+│   └── useUserBlocking.ts        # User blocking/muting logic
 │
 ├── lib/                          # Utilities & Helpers
 │   ├── supabase.ts               # Supabase client initialization
-│   ├── analytics.ts              # Analytics tracking (Vercel)
+│   ├── analytics.tsx             # Analytics tracking (Vercel)
+│   ├── billingSystem.ts          # Billing and payment logic
+│   ├── defaultRooms.ts           # Default room configurations
+│   ├── linkPreview.ts            # Link preview generation
+│   ├── mediaProcessing.ts        # Media file processing
+│   ├── messageParser.ts          # Message parsing (@mentions, links)
+│   ├── rateLimiter.ts            # Rate limiting utilities
+│   ├── reactionUtils.ts          # Message reaction utilities
+│   ├── sanitization.ts           # Input sanitization
+│   ├── searchUtils.ts            # Search functionality helpers
+│   ├── userUtils.ts              # User-related utilities
 │   └── utils.ts                  # General utilities
 │
 ├── config/                       # Configuration
 │   └── server.ts                 # Server-side config (dotenv loading)
 │
 ├── types/                        # TypeScript Definitions
-│   └── index.ts                  # Shared type definitions
+│   └── chat.ts                   # Chat-related type definitions (expanded for P1 features: MessageReactions, LinkPreviews, UserBlocks, TypingIndicators, etc.)
 │
 └── styles/                       # Additional Styles
     └── themes/                   # Theme configurations
+        ├── gaming-v1-stable.css  # Stable gaming theme
+        ├── gaming-v2-cyberpunk.css # Cyberpunk theme
+        └── gaming-v3-retro.css   # Retro theme
+
+### Static Assets (/public)
+```
+public/
+├── browser-test.js
+├── icon-192x192.png
+├── icon-512x512.png
+├── manifest.json
+├── sw.js
+├── test-page.html
+└── test-suite.html
+```
+
+### Scripts (/scripts)
+```
+scripts/
+├── check-email-dns.sh            # Email DNS verification
+├── check_db.js                   # Database connectivity check
+├── deploy.sh                     # Production deployment
+├── dev-manager.sh                # Development environment control
+├── e2e_test.js                   # End-to-end user flow tests
+├── e2e_invite_flow.js            # E2E invite signup flow tests
+├── e2e_lifecycle.js              # E2E lifecycle tests (invite, CRUD, public)
+├── health-check.sh               # System validation & diagnostics
+├── init-rooms.js                 # Initialize default rooms
+├── provision_branch_protection.sh # GitHub branch protection setup
+├── rollback_migrations.sh        # Database migration rollback helper
+├── test_rls.js                   # RLS policy validation tests
+└── verify-brevo-key.js           # Brevo API key validation
+```
 
 ### Documentation (/docs)
 ```
@@ -100,8 +193,17 @@ docs/
 ### Database (/supabase)
 ```
 supabase/
-└── migrations/                   # Database migration scripts
-    └── [timestamp]_initial_schema.sql
+├── .gitignore
+├── .temp/
+├── config.toml
+├── migrations/                   # Database migration scripts
+│   ├── 20251206000000_initial_schema.sql
+│   ├── 20251206221554_setup_storage_bucket.sql
+│   ├── 20251208_add_invitations_table.sql
+│   ├── 20251212_add_room_members_table.sql
+│   ├── 20251213_add_p1_features.sql          # Message reactions, link previews, user blocks
+│   ├── 20251214_add_vibe_system.sql           # Vibe aliases, settings, moderation
+│   └── 20251215_add_advanced_features.sql     # Bookmarks, pins, encryption metadata
 
 ### Legacy/Deprecated (To Be Removed)
 ```
@@ -134,10 +236,29 @@ functions/                        # Firebase Functions (replaced by Vercel Edge)
 ### 3. Database Layer (Supabase PostgreSQL)
 **Tables:**
 - `users` - User profiles and authentication
-- `rooms` - Chat rooms/conversations
+- `rooms` - Chat rooms/conversations  
+- `room_members` - Room membership join table (Dec 12, 2025)
 - `messages` - Chat messages with metadata
 - `invitations` - Email invitation system
 - `attachments` - File upload metadata
+- `debug_logs` - Debug logging (service_role only)
+
+**Planned Tables (Phase 1.6+):**
+- `vibes` - User vibe/persona system with aliases
+- `vibe_room_assignments` - Vibe-to-room mappings
+- `privacy_settings` - User privacy controls
+- `trust_relationships` - Trust-gated sharing
+- `message_encryption_metadata` - E2E encryption & TTL
+- `message_threads` - Reply threading
+- `message_bookmarks` - Saved messages
+- `pinned_messages` - Room announcements
+- `room_moderation_logs` - Moderation actions
+- `message_reactions` - Emoji reactions on messages
+- `link_previews` - Cached rich link previews
+- `user_blocks` - User blocking/muting relationships
+- `user_reports` - User reporting system
+- `vibe_aliases` - User alias management by vibe
+- `moderation_logs` - AI moderation actions
 
 **Security:** Row Level Security (RLS) policies on all tables
 
@@ -164,21 +285,47 @@ functions/                        # Firebase Functions (replaced by Vercel Edge)
 ### Local Development
 ```bash
 ./start-local.sh              # Start Next.js dev server (http://localhost:3000)
+./scripts/dev-manager.sh start # Unified dev environment control (RECOMMENDED)
+./scripts/health-check.sh     # System validation & diagnostics
 npm run dev                   # Alternative: direct Next.js start
 npm run build                 # Build production bundle
 npm start                     # Run production server
+npm run type-check            # TypeScript validation
 ```
 
-### Testing & Debugging
+### Testing & Validation
 ```bash
+npm run test:rls              # RLS policy validation
+npm run test:e2e:invite       # E2E invite flow tests
+npm run test:e2e:lifecycle    # E2E lifecycle tests
+npm run ci:pr                 # Full PR validation suite
 ./check-dns.sh                # Verify DNS records for email
+./check-auth-dns.sh           # Comprehensive auth & DNS validation
 ./verify-brevo-dns.sh         # Check Brevo domain authentication
+./setup-recaptcha.sh          # Setup reCAPTCHA
 ```
 
-### Database
+### Utility Scripts
 ```bash
-# Run in Supabase SQL Editor:
+./scripts/check_db.js          # Check database connectivity
+./scripts/deploy.sh            # Deploy to production
+./scripts/init-rooms.js        # Initialize default rooms
+./scripts/verify-brevo-key.js  # Verify Brevo API key
+./scripts/provision_branch_protection.sh # Setup GitHub branch protection
+npm run provision:branch-protection      # Run branch protection setup
+```
+
+### Database & Migrations
+```bash
+# Run in Supabase SQL Editor or via CLI:
 supabase-debug-signup.sql     # Debug signup errors
+supabase-fix-all.sql          # Fix all known issues
+
+# Migration management:
+npx supabase db push --linked  # Push migrations to remote DB
+npx supabase db dump --linked  # Backup remote database
+npm run rollback:migrations    # Rollback all migrations (requires psql)
+./scripts/rollback_migrations.sh <file.sql>  # Rollback specific migration
 ```
 
 ---
@@ -298,6 +445,6 @@ User → InviteFriendsDialog → /api/send-invite
 
 ---
 
-**Last Architecture Review:** December 10, 2025  
-**Next Review Due:** January 10, 2026  
+**Last Architecture Review:** December 12, 2025  
+**Next Review Due:** January 12, 2026  
 **Document Owner:** MagicWRX Development Team

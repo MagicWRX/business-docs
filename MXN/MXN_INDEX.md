@@ -1,15 +1,15 @@
 # MXN.CHAT Master Index (SSOT)
 
-**Document Date:** December 12, 2025  
-**Last Updated:** December 12, 2025  
-**Version:** 1.2 (MVP 1.1.0 + Vibe System Planning)  
-**Status:** Active - MVP 1.1.0 Released, Phase 1.6+ Planned  
+**Document Date:** December 14, 2025  
+**Last Updated:** December 14, 2025  
+**Version:** 1.6.1 (UI Improvements & Room Management)  
+**Status:** Active - MVP 1.1.0 Released, Phase 1.6+ P1 Features Planned  
 **Compliance:** AI_STANDARDS.md
 
 ---
 
 ## Prompt Phrase
-Review MXN_INDEX.md continue with MXN_ROADMAP.md.
+Review MXN_INDEX.md and any included documents and continue with MXN_ROADMAP.md ensure items sync with MXN_FEATURES.md, MXN_TREE.md.
 
 ## 🎯 Purpose
 
@@ -34,6 +34,9 @@ This document serves as the **Single Source of Truth (SSOT)** index for all MXN.
 
 ### Layer 5: Standards Log
 - **[MXN_ROADMAP.md](MXN_ROADMAP.md)** - Development phases, sign-off matrix, acceptance criteria
+- **[MXN_SOLUTIONS.md](MXN_SOLUTIONS.md)** - SSOT for System Errors, Solutions, and Operational Procedures
+- **[MXN_DEBUG.md](MXN_DEBUG.md)** - SSOT for Debugging Tools and Scripts
+- **[MXN_TESTING.md](MXN_TESTING.md)** - SSOT for Testing Framework, Tools, and Safeguards
 
 ---
 
@@ -43,6 +46,9 @@ This document serves as the **Single Source of Truth (SSOT)** index for all MXN.
 |----------|---------|--------------|--------|
 | **[MXN_SECURITY.md](MXN_SECURITY.md)** | Key management, rotation, E2E testing, SSH setup | Dec 10, 2025 | ✅ Active |
 | **[MXN_ROADMAP.md](MXN_ROADMAP.md)** | Development phases, milestones, priorities | Dec 12, 2025 | ✅ Active |
+| **[MXN_SOLUTIONS.md](MXN_SOLUTIONS.md)** | Known issues, fixes, and core procedures | Dec 12, 2025 | ✅ Active |
+| **[MXN_DEBUG.md](MXN_DEBUG.md)** | Debugging tools, scripts, and panel usage | Dec 12, 2025 | ✅ Active |
+| **[MXN_TESTING.md](MXN_TESTING.md)** | Testing framework, safeguards, and procedures | Dec 12, 2025 | ✅ Active |
 | **[MXN_TREE.md](MXN_TREE.md)** | Technical architecture, file structure SSOT | Dec 12, 2025 | ✅ Active |
 | **[MXN_INDEX.md](MXN_INDEX.md)** | This document - central navigation | Dec 12, 2025 | ✅ Active |
 
@@ -56,7 +62,8 @@ This document serves as the **Single Source of Truth (SSOT)** index for all MXN.
 | **[MXN_AUTH_SETUP.md](MXN_AUTH_SETUP.md)** | Authentication config (Google OAuth, Supabase) - Complete URL/URI documentation for all environments | Dec 10, 2025 | ✅ Active |
 | **[MXN_EMAIL_SETUP.md](MXN_EMAIL_SETUP.md)** | Email configuration (Brevo API, DNS) | Dec 11, 2025 | ✅ Active |
 | **[MXN_DEPLOYMENT_CICD.md](MXN_DEPLOYMENT_CICD.md)** | Deployment procedures, CI/CD setup | Dec 6, 2025 | ✅ Active |
-| **[MXN_SUPABASE_SCHEMA.md](MXN_SUPABASE_SCHEMA.md)** | Database schema, migrations, RLS policies | Dec 10, 2025 | ✅ Active |
+| **[MXN_SUPABASE_SCHEMA.md](MXN_SUPABASE_SCHEMA.md)** | Database schema SQL reference | Dec 10, 2025 | ✅ Active |
+| **[MXN_SUPABASE_DB_SSOT.md](MXN_SUPABASE_DB_SSOT.md)** | Database design SSOT, planned features, migrations | Dec 12, 2025 | ✅ Active |
 
 ---
 
@@ -64,6 +71,7 @@ This document serves as the **Single Source of Truth (SSOT)** index for all MXN.
 
 | Document | Purpose | Last Updated | Status |
 |----------|---------|--------------|--------|
+| **[MXN_FEATURES.md](MXN_FEATURES.md)** | Exhaustive feature ideas & enhancement roadmap | Dec 11, 2025 | ✅ Active |
 | **[MXN_BUSINESS_PLAN.md](MXN_BUSINESS_PLAN.md)** | Business strategy, revenue streams | Dec 10, 2025 | ✅ Active |
 | **[MXN_SPECS.md](MXN_SPECS.md)** | Technical specifications | Dec 10, 2025 | ✅ Active |
 | **[MXN_ARCHITECTURE_DIAGRAM.md](MXN_ARCHITECTURE_DIAGRAM.md)** | Visual system architecture | Dec 10, 2025 | ✅ Active |
@@ -72,46 +80,55 @@ This document serves as the **Single Source of Truth (SSOT)** index for all MXN.
 
 ---
 
-## 🛠️ CLI Tools & Scripts
+## 🛠️ CLI Tools & Scripts (Consolidated)
 
-### Development Scripts
+### Core Development Suite
 ```bash
-# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/
-./start-local.sh              # Start Next.js dev server (http://localhost:3000)
-./setup-recaptcha.sh          # Setup and configure reCAPTCHA for the application
+# Primary development management (RECOMMENDED)
+./scripts/dev-manager.sh      # Unified dev environment control
+./scripts/health-check.sh     # System validation & diagnostics
+./start-local.sh              # Quick start (uses dev-manager internally)
 ```
 
-### Email & DNS Scripts
+### Testing & Validation Suite
 ```bash
-./check-dns.sh                # Verify DNS records for email delivery
-./check-auth-dns.sh           # Check authentication and DNS configuration
-./verify-brevo-dns.sh         # Validate Brevo domain authentication and DNS setup
+# Testing framework (see MXN_TESTING.md)
+npm run test:rls               # RLS policy validation tests
+npm run test:e2e:invite        # E2E invite flow tests
+npm run test:e2e:lifecycle     # E2E lifecycle tests (invite, CRUD, public)
+npm run ci:pr                  # Full PR validation suite
+node scripts/e2e_test.js       # Legacy end-to-end user workflow tests
+node scripts/check_db.js       # Database connectivity validation
+./scripts/test-all.sh          # Full automated test suite (planned)
+./scripts/ci-check.sh          # Pre-deployment validation (planned)
 ```
 
-### Deployment Scripts
+### Authentication & DNS Suite
 ```bash
-# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/scripts/
-./scripts/deploy.sh           # Deploy application to production environment
+# Auth & DNS validation (CONSOLIDATED)
+./check-auth-dns.sh           # Comprehensive auth + DNS validation
+./check-dns.sh                # DNS-only validation
+./verify-brevo-dns.sh         # Email-specific DNS validation
+node scripts/verify-brevo-key.js # Brevo API key validation
 ```
 
-### Database Scripts
+### Deployment Suite
 ```bash
-supabase-debug-signup.sql     # Debug signup errors with detailed logging
+# Production deployment
+./scripts/deploy.sh           # Production deployment pipeline
+./check-env-and-deploy.sh     # Environment validation + deploy
 ```
 
-### Testing Scripts
+### Database & Utility Scripts
 ```bash
-# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/scripts/
-node scripts/e2e_test.js      # End-to-end smoke tests (manual workflow)
-node scripts/check_db.js      # Check database connectivity and health
 node scripts/init-rooms.js    # Initialize default chat rooms/vibes
-node scripts/verify-brevo-key.js # Verify Brevo API key validity
+supabase-debug-signup.sql     # Debug signup errors with detailed logging
+./setup-recaptcha.sh          # reCAPTCHA configuration
 ```
 
-### Email DNS Scripts
+### Legacy Scripts (Firebase Era)
 ```bash
-# Location: /Users/brianlindahl/Development/Business/Websites/mxn-chat/scripts/
-./scripts/check-email-dns.sh  # Comprehensive email DNS verification
+./firebase-status.sh          # Legacy Firebase monitoring (deprecated)
 ```
 
 ---
@@ -154,20 +171,35 @@ node scripts/verify-brevo-key.js # Verify Brevo API key validity
 - [x] Desktop input sticky positioning
 - [x] Tab visibility reconnection handling
 - [x] E2E testing automation validated
+- [x] Account deletion email notifications implemented
+- [x] Alias update freezing issue fixed with validation & error handling
+- [x] Message visibility issue fixed with optimistic updates
+- [x] Development scripts enhanced (dev-manager.sh, health-check.sh)
+- [x] Redundant project documentation removed (SSOT enforcement)
+- [x] **Account deletion RLS policy fix implemented** (December 13, 2025)
+- [x] **Contact/Support page implemented with database storage** (December 14, 2025)
 
 ### 🚧 In Progress
 - [ ] Lighthouse audit and performance optimization
 - [ ] Beta user onboarding (5-10 users)
 - [ ] Session timeout configuration in Supabase
 - [ ] Mobile responsiveness final polish
+- [ ] Documentation drift prevention (automated checks)
 
-### 🔜 Next Milestone - Phase 1.6: Vibe System
-- **Message Interaction:** Hover delete for own messages (Desktop + Mobile)
-- **Room Control:** Creator deletion rights with confirmation
-- **Visual Identity:** Colored vibe bullets replacing hashtags
-- **Terminology:** Rooms → Topics UI update
-- **Vibe Settings:** Triggers, Boundary, Off-Limits framework
-- **Anonymity Core:** Vibe alias selection system (30-day expiry)
+### 🔜 Next Milestone - Phase 1.6: Core Messaging Features
+- **Message Editing:** Edit sent messages within 5-minute window
+- **Reply Threading:** Click reply to quote specific messages
+- **Emoji Reactions:** Add emoji reactions to messages
+- **Typing Indicators:** Show "User is typing..." status
+- **Read Receipts:** Visual confirmation of message reads
+- **Message Search:** Full-text search through chat history
+- **@Mentions:** Tag users with @username notifications
+- **Link Previews:** Rich previews for shared URLs
+- **File Upload:** Drag-and-drop file sharing
+- **User Management:** Block/mute users, report system
+- **Profile Features:** Custom avatars, status messages
+- **GDPR Export:** Download all user data
+- **Vibe System:** Colored bullets, alias management, privacy controls
 
 ---
 
@@ -219,17 +251,25 @@ MXN_<CATEGORY>.md                  # Single-word topics
 
 ## 🗑️ Deprecated & Removed Documentation
 
-### Consolidated into SSOT (December 11, 2025)
+### Consolidated into SSOT (December 12, 2025)
 - ❌ `/mxn-chat/docs/EMAIL_SETUP.md` → Moved to `DOCs/MXN/MXN_EMAIL_SETUP.md`
 - ❌ `/mxn-chat/docs/SECURITY_NOTES.md` → Consolidated into `MXN_SECURITY.md`
+- ❌ `/mxn-chat/docs/MXN_INDEX.md` → Removed (redundant, SSOT is in DOCs/MXN/)
+- ❌ `/mxn-chat/docs/MULTI_USER_CHAT_PLAN.md` → Consolidated into `MXN_ROADMAP.md`
 - ❌ DOC_INDEX.md → Consolidated into MXN_INDEX.md
 
 ### Deleted (Outdated/Redundant)
 - ❌ `PROJECT_STATUS.md` - References deprecated Firebase (project uses Supabase)
 - ❌ `DEPLOYMENT.md` - Empty file, covered by `MXN_DEPLOYMENT_CICD.md`
+- ❌ `FIREBASE_PAYMENTS_SETUP.md` - Firebase/Stripe setup not relevant to Supabase
+- ❌ `MAJOR_UPDATE_SUMMARY.md` - Firebase-era features not applicable
+- ❌ `MISSION_ACCOMPLISHED.md` - Firebase-era features not applicable
+- ❌ `THEME_DEVELOPMENT.md` - Firebase-era theme practices not applicable
+- ❌ `ULTIMATE_ROADMAP.md` - Firebase-era roadmap superseded by SSOT
+- ❌ `BREVO_SETUP.md` - Consolidated into `MXN_EMAIL_SETUP.md`
+- ❌ `CI_SETUP.md` - Consolidated into `MXN_DEPLOYMENT_CICD.md`
 - ❌ `MXN_DEBUG.md` - Merged into `MXN_TREE.md`
 - ❌ `MXN_SITES.md` - Outdated
-- ❌ `MULTI_USER_CHAT_PLAN.md` - Superseded by `MXN_ROADMAP.md`
 
 ### Legacy Systems Removed
 - ❌ Firebase configuration files

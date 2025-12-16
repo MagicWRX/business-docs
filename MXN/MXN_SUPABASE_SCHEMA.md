@@ -1,4 +1,8 @@
-– MXN_SUPABASE_SCHEMA.sql
+# MXN Supabase Database Schema (SQL Reference)
+
+**File purpose:** This document is intended as the raw SQL schema reference for MXN projects. For the narrative SSOT and policy guidance, see `DOCs/MXN/MXN_SUPABASE_DB_SSOT.md`.
+
+# MXN_SUPABASE_SCHEMA.sql
 – Date: 2025-12-06 06:00 (-06:00)
 – Single Source of Truth: Full Supabase schema for MXN.CHAT (Project A) and MagicWRX (Project B)
 

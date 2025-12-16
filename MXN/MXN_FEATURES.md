@@ -12,6 +12,15 @@
 This document contains an exhaustive list of potential features, enhancements, and capabilities for MXN.CHAT. Features are organized by category and prioritized by phase, difficulty, and business value.
 
 ---
+## New Feature Development
+1. **Vibe Lounge**: Central hub of mxn.chat.
+2. **Initial Page**: Displays your Alias selected with its **VIBE indicator**.
+3. **Vibe Controls**: User can adjust vibe indicator for that alias OR select the drop down to select one of the users other alias with their own indicator and Settings.
+4. **Alias Parameters**: Each Alias has its own controls/settings/boundaries/triggers/parameters. This is ESSENTIAL to mxn.chat to empower User Control.
+5. **Main Window**: The Vibe Lounge.
+6. **Vibe Navigation**: The vibe lounge displays colored circle vibes/tabs across the top. Users can select colored circle vibes to begin chatting **Anonymously** with all Users, OR jump to **Current Topics**, OR **My Topics** (with unread message indicators).
+7. **User Vibe**: Every User starts out with their own Topic/Vibe/wall/place to post their moods and feelings. These are safeguarded by their parameters.
+8. **A/B Testing & Environment Control**: Implement a robust system for testing UI variations (Sidebar, Vibe Lounge, Landing Page) and managing Live vs. Staging environments using Vercel Edge Middleware and Supabase Projects. See [MXN_ABTESTING.md](MXN_ABTESTING.md) for details.
 
 ## 📊 Priority Matrix Legend
 
@@ -34,6 +43,7 @@ This document contains an exhaustive list of potential features, enhancements, a
 ### Account Creation & Login
 | Feature | Priority | Effort | Business Value | Notes |
 |---------|----------|--------|----------------|-------|
+| Alias-first / Anonymous-by-default | 🔴 P0 | S | High | Alias required; no real-name or photo required; always-on anonymity by default |
 | Magic link login (passwordless) | 🟡 P1 | M | High | Reduces friction |
 | Phone number authentication | 🟢 P2 | L | Medium | SMS integration needed |
 | Apple Sign-In | 🟡 P1 | M | High | iOS user convenience |
@@ -63,6 +73,8 @@ This document contains an exhaustive list of potential features, enhancements, a
 | Mute user feature | 🟡 P1 | S | High | UX control |
 | User report system | 🟡 P1 | M | High | Moderation |
 | Account export (GDPR) | 🟡 P1 | M | High | Compliance |
+| Account deletion with closure email | 🟡 P1 | S | High | Privacy & user rights |
+| Contact/Support Page | 🟡 P1 | S | High | User feedback & support |
 | Account import from other platforms | 🔵 P3 | L | Low | Migration tool |
 
 ---
@@ -91,8 +103,8 @@ This document contains an exhaustive list of potential features, enhancements, a
 | Message translation | 🟢 P2 | M | High | Global audience |
 | Read receipts | 🟡 P1 | M | Medium | Message status |
 | Typing indicators | 🟡 P1 | S | High | Real-time feedback |
-| Message encryption (E2E) | 🟢 P2 | XL | High | Privacy |
-| Self-destructing messages | 🟢 P2 | M | Medium | Privacy |
+| Message encryption (E2E) | 🔴 P0 | XL | High | Privacy-by-default (mandatory for DMs and private rooms) |
+| Self-destructing messages | � P0 | M | High | 24h default auto-delete (user-tunable per room/DM) — default always-on for anonymized experiences |
 | Message delivery status | 🟡 P1 | M | Medium | Transparency |
 | Spam detection | 🟡 P1 | L | High | Quality control |
 | Message filtering | 🟢 P2 | M | Medium | Customization |
@@ -428,6 +440,7 @@ This document contains an exhaustive list of potential features, enhancements, a
 | Priority support (paid) | 🟢 P2 | M | Medium | Support tier |
 | Early access features | 🟢 P2 | S | Medium | Premium perk |
 | Stripe integration | 🟡 P1 | M | High | Payment |
+| Billing isolation for anonymity | 🟡 P1 | M | High | Separate billing identity from alias; collect only required billing info; KYC only applied when legally required and kept separate from public alias | 
 | PayPal integration | 🟢 P2 | M | Medium | Alternative |
 | Apple Pay/Google Pay | 🟢 P2 | M | Medium | Mobile |
 | Cryptocurrency payments | 🔵 P3 | L | Low | Alternative |
@@ -455,7 +468,7 @@ This document contains an exhaustive list of potential features, enhancements, a
 ### Security Features
 | Feature | Priority | Effort | Business Value | Notes |
 |---------|----------|--------|----------------|-------|
-| End-to-end encryption | 🟢 P2 | XL | High | Privacy |
+| End-to-end encryption | � P0 | XL | High | Mandatory for DMs and private rooms; opt-in for public rooms; privacy-by-default |
 | Two-factor authentication | 🟡 P1 | M | High | Security |
 | Security keys (WebAuthn) | 🟢 P2 | M | Medium | Advanced |
 | Login alerts | 🟡 P1 | S | Medium | Security |
@@ -473,17 +486,29 @@ This document contains an exhaustive list of potential features, enhancements, a
 | SQL injection prevention | 🟡 P1 | M | High | Security |
 | Rate limiting | 🟡 P1 | M | High | DDoS |
 | DDoS protection | 🟡 P1 | M | High | Availability |
+| Privacy-preserving proof-of-humanity (bot mitigation) | 🔴 P0 | M | High | Device & behavioral signals, WebAuthn or privacy-preserving tokens to reduce bots while preserving anonymity |
 | Content Security Policy | 🟡 P1 | M | Medium | Security |
 | Subresource Integrity | 🟢 P2 | S | Low | Trust |
 
 ### Privacy Features
+
+#### MXN Privacy Core (Extreme Privacy, Anonymity, Transparency, Ease)
+| Feature | Priority | Effort | Business Value | Notes |
+|---------|----------|--------|----------------|-------|
+| Privacy-by-default settings | 🔴 P0 | M | High | Always-on anonymous mode: aliases required; no real name or real photo required; minimal data; no public exposure unless opted-in |
+| Transparent privacy dashboard | 🟡 P1 | M | High | Clear controls: what’s shared, with whom, and for how long |
+| Trust-gated sharing | 🔴 P0 | M | High | Personal info exchange only when both parties set Trust/Intimate |
+| Safety enforcement (auto-block personal info) | 🔴 P0 | M | High | Detect/deny phone, email, external handles unless trust-gated |
+| Moderation evidence handling (privacy-preserving) | 🔴 P0 | M | High | Store minimal evidence (hashed or redacted); limited-time access for reviewers; preserve anonymization where possible |
+| Vibe access modes (Green/Amber/Red) | 🟡 P1 | M | High | Room/DM entry controlled by vibe boundaries and compatibility |
+
 | Feature | Priority | Effort | Business Value | Notes |
 |---------|----------|--------|----------------|-------|
 | Privacy settings dashboard | 🟡 P1 | M | High | Control |
 | Data export (GDPR) | 🟡 P1 | M | High | Compliance |
 | Data deletion (right to be forgotten) | 🟡 P1 | M | High | Compliance |
-| Anonymous mode | 🔵 P3 | M | Low | Privacy |
-| Incognito messaging | 🔵 P3 | L | Low | Privacy |
+| Anonymous mode | 🔴 P0 | M | High | Always-on alias-first approach: users never need to provide a real name or personal photo. Each alias has independent vibe/boundaries and persistence policy |
+| Incognito messaging | 🟡 P1 | M | High | Quick “mask” for temporary anonymity within an alias |
 | Hide online status | 🟡 P1 | S | Medium | Privacy |
 | Hide read receipts | 🟡 P1 | S | Medium | Privacy |
 | Hide typing indicators | 🟡 P1 | S | Low | Privacy |

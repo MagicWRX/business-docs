@@ -238,28 +238,44 @@ Sender → admin@mxn.chat → Cloudflare MX Servers → magicwrxstudio@gmail.com
 |----------------|--------|-----------------|
 | SPF | Moderate | Some emails rejected |
 | DMARC | Low | Reduced reporting |
-### 📋 STEP-BY-STEP: Enable Cloudflare Email Routing
+### 📋 Detailed DNS Records (Cloudflare Configuration)
 
-**Time Required:** 10 minutes  
-**Cost:** FREE
+**Location:** Cloudflare Dashboard → mxn.chat → DNS → Records
 
-#### Step 1: Access Cloudflare Email Routing
+| Type | Name (Host) | Content (Value) | Proxy Status | Purpose |
+|------|-------------|-----------------|--------------|---------|
+| **CNAME** | `brevo1._domainkey` | `b1.mxn-chat.dkim.brevo.com` | **DNS Only** (Gray Cloud) | DKIM Authentication |
+| **CNAME** | `brevo2._domainkey` | `b2.mxn-chat.dkim.brevo.com` | **DNS Only** (Gray Cloud) | DKIM Authentication |
+| **TXT** | `@` | `brevo-code:fbaea90f891e98c3edb299ccd8433bdd` | N/A | Domain Verification |
+| **TXT** | `_dmarc` | `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com` | N/A | Email Policy |
+| **TXT** | `@` | `v=spf1 include:spf.brevo.com include:_spf.google.com ~all` | N/A | Sender Authorization |
 
-1. **Open Cloudflare Dashboard:**
-   ```
-   https://dash.cloudflare.com
-   ```
+**⚠️ Critical Configuration Notes:**
 
-2. **Select Domain:**
-   - Click on: `mxn.chat`
+1. **SPF Record:** If you have an existing TXT record for `@`, **edit it** to include the SPF value above. Do not create duplicate SPF records.
 
-3. **Navigate to Email:**
-   - Left sidebar: **Email** → **Email Routing**
-   - Or direct link: https://dash.cloudflare.com → mxn.chat → Email
+2. **CNAME Records:** Ensure "Proxy Status" is set to **DNS Only** (Gray Cloud icon), not Proxied (Orange Cloud).
 
-4. **Enable Email Routing:**
-   - Click: **"Get Started"** or **"Enable Email Routing"**
-   - Cloudflare will automatically configure MX records
+3. **DMARC Policy:** `p=none` allows emails during setup. Change to `p=quarantine` or `p=reject` for production.
+
+4. **Propagation:** DNS changes take 5-30 minutes to propagate globally.
+
+### DNS Verification Script
+
+```bash
+# Run this to verify DNS records are configured correctly
+./scripts/check-email-dns.sh
+```
+
+**Expected Output:**
+```bash
+🌐 DNS Configuration Check
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ SPF Record found: v=spf1 include:spf.brevo.com include:_spf.google.com ~all
+✅ DKIM Records found: brevo1._domainkey, brevo2._domainkey
+✅ DMARC Record found: v=DMARC1; p=none...
+✅ Domain Verification: brevo-code:fbaea90f891e98c3edb299ccd8433bdd
+```
 
 #### Step 2: Verify Destination Email
 

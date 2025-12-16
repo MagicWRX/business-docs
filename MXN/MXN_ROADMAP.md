@@ -1,12 +1,39 @@
 # MXN.CHAT Master Roadmap (SSOT)
 
-**Document Date:** December 12, 2025 12:00 CST  
-**Last Updated:** December 12, 2025  
-**Version:** 1.5.0 (Vibe-Based Features & Next Steps Strategy)  
-**Status:** Phase 1 Complete - MVP 1.1.0 Deployed, Phase 1.6+ Vibe System Planned  
-**Next Review:** December 13, 2025 (Daily)
+**Document Date:** December 13, 2025 12:00 CST  
+**Last Updated:** December 14, 2025  
+**Version:** 1.6.1 (UI Improvements & Room Management)  
+**Status:** Phase 1 Complete - MVP 1.1.0 Deployed, Phase 1.6+ P1 Features Planned  
+**Next Review:** December 15, 2025 (Daily)
 
 ---
+## Prompt Current need chages.
+1. [✅] Change side bar titles from Channels -> Topics
+2. [✅] Change My Rooms -> My Topics
+3. [✅] ADD "Current Topics" display other user's Topics.
+4. [✅] Add "Vibe" indicator. to Topics.
+5. [✅] Develop "Vibe" indicator controls and connections to User's Alias. (Basic implementation via UserSettingsModal)
+6. [✅] Develop User Alias, add, vibe settings, "Boundries, Triggers, Off-Limits, Open, and 'Add Custom' - Vibe 'words' these help establish and broaden users' controls for settings. (Basic alias and vibe selection implemented)
+7. [✅] Change Color of Users in Topic chats. Let current user see their color as GREEN while other users get purple, pink, orange, yellow.  NO MXN.CHAT Blue. that mxn.chat blue is reserved for MXN communitcations and links. REDS are for CAUTION and not tube used by users according to Layout and Desing Rules for Brand and IP.
+8. [✅] Remove all instances of Game Controller ICon.
+9. [✅] Remove all instances to Gaming, or Games.  Use mxn.chat(Always lowercase) or Topics, or Vibe as terminology.
+
+4. [✅] Add Settings controls for User to adjust Chat/Topic settings, boundries, triggers, ans so forth. (Basic UserSettingsModal implemented) 
+
+## Recently Completed Tasks
+1. [✅] Display Login information if user attempts login through email rather than Google Account. (Added helpful error messages in AuthForm)
+2. [✅] Signed in Users need to be able to see which Chats they have created. (Added "My Rooms" section in Sidebar)
+3. [✅] Add 'X' to chat for deleting chats. (Added delete button for room creators)
+4. [✅] Add Settings controls for User to adjust Chat/Topic settings, boundries, triggers, ans so forth. (Implemented UserSettingsModal with basic alias and vibe controls) 
+
+
+## Recently Completed Tasks (Latest Updates)
+1. [✅] Implemented UserSettingsModal component for adjusting user alias and vibe preferences
+2. [✅] Integrated "Adjust Vibe" button in Vibe Lounge to open settings modal  
+3. [✅] Added basic vibe selection with 6 predefined vibes (Chill, Hype, Focus, Creative, Support, Wild)
+4. [✅] Connected alias editing to existing updateDisplayName functionality
+5. [✅] Updated MXN_ROADMAP.md to reflect completion of settings controls implementation
+
 
 ## 1. 🎯 Vision Statement
 
@@ -73,11 +100,12 @@ Goal: Clean, functional MVP with core chat features for early users.
 	•	[✅] Create and Delete Vibes (Conversations) - Create implemented, Delete needs implementation
 	•	[✅] Post Messages to Vibes and View Other Users' Messages (24h auto-delete)
 	•	[✅] User Logout
-	•	[✅] Delete Account Option in Settings
+	•	[✅] Delete Account Option in Settings - Updated: Confirmation modal and server-side deletion endpoint implemented with closure email notification
 	•	[✅] Terms of Service and Privacy Policy pages
 	•	[✅] Number of members logged in functioning
 	•	[✅] Sidebar search for #topics and aliases
 	•	[✅] Colored circle avatar for current vibe
+	•	[✅] Contact/Support Page - Implemented with database storage and bot protection
 
 **Status:** MVP 1.0.1 Deployed and Fully Functional
 
@@ -170,7 +198,7 @@ Goal: Transform MXN.CHAT from web-only to full cross-platform application ecosys
 	•	Cross-platform testing and QA
 
 **Business Impact:**
-	•	Unlocks desktop power users and gaming communities
+	•	Unlocks desktop power for users communities
 	•	Captures mobile users for on-the-go communication
 	•	Increases user engagement and retention
 	•	Creates premium app store revenue streams
@@ -262,7 +290,7 @@ Release target: Multi-Platform MVP 2.0
 **Complete Setup Guide:** See [MXN_DNS_EMAIL_SETUP.md](MXN_DNS_EMAIL_SETUP.md)
 
 ### Testing Priority Order
-1. Fix Google OAuth authentication (blocking users)
+1. Fix Google OAuth authentication (DOMAIN MISMATCH - Supabase configured for mxn.chat but site at www.mxn.chat)
 2. Enable email receiving via Cloudflare Email Routing (10 min)
 3. Test invite system (working but verify)
 4. Test message posting (working but verify)
@@ -456,7 +484,7 @@ MXN.CHAT becomes:
 **Next Development Sprint (LEAN MVP Focus):**
 	•	[✅] Fix message sending/display issues (database column names)
 	•	[✅] Update Supabase URLs and Google OAuth URIs (completed)
-	•	[ ] Test Google OAuth login flow (should now work)
+	•	[❌] Test Google OAuth login flow (DOMAIN MISMATCH ISSUE FOUND - see MXN_SOLUTIONS.md #10)
 	•	[✅] Verify email/password auth works end-to-end (Logic implemented; SMTP pending)
 	•	[ ] Implement Alias Creation and Editing (via Icons)
 	•	[ ] Add Room Creation and Deletion Functionality
@@ -473,8 +501,8 @@ MXN.CHAT becomes:
 
 ### 10.1 Message Interaction & Deletion
 **Feature:** Hoverable/clickable messages with delete functionality
-**Status:** 🟡 Planned - Phase 1.6
-**Priority:** High (User Control)
+**Status:** ✅ Completed - Phase 1.6
+**Implementation:** Added hover-to-show delete button for desktop and enhanced existing mobile swipe functionality. Users can only delete their own messages with confirmation dialog.
 
 **Implementation Strategy:**
 ```typescript
@@ -504,6 +532,23 @@ CREATE POLICY "Users can delete own messages"
 ON messages FOR DELETE
 USING (auth.uid() = author_id);
 ```
+
+**UI Design:**
+- **Desktop:** Hovering over a user's own message displays a small 'X' (delete) button in the top-right corner of the message bubble. Clicking it triggers a confirmation dialog.
+- **Mobile:** Implement swipe-left gesture on the message to reveal a delete action button. Tapping the button shows confirmation.
+- **Confirmation Dialog:** Simple modal with "Delete this message?" and "This action cannot be undone." Options: Cancel (dismiss) or Delete (proceed).
+- **Visual Feedback:** Deleted messages show as "[Message deleted]" in gray text, visible to all users in the room.
+- **Accessibility:** Ensure keyboard navigation (Tab to focus, Enter to delete) and screen reader support for delete actions.
+
+**Testing Plan:**
+- **Unit Tests:** Test `onDelete` function calls Supabase delete API only for own messages.
+- **Integration Tests:** Verify RLS policy prevents deletion of others' messages.
+- **E2E Tests:** Simulate hover/swipe, confirm deletion, check message disappears and shows "[Message deleted]".
+- **Edge Cases:** Test deletion of last message in room, rapid clicks, network errors during delete.
+- **Mobile Testing:** Verify swipe gesture on iOS/Android devices.
+
+**Estimated Effort:** 2-3 days (1 day UI, 1 day backend integration, 1 day testing)
+**Dependencies:** MessageList.tsx component, Supabase RLS policies, existing swipe gesture library (if any)
 
 ---
 
@@ -535,6 +580,71 @@ const canDeleteRoom = (room: ChatRoom, userId: string) => {
 3. Add confirmation dialog with room name
 4. Handle edge case: Auto-select another room after deletion
 5. Update Supabase RLS to enforce creator-only deletion
+
+**Ownership Transfer & Admins**
+
+Feature: Allow room creators to transfer ownership or appoint admins.
+
+Implementation notes:
+- Add `owner_id` (UUID) and `admins` (UUID[]) to `rooms` table; keep `created_by` as audit.
+- Provide UI: `Transfer Ownership` (requires password reconfirmation) and `Manage Admins` modal.
+- Only `owner_id` can transfer ownership; admins can manage members but not transfer unless explicitly granted.
+
+**Soft Delete vs Hard Delete**
+
+- Default to *soft-delete* (mark `deleted_at` TIMESTAMPTZ) so audit logs, moderation, and recovery are possible for a short window (24–72h).
+- Provide a background job to purge hard-deleted rooms after retention period; attachments and messages cascade-delete or move to archival bucket.
+- UI shows placeholder "[Topic deleted]" for soft-deleted rooms and auto-selects a fallback topic.
+
+**Cascade & Data Retention**
+
+- Deleting a room should either:
+	- soft-delete messages (set `deleted_at`), or
+	- queue messages/media for archival + scheduled delete job.
+- Retain moderation logs and membership records for 30 days for audit purposes.
+
+**Supabase RLS Examples (SQL)**
+
+```sql
+-- Only owner or admin can delete (soft/hard handled in server function)
+CREATE POLICY "Room owners or admins can delete"
+ON rooms FOR UPDATE, DELETE
+USING (
+	auth.uid() = owner_id
+	OR auth.uid() = ANY(admins)
+);
+
+-- Allow transfer of ownership only to a valid user (enforced in server function)
+-- Example: server-side RPC `transfer_room_owner(room_id, new_owner_id)` with checks
+```
+
+**API & UI Flow**
+
+- UI: Room sidebar -> kebab menu -> `Delete Topic` / `Transfer Ownership` / `Manage Admins`.
+- Confirm dialog for deletion shows room name, member count, and consequences; require typing the room name to confirm for hard delete.
+- API: `DELETE /api/rooms/:id` (soft by default) returns `{deleted: true, archivedAt: ...}`; `POST /api/rooms/:id/transfer` body: `{newOwnerId}`.
+- Server: Use Postgres function or Edge function to perform ownership transfer atomically and emit realtime event to room members.
+
+**Notifications & Audit**
+
+- Emit realtime events: `room.deleted`, `room.transferred`, `room.admins.updated` to update clients.
+- Write `room_audit_logs` entries for actions: `{actor_id, action, target_id, details, created_at}`.
+
+**Testing & QA Checklist**
+
+- Unit: `deleteRoom` callable only when `canDeleteRoom` true.
+- Integration: RLS policy prevents non-owners/admins from deleting via direct DB call.
+- E2E: UI flow for owner deleting (soft -> purge), transfer ownership (new owner receives rights), admin actions.
+- Edge cases: last-member deletion, concurrent delete+message post, transfer to non-existent user.
+
+**Migration Notes**
+
+- SQL migration should:
+	1. Add `owner_id UUID`, `admins UUID[]`, `deleted_at TIMESTAMPTZ DEFAULT NULL` to `rooms`.
+	2. Backfill `owner_id = created_by` for existing rows.
+	3. Add `room_audit_logs` table and necessary indexes.
+
+Estimated effort: 1–2 days (schema + RLS + UI + tests).
 
 ---
 
@@ -762,30 +872,376 @@ WHERE is_active = true;
 
 ---
 
+### 10.9 Edit Sent Messages
+**Feature:** Allow users to edit their own messages within time limit
+**Status:** ✅ Completed - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation:** Added double-click to edit for own messages, inline textarea with save/cancel, 5-minute time limit, "(edited)" indicator.
+
+**Implementation Strategy:**
+```typescript
+// MessageList.tsx - Add edit functionality
+interface MessageItemProps {
+  message: Message;
+  canEdit: boolean; // message.authorId === currentUser.id && withinTimeLimit
+  onEdit: (messageId: string, newText: string) => Promise<void>;
+}
+
+// Double-click or long-press to enter edit mode
+// Show "(edited)" indicator after edit
+// 5-minute edit window
+```
+
+**Database Schema:**
+```sql
+ALTER TABLE messages ADD COLUMN edited_at TIMESTAMPTZ;
+ALTER TABLE messages ADD COLUMN edit_count INTEGER DEFAULT 0;
+```
+
+---
+
+### 10.10 Reply to Specific Messages (Threading)
+**Feature:** Click reply button to quote and respond to specific messages
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+interface Message {
+  id: string;
+  replyToId?: string; // Reference to parent message
+  replyToPreview?: string; // Cached preview text
+}
+
+// UI shows quoted message above reply
+// Click quote to jump to original message
+```
+
+**Database Schema:**
+```sql
+ALTER TABLE messages ADD COLUMN reply_to_id UUID REFERENCES messages(id);
+ALTER TABLE messages ADD COLUMN reply_to_preview TEXT;
+```
+
+---
+
+### 10.11 Message Reactions (Emoji)
+**Feature:** Click message to add emoji reactions
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// New component: ReactionPicker.tsx
+interface Reaction {
+  emoji: string;
+  users: string[]; // User IDs who reacted
+  count: number;
+}
+
+// Hover/long-press message shows reaction picker
+// Reactions stored in separate table for performance
+```
+
+**Database Schema:**
+```sql
+CREATE TABLE message_reactions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  message_id UUID REFERENCES messages(id) ON DELETE CASCADE,
+  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+  emoji TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(message_id, user_id, emoji)
+);
+```
+
+---
+
+### 10.12 Typing Indicators
+**Feature:** Show "User is typing..." when someone types
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Use Supabase presence for typing status
+const typingChannel = supabase.channel(`room:${roomId}:typing`);
+
+// Debounce typing events (300ms)
+// Show indicators for 3 seconds after stopping
+```
+
+---
+
+### 10.13 Read Receipts
+**Feature:** Show when messages are read by others
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (Medium)
+
+**Implementation Strategy:**
+```typescript
+// Track read status per user per message
+interface ReadReceipt {
+  messageId: string;
+  userId: string;
+  readAt: Date;
+}
+
+// Show checkmarks: sent (✓) vs read (✓✓)
+```
+
+---
+
+### 10.14 Message Search
+**Feature:** Search through message history
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Search input in ChatInterface
+// Full-text search with PostgreSQL
+// Filter by date, user, room
+```
+
+**Database:**
+```sql
+-- Enable full-text search
+CREATE INDEX messages_content_idx ON messages USING gin(to_tsvector('english', content));
+```
+
+---
+
+### 10.15 Mention/Tag Users (@username)
+**Feature:** @username notifications and highlighting
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Parse @mentions in message text
+// Highlight mentions in UI
+// Send push notifications for mentions
+// Autocomplete dropdown when typing @
+```
+
+---
+
+### 10.16 Link Previews
+**Feature:** Show rich previews for URLs
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Server-side URL parsing
+// Cache previews in database
+// Show title, description, image
+```
+
+**Database Schema:**
+```sql
+CREATE TABLE link_previews (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  url TEXT UNIQUE,
+  title TEXT,
+  description TEXT,
+  image_url TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+---
+
+### 10.17 File Drag-and-Drop
+**Feature:** Drag files directly into chat
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// HTML5 drag/drop API
+// Multiple file selection
+// Progress indicators
+// Supabase Storage upload
+```
+
+---
+
+### 10.18 Multi-File Upload
+**Feature:** Upload multiple files at once
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (Medium)
+
+**Implementation Strategy:**
+```typescript
+// File input with multiple attribute
+// Batch upload with progress
+// Thumbnail previews
+```
+
+---
+
+### 10.19 Image Gallery View
+**Feature:** Click images to view in gallery
+**Status:** 🟡 Planned - Phase 1.6
+**Priority:** P1 (Medium)
+
+**Implementation Strategy:**
+```typescript
+// Modal gallery viewer
+// Navigation between images
+// Download/share options
+```
+
+---
+
+### 10.20 Block/Mute User Features
+**Feature:** Block users from contacting you, mute notifications
+**Status:** 🟡 Planned - Phase 1.7
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Block: Hide messages, prevent DMs
+// Mute: Hide notifications only
+// Settings panel for management
+```
+
+**Database Schema:**
+```sql
+CREATE TABLE user_blocks (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  blocker_id UUID REFERENCES users(id),
+  blocked_id UUID REFERENCES users(id),
+  block_type TEXT DEFAULT 'full', -- 'full' or 'notifications'
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(blocker_id, blocked_id)
+);
+```
+
+---
+
+### 10.21 User Report System
+**Feature:** Report abusive users for moderation
+**Status:** 🟡 Planned - Phase 1.7
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Report button on user profiles/messages
+// Categories: spam, harassment, inappropriate
+// Admin review queue
+```
+
+**Database Schema:**
+```sql
+CREATE TABLE user_reports (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  reporter_id UUID REFERENCES users(id),
+  reported_id UUID REFERENCES users(id),
+  category TEXT,
+  description TEXT,
+  status TEXT DEFAULT 'pending',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+---
+
+### 10.22 Account Export (GDPR)
+**Feature:** Download all user data
+**Status:** 🟡 Planned - Phase 1.7
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Generate JSON/CSV export
+// Include messages, profile data, settings
+// Email download link
+```
+
+---
+
+### 10.23 Profile Management Features
+**Feature:** Custom avatars, status messages, visibility controls
+**Status:** 🟡 Planned - Phase 1.7
+**Priority:** P1 (High)
+
+**Implementation Strategy:**
+```typescript
+// Profile settings panel
+// Avatar upload to Supabase Storage
+// Status message with emoji picker
+// Privacy toggles
+```
+
+**Database Schema:**
+```sql
+ALTER TABLE users ADD COLUMN avatar_url TEXT;
+ALTER TABLE users ADD COLUMN status_message TEXT;
+ALTER TABLE users ADD COLUMN profile_visibility TEXT DEFAULT 'public';
+```
+
+---
+
 ### 10.7 Implementation Timeline
 
-**Phase 1.6 - UX Polish (2 weeks)**
+**Phase 1.6 - Core Messaging Features (3 weeks)**
 - ✅ Message hover/delete (Desktop + Mobile)
+- ✅ Edit sent messages (P1)
+- ✅ Reply to specific messages (threading) (P1)
+- ✅ Message reactions (emoji) (P1)
+- ✅ Typing indicators (P1)
+- ✅ Read receipts (P1)
+- ✅ Message search (P1)
+- ✅ Mention/tag users (@username) (P1)
+- ✅ Link previews (P1)
+- ✅ File drag-and-drop (P1)
+- ✅ Multi-file upload (P1)
+- ✅ Image gallery view (P1)
 - ✅ Room deletion by creator
 - ✅ Colored vibe bullets instead of hashtags
 - ✅ Rooms → Topics terminology update
 
-**Phase 1.7 - Vibe Settings Foundation (3 weeks)**
-- ✅ Basic Vibe Settings UI (Triggers, Boundary, Off-Limits text)
+**Phase 1.7 - User Management & Privacy (2 weeks)**
+- ✅ Block user feature (P1)
+- ✅ Mute user feature (P1)
+- ✅ User report system (P1)
+- ✅ Account export (GDPR) (P1)
+- ✅ Profile visibility controls (P1)
+- ✅ Custom avatar upload (P1)
+- ✅ Status messages (custom text) (P1)
+- ✅ Vibe Settings Foundation (Triggers, Boundary, Off-Limits)
 - ✅ Privacy level controls (Open, Invite-Only, Private)
 - ✅ Vibe Alias creation and selection
 - ✅ 30-day alias expiry logic
 
-**Phase 1.8 - AI-Powered Moderation (2 weeks)**
-- ✅ OpenAI integration for Off-Limits enforcement
+**Phase 1.8 - Advanced Features (3 weeks)**
+- ✅ Message pinning (P1)
+- ✅ Message bookmarks/saved messages (P1)
+- ✅ Code snippet formatting (P1)
+- ✅ Markdown support (P1)
+- ✅ Spam detection (P1)
+- ✅ AI-Powered Moderation (Off-Limits enforcement)
 - ✅ Real-time message validation
 - ✅ Moderation logging and analytics
 
-**Phase 2+ - Advanced Features**
-- Community reporting system
-- Custom vibe color picker
-- Vibe-based room discovery
-- Reputation system tied to aliases
+**Phase 1.9 - Rich Media & Communication (2 weeks)**
+- ✅ Voice messages (P2)
+- ✅ GIF picker integration (P2)
+- ✅ Sticker packs (P2)
+- ✅ Poll creation (P1)
+- ✅ Custom emoji reactions (P2)
+
+**Phase 2.0 - Scaling & Monetization (4 weeks)**
+- ✅ Subtle ads integration
+- ✅ Message pagination + virtual scrolling
+- ✅ Media compression pipeline
+- ✅ API rate limits + metering foundation
+- ✅ File size limits by tier
+- ✅ Premium subscription system
 
 ---
 
