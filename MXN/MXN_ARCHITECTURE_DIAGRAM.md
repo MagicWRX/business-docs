@@ -14,7 +14,7 @@ This diagram shows the top-down architecture of MXN.CHAT (flagship) and MagicWRX
 	•	Supabase Accounts: 2 Projects (mxn-chat-db, magicwrx-db)
 	•	Stripe Account: One Business Account (MXN + MagicWRX payments)
 	•	Google Analytics / GA4 Account: Tracking for both apps
-	•	Google Ads Account: Monetization for free-tier users
+	•	Google Ads Account: amazinglystrangemedia@gmail.com Monetization for free-tier users
 	•	OpenAI / AI Provider Account: AI content & moderation
 	•	Optional Developer Tools: GitHub / GitLab repository accounts
 

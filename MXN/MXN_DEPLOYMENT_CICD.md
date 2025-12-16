@@ -117,11 +117,66 @@ Since adding members to Vercel incurs a per-seat cost, use the following strateg
 	4.	Third-Party Integrations
 	•	Stripe webhook endpoint verified
 	•	GA4 and Ads scripts tested
-	•	OpenAI endpoints configured and tested
-
 ⸻
 
-5. Post-Deployment Checks
+4. CI/CD Secrets Configuration
+
+### Required Environment Variables
+
+| Variable | Scope | Purpose | Security Level |
+|----------|-------|---------|----------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Client + Server | Supabase project URL | Public |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Client | Read-only DB access (RLS) | Public |
+| `SUPABASE_SERVICE_ROLE_KEY` | Server Only | Admin DB access | Secret |
+| `BREVO_API_KEY` | Server Only | Transactional email API | Secret |
+| `NEXT_PUBLIC_BREVO_AI_API_KEY` | Client | AI chat features | Rate Limited |
+
+### GitHub Actions Setup
+
+1. **Navigate to Repository Secrets:**
+   - GitHub → Repository → Settings → Secrets → Actions
+   - Click "New repository secret"
+
+2. **Add Required Secrets:**
+   ```bash
+   SUPABASE_URL=https://opcsbfwqazyzsskuuooz.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGci...  # Public key
+   SUPABASE_SERVICE_ROLE_KEY=eyJhbGci...      # Admin key (encrypted)
+   BREVO_API_KEY=xkeysib-5b3d8e03...          # Email API key
+   ```
+
+3. **Run E2E Tests:**
+   - Use workflow: `.github/workflows/e2e.yml`
+   - Manual trigger: "E2E Smoke Test"
+
+### Vercel Environment Variables
+
+1. **Access Project Settings:**
+   - Vercel Dashboard → Project → Settings → Environment Variables
+
+2. **Configure for Each Environment:**
+   - **Production:** All variables
+   - **Preview:** All variables (for testing)
+   - **Development:** Limited variables (local testing)
+
+3. **Variable Settings:**
+   ```bash
+   # Public (exposed to browser)
+   NEXT_PUBLIC_SUPABASE_URL=https://opcsbfwqazyzsskuuooz.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGci...
+
+   # Server-side only (never exposed)
+   SUPABASE_SERVICE_ROLE_KEY=eyJhbGci...
+   BREVO_API_KEY=xkeysib-5b3d8e03...
+   ```
+
+### Security Best Practices
+
+- **Test Project:** Use dedicated Supabase test project for CI
+- **Key Rotation:** Rotate service keys every 90 days
+- **Access Control:** Limit Vercel collaborators to essential personnel
+- **Audit Logs:** Monitor GitHub Actions and Vercel deployment logs
+- **Encryption:** Store sensitive keys encrypted in GitHub Secrets
 	•	Confirm deployment URL is live and reachable
 	•	Test authentication flows (email verification, signup, login)
 	•	Send test messages in MXN.CHAT and validate ephemeral cleanup

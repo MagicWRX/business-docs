@@ -1,10 +1,12 @@
 # MXN.CHAT Complete Feature & Capability Reference (SSOT)
 
-**Document Date:** December 11, 2025  
-**Last Updated:** December 11, 2025  
-**Version:** 1.0.0  
-**Status:** Production Active (MVP 1.0.1)
+**Document Date:** December 12, 2025  
+**Last Updated:** December 12, 2025  
+**Version:** 1.1.0  
+**Status:** Production Active (MVP 1.1.0)
 
+---
+Single Source of Truth for the MXN.CHAT
 ---
 
 ## 🎯 Purpose
@@ -33,6 +35,8 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 
 #### User Profile Management
 - ✅ Forced alias creation on signup (anonymous by design)
+- ✅ Exclusive aliases (unique across platform)
+- ✅ Alias auto-deletion after 30 days (prevents hoarding)
 - ✅ Custom display name/alias (editable anytime)
 - ✅ Auto-generated avatar based on display name
 - ✅ User status management (online/offline)
@@ -52,15 +56,16 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 ### 2. 💬 Chat & Messaging
 
 #### Real-time Messaging
-- ✅ Send text messages to chat rooms
+- ✅ Send text messages to chat vibes
 - ✅ Real-time message delivery (Supabase Realtime)
 - ✅ Live message updates without page refresh
 - ✅ Message timestamp with "time ago" formatting
-- ✅ Message history loading (last 100 messages per room)
+- ✅ Message history loading (last 100 messages per vibe)
 - ✅ Author identification with avatar and display name
 - ✅ Swipe-to-delete messages (mobile)
 - ✅ Message deletion (own messages only)
 - ✅ Edited message indicator (planned)
+- ✅ Auto-delete messages after 24 hours (ephemeral)
 
 #### Message Composition
 - ✅ Text input with multiline support
@@ -77,38 +82,41 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 - ✅ Click to open full-size image
 - ✅ Image URL sharing support
 - ✅ Image metadata tracking
+- ✅ Auto-delete images after 24 hours (ephemeral)
 
 ---
 
 ### 3. 🏠 Chat Rooms & Channels
 
 #### Room Management
-- ✅ Default rooms (General, Gaming, Off-Topic)
-- ✅ Create custom rooms/channels
-- ✅ Delete rooms (admin only)
-- ✅ Room descriptions
-- ✅ Public/private room types
-- ✅ Room member count display
+- ✅ Default vibes (General, Gaming, Off-Topic)
+- ✅ Create custom vibes/channels
+- ✅ Delete vibes (admin only)
+- ✅ Vibe descriptions
+- ✅ Public/private vibe types
+- ✅ Vibe member count display
 - ✅ Admin permission system
-- ✅ Auto-select first room on load
+- ✅ Auto-select first vibe on load
+- ✅ Vibe auto-deletion after 3 days (ephemeral)
 
-#### Room Navigation
-- ✅ Sidebar with room list
-- ✅ Active room highlighting
-- ✅ Room switching without page reload
-- ✅ Collapsible "Other Rooms" dropdown
-- ✅ #Welcome room always visible
-- ✅ Room icons with # prefix
-- ✅ Mobile-friendly room sidebar
+#### Vibe Navigation
+- ✅ Sidebar with vibe list
+- ✅ Active vibe highlighting
+- ✅ Vibe switching without page reload
+- ✅ Collapsible "Other Vibes" dropdown
+- ✅ #Welcome vibe always visible
+- ✅ Vibe icons with # prefix
+- ✅ Mobile-friendly vibe sidebar
+- ✅ Sidebar search for #topics (purple) and aliases (blue)
 
-#### Room Features
+#### Vibe Features
 - ✅ Last activity tracking
-- ✅ Message count per room
-- ✅ Room creation timestamp
-- ✅ Room creator tracking
-- ✅ Default room designation
+- ✅ Message count per vibe
+- ✅ Vibe creation timestamp
+- ✅ Vibe creator tracking
+- ✅ Default vibe designation
 - ✅ Maximum member limits (100 default)
-- ✅ Room active/inactive status
+- ✅ Vibe active/inactive status
 
 ---
 
@@ -150,6 +158,7 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 - ✅ Responsive card layouts
 - ✅ Glass morphism effects
 - ✅ Smooth transitions and hover states
+- ✅ Colored circle avatar for current vibe (user-selectable)
 
 #### Mobile Experience
 - ✅ Mobile-first responsive design
@@ -358,7 +367,34 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 
 ---
 
-## 🔧 Technical Stack Summary
+## 🎨 UI Concept Diagram (MVP 1.1.0)
+
+```
+MXN.CHAT Interface Layout
+
++-------------------+-------------------+
+|     Sidebar       |     Chat Area     |
++-------------------+-------------------+
+| Search: [_______] | [🔵] Alias O      |
+|                   |                   |
+| #topic (purple)   | Message 1 (24h)   |
+| alias (blue)      | Message 2 (24h)   |
+|                   |                   |
+| Vibes:            |                   |
+| 🎮 Gaming Vibe    |                   |
+| 💬 Chat Vibe      |                   |
+| 🎵 Music Vibe     |                   |
++-------------------+-------------------+
+
+Key Features Illustrated:
+1. 🔵 Exclusive aliases with 30-day expiry (prevents hoarding)
+2. 🔍 Sidebar search for #topics (purple) and aliases (blue)
+3. 🎮 Rooms rebranded as "Vibes" for better UX
+4. 🎨 Colored circle avatar representing user's current vibe
+5. ⏰ Ephemeral content: Messages/Pictures auto-delete after 24h, Vibes after 3 days
+```
+
+---
 
 ### Frontend
 - **Framework:** Next.js 15 (App Router)
@@ -382,9 +418,9 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 
 ---
 
-## 📈 Current Statistics (MVP 1.0.1)
+## 📈 Current Statistics (MVP 1.1.0)
 
-- **Total Features:** 150+ implemented capabilities
+- **Total Features:** 160+ implemented capabilities
 - **API Endpoints:** 3 custom routes + Supabase APIs
 - **Database Tables:** 5 core tables with RLS
 - **UI Components:** 14 React components
@@ -455,6 +491,6 @@ This document MUST be updated when:
 
 ---
 
-**Last Feature Audit:** December 11, 2025  
-**Next Review Due:** December 18, 2025 (Weekly)  
+**Last Feature Audit:** December 12, 2025  
+**Next Review Due:** December 19, 2025 (Weekly)  
 **Document Owner:** MagicWRX Development Team

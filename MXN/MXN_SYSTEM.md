@@ -1,9 +1,9 @@
 # MXN_SYSTEM.md - v1.0.1 Complete System Overview (SSOT)
 
-**Document Date:** December 11, 2025
-**Version:** 1.0.1
+**Document Date:** December 12, 2025
+**Version:** 1.1.0
 **Status:** Production Ready
-**Last Updated:** December 11, 2025
+**Last Updated:** December 12, 2025
 
 ---
 
@@ -13,7 +13,12 @@
 
 ### Key Achievements (v1.0)
 - ✅ **Real-time messaging** with Supabase Realtime
+- ✅ **Complete Anonymity** no displayed collected information
 - ✅ **Secure authentication** (Email/Password + Google OAuth)
+- ✅ **Exclusive aliases** with 30-day expiry (anti-hoarding)
+- ✅ **Ephemeral content** (24h messages/pictures, 3-day vibes)
+- ✅ **Vibe-based rooms** with colored user indicators
+- ✅ **Sidebar search** for topics and aliases
 - ✅ **Image uploads** with automatic cleanup
 - ✅ **Email invitation system** with token-based security
 - ✅ **Professional UI** with mobile responsiveness
@@ -31,7 +36,10 @@ MXN.CHAT v1.0 System Architecture
 ├── 🎨 Frontend Layer (Next.js 15 + React 19)
 │   ├── App Router with TypeScript
 │   ├── Tailwind CSS + ShadCN Components
-│   ├── Real-time chat interface
+│   ├── Real-time chat interface with ephemeral content
+│   ├── Exclusive aliases (30-day expiry)
+│   ├── Vibe-based rooms with colored indicators
+│   ├── Sidebar search for topics/aliases
 │   ├── Authentication flows
 │   └── Mobile-first responsive design
 │
@@ -39,18 +47,20 @@ MXN.CHAT v1.0 System Architecture
 │   ├── Supabase Auth (Email + Google OAuth)
 │   ├── PostgreSQL Database with RLS
 │   ├── Real-time subscriptions
-│   ├── File storage with buckets
+│   ├── File storage with 24h auto-delete
+│   ├── Ephemeral cleanup (messages 24h, vibes 3 days)
 │   └── Edge Functions for serverless APIs
 │
 ├── 📊 Database Schema (v1.0)
-│   ├── users (authentication profiles)
-│   ├── rooms (chat rooms/conversations)
-│   ├── messages (chat messages with metadata)
+│   ├── users (authentication profiles + aliases)
+│   ├── rooms (vibes with auto-delete after 3 days)
+│   ├── messages (ephemeral after 24 hours)
 │   ├── invitations (email invitation system)
-│   └── attachments (file uploads)
+│   └── attachments (file uploads with 24h expiry)
 │
 ├── 🔐 Security & Privacy
 │   ├── Row Level Security (RLS) on all tables
+│   ├── Exclusive aliases prevent hoarding
 │   ├── Token-based invitations (7-day expiry)
 │   ├── Secure file uploads with validation
 │   └── GDPR-compliant data handling
@@ -87,24 +97,31 @@ MXN.CHAT v1.0 System Architecture
 #### Authentication & Security
 - **Email/Password Registration** with verification
 - **Google OAuth Integration** with consent screen
+- **Exclusive Aliases** with 30-day expiry (anti-hoarding)
 - **Secure Session Management** with Supabase
 - **Password Reset Functionality**
 - **Profile Management** (display names, avatars)
 
 #### Real-time Chat
 - **Text Messaging** with real-time delivery
-- **Room-based Conversations** (public/private)
+- **Vibe-based Conversations** (public/private)
+- **Ephemeral Messages** (24-hour auto-delete)
+- **Ephemeral Images** (24-hour auto-delete)
 - **Message History** with pagination
 - **Typing Indicators** (planned for v1.1)
 - **Read Receipts** (planned for v1.1)
 
 #### Media & Files
-- **Image Uploads** with drag-and-drop
-- **File Attachments** with size limits
+- **Image Uploads** with drag-and-drop (24h expiry)
+- **File Attachments** with size limits (24h expiry)
 - **Automatic Cleanup** (ephemeral media)
 - **Secure Storage** with access controls
 
 #### User Experience
+- **Vibe-based Interface** (rooms called vibes)
+- **Colored User Circles** for current vibe
+- **Sidebar Search** for #topics (purple) and aliases (blue)
+- **Ephemeral Vibes** (3-day auto-delete)
 - **Mobile-Responsive Design**
 - **Dark/Light Theme Support**
 - **Intuitive Navigation**
