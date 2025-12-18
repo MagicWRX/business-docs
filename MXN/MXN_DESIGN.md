@@ -105,6 +105,55 @@ module.exports = {
 }
 ```
 
+LAYOUTS
+
+Vibe Indictors
+
+RightSidebar layout
+                                                        left aligned
+                                                           v 
+|Profile Pick|  |User Alias |v| <- Alias name dropdown.   |O| <- Vibe "Indicator" Status Filled Circle + left aligned + default Color + small text inside Filled Cirlce "SET"
+
+__________________
+|User Alias 01 |v| <- Alias name dropdown. 
+|User Alias 02 | | 
+|User Alias 03 | | 
+|+   NEW Alias | | 
+------------------
+
+
+
+
+the 'O' Represient the "Filled in Colored Circles",
+Place circles in a bos that in-line with current Vibe Indicator. 
+When Hover or Pressed Box Quickly fades in and is positioned based on last Vibe or Set to Defaul.  CIRCLES containg SMALL TEXT CHILL, HYPED, FOCUSED, ect.
+
+|O| <- Chill
+|O| <- Hype
+|O| <- Focus 
+|O| <- Default <- mxn blue         
+|O| <- Creative                    
+|O| <- Support
+|O| <- Wild
+
+______________________________________________
+VIBE LOUNGE -> TOPIC Status Vibe "Mood" Rings.  <- Flush Top
+
+                                  O O O O O O   <- Mood/Vibe Rings 
+----------------------------------------------  <- Purple Vibe Lounge Bar
+O       Oo.    O                 Oo. o       O      for Rings to Rest One.
+  O.   O        O       O   O O.    o O o
+O    O       O   O O.    O       O   O O.       <- USER's TOPICS Colored 
+    O       O   O O.                O.  O.  o      Based on that users Vibe
+        O       O   O O.    O       O   O O.       Size Changes With Number 
+                                                    Number of Users AND Circle TOPIC NAME on REVERVE COLOR TOPIC CIRCLE. When Hovered Circle enloarges for better veiw Increasing size of topic name. As topics are added they fade in and slowly move to the bottom. Responses make the Compback in from top.
+                                                    Like The Prices Right's PLINKO game the Drop-in as more come on line the screen fiils. 
+
+                                                    Pressing the Mood VIBE Ring SELECTS TOPICs of With those Moods/Vibe.
+
+
+
+
 ### 3. Usage in Components
 ❌ **Don't:** `text-purple-400` (Raw value)  
 ✅ **Do:** `text-brand-purple` or `text-user-purple` (Semantic value)
@@ -201,39 +250,145 @@ To bring the current codebase into compliance:
 
 ---
 
-## Diagram of ChatInterfase.tsx
-/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/components/RoomSidebar.tsx
+## 📐 Visual Layout Diagrams
 
-/Users/brianlindahl/Development/Business/DOCs/MXN/MXN_DESIGN.md
-┌─────────────────────────────────────────────────┐
-│ Header (mxn.chat title + action buttons)        │
-│   [ChatInterface.tsx#L383](../../Websites/mxn-chat/src/components/ChatInterface.tsx#L383)
-├─────────────────────────────────────────────────┤
-│ User Info (avatar + name + online status)       │
-│   [ChatInterface.tsx#L425](../../Websites/mxn-chat/src/components/ChatInterface.tsx#L425)
-├─────────────────────────────────────────────────┤
-│ ROOM SIDEBAR (RoomSidebar component)            │
-│   [RoomSidebar.tsx](../../Websites/mxn-chat/src/components/RoomSidebar.tsx)
-│ ├─ Topics Header + Create Button               │
-│ │   [RoomSidebar.tsx#L99](../../Websites/mxn-chat/src/components/RoomSidebar.tsx#L99)
-│ ├─ Online Users Count                          │
-│ │   [RoomSidebar.tsx#L112](../../Websites/mxn-chat/src/components/RoomSidebar.tsx#L112)
-│ ├─ Welcome Room (always visible)               │
-│ │   [RoomSidebar.tsx#L117](../../Websites/mxn-chat/src/components/RoomSidebar.tsx#L117)
-│ ├─ My Topics (collapsible)                     │
-│ │   [RoomSidebar.tsx#L150](../../Websites/mxn-chat/src/components/RoomSidebar.tsx#L150)
-│ │  ├─ Topic Item 1 (with actions)              │
-│ │  └─ Topic Item 2 (with actions)              │
-│ └─ Current Topics (collapsible)                │
-│    [RoomSidebar.tsx#L227](../../Websites/mxn-chat/src/components/RoomSidebar.tsx#L227)
-│    ├─ Public Topic 1                           │
-│    └─ Public Topic 2                           │
-├─────────────────────────────────────────────────┤
-│ FRIENDS SECTION                                │
-│   [RoomSidebar.tsx#L310](../../Websites/mxn-chat/src/components/RoomSidebar.tsx#L310)
-│ ├─ Friends Header + Count                      │
-│ └─ Friends List or "No friends" message        │
-└─────────────────────────────────────────────────┘
+### LEFT SIDEBAR (Desktop) - RoomSidebar.tsx
 
-**Document Owner:** MagicWRX Development Team
-**Last Updated:** December 15, 2025
+```
+┌────────────────────────────────────────────────────┐
+│ ┌────────────────────────────────────────────────┐ │
+│ │  mxn.chat           [💰][👥][⚙️][🔔][🚪]      │ │ Header
+│ └────────────────────────────────────────────────┘ │
+├────────────────────────────────────────────────────┤
+│ ┌────────────────────────────────────────────────┐ │
+│ │ [👤] (O)  User Alias ▼          Name/Online   │ │ User Info
+│ │      ↑                                         │ │ + Vibe Indicator
+│ │   Vibe Indicator (Filled Circle)              │ │
+│ │                                                │ │
+│ │   [Vibe Selector Dropdown on hover/click]     │ │
+│ │   ┌──────────────────┐                        │ │
+│ │   │ (O) Chill        │ ← Selector appears     │ │
+│ │   │ (O) Hype         │   with emoji + text    │ │
+│ │   │ (O) Focus        │   Current vibe = bold  │ │
+│ │   │ (O) Default      │                        │ │
+│ │   │ (O) Creative     │                        │ │
+│ │   │ (O) Support      │                        │ │
+│ │   │ (O) Wild         │                        │ │
+│ │   └──────────────────┘                        │ │
+│ └────────────────────────────────────────────────┘ │
+├────────────────────────────────────────────────────┤
+│ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ │
+│ ┃ Topics                            [+ Create]  ┃ │ Topics Section
+│ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ │
+│                                                    │
+│   👥 42 Online                                     │
+│                                                    │
+│   # Welcome                   [Always Visible]    │
+│                                                    │
+│ ┌────────────────────────────────────────────────┐ │
+│ │ ▼ My Topics (3)                                │ │ Collapsible
+│ │   # Topic-Name-1      [👥][🗑️]   (5 unread)  │ │ User's Topics
+│ │   # Topic-Name-2      [👥][🗑️]   (2 unread)  │ │
+│ │   # Topic-Name-3      [👥][🗑️]                │ │
+│ └────────────────────────────────────────────────┘ │
+│                                                    │
+│ ┌────────────────────────────────────────────────┐ │
+│ │ ▼ Current Topics (8)                           │ │ Collapsible
+│ │   # general           125 members              │ │ Public Topics
+│ │   # tech-talk         43 members               │ │
+│ │   # random            89 members               │ │
+│ │   ...                                          │ │
+│ └────────────────────────────────────────────────┘ │
+├────────────────────────────────────────────────────┤
+│ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ │
+│ ┃ Friends (12)                                   ┃ │ Friends Section
+│ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ │
+│   [👤] FriendAlias1    ● Online                   │
+│   [👤] FriendAlias2    ● Online                   │
+│   [👤] FriendAlias3    ○ Offline                  │
+└────────────────────────────────────────────────────┘
+```
+
+### MAIN AREA - VIBE LOUNGE (ChatInterface.tsx)
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                                                                  │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │                                                            │ │
+│  │  VIBE LOUNGE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~             │ │
+│  │               ↑ Sine Wave Animation (Purple #8844ff)      │ │
+│  │                                                            │ │
+│  │  Select a vibe to connect anonymously or jump to a topic  │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                  │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │                         ●    ●    ●    ●    ●    ●      │ │ Mood/Vibe Rings
+│  │                       Chill Hype Focus Create Support Wild│ │ (Right Aligned)
+│  ├────────────────────────────────────────────────────────────┤ │
+│  │ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ │ │ Purple Vibe Bar
+│  └────────────────────────────────────────────────────────────┘ │ (Separator)
+│                                                                  │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │                   TOPIC BUBBLES AREA                       │ │ Active Topics
+│  │                                                            │ │ (Plinko Style)
+│  │    ●●         ●                    ●●    ●                │ │
+│  │  ●    ●     ●   ●        ●     ●●      ●   ●●            │ │ Circles colored
+│  │    ●       ●      ●●  ●    ●●       ●   ●●               │ │ by user's vibe
+│  │  ●    ●       ●   ●●      ●       ●   ●●                 │ │
+│  │      ●       ●   ●●  ●    ●       ●   ●●                 │ │ Size = # users
+│  │                                                            │ │ in that topic
+│  │  [Topic names shown on reverse color inside circles]      │ │
+│  │  [Hover = enlarge circle + larger topic name]             │ │ Drop from top
+│  │  [New topics fade in from top, push down like Plinko]     │ │ Responses bring
+│  │  [Responses make topics rise back to top]                 │ │ back to top
+│  │                                                            │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                  │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │   [Initialize Default Topics]  (if no rooms exist)         │ │
+│  └────────────────────────────────────────────────────────────┘ │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
+
+INTERACTION:
+- Click Vibe Ring → Filter topics showing only that vibe
+- Click Topic Bubble → Enter that topic/room
+- Hover Topic Bubble → Enlarge + show details
+- Vibe Rings rest on purple bar, always visible
+- Topic Bubbles animate: drop from top when created
+                         rise up when new messages
+```
+
+### VIBE INDICATOR DETAILS
+
+```
+Vibe Colors & Names:
+┌────────────────────────────────────┐
+│ ● Chill     (Green)    #22c55e    │
+│ ● Hype      (Purple)   #9333ea    │
+│ ● Focus     (Orange)   #fb923c    │
+│ ● Creative  (Yellow)   #facc15    │
+│ ● Support   (Pink)     #ec4899    │
+│ ● Wild      (Fuchsia)  #e879f9    │
+│ ● Default   (MXN Blue) #00d4ff    │
+└────────────────────────────────────┘
+
+In Sidebar:
+- Small filled circle (32px) next to avatar
+- Shows current user's vibe color
+- Click/Hover → Dropdown with all vibes
+- Emoji + Name shown in dropdown
+- Current selection highlighted
+
+In Vibe Lounge:
+- Larger circles (48px) as tabs/filters
+- Border + semi-transparent bg
+- Hover → Fill with solid color + glow
+- Click → Filter topics by that vibe
+```
+
+---
+
+**Document Owner:** MagicWRX Development Team  
+**Last Updated:** December 16, 2025

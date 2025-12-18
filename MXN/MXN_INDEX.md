@@ -1,8 +1,8 @@
 # MXN.CHAT Master Index (SSOT)
 
-**Document Date:** December 14, 2025  
-**Last Updated:** December 14, 2025  
-**Version:** 1.6.1 (UI Improvements & Room Management)  
+**Document Date:** December 17, 2025  
+**Last Updated:** December 17, 2025  
+**Version:** 1.6.2 (Documentation Sync & Image Optimization)  
 **Status:** Active - MVP 1.1.0 Released, Phase 1.6+ P1 Features Planned  
 **Compliance:** AI_STANDARDS.md
 
@@ -154,9 +154,9 @@ supabase-debug-signup.sql     # Debug signup errors with detailed logging
 ## 📊 Current Status
 
 ### Project Phase
-- **Phase:** 1 - Refined MVP (Active)
-- **Version:** v1.0.0
-- **Last Deploy:** December 10, 2025
+- **Phase:** 1.6 - Core Messaging Features (Active)
+- **Version:** v1.1.0
+- **Last Deploy:** December 14, 2025
 
 ### ✅ Recently Completed (December 2025)
 - [x] Email delivery via Brevo API (working!)
@@ -178,6 +178,11 @@ supabase-debug-signup.sql     # Debug signup errors with detailed logging
 - [x] Redundant project documentation removed (SSOT enforcement)
 - [x] **Account deletion RLS policy fix implemented** (December 13, 2025)
 - [x] **Contact/Support page implemented with database storage** (December 14, 2025)
+- [x] **Advanced image optimization implemented** (December 14, 2025)
+  - WebP format support with automatic detection
+  - EXIF metadata stripping for privacy and size reduction
+  - Progressive JPEG creation for better loading experience
+  - 70-90% file size reduction with maintained quality
 
 ### 🚧 In Progress
 - [ ] Lighthouse audit and performance optimization
@@ -200,6 +205,7 @@ supabase-debug-signup.sql     # Debug signup errors with detailed logging
 - **Profile Features:** Custom avatars, status messages
 - **GDPR Export:** Download all user data
 - **Vibe System:** Colored bullets, alias management, privacy controls
+- **Advanced Image Optimization:** WebP support, EXIF stripping, progressive loading
 
 ---
 

@@ -1,8 +1,8 @@
 # MXN.CHAT Technical Architecture & File Structure (SSOT)
 
-**Document Date:** December 13, 2025 12:00 CST  
-**Last Updated:** December 13, 2025  
-**Version:** 2.2.0  
+**Document Date:** December 17, 2025 12:00 CST  
+**Last Updated:** December 17, 2025  
+**Version:** 2.2.1  
 **Status:** Production Active
 
 ---
@@ -133,6 +133,7 @@ src/
 │   ├── analytics.tsx             # Analytics tracking (Vercel)
 │   ├── billingSystem.ts          # Billing and payment logic
 │   ├── defaultRooms.ts           # Default room configurations
+│   ├── imageUtils.ts             # Advanced image optimization and processing
 │   ├── linkPreview.ts            # Link preview generation
 │   ├── mediaProcessing.ts        # Media file processing
 │   ├── messageParser.ts          # Message parsing (@mentions, links)

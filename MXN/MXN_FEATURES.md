@@ -22,6 +22,53 @@ This document contains an exhaustive list of potential features, enhancements, a
 7. **User Vibe**: Every User starts out with their own Topic/Vibe/wall/place to post their moods and feelings. These are safeguarded by their parameters.
 8. **A/B Testing & Environment Control**: Implement a robust system for testing UI variations (Sidebar, Vibe Lounge, Landing Page) and managing Live vs. Staging environments using Vercel Edge Middleware and Supabase Projects. See [MXN_ABTESTING.md](MXN_ABTESTING.md) for details.
 
+
+Vibe Indictors
+
+RightSidebar layout
+                                                        left aligned
+                                                           v 
+|Profile Pick|  |User Alias |v| <- Alias name dropdown.   |O| <- Vibe "Indicator" Status Filled Circle + left aligned + default Color + small text inside Filled Cirlce "SET"
+
+__________________
+|User Alias 01 |v| <- Alias name dropdown. 
+|User Alias 02 | | 
+|User Alias 03 | | 
+|+   NEW Alias | | 
+------------------
+
+
+
+
+the 'O' Represient the "Filled in Colored Circles",
+Place circles in a bos that in-line with current Vibe Indicator. 
+When Hover or Pressed Box Quickly fades in and is positioned based on last Vibe or Set to Defaul.  CIRCLES containg SMALL TEXT CHILL, HYPED, FOCUSED, ect.
+
+|O| <- Chill
+|O| <- Hype
+|O| <- Focus 
+|O| <- Default <- mxn blue         
+|O| <- Creative                    
+|O| <- Support
+|O| <- Wild
+
+______________________________________________
+VIBE LOUNGE -> TOPIC Status Vibe "Mood" Rings.  <- Flush Top
+
+                                  O O O O O O   <- Mood/Vibe Rings 
+----------------------------------------------  <- Purple Vibe Lounge Bar
+O       Oo.    O                 Oo. o       O      for Rings to Rest One.
+  O.   O        O       O   O O.    o O o
+O    O       O   O O.    O       O   O O.       <- USER's TOPICS Colored 
+    O       O   O O.                O.  O.  o      Based on that users Vibe
+        O       O   O O.    O       O   O O.       Size Changes With Number 
+                                                    Number of Users AND Circle TOPIC NAME on REVERVE COLOR TOPIC CIRCLE. When Hovered Circle enloarges for better veiw Increasing size of topic name. As topics are added they fade in and slowly move to the bottom. Responses make the Compback in from top.
+                                                    Like The Prices Right's PLINKO game the Drop-in as more come on line the screen fiils. 
+
+                                                    Pressing the Mood VIBE Ring SELECTS TOPICs of With those Moods/Vibe.
+
+
+
 ## 📊 Priority Matrix Legend
 
 - **🔴 P0:** Critical / MVP requirements
@@ -126,12 +173,74 @@ This document contains an exhaustive list of potential features, enhancements, a
 | Image gallery view | 🟡 P1 | M | Medium | Media browsing |
 | File size limits by tier | 🟡 P1 | S | High | Monetization |
 | Cloud storage integration (Drive, Dropbox) | 🔵 P3 | L | Medium | Convenience |
-| File compression/optimization | 🟡 P1 | M | Medium | Cost savings |
+| File compression/optimization | ✅ Implemented | - | - | Automatic image resizing & JPEG compression |
 | Image editing before send | 🟢 P2 | M | Low | User control |
 | OCR for images (text extraction) | 🔵 P3 | M | Low | Advanced |
 | File scanning (virus/malware) | 🟡 P1 | M | High | Security |
 | File expiration/auto-delete | 🟡 P1 | M | Medium | Storage management |
 | Download limits | 🔵 P3 | S | Low | Bandwidth control |
+
+---
+
+## 2.5. ⚡ Performance & Optimization
+
+### Image Optimization & Compression
+| Feature | Priority | Effort | Business Value | Notes |
+|---------|----------|--------|----------------|-------|
+| **Automatic image resizing** | ✅ Implemented | - | - | Max 1200px, maintains aspect ratio |
+| **Smart format conversion** | ✅ Implemented | - | - | JPEG 80% quality for messages |
+| **Profile picture optimization** | ✅ Implemented | - | - | 256x256px circular crops |
+| **Progressive JPEG loading** | 🟡 P1 | S | High | Faster perceived loading |
+| **WebP format support** | 🟡 P1 | M | High | 25-35% smaller files |
+| **AVIF format support** | 🟢 P2 | M | Medium | Next-gen compression |
+| **Multi-resolution images** | 🟡 P1 | M | High | Adaptive quality |
+| **Lazy loading with blur placeholders** | 🟡 P1 | M | High | Better UX, saves bandwidth |
+| **EXIF data stripping** | 🟡 P1 | S | Medium | Privacy & size reduction |
+| **Duplicate image detection** | 🟢 P2 | M | Medium | Storage efficiency |
+| **Image CDN optimization** | 🟡 P1 | M | High | Global performance |
+| **Client-side compression** | ✅ Implemented | - | - | Before upload |
+| **Quality-based optimization** | 🟢 P2 | M | Medium | Content-aware compression |
+| **Thumbnail generation** | 🟡 P1 | M | High | Gallery views & previews |
+| **Image metadata caching** | 🟢 P2 | S | Medium | Faster loads |
+| **Bandwidth-adaptive quality** | 🔵 P3 | M | Low | Connection-aware |
+| **Offline image caching** | 🟢 P2 | M | Medium | PWA functionality |
+| **Image transformation API** | 🟢 P2 | L | Medium | Dynamic resizing |
+
+### Storage Optimization
+| Feature | Priority | Effort | Business Value | Notes |
+|---------|----------|--------|----------------|-------|
+| **File deduplication** | 🟢 P2 | M | High | Prevent duplicate uploads |
+| **Automatic file expiration** | 🟡 P1 | M | High | Storage cost control |
+| **Tiered storage limits** | 🟡 P1 | M | High | Monetization |
+| **Compression before storage** | ✅ Implemented | - | - | All images optimized |
+| **Storage analytics dashboard** | 🟢 P2 | M | Medium | Usage insights |
+| **Bulk file management** | 🟢 P2 | M | Medium | Admin tools |
+| **Storage quota warnings** | 🟡 P1 | S | High | User awareness |
+| **File type restrictions** | 🟡 P1 | S | High | Security & cost |
+
+### Network & Loading Performance
+| Feature | Priority | Effort | Business Value | Notes |
+|---------|----------|--------|----------------|-------|
+| **HTTP/2 Server Push** | 🟢 P2 | M | Medium | Faster initial loads |
+| **Service Worker caching** | 🟡 P1 | M | High | Offline functionality |
+| **Critical CSS inlining** | 🟡 P1 | S | High | Faster rendering |
+| **Font loading optimization** | 🟡 P1 | S | High | Text rendering |
+| **JavaScript code splitting** | 🟡 P1 | M | High | Bundle size reduction |
+| **Image lazy loading** | 🟡 P1 | S | High | Bandwidth savings |
+| **Progressive Web App (PWA)** | 🟡 P1 | L | High | Mobile experience |
+| **Connection quality detection** | 🟢 P2 | M | Medium | Adaptive loading |
+| **Background sync** | 🟢 P2 | M | Medium | Offline messaging |
+
+### Database & API Optimization
+| Feature | Priority | Effort | Business Value | Notes |
+|---------|----------|--------|----------------|-------|
+| **Query result caching** | 🟡 P1 | M | High | Faster responses |
+| **Database connection pooling** | 🟡 P1 | M | High | Scalability |
+| **API response compression** | 🟡 P1 | S | High | Bandwidth reduction |
+| **Real-time subscription optimization** | 🟡 P1 | M | High | Live chat performance |
+| **Pagination for large datasets** | ✅ Implemented | - | - | Efficient loading |
+| **Database indexing strategy** | 🟡 P1 | M | High | Query performance |
+| **CDN for static assets** | 🟡 P1 | M | High | Global distribution |
 
 ---
 
