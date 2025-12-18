@@ -6,6 +6,11 @@ Review Current status of MXN_ROADMAP.md, MXN_FEATURES.md, MXN_LIFECYCLE.md, MXN_
 
 Run Tests and Report.
 
+** Testing Accounts
+These names need to FOREVER be reserved and off limits for Account Creations.
+
+mxn, mxn.chat, vibe, bubble, bubbles, thoughts, thought, Shodai, Gyakushū, Mosu, Dai Senso, San Daikaiju, Ebirah, Gaira, Soshingeki, Hedorah, Gigan, Megaro, Meka
+
 **RLS Tests**
 : A new RLS policy test script was added at `scripts/test_rls.js`. Set the following environment variables to run the script:
 

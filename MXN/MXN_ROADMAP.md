@@ -1,10 +1,10 @@
 # MXN.CHAT Master Roadmap (SSOT)
 
-**Document Date:** December 13, 2025 12:00 CST  
-**Last Updated:** December 14, 2025  
-**Version:** 1.6.1 (UI Improvements & Room Management)  
+**Document Date:** December 17, 2025 12:00 CST  
+**Last Updated:** December 17, 2025  
+**Version:** 1.6.2 (Documentation Sync & Image Optimization)  
 **Status:** Phase 1 Complete - MVP 1.1.0 Deployed, Phase 1.6+ P1 Features Planned  
-**Next Review:** December 15, 2025 (Daily)
+**Next Review:** December 18, 2025 (Daily)
 
 ---
 ## Prompt Current need chages.
@@ -33,6 +33,12 @@
 3. [✅] Added basic vibe selection with 6 predefined vibes (Chill, Hype, Focus, Creative, Support, Wild)
 4. [✅] Connected alias editing to existing updateDisplayName functionality
 5. [✅] Updated MXN_ROADMAP.md to reflect completion of settings controls implementation
+6. [✅] **Advanced image optimization implemented** (December 14, 2025)
+   - WebP format support with automatic browser detection
+   - EXIF metadata stripping for privacy and size reduction
+   - Progressive JPEG creation for better loading experience
+   - 70-90% file size reduction with maintained image quality
+   - Client-side optimization before upload to reduce storage costs
 
 
 ## 1. 🎯 Vision Statement
@@ -688,19 +694,19 @@ ALTER TABLE rooms ADD COLUMN vibe_settings JSONB DEFAULT '{}';
 
 ---
 
-### 10.4 Terminology Update: Rooms → Topics
-**Feature:** Dual terminology support (Rooms/Topics interchangeable)
+### 10.4 Terminology Update: Rooms → Thoughts
+**Feature:** Dual terminology support (Rooms/Thoughts interchangeable)
 **Status:** 🟡 Planned - Phase 1.6
 **Priority:** Low (UX Clarity)
 
 **Implementation Strategy:**
 ```typescript
-// Use "Topics" in UI, "rooms" in code/database
+// Use "Thoughts" in UI, "rooms" in code/database
 const UI_LABELS = {
-  room: 'Topic',
-  rooms: 'Topics',
-  createRoom: 'Create Topic',
-  deleteRoom: 'Delete Topic'
+	room: 'Thought',
+	rooms: 'Thoughts',
+	createRoom: 'Share Thought',
+	deleteRoom: 'Delete Thought'
 };
 
 // Keep database table name as "rooms" for stability

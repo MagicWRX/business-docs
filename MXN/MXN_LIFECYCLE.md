@@ -78,19 +78,20 @@ Users classify each other using a 5-tier trust hierarchy:
 
 ⸻
 
-5. Topics
+5. Thoughts
 
-5.1 Topic Creation
-	•	Users can create topic rooms inside their Vibe.
-	•	Topics may relate to interests (e.g., Cowboy Movies, Football, American History, News, etc.).
-	•	Each topic inherits:
+
+5.1 Thought Sharing
+	•	Users can share thought rooms inside their Vibe.
+	•	Thoughts may relate to interests (e.g., Cowboy Movies, Football, American History, News, etc.).
+	•	Each thought inherits:
 	•	The alias’s vibe settings
 	•	The alias’s boundaries
 	•	The alias’s triggers
 
-5.2 Topic Ownership
-	•	Only the creator can delete a topic.
-	•	Topic auto-deletes 24 hours after last activity.
+5.2 Thought Ownership
+	•	Only the creator can delete a thought.
+	•	Thought auto-deletes 24 hours after last activity.
 
 ⸻
 

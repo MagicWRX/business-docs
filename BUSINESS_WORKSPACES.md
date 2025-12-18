@@ -1,10 +1,12 @@
 # Business Workspaces Overview
 
-**Document Date:** December 5, 2025  
-**Version:** 1.0.0  
-**Last Updated:** December 5, 2025
+**Document Date:** December 16, 2025  
+**Version:** 1.0.1  
+**Last Updated:** December 16, 2025
 
 ---
+## Business Workspaces Prompt
+
 
 ## Overview
 
@@ -15,13 +17,15 @@ This document provides a comprehensive overview of all active business workspace
 | Workspace | Title | Group | Purpose | Tech Stack | Status | Location |
 |-----------|-------|-------|---------|------------|--------|----------|
 | DOCs/ | Documentation Hub | Platform Ops | Central documentation, roadmaps and standards | Markdown | Active | `/Users/brianlindahl/Development/Business/DOCs/` |
-| mxn-chat/ | MXN Chat | Apps/Templates | Real-time gaming chat (can be launched as an add-on app) | Next.js, Firebase | Deployed | `/Users/brianlindahl/Development/Business/Websites/mxn-chat/` |
-| MagicWRX/ | Magic WRX (HEAD) | Platform Core | Freemium website builder + template marketplace (head project) | Next.js, Firebase, Stripe | Production-ready | `/Users/brianlindahl/Development/Business/Websites/MagicWRX/` |
-| base-template/ | Base Template (DRY) | Templates | Core dry template (recommended canonical starter) | Next.js 15, React 19, Tailwind | Deployed | `/Users/brianlindahl/Development/Business/Websites/base-template/` |
-| auth-tool/ | Auth Tool | Platform Core | Packaged Google OAuth / Supabase auth starting point for user verification | Next.js, Supabase | Deployed | `/Users/brianlindahl/Development/Business/Websites/auth-tool/` |
-| auth-tool-package/ | Auth Tool Package | Platform Core | Distribution package for Auth Tool with scripts and docs | Next.js, Supabase | Deployed | `/Users/brianlindahl/Development/Business/Websites/auth-tool-package/` |
-| Template-WRX/ | Template WRX | Templates Marketplace | Collection of business templates and deploy scripts | Next.js, Firebase | Deployed | `/Users/brianlindahl/Development/Business/Websites/Template-WRX/` |
-| hello-world-vercel-main/ | Hello Vercel Demo | Samples | Minimal Vercel demo used for tests and quickstarts | Next.js | Deployed | `/Users/brianlindahl/Development/Business/Websites/hello-world-vercel-main/` |
+| mxn-chat/ | MXN Chat | Apps/Templates | Real-time gaming chat (can be launched as an add-on app) | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/mxn-chat/` |
+| MagicWRX/ | Magic WRX (HEAD) | Platform Core | Freemium website builder + template marketplace (head project) | Next.js, Firebase, Stripe | Live | `/Users/brianlindahl/Development/Business/Websites/MagicWRX/` |
+| base-template/ | Base Template (DRY) | Templates | Core dry template (recommended canonical starter) | Next.js 16, React 19, Tailwind | Live | `/Users/brianlindahl/Development/Business/Websites/base-template/` |
+| auth-tool/ | Auth Tool | Platform Core | Packaged Google OAuth / Supabase auth starting point for user verification | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/auth-tool/` |
+| auth-tool-package/ | Auth Tool Package | Platform Core | Distribution package for Auth Tool with scripts and docs | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/auth-tool-package/` |
+| Template-WRX/ | Template WRX | Templates Marketplace | Collection of business templates and deploy scripts | Next.js, Firebase | Live | `/Users/brianlindahl/Development/Business/Websites/Template-WRX/` |
+| hello-world-vercel-main/ | Hello Vercel Demo | Samples | Minimal Vercel demo used for tests and quickstarts | Next.js | Live | `/Users/brianlindahl/Development/Business/Websites/hello-world-vercel-main/` |
+| amazinglystrange/ | Amazingly Strange | Gaming Platform | Gaming community platform with blog and admin features | PHP, Firebase | Live | `/Users/brianlindahl/Development/Hosting/amazinglystrange/` |
+| Amazingly-Strange-Website/ | Amazingly Strange Website | Gaming Platform | Next.js version of gaming platform with Supabase | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Amazingly-Strange-Website/amazingly-strange-website/` |
 
 ---
 
@@ -58,14 +62,14 @@ This document provides a comprehensive overview of all active business workspace
 - Single chatroom with AdMob integration at top
 - Mobile-responsive design (Flutter compatibility mentioned)
 
-**Current Status:** Migrating from Firebase to Supabase. Code updated, database schema ready. Deployed at https://mxn-chat.web.app (Firebase - legacy) and https://mxn-chat-dxtlqwkli-magicwrxs-projects.vercel.app (Vercel). All Firebase services active but transitioning to Supabase for better scalability.
+**Current Status:** Successfully migrated to Supabase and deployed live at https://www.mxn.chat. All Firebase services decommissioned in favor of Supabase for better scalability.
 
-**Next Steps:** Complete Supabase setup (database schema, auth configuration), test migration, migrate user data if needed, decommission Firebase services.
+**Next Steps:** Monitor performance, gather user feedback, and consider additional features like multiple chat rooms or enhanced moderation tools.
 
 ### MagicWRX/
 **Purpose:** Premium business website builder platform offering a marketplace of professional templates with integrated authentication and admin management.
 
-**Technologies:** Next.js 15, React 19, TypeScript, Tailwind CSS, Firebase v10 (Auth, Firestore, Analytics, Storage), Stripe integration.
+**Technologies:** Next.js 16, React 19, TypeScript, Tailwind CSS, Firebase v10 (Auth, Firestore, Analytics, Storage), Stripe integration.
 
 **Key Features:**
 - 5 premium business templates: E-commerce Store, SaaS Platform, Portfolio Website, Restaurant Menu, Corporate Website
@@ -76,14 +80,14 @@ This document provides a comprehensive overview of all active business workspace
 - Demo mode available without Firebase setup
 - Flutter mobile app compatibility built-in
 
-**Current Status:** Production-ready with comprehensive Firebase integration. Includes troubleshooting guides and automated deployment scripts.
+**Current Status:** Live and production-ready at https://www.magicwrx.com with comprehensive Firebase integration. Includes troubleshooting guides and automated deployment scripts. AI functionality temporarily disabled due to React 19 compatibility issues.
 
-**Next Steps:** Focus on marketplace growth, implement Stripe payments, expand template library, and optimize for mobile app deployment.
+**Next Steps:** Re-enable AI functionality once React 19 compatibility is resolved, implement Stripe payments, expand template library, and optimize for mobile app deployment.
 
 ### base-template/
 **Purpose:** Individual business website template specifically designed for computer repair services, optimized for quick deployment on Vercel.
 
-**Technologies:** Node.js with Express server, vanilla HTML/CSS/JavaScript, Vercel deployment.
+**Technologies:** Next.js 16, React 19, Tailwind CSS, Vercel deployment.
 
 **Key Features:**
 - Responsive mobile-first design
@@ -93,7 +97,7 @@ This document provides a comprehensive overview of all active business workspace
 - SEO optimized with proper meta tags
 - Easy customization guide for business owners
 
-**Current Status:** Deployed at https://base-template-j8e75vif1-magicwrxs-projects.vercel.app. Core dry template (recommended canonical starter) with Next.js 15, React 19, and Tailwind CSS.
+**Current Status:** Live at https://base-template-pi.vercel.app. Core dry template (recommended canonical starter) with Next.js 16, React 19, and Tailwind CSS.
 
 **Next Steps:** Deploy customized versions for different repair businesses, potentially expand to other service industries.
 
@@ -110,9 +114,9 @@ This document provides a comprehensive overview of all active business workspace
 - Session management and user profiles
 - Environment variable management for production
 
-**Current Status:** Successfully deployed to Vercel at https://apps-gnl0vc31n-magicwrxs-projects.vercel.app. Requires Supabase project setup and Google OAuth configuration to be fully operational.
+**Current Status:** Live at https://apps-gnl0vc31n-magicwrxs-projects.vercel.app. Fully operational with Supabase project setup and Google OAuth configuration.
 
-**Next Steps:** Complete Supabase project creation, configure Google OAuth credentials, add environment variables to Vercel, and test authentication flow.
+**Next Steps:** Monitor authentication flows, gather user feedback, and consider additional features like social login options.
 
 ### auth-tool-package/
 **Purpose:** Packaged distribution of the Google OAuth authentication tool, providing a ready-to-deploy authentication solution.
@@ -125,9 +129,9 @@ This document provides a comprehensive overview of all active business workspace
 - Comprehensive documentation and helper scripts
 - Same features as auth-tool: Google OAuth, protected routes, admin dashboard
 
-**Current Status:** Deployed at https://auth-tool-package-io51xm33-magicwrxs-projects.vercel.app. Distribution package for Auth Tool with scripts and docs, ready for use.
+**Current Status:** Live at https://auth-tool-package-io51xm33-magicwrxs-projects.vercel.app. Fully operational distribution package for Auth Tool with scripts and docs.
 
-**Next Steps:** Same as auth-tool - requires Supabase and Google OAuth configuration for full functionality.
+**Next Steps:** Same as auth-tool - monitor performance and gather feedback for improvements.
 
 ### Template-WRX/
 **Purpose:** Business website template platform similar to MagicWRX, focused on providing ready-to-use templates for various business types.
@@ -143,7 +147,7 @@ This document provides a comprehensive overview of all active business workspace
 - Demo mode without Firebase setup
 - Template customization and deployment tools
 
-**Current Status:** Deployed at https://template-1dpr0oe6x-magicwrxs-projects.vercel.app. Production-ready template platform with Firebase integration. Includes deployment scripts and customization guides.
+**Current Status:** Live at https://template-wrx.vercel.app. Production-ready template platform with Firebase integration. Includes deployment scripts and customization guides.
 
 **Next Steps:** Implement template marketplace features, add more business template categories, integrate payment processing.
 
@@ -159,11 +163,42 @@ This document provides a comprehensive overview of all active business workspace
 - Environment variable configuration for Supabase
 - Basic Next.js project structure
 
-**Current Status:** Deployed at https://hello-world-vercel-main-ayqwq2u73-magicwrxs-projects.vercel.app. Minimal Vercel demo used for tests and quickstarts with static HTML and API functions.
+**Current Status:** Live at https://hello-world-vercel-main-ayqwq2u73-magicwrxs-projects.vercel.app. Minimal Vercel demo used for tests and quickstarts with static HTML and API functions.
 
 **Next Steps:** Use as a starting point for more complex Vercel projects, or as a reference for serverless API implementation.
 
----
+### amazinglystrange/
+**Purpose:** Gaming community platform with blog functionality, admin management, and Firebase backend.
+
+**Technologies:** PHP, Firebase (Auth, Firestore, Storage), HTML/CSS/JavaScript.
+
+**Key Features:**
+- Blog post management system
+- Admin dashboard for content management
+- Firebase authentication and data storage
+- Gaming-focused community features
+- Media upload and management
+
+**Current Status:** Live Firebase-hosted platform for gaming community.
+
+**Next Steps:** Monitor community engagement and consider feature enhancements.
+
+### Amazingly-Strange-Website/
+**Purpose:** Next.js version of the gaming platform with Supabase backend, providing enhanced performance and scalability.
+
+**Technologies:** Next.js 16, React 19, TypeScript, Supabase (Auth, PostgreSQL), Tailwind CSS.
+
+**Key Features:**
+- Modern Next.js application structure
+- Supabase authentication and database
+- Blog functionality with rich text editing
+- Admin dashboard for content management
+- Gaming community features
+- Mobile-responsive design
+
+**Current Status:** Live at https://amazingly-strange-website-beta.vercel.app. Successfully deployed with Supabase integration.
+
+**Next Steps:** Complete full feature migration from PHP version, optimize performance, and enhance user experience.
 
 ## Maintenance Notes
 
@@ -173,9 +208,9 @@ This document provides a comprehensive overview of all active business workspace
 
 ---
 
-**Document Version**: 1.0.0  
-**Last Updated**: December 5, 2025  
-**Next Review**: March 5, 2026
+**Document Version**: 1.0.1  
+**Last Updated**: December 16, 2025  
+**Next Review**: March 16, 2026
 
 ---
 
