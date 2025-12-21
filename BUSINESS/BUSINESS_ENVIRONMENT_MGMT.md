@@ -118,7 +118,7 @@ OPENAI_API_KEY=sk-[...]
 
 # App Config
 NEXT_PUBLIC_APP_URL=https://magicwrx.vercel.app
-NEXT_PUBLIC_APP_URL_LOCAL=http://localhost:3001
+NEXT_PUBLIC_APP_URL_LOCAL=http://localhost:3002
 ```
 
 **Migration Checklist:**
@@ -162,7 +162,7 @@ NEXT_PUBLIC_SENDER_EMAIL=community@amazinglystrange.com
 
 # App Config
 NEXT_PUBLIC_APP_URL=https://amazinglystrange.com
-NEXT_PUBLIC_APP_URL_LOCAL=http://localhost:3002
+NEXT_PUBLIC_APP_URL_LOCAL=http://localhost:3003
 ```
 
 ---

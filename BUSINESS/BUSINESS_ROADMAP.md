@@ -14,6 +14,9 @@
 4. [x] Review /Users/brianlindahl/Development/Business/DOCs/MXN documents for refined direction. - **COMPLETED**: MXN.CHAT deployed and operational
 5. [x] Two SUPABASE Account Solutions. MagicWRXStudios@gmail.com and brian@AmazinglyStrange.com I need to separate .env.local. - **COMPLETED**: Account separation implemented across all projects
 6. [x] Update ./start-local.sh for BUSINESS_WORKSPASE.md Testing. - **COMPLETED**: Unified start-all-local.sh created for all 5 projects (ports 3000-3004)
+7. [x] Platform Architecture Decision: Multi-Tenant vs Separate Databases. - **COMPLETED**: Multi-tenant RLS architecture chosen for MagicWRX to support unlimited clients on 2 Supabase projects
+8. [x] Centralized ADMIN System Design. - **COMPLETED**: /ADMIN/ multi-tenant dashboard architecture designed
+9. [x] Shared Component Library Strategy. - **COMPLETED**: /SHARED/ directory structure planned for auth-tool, blog-engine, layout-manager, media-library
 
 
 ## 🎯 CODE QUALITY PRINCIPLES
@@ -108,9 +111,81 @@ Business/                                       # 🏢 AMAZING BUSINESS ROOT
 ├── DOCs/                                       # 📚 Master Documentation Hub
 │   ├── BUSINESS_ROADMAP.md                     # This file
 │   ├── BUSINESS_AI_PROMPT.md                   # AI assistant guide
+│   ├── BUSINESS_ADMIN.md                       # Admin architecture guide
+│   ├── BUSINESS_WORKSPACES.md                  # Workspace overview
+│   ├── BUSINESS_VERCEL.md                      # Deployment strategies
 │   ├── amazing_business_strategy.md            # Core business strategy
 │   ├── amazing_business_strategy copy.md       # Gaming-focused strategy
 │   └── amazing_tech_stack_guide.md             # Technical architecture
+│
+├── ADMIN/                                      # 🎛️ MASTER ADMIN DASHBOARD
+│   ├── src/                                    # Multi-tenant admin app
+│   │   ├── app/                                # Next.js 15 App Router
+│   │   │   ├── dashboard/                      # Site selector dashboard
+│   │   │   ├── amazinglystrange/               # AS-specific admin
+│   │   │   │   ├── blog/                       # Blog management
+│   │   │   │   ├── media/                      # Media library
+│   │   │   │   └── layout-manager/             # Layout builder
+│   │   │   ├── magicwrx/                       # MagicWRX-specific admin
+│   │   │   │   ├── clients/                    # Client management
+│   │   │   │   ├── templates/                  # Template marketplace
+│   │   │   │   ├── billing/                    # Stripe integration
+│   │   │   │   └── revenue-share/              # AdSense tracking
+│   │   │   └── mxn/                            # MXN-specific admin
+│   │   │       ├── users/                      # User management
+│   │   │       ├── aliases/                    # Alias management
+│   │   │       ├── vibes/                      # Vibe controls
+│   │   │       └── moderation/                 # Content moderation
+│   │   ├── components/
+│   │   │   ├── shared/                         # Reusable admin UI
+│   │   │   └── site-specific/                  # Custom per site
+│   │   └── lib/
+│   │       ├── supabase/
+│   │       │   ├── amazinglystrange.ts         # AS Supabase client
+│   │       │   ├── magicwrx.ts                 # MagicWRX client
+│   │       │   └── mxn.ts                      # MXN client
+│   │       └── auth/
+│   │           └── multi-tenant.ts             # Multi-tenant auth
+│   └── .env.local                              # All Supabase credentials
+│
+├── SHARED/                                     # 📦 REUSABLE COMPONENT LIBRARY
+│   ├── auth-tool/                              # Google OAuth + Supabase
+│   │   ├── package.json                        # NPM package
+│   │   ├── src/
+│   │   │   ├── components/                     # Auth UI components
+│   │   │   ├── hooks/                          # useAuth hook
+│   │   │   └── lib/                            # Supabase client setup
+│   │   └── README.md                           # Integration guide
+│   ├── blog-engine/                            # Blog CMS (from AS)
+│   │   ├── package.json
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   │   ├── BlogEditor.tsx              # WYSIWYG editor
+│   │   │   │   ├── BlogList.tsx                # Post listing
+│   │   │   │   └── BlogPreview.tsx             # Live preview
+│   │   │   └── hooks/
+│   │   │       └── useBlogPosts.ts             # Blog data hook
+│   │   └── README.md
+│   ├── layout-manager/                         # Visual page builder (from AS)
+│   │   ├── package.json
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   │   ├── LayoutBuilder.tsx           # Drag-drop builder
+│   │   │   │   ├── ElementLibrary.tsx          # Component library
+│   │   │   │   └── LayoutPreview.tsx           # Preview pane
+│   │   │   └── hooks/
+│   │   │       └── useLayouts.ts               # Layout data hook
+│   │   └── README.md
+│   └── media-library/                          # Media management
+│       ├── package.json
+│       ├── src/
+│       │   ├── components/
+│       │   │   ├── MediaUploader.tsx           # Upload interface
+│       │   │   ├── MediaBrowser.tsx            # Browse/select
+│       │   │   └── ImageOptimizer.tsx          # WebP conversion
+│       │   └── hooks/
+│       │       └── useMedia.ts                 # Media data hook
+│       └── README.md
 │
 ├── Websites/                                   # 🌐 WEB PLATFORMS
 │   │
@@ -229,8 +304,15 @@ Business/                                       # 🏢 AMAZING BUSINESS ROOT
 ## 🎯 MVP SCOPE & OBJECTIVES
 
 ### **Mission Statement**
-Transform from a gaming/web tools company into a monopolized template-based web hosting empire.
+Build a scalable Platform-as-a-Service (PaaS) ecosystem that enables unlimited clients to deploy professional websites, blogs, and applications through a multi-tenant architecture.
+
 **Strategic Pivot:** Use **MXN.CHAT** as the "Spearhead" product to drive immediate user acquisition and revenue, validating the platform infrastructure before scaling the full MagicWRX hosting solution.
+
+**Architecture Philosophy:**
+- **Multi-Tenant Design**: One Supabase database serves unlimited clients via Row-Level Security (RLS)
+- **Shared Components**: Reusable auth, blog, layout, and media libraries reduce development costs
+- **Centralized Admin**: Single dashboard manages all platforms (AmazinglyStrange, MagicWRX, MXN.CHAT)
+- **Cost Efficiency**: 2 Supabase projects support entire business (MagicWRX multi-tenant + MXN.CHAT privacy-isolated)
 
 ### **Core Value Propositions**
 
@@ -273,7 +355,320 @@ Transform from a gaming/web tools company into a monopolized template-based web 
 
 ---
 
-## 📅 ACTION ITEMS: NOW, NEXT, LATER
+## 📅 ACTION ITEMS: NOW, NEXT, LATER (Updated Dec 18, 2025)
+
+**Strategic Shift:** Pragmatic phased approach that keeps production sites operational while building new centralized architecture.
+
+---
+
+## 🔥 NOW (December 2025 - Production Stability FIRST)
+
+**Philosophy:** Don't break what's working. Fix production admin panels BEFORE building new systems.
+
+### **Priority 0: AmazinglyStrange.com Firebase Admin** 🚨
+
+- [ ] **Audit Current Admin (`/admin.html`)**
+  - Location: `/Users/brianlindahl/Development/Hosting/amazinglystrange/public/admin.html`
+  - [ ] Test blog post creation/editing/deletion
+  - [ ] Test media upload to Firebase Storage
+  - [ ] Test layout manager functionality
+  - [ ] Verify page management works
+  - [ ] Document any bugs or broken features
+  - **Status**: 🔴 CRITICAL - Production site dependency
+  - **Owner**: Brian
+  - **Deadline**: This week
+
+- [ ] **Fix Broken Features (if any)**
+  - [ ] Repair Firebase Storage connections
+  - [ ] Fix Firestore write permissions
+  - [ ] Update deprecated Firebase SDK calls
+  - [ ] Test on live site: https://amazinglystrange.com
+  - **Status**: 🔴 CRITICAL
+
+- [ ] **Backup Firebase Data**
+  - [ ] Export Firestore database (blog posts, pages, media metadata)
+  - [ ] Download all Firebase Storage files
+  - [ ] Document current schema
+  - [ ] Store backups in secure location
+  - **Status**: 🔴 CRITICAL
+
+### **Priority 1: MXN.CHAT Admin Essentials** 🚨
+
+- [ ] **Verify Current Admin Works**
+  - Location: `/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/app/admin/`
+  - [ ] Test user management interface
+  - [ ] Test message moderation (delete, ban)
+  - [ ] Test room management
+  - [ ] Verify analytics display
+  - [ ] Check Supabase RLS policies working
+  - **Status**: 🔴 CRITICAL - Production site dependency
+  - **Owner**: Brian
+  - **Deadline**: This week
+
+- [ ] **Add Reserved Alias Enforcement**
+  - [ ] Block at DB level: Shodai, Gyakushū, Mosu, Dai Senso, San Daikaiju, Ebirah, Gaira, Soshingeki, Hedorah, Gigan, Megaro, Meka, Brian, Brian Lindahl, Amy, Ethan, Elizabeth, Elijah, Bri, Brianna, Caiden, Jurney, mxn, mxn.chat, vibe, bubble, bubbles, thoughts, thought
+  - [ ] Add CHECK constraint to `user_aliases` table
+  - [ ] Create admin UI to view/manage reserved list
+  - [ ] Test alias creation blocked for reserved names
+  - **Status**: 🟡 HIGH PRIORITY
+  - **Deadline**: 2 weeks
+
+- [ ] **Basic Moderation Dashboard**
+  - [ ] View flagged messages
+  - [ ] Ban/unban users
+  - [ ] View user report history
+  - **Status**: 🟡 HIGH PRIORITY
+
+### **Priority 2: MagicWRX Production Access** 🔧
+
+- [ ] **Fix 401 Errors**
+  - Current URL: https://magic-g7ua1cnfl-magicwrxs-projects.vercel.app
+  - [ ] Investigate production authentication issues
+  - [ ] Make homepage publicly accessible (remove auth middleware)
+  - [ ] Test all public routes (/, /pricing, /templates, /contact)
+  - [ ] Verify environment variables on Vercel
+  - **Status**: 🔴 CRITICAL
+  - **Deadline**: This week
+
+- [ ] **Basic Stripe Setup**
+  - [ ] Create test products in Stripe Dashboard
+  - [ ] Set up webhook endpoints
+  - [ ] Test subscription flow locally
+  - [ ] Document Stripe configuration
+  - **Status**: 🟡 HIGH PRIORITY
+  - **Deadline**: 2 weeks
+
+---
+
+## 🚀 NEXT (January-February 2026 - Build Foundation Without Breaking Production)
+
+**Philosophy:** Extract reusable code. Start /ADMIN/ gradually. Run old and new systems in parallel.
+
+### **Week 1-2 (Early January): Create /SHARED/ Directory**
+
+- [ ] **Set Up /SHARED/ Structure**
+  - [ ] Create `/Users/brianlindahl/Development/Business/SHARED/` directory
+  - [ ] Set up package.json for each component
+  - [ ] Configure TypeScript
+  - [ ] Create README templates
+
+- [ ] **Move Auth Tool First**
+  - [ ] Copy `/Websites/auth-tool/` → `/SHARED/auth-tool/`
+  - [ ] Convert to importable npm package
+  - [ ] Test import in MagicWRX project
+  - [ ] Document installation instructions
+
+### **Week 3-4 (Mid January): Extract Blog Components**
+
+- [ ] **Create /SHARED/blog-engine/**
+  - [ ] Extract WYSIWYG editor from AmazinglyStrange
+  - [ ] Extract blog post management components
+  - [ ] Extract media library components
+  - [ ] **IMPORTANT**: Don't modify live Firebase admin during extraction
+
+- [ ] **Test Blog Engine Package**
+  - [ ] Test in isolated environment
+  - [ ] Verify no Firebase dependencies broken
+  - [ ] Document component API
+
+### **Week 5-6 (Late January): /ADMIN/ Foundation**
+
+- [ ] **Create /ADMIN/ Next.js Project**
+  - [ ] Initialize Next.js 15 at `/Users/brianlindahl/Development/Business/ADMIN/`
+  - [ ] Set up Tailwind CSS
+  - [ ] Configure TypeScript
+  - [ ] Create basic directory structure
+
+- [ ] **Multi-Supabase Client Setup**
+  - [ ] Create `lib/supabase/factory.ts`
+  - [ ] Configure environment variables for all 3 Supabase instances:
+    - AmazinglyStrange Supabase (brian@amazinglystrange.com)
+    - MagicWRX Supabase (magicwrxstudio@gmail.com)
+    - MXN Supabase (magicwrxstudio@gmail.com)
+  - [ ] Test connectivity to each instance
+  - [ ] Implement authentication middleware
+
+- [ ] **Build Site Switcher UI**
+  - [ ] Create dashboard page with site selector
+  - [ ] Add dropdown: AmazinglyStrange, MagicWRX, MXN
+  - [ ] Implement role-based routing (brian@ vs magicwrxstudio@)
+  - [ ] Test authentication with both admin emails
+
+### **Week 7-8 (Early February): Parallel Admin Systems**
+
+- [ ] **Build AmazinglyStrange Admin in /ADMIN/**
+  - [ ] Create `/admin/amazinglystrange/` routes
+  - [ ] Import blog-engine from /SHARED/
+  - [ ] Build media manager UI
+  - [ ] Build layout manager UI
+  - [ ] Test all features thoroughly
+
+- [ ] **Run BOTH Systems in Parallel**
+  - [ ] **Keep Firebase admin.html running at https://amazinglystrange.com/admin.html**
+  - [ ] **Deploy new /ADMIN/ to separate subdomain (admin.amazinglystrange.com)**
+  - [ ] Test both for 2 weeks minimum
+  - [ ] Gather feedback
+  - [ ] Fix bugs in new system before deprecating old
+
+### **Week 9-10 (Mid-Late February): MagicWRX Multi-Tenant**
+
+- [ ] **Design Multi-Tenant Schema**
+  - [ ] Create `clients` table
+  - [ ] Create `client_sites` table
+  - [ ] Create `client_blogs` table (Artist Platform)
+  - [ ] Create `client_media` table
+  - [ ] Write RLS policies
+
+- [ ] **Test Schema in Development**
+  - [ ] Set up test Supabase project
+  - [ ] Run migrations
+  - [ ] Test RLS with multiple test users
+  - [ ] Verify data isolation
+
+- [ ] **Build Client Onboarding**
+  - [ ] Create signup page for MagicWRX clients
+  - [ ] Implement Google OAuth for clients
+  - [ ] Build client dashboard
+  - [ ] Test with 3-5 beta users
+
+---
+
+## 🌟 LATER (March 2026+ - Full Migration & Scale)
+
+**Philosophy:** Deprecate old systems ONLY after new ones are 100% validated in production.
+
+### **Complete /ADMIN/ Migration**
+
+- [ ] **Build MagicWRX Admin**
+  - [ ] Client management (CRUD)
+  - [ ] Template marketplace management
+  - [ ] Billing dashboard (Stripe integration)
+  - [ ] Revenue sharing tracker (Google AdSense API)
+  - [ ] Analytics per client
+
+- [ ] **Build MXN Admin**
+  - [ ] Reserved alias system (DB-level enforcement)
+  - [ ] Vibe management
+  - [ ] Advanced moderation tools
+  - [ ] Analytics dashboard
+  - [ ] User behavior tracking
+
+- [ ] **Unified Analytics Dashboard**
+  - [ ] Cross-platform metrics
+  - [ ] Revenue tracking across all platforms
+  - [ ] User growth charts
+  - [ ] Performance monitoring
+
+### **Deprecate Old Admin Panels (30-Day Transition)**
+
+- [ ] **AmazinglyStrange Firebase Admin**
+  - [ ] Add deprecation warning banner (Week 1-2)
+  - [ ] Redirect to new /ADMIN/ with 10-second delay (Week 3-4)
+  - [ ] Full redirect, no delay (Week 5+)
+  - [ ] Archive old admin.html code
+  - [ ] Document migration in changelog
+
+- [ ] **MXN Project Admin**
+  - [ ] Add deprecation warning
+  - [ ] Redirect admin routes to /ADMIN/
+  - [ ] Remove old admin code from project
+  - [ ] Update documentation
+
+- [ ] **MagicWRX Placeholder Admin**
+  - [ ] Replace with /ADMIN/ link
+  - [ ] Clean up project structure
+
+### **Artist Blog Platform Launch**
+
+- [ ] **Beta Testing (Week 1-4)**
+  - [ ] Onboard 10 artists
+  - [ ] Test revenue sharing calculations
+  - [ ] Monitor Google AdSense integration
+  - [ ] Gather feedback
+  - [ ] Refine UX based on artist input
+
+- [ ] **Public Launch (Week 5+)**
+  - [ ] Marketing campaign
+  - [ ] SEO optimization for artist profiles
+  - [ ] Content guidelines and moderation
+  - [ ] Community building
+
+### **Pixel Art Platform**
+
+- [ ] **Design & Prototype**
+  - [ ] Create `pixel_art_posts` table in MagicWRX Supabase
+  - [ ] Build voting system
+  - [ ] Design gallery UI
+  - [ ] Create contest framework
+
+- [ ] **Beta Testing**
+  - [ ] Onboard 20 artists
+  - [ ] Test voting mechanics
+  - [ ] Refine UX
+  - [ ] Test revenue model
+
+- [ ] **Public Launch**
+  - [ ] Marketing campaign
+  - [ ] Launch contests/challenges
+  - [ ] Community moderation
+
+---
+
+## 📊 REALISTIC TIMELINE SUMMARY
+
+```
+DEC 2025          JAN 2026          FEB 2026          MAR 2026+
+─────────────     ─────────────     ─────────────     ──────────────
+FIX PRODUCTION    BUILD /SHARED/    BUILD /ADMIN/     FULL MIGRATION
+  (2 weeks)         (4 weeks)         (4 weeks)         (Ongoing)
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ • AS Admin   │  │ • Extract    │  │ • /ADMIN/ UI │  │ • Deprecate  │
+│   Working    │  │   auth-tool  │  │ • Multi-DB   │  │   old admins │
+│ • MXN Admin  │  │ • Extract    │  │ • Parallel   │  │ • Artist     │
+│   Working    │  │   blog-engine│  │   Systems    │  │   Blog Beta  │
+│ • MagicWRX   │  │ • Extract    │  │ • Test       │  │ • Scale to   │
+│   Access OK  │  │   components │  │   Thoroughly │  │   100 clients│
+└──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘
+```
+
+---
+
+## ⚠️ CRITICAL RULES (NON-NEGOTIABLE)
+
+1. **NEVER break production sites** - AmazinglyStrange and MXN are LIVE
+2. **Run old and new systems in PARALLEL** during migration (minimum 2 weeks)
+3. **Test new admin for 2+ weeks** before deprecating old systems
+4. **Keep Firebase admin.html working** until new /ADMIN/ is 100% validated
+5. **Always have rollback plan** - can revert to old admin at any time
+6. **Incremental migration** - one feature at a time, test thoroughly
+7. **User communication** - warn users before deprecating old systems
+
+---
+
+## 🎯 SUCCESS CRITERIA PER PHASE
+
+### **NOW Phase Success (December 2025)**
+- ✅ AmazinglyStrange admin working 100% (blog, media, layout manager)
+- ✅ MXN.CHAT admin working 100% (moderation, analytics, reserved aliases)
+- ✅ MagicWRX production site accessible (401 errors fixed)
+- ✅ Zero production downtime
+- ✅ All data backed up
+
+### **NEXT Phase Success (January-February 2026)**
+- ✅ /SHARED/ library operational and tested
+- ✅ /ADMIN/ dashboard functional with multi-Supabase support
+- ✅ AmazinglyStrange admin migrated (but old one still works)
+- ✅ Both systems run in parallel for 2+ weeks without issues
+- ✅ Multi-tenant schema tested in development
+
+### **LATER Phase Success (March+ 2026)**
+- ✅ Old admin panels deprecated after successful transition
+- ✅ Artist Blog beta launched with 10+ artists
+- ✅ 10+ MagicWRX paying clients onboarded
+- ✅ $5k MRR achieved
+- ✅ Zero complaints about admin migration
+
+---
 
 ## 🔥 NOW (Current Sprint - Week of Oct 12, 2025)
 

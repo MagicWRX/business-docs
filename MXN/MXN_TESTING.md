@@ -9,7 +9,22 @@ Run Tests and Report.
 ** Testing Accounts
 These names need to FOREVER be reserved and off limits for Account Creations.
 
-mxn, mxn.chat, vibe, bubble, bubbles, thoughts, thought, Shodai, Gyakushū, Mosu, Dai Senso, San Daikaiju, Ebirah, Gaira, Soshingeki, Hedorah, Gigan, Megaro, Meka
+I need Admin Panel and Controls.
+There is only one Master Admin and it is hard coded as owner of magicwrxstudios@gmail.com.
+
+magicwrxstudio@gmail has the following never expiring Alias: Shodai, Gyakushū, Mosu, Dai Senso, San Daikaiju, Ebirah, Gaira, Soshingeki, Hedorah, Gigan, Megaro, Meka, Brian, Brian Lindahl.
+
+I need to reserve Names for employes. 
+
+Master Admin(magicwrxstudio@gmail.com) is the only one with the power to create outer admin users and set Never Expiring Alias for those users. 
+
+Master Admin Panel:
+Adds Never expiring Alias
+Adds custom Emails
+Links custom emails to Never Expiring Aliases. 
+
+Reserved Never Expiring Aliases for Employees 
+ Amy, Ethan, Elizhabeth, Elijah, Bri, Brianna, Amy Lindahl, Ethan Lindahl, Elizabeth Lindahl, Elijah Lindahl, Caiden Jurney, Caiden, Jurney, Brianna Thornsby. Elijah Wood, Rob Zombie, Barrack Obama, Michelle Obama, mxn, mxn.chat, vibe, bubble, bubbles, thoughts, thought
 
 **RLS Tests**
 : A new RLS policy test script was added at `scripts/test_rls.js`. Set the following environment variables to run the script:
