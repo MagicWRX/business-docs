@@ -1,52 +1,62 @@
 # BUSINESS VERCEL DEPLOYMENT GUIDE
 
-**Document Date:** October 12, 2025  
-**Version:** 1.0.0  
-**Status:** Single Source of Truth  
-**Last Updated:** October 12, 2025
+**Document Date:** December 18, 2025  
+**Version:** 2.0.0  
+**Status:** Single Source of Truth - Multi-Tenant Architecture  
+**Last Updated:** December 18, 2025
 
 ---
 
 ## 🎯 PURPOSE
 
 This document serves as the **single source of truth** for deploying and managing all Amazing Business Platform websites on Vercel and Firebase. It covers:
-- **MagicWRX Business**: Web development tools and hosting platform
-- **AmazinglyStrange Business**: Gaming and entertainment websites
-- Deployment strategies for both GitHub accounts
+- **MagicWRX Business**: Multi-tenant Platform-as-a-Service for unlimited clients
+- **AmazinglyStrange Business**: Gaming community platform with blog features
+- **MXN.CHAT Business**: Privacy-first chat platform
+- Deployment strategies across 2 Supabase projects and multiple hosting platforms
 
 ---
 
-## 🏢 BUSINESS SEPARATION & ACCOUNT STRUCTURE
+## 🏗️ PLATFORM ARCHITECTURE OVERVIEW
 
-### **Two Distinct GitHub Organizations**
+### **Multi-Tenant Strategy**
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    AMAZING BUSINESS HOLDINGS                    │
-│                    (Parent Organization)                        │
+│                    AMAZING BUSINESS PLATFORM                    │
+│           Platform-as-a-Service Ecosystem (Dec 2025)            │
 └─────────────────────────────────────────────────────────────────┘
                                  │
                     ┌────────────┴────────────┐
                     │                         │
          ┌──────────▼──────────┐   ┌─────────▼──────────┐
-         │   MAGICWRX ORG      │   │ AMAZINGLYSTRANGE   │
-         │   (GitHub)          │   │   ORG (GitHub)     │
+         │   MAGICWRX          │   │ AMAZINGLYSTRANGE   │
+         │   Supabase          │   │   Supabase         │
+         │   (Multi-Tenant)    │   │   (Dedicated DB)   │
          │                     │   │                    │
-         │ Web Development     │   │ Gaming & Media     │
-         │ & Tools Business    │   │ Entertainment      │
+         │ - Client Sites      │   │ - Gaming Blog      │
+         │ - Artist Blogs      │   │ - Media Library    │
+         │ - Pixel Art         │   │ - Layout Manager   │
+         │ - Revenue Sharing   │   │ - Admin Dashboard  │
          └──────────┬──────────┘   └─────────┬──────────┘
                     │                        │
          ┌──────────┴──────────┐  ┌─────────┴──────────┐
          │                     │  │                     │
-    ┌────▼─────────────────────▼──▼──┐   ┌─────────────▼──────────┐
-    │    VERCEL HOSTING             │   │  FIREBASE HOSTING      │
-    │    (Primary)                  │   │  (Current, may migrate)│
-    └───────────────────────────────┘   └────────────────────────┘
+    ┌────▼────────┬────────────▼──▼──┐   ┌─────────────▼──────────┐
+    │ MagicWRX.com│  MXN.CHAT        │   │  AmazinglyStrange.com  │
+    │ (Vercel)    │  (Vercel)        │   │  (Firebase → Vercel)   │
+    └─────────────┴──────────────────┘   └────────────────────────┘
 ```
 
----
+### **Supabase Project Allocation**
 
-## 📊 VERCEL ECOSYSTEM OVERVIEW
+| Supabase Project | Account | Platforms | Architecture |
+|------------------|---------|-----------|--------------|
+| **MagicWRX Supabase** | magicwrxstudio@gmail.com | MagicWRX, Artist Blogs, Pixel Art | Multi-tenant with RLS |
+| **MXN.CHAT Supabase** | magicwrxstudio@gmail.com | MXN.CHAT | Privacy-isolated |
+| **AmazinglyStrange Supabase** | brian@amazinglystrange.com | AmazinglyStrange.com | Dedicated |
+
+---
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐

@@ -42,15 +42,16 @@ __________________
 
 the 'O' Represient the "Filled in Colored Circles",
 Place circles in a bos that in-line with current Vibe Indicator. 
-When Hover or Pressed Box Quickly fades in and is positioned based on last Vibe or Set to Defaul.  CIRCLES containg SMALL TEXT CHILL, HYPED, FOCUSED, ect.
 
-|O| <- Chill
-|O| <- Hype
-|O| <- Focus 
-|O| <- Default <- mxn blue         
-|O| <- Creative                    
-|O| <- Support
-|O| <- Wild
+When hovered or pressed the box quickly fades in and is positioned based on last Vibe or set to default. CIRCLES containing SMALL TEXT: RELAXED, EXCITED, FOCUSED, etc.
+
+|O| <- Relaxed
+|O| <- Excited
+|O| <- Focused
+|O| <- Default <- mxn blue
+|O| <- Happy / Focused
+|O| <- Supported
+|O| <- Frustrated / Excited
 
 ______________________________________________
 VIBE LOUNGE -> TOPIC Status Vibe "Mood" Rings.  <- Flush Top
@@ -97,6 +98,15 @@ O    O       O   O O.    O       O   O O.       <- USER's TOPICS Colored
 | Facebook/Twitter OAuth | 🔵 P3 | M | Low | Additional social options |
 | Microsoft/GitHub OAuth | 🔵 P3 | M | Medium | Enterprise appeal |
 | Discord OAuth | 🟢 P2 | S | Medium | Gaming community fit |
+
+### Admin & Moderation
+| Feature | Priority | Effort | Business Value | Notes |
+|---------|----------|--------|----------------|-------|
+| Admin Dashboard | 🔴 P0 | M | High | User management, alias control, system health |
+| User Management | 🔴 P0 | S | High | Change account types, grant slots |
+| Alias Management | 🔴 P0 | S | High | Reserve aliases (Never Expire), delete aliases |
+| Content Moderation | 🟡 P1 | M | High | Delete messages/rooms, ban users |
+| System Logs | 🟢 P2 | S | Medium | View debug logs and errors |
 | Two-factor authentication (2FA) | 🟡 P1 | M | High | Security enhancement |
 | Biometric login (fingerprint/face) | 🟢 P2 | M | Medium | Mobile convenience |
 | Remember device option | 🟡 P1 | S | Medium | UX improvement |

@@ -1,11 +1,206 @@
 # Business Workspaces Overview
 
-**Document Date:** December 16, 2025  
-**Version:** 1.0.1  
-**Last Updated:** December 16, 2025
+**Document Date:** December 18, 2025  
+**Version:** 2.0.0  
+**Last Updated:** December 18, 2025  
+**Status:** Multi-Tenant Platform Architecture
 
 ---
 ## Business Workspaces Prompt
+1. [ ] Setting up Staging Site in ADMIN 
+2. [ ] Setting up Demo Pages for SHARED tools.
+3. [ ] ADMIN Master and Tenant System
+4. [ ] Location-Filter Testing with in SHARED tools.
+5. [ ] Stripe Setup
+6. [ ] Adsense Setup
+7. [ ] Google AUTH setup for BUSINESS Projects
+8. [ ] Clear Database Structure, and Scale Development
+9. [ ] Landing_01 thru Landing_12 Page for MagicWRX 
+10. [ ] Landing Pages intertwinded with Template-WRX and Layout-Manager.tsx and SHARED tools.
+11. [ ] Card Develpoment for SHARED Tools. d
+
+
+**New Architecture (Dec 2025):**
+- **Multi-Tenant Platform**: 
+	MagicWRX Supabase serves unlimited clients via Row-Level Security (RLS)
+	
+- **Centralized Admin**: 
+	`/ADMIN/` manages all 3 platforms from one dashboard (http://localhost:3006)
+
+- **Shared Components**: 
+	`/SHARED/` library (auth-tool, blog-engine, layout-manager, media-library)
+
+---
+
+## � Local Port Assignments (SSOT)
+
+| Port | Project | Location |
+|------|---------|----------|
+| **3000** | **Business HUB** | `SHARED/hub` |
+| **3001** | **MXN Chat** | `Websites/mxn-chat` |
+| **3002** | **MagicWRX** | `Websites/MagicWRX` |
+| **3003** | **Amazingly Strange** | `Amazingly-Strange-Website` |
+| **3004** | **Base Template** | `Websites/base-template` |
+| **3005** | **Template WRX** | `Websites/Template-WRX` |
+| **3006** | **Master ADMIN** | `ADMIN/` |
+| **3007** | **Auth Tool** | `Websites/auth-tool` |
+| **3008** | **Auth Tool Pkg** | `Websites/auth-tool-package` |
+
+---
+
+## SHARED Tools Hub (Build + Test Lab)
+
+**Purpose:** A dedicated playground for `@amazing/*` packages so features can be built/tested outside of `ADMIN`, and deployed independently for **staging vs production** validation.
+
+**Local:**
+- Runs at **http://localhost:3000** from `SHARED/hub`
+- Start via: `bash SHARED/start-all-local.sh start hub`
+
+**Relationship to ADMIN:**
+- `ADMIN` remains the **real integration surface** (multi-tenant, real backends).
+- The Hub is the **isolation surface** (mock backends by default, faster iteration, safer experiments).
+
+### Environment Variables (Exact Names)
+
+**Hub (recommended when connecting to real services):**
+- `NEXT_PUBLIC_APP_ENV` = `development` | `staging` | `production`
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` (server-only; never expose as `NEXT_PUBLIC_*`)
+
+**mxn-chat (Supabase client uses):**
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` (server-only; optional)
+
+**ADMIN (.env.local.example):**
+- `NEXT_PUBLIC_AS_SUPABASE_URL`
+- `NEXT_PUBLIC_AS_SUPABASE_ANON_KEY`
+- `NEXT_PUBLIC_MAGICWRX_SUPABASE_URL`
+- `NEXT_PUBLIC_MAGICWRX_SUPABASE_ANON_KEY`
+- `NEXT_PUBLIC_MXN_SUPABASE_URL`
+- `NEXT_PUBLIC_MXN_SUPABASE_ANON_KEY`
+
+### Vercel + Supabase + Google OAuth (Staging vs Production)
+
+**Recommended approach (simple + reliable):**
+- **Vercel Preview Deployments** = staging
+- **Vercel Production Deployment** = live
+
+**Supabase:**
+- Use **two Supabase projects** (staging + production) to prevent test data and auth settings from leaking into production.
+- In Vercel, set env vars by scope:
+	- **Preview** → staging Supabase URL/keys
+	- **Production** → production Supabase URL/keys
+
+**Google OAuth via Supabase Auth:**
+- In Google Cloud Console, set **Authorized redirect URI** to Supabase callback:
+	- `https://<SUPABASE_PROJECT_REF>.supabase.co/auth/v1/callback`
+- In Supabase Auth settings for each environment, set:
+	- **Site URL** (your primary domain)
+	- **Additional Redirect URLs** (include local + staging + prod):
+		- `http://localhost:3000/*` (Hub)
+		- `http://localhost:3005/*` (ADMIN)
+		- your staging domain(s)
+		- your production domain(s)
+
+**Practical note:** Google OAuth does not support wildcard subdomains well for Vercel previews; prefer a stable staging domain (or rely on PR previews without OAuth).
+
+## �🔐 ADMIN Login Credentials Guide
+
+### What's the Difference?
+
+**Account Access** = Logging into **Supabase Dashboard** (https://supabase.com/dashboard)
+- Use to: Manage projects, create users, view database, configure settings
+- Login with: Your Supabase account email/password
+
+**User Access** = Logging into **ADMIN App** (http://localhost:3006/login)
+- Use to: Manage platforms (MagicWRX, MXN, AmazinglyStrange content)
+- Login with: User created IN the Supabase project's Authentication tab
+
+---
+
+### For ADMIN App Login (`/ADMIN/`)
+
+#### MagicWRX & MXN.CHAT Admin
+
+**ADMIN Login:** magicwrxstudio@gmail.com  
+**Password:** [Create this user in Supabase Dashboard below]
+
+**How to Create/Reset:**
+1. Go to https://supabase.com/dashboard
+2. Login with: magicwrxstudio@gmail.com / ***** (Account Access)
+3. Select **MagicWRX project** (`ujfcflnrtrkdgfclwelz`)
+4. Navigate to **Authentication** → **Users**
+5. Add or reset user: `magicwrxstudio@gmail.com`
+6. Set password → **Use this for ADMIN login**
+
+#### AmazinglyStrange Admin
+
+**ADMIN Login:** brian@amazinglystrange.com  
+**Password:** [Create this user in Supabase Dashboard below]
+
+**How to Create/Reset:**
+1. Go to https://supabase.com/dashboard
+2. Login with: brian@amazinglystrange.com / ***** (Account Access)
+3. Select **AmazinglyStrange project** (`nthggvagtopobmdnquph`)
+4. Navigate to **Authentication** → **Users**
+5. Add or reset user: `brian@amazinglystrange.com`
+6. Set password → **Use this for ADMIN login**
+
+---
+
+### For Platform Management (Dashboard Access)
+
+#### Vercel (Deployment Platform)
+- **Login:** magicwrxstudio@gmail.com
+- **Password:** ******
+- **Used For:** Deploy projects, manage domains, view analytics
+
+#### Supabase Dashboard (Database Management)
+
+**MagicWRX & MXN Projects:**
+- **Login:** magicwrxstudio@gmail.com
+- **Password:** *****
+- **Projects:** MagicWRX (`ujfcflnrtrkdgfclwelz`) + MXN.CHAT (`opcsbfwqazyzsskuuooz`)
+
+**AmazinglyStrange Project:**
+- **Login:** brian@amazinglystrange.com
+- **Password:** *****
+- **Project:** AmazinglyStrange (`nthggvagtopobmdnquph`)
+
+#### Stripe (Payment Processing)
+- **Login:** magicwrxstudio@gmail.com
+- **Password:** *****
+- **Used For:** Manage subscriptions, view revenue, configure products
+
+---
+
+### Quick Reference Table
+
+| Platform | Purpose | Email | Where to Manage |
+|----------|---------|-------|-----------------|
+| **ADMIN App** | Manage all 3 platforms | magicwrxstudio@gmail.com<br>brian@amazinglystrange.com | Supabase Dashboard → Authentication → Users |
+| **Vercel** | Deploy & host apps | magicwrxstudio@gmail.com | https://vercel.com/login |
+| **Supabase** | Database & auth setup | magicwrxstudio@gmail.com<br>brian@amazinglystrange.com | https://supabase.com/dashboard |
+| **Stripe** | Payment processing | magicwrxstudio@gmail.com | https://dashboard.stripe.com/login |
+
+---
+
+### Common Tasks
+
+**Reset ADMIN Password:**
+1. Supabase Dashboard → Your Project → Authentication → Users
+2. Find user → Click "..." → Reset Password
+3. Copy new password and use at http://localhost:3006/login
+
+**Enable MFA for ADMIN:**
+1. Login to ADMIN at http://localhost:3006/login
+2. Go to Dashboard → Click "Setup MFA"
+3. Scan QR code with Google Authenticator
+4. Next login will require 6-digit code
+
+---
 
 
 ## Overview
@@ -17,11 +212,13 @@ This document provides a comprehensive overview of all active business workspace
 | Workspace | Title | Group | Purpose | Tech Stack | Status | Location |
 |-----------|-------|-------|---------|------------|--------|----------|
 | DOCs/ | Documentation Hub | Platform Ops | Central documentation, roadmaps and standards | Markdown | Active | `/Users/brianlindahl/Development/Business/DOCs/` |
-| mxn-chat/ | MXN Chat | Apps/Templates | Real-time gaming chat (can be launched as an add-on app) | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/mxn-chat/` |
-| MagicWRX/ | Magic WRX (HEAD) | Platform Core | Freemium website builder + template marketplace (head project) | Next.js, Firebase, Stripe | Live | `/Users/brianlindahl/Development/Business/Websites/MagicWRX/` |
+| **ADMIN/** | **Master Admin Dashboard** | **Platform Ops** | **Multi-tenant admin for all platforms** | **Next.js 15, Supabase (3 instances)** | **In Progress** | `/Users/brianlindahl/Development/Business/ADMIN/` |
+| **SHARED/** | **Component Library** | **Platform Core** | **Reusable packages (auth, blog, layout, media)** | **TypeScript, React** | **In Progress** | `/Users/brianlindahl/Development/Business/SHARED/` |
+| mxn-chat/ | MXN Chat | Apps | Privacy-first chat platform with aliases and vibes | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/mxn-chat/` |
+| MagicWRX/ | Magic WRX (Multi-Tenant Platform) | Platform Core | Multi-tenant SaaS platform for unlimited clients | Next.js, Supabase (multi-tenant RLS), Stripe | Live | `/Users/brianlindahl/Development/Business/Websites/MagicWRX/` |
 | base-template/ | Base Template (DRY) | Templates | Core dry template (recommended canonical starter) | Next.js 16, React 19, Tailwind | Live | `/Users/brianlindahl/Development/Business/Websites/base-template/` |
-| auth-tool/ | Auth Tool | Platform Core | Packaged Google OAuth / Supabase auth starting point for user verification | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/auth-tool/` |
-| auth-tool-package/ | Auth Tool Package | Platform Core | Distribution package for Auth Tool with scripts and docs | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/auth-tool-package/` |
+| auth-tool/ | Auth Tool | Platform Core | Google OAuth / Supabase auth (moving to /SHARED/) | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/auth-tool/` |
+| auth-tool-package/ | Auth Tool Package | Platform Core | Distribution package for Auth Tool (moving to /SHARED/) | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/auth-tool-package/` |
 | Template-WRX/ | Template WRX | Templates Marketplace | Collection of business templates and deploy scripts | Next.js, Firebase | Live | `/Users/brianlindahl/Development/Business/Websites/Template-WRX/` |
 | hello-world-vercel-main/ | Hello Vercel Demo | Samples | Minimal Vercel demo used for tests and quickstarts | Next.js | Live | `/Users/brianlindahl/Development/Business/Websites/hello-world-vercel-main/` |
 | amazinglystrange/ | Amazingly Strange | Gaming Platform | Gaming community platform with blog and admin features | PHP, Firebase | Live | `/Users/brianlindahl/Development/Hosting/amazinglystrange/` |
@@ -47,13 +244,45 @@ This document provides a comprehensive overview of all active business workspace
 
 **Next Steps:** Continue implementing roadmap phases, maintain documentation compliance, and track progress against revenue targets.
 
+### ADMIN/ ⭐ NEW
+**Purpose:** Centralized multi-tenant admin dashboard to manage all business platforms from a single location.
+
+**Technologies:** Next.js 15, TypeScript, Tailwind CSS, Supabase (3 separate instances), React Query.
+
+**Key Features:**
+- Multi-tenant authentication (brian@amazinglystrange.com, magicwrxstudio@gmail.com)
+- Site switcher to manage AmazinglyStrange, MagicWRX, and MXN.CHAT
+- Shared admin components (blog editor, media manager, user management)
+- MagicWRX multi-tenant client management
+- Revenue sharing dashboard (Google AdSense API integration)
+- Unified analytics across all platforms
+
+**Current Status:** In Progress (Dec 2025). Architecture designed, shared dependencies being initialized.
+
+**Next Steps:** Create `/ADMIN/` directory, implement multi-Supabase client setup, build site switcher UI, migrate existing admin features.
+
+### SHARED/ ⭐ NEW
+**Purpose:** Reusable component library extracted from existing projects to reduce code duplication.
+
+**Technologies:** TypeScript, React, published as local npm packages.
+
+**Key Packages:**
+- `@amazing/auth-tool`: `/SHARED/auth-tool/` - Google OAuth + Supabase authentication (from auth-tool/) - **✅ Extracted & Integrated**
+- `@amazing/blog-engine`: `/SHARED/blog-engine/` - WYSIWYG blog editor (from AmazinglyStrange)
+- `@amazing/layout-manager`: `/SHARED/layout-manager/` - Visual page builder (from AS) - **✅ Extracted & Integrated**
+- `@amazing/media-library`: `/SHARED/media-library/` - Media upload/optimization (shared across all)
+
+**Current Status:** In Progress (Dec 2025). Layout Manager and Auth Tool extracted and integrated.
+
+**Next Steps:** Extract blog components from AmazinglyStrange, create media library package.
+
 ### mxn-chat/
-**Purpose:** Real-time gaming community chat application designed for multiplayer gaming environments.
+**Purpose:** Real-time VIBE community chat application designed for PRIVATE sharing of 'Thought' based on MOOD/VIBE environments.
 
 **Technologies:** Next.js 15, TypeScript, Tailwind CSS, Supabase (Auth, PostgreSQL, Real-time), React 18.
 
 **Key Features:**
-- Real-time messaging with Firebase Firestore listeners
+- Real-time messaging with Firebase Firestore listeners <- Switched to Supabase
 - User authentication (Email/Password, Google OAuth)
 - Friend invitation system
 - Gaming-inspired dark UI with neon accents
@@ -67,22 +296,29 @@ This document provides a comprehensive overview of all active business workspace
 **Next Steps:** Monitor performance, gather user feedback, and consider additional features like multiple chat rooms or enhanced moderation tools.
 
 ### MagicWRX/
-**Purpose:** Premium business website builder platform offering a marketplace of professional templates with integrated authentication and admin management.
+**Purpose:** Multi-tenant Platform-as-a-Service (PaaS) that enables unlimited clients to deploy professional websites and blogs through a shared Supabase database with Row-Level Security (RLS).
 
-**Technologies:** Next.js 16, React 19, TypeScript, Tailwind CSS, Firebase v10 (Auth, Firestore, Analytics, Storage), Stripe integration.
+**Technologies:** Next.js 16, React 19, TypeScript, Tailwind CSS, Supabase (multi-tenant RLS), Stripe, Google AdSense API.
 
 **Key Features:**
-- 5 premium business templates: E-commerce Store, SaaS Platform, Portfolio Website, Restaurant Menu, Corporate Website
-- Firebase authentication (email/password + Google OAuth)
-- Admin dashboard with user management
-- Mobile-first responsive design with custom gradients and card shadows
-- Template marketplace with pricing tiers ($19-199 for templates, $19-199/mo for hosting)
-- Demo mode available without Firebase setup
-- Flutter mobile app compatibility built-in
+- **Multi-Tenant Architecture**: Single Supabase DB serves unlimited clients via RLS policies
+- **Client Sites**: Each client can create multiple websites from 5+ templates
+- **Artist Blog Platform**: Revenue-sharing blog platform (70% artist, 30% platform)
+- **Pixel Art Platform** (Planned): Art posting and judging community
+- **Template Marketplace**: E-commerce, SaaS, Portfolio, Restaurant, Corporate templates
+- **Stripe Integration**: Subscription billing for client plans
+- **Google AdSense**: Automated revenue tracking and distribution
 
-**Current Status:** Live and production-ready at https://www.magicwrx.com with comprehensive Firebase integration. Includes troubleshooting guides and automated deployment scripts. AI functionality temporarily disabled due to React 19 compatibility issues.
+**Database Schema:**
+- `clients` - MagicWRX customers (multi-tenant users)
+- `client_sites` - Sites created by clients (isolated by client_id)
+- `client_blogs` - Blog posts (Artist Platform, revenue sharing)
+- `client_media` - Media files (isolated by client_id)
+- `revenue_share` - AdSense revenue tracking
 
-**Next Steps:** Re-enable AI functionality once React 19 compatibility is resolved, implement Stripe payments, expand template library, and optimize for mobile app deployment.
+**Current Status:** Live at https://www.magicwrx.com with basic features. Multi-tenant schema designed but not yet implemented. Currently using Firebase (migrating to Supabase multi-tenant).
+
+**Next Steps:** Implement multi-tenant Supabase schema, migrate from Firebase, build client onboarding flow, integrate Stripe subscriptions, launch Artist Blog beta.
 
 ### base-template/
 **Purpose:** Individual business website template specifically designed for computer repair services, optimized for quick deployment on Vercel.

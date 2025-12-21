@@ -88,10 +88,16 @@ src/
 │   │   ├── page.tsx              # Invite friends interface
 │   │   └── [token]/page.tsx      # Accept invitation by token
 │   │
+│   ├── admin/                    # Admin Panel
+│   │   └── page.tsx              # Admin Dashboard
+│   │
 │   └── dev/                      # Developer tools
 │       └── outbox/page.tsx       # Email outbox for testing
 │
 ├── components/                   # React Components
+│   ├── admin/                    # Admin Components
+│   │   ├── AdminUserList.tsx     # User management list
+│   │   └── AdminAliasList.tsx    # Alias management list
 │   ├── AuthForm.tsx              # Login/Signup form with Google OAuth
 │   ├── BillingDashboard.tsx      # Billing and subscription management
 │   ├── ChatInterface.tsx         # Main chat UI

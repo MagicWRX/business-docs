@@ -8,6 +8,15 @@
 
 ---
 ## Prompt Current need chages.
+1. [ ] Users need they ability to add up to 3 Alias. 
+2. [ ] User Aliases reset every 30 days if unused. after 30 days of no USE.
+3. [ ] Users can pay to keep there alias for $1.99.
+4. [ ] For 2.99 Can Reserve there current 3 alias and add 4 more for a totol of 7 alias a year. 
+5. [ ] for 3.99 user get 3 alias(w/ 30 day resets) and 7 alias annual reservation for a year.
+5. [ ] For 4.99 users can get 3 alias(w/ 30 day resets) and 14 alias annual reservation for a year. 
+6. [ ] For 8.99 users can get 28 alias annual reservation for a year.
+
+
 1. [✅] Change side bar titles from Channels -> Topics
 2. [✅] Change My Rooms -> My Topics
 3. [✅] ADD "Current Topics" display other user's Topics.
@@ -28,9 +37,18 @@
 
 
 ## Recently Completed Tasks (Latest Updates)
-1. [✅] Implemented UserSettingsModal component for adjusting user alias and vibe preferences
+1. [✅] **Admin Panel Implementation** (December 18, 2025)
+   - Created `/admin` route with role-based access control
+   - Implemented User Management (search, account type toggle, grant slots)
+   - Implemented Alias Management (view, delete, toggle "Never Expire")
+   - Added RLS policies for Admin access
+2. [✅] **Alias System & Monetization Backend** (December 18, 2025)
+   - Migrated schema to support 1:N User:Alias relationship
+   - Added `aliases`, `user_purchases`, and `moods` tables
+   - Implemented 30-day expiry logic and paid reservation support
+3. [✅] Implemented UserSettingsModal component for adjusting user alias and vibe preferences
 2. [✅] Integrated "Adjust Vibe" button in Vibe Lounge to open settings modal  
-3. [✅] Added basic vibe selection with 6 predefined vibes (Chill, Hype, Focus, Creative, Support, Wild)
+3. [✅] Added basic vibe selection with 6 predefined vibes (Relaxed, Excited, Focused, Happy / Focused, Supported, Frustrated / Excited)
 4. [✅] Connected alias editing to existing updateDisplayName functionality
 5. [✅] Updated MXN_ROADMAP.md to reflect completion of settings controls implementation
 6. [✅] **Advanced image optimization implemented** (December 14, 2025)
@@ -865,7 +883,7 @@ WHERE is_active = true;
 
 **UI Flow:**
 1. After login → "Choose your vibe" modal
-2. User picks from preset vibes (chill, energetic, etc.) or custom
+2. User picks from preset vibes (Relaxed, energetic, etc.) or custom
 3. Enter alias name (availability check)
 4. Alias appears in chat with colored indicator
 5. Settings panel allows switching aliases or creating new ones

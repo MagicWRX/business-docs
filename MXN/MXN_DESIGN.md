@@ -126,15 +126,16 @@ __________________
 
 the 'O' Represient the "Filled in Colored Circles",
 Place circles in a bos that in-line with current Vibe Indicator. 
-When Hover or Pressed Box Quickly fades in and is positioned based on last Vibe or Set to Defaul.  CIRCLES containg SMALL TEXT CHILL, HYPED, FOCUSED, ect.
 
-|O| <- Chill
-|O| <- Hype
-|O| <- Focus 
-|O| <- Default <- mxn blue         
-|O| <- Creative                    
-|O| <- Support
-|O| <- Wild
+When hovered or pressed the box quickly fades in and is positioned based on last Vibe or set to default. CIRCLES containing SMALL TEXT: RELAXED, EXCITED, FOCUSED, etc.
+
+|O| <- Relaxed
+|O| <- Excited
+|O| <- Focused
+|O| <- Default <- mxn blue
+|O| <- Happy / Focused
+|O| <- Supported
+|O| <- Frustrated / Excited
 
 ______________________________________________
 VIBE LOUNGE -> TOPIC Status Vibe "Mood" Rings.  <- Flush Top
@@ -267,13 +268,13 @@ To bring the current codebase into compliance:
 │ │                                                │ │
 │ │   [Vibe Selector Dropdown on hover/click]     │ │
 │ │   ┌──────────────────┐                        │ │
-│ │   │ (O) Chill        │ ← Selector appears     │ │
-│ │   │ (O) Hype         │   with emoji + text    │ │
-│ │   │ (O) Focus        │   Current vibe = bold  │ │
+│ │   │ (O) Relaxed      │ ← Selector appears     │ │
+│ │   │ (O) Excited      │   with emoji + text    │ │
+│ │   │ (O) Focused      │   Current vibe = bold  │ │
 │ │   │ (O) Default      │                        │ │
-│ │   │ (O) Creative     │                        │ │
-│ │   │ (O) Support      │                        │ │
-│ │   │ (O) Wild         │                        │ │
+│ │   │ (O) Happy / Focused │                     │ │
+│ │   │ (O) Supported    │                        │ │
+│ │   │ (O) Frustrated / Excited │                │ │
 │ │   └──────────────────┘                        │ │
 │ └────────────────────────────────────────────────┘ │
 ├────────────────────────────────────────────────────┤
@@ -324,7 +325,7 @@ To bring the current codebase into compliance:
 │                                                                  │
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │                         ●    ●    ●    ●    ●    ●      │ │ Mood/Vibe Rings
-│  │                       Chill Hype Focus Create Support Wild│ │ (Right Aligned)
+│  │                       Relaxed Excited Focused Happy/Focused Supported Frustrated/Excited│ │ (Right Aligned)
 │  ├────────────────────────────────────────────────────────────┤ │
 │  │ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ │ │ Purple Vibe Bar
 │  └────────────────────────────────────────────────────────────┘ │ (Separator)
@@ -365,12 +366,12 @@ INTERACTION:
 ```
 Vibe Colors & Names:
 ┌────────────────────────────────────┐
-│ ● Chill     (Green)    #22c55e    │
-│ ● Hype      (Purple)   #9333ea    │
-│ ● Focus     (Orange)   #fb923c    │
-│ ● Creative  (Yellow)   #facc15    │
-│ ● Support   (Pink)     #ec4899    │
-│ ● Wild      (Fuchsia)  #e879f9    │
+│ ● Relaxed   (Green)    #22c55e    │
+│ ● Excited   (Purple)   #9333ea    │
+│ ● Focused   (Orange)   #fb923c    │
+│ ● Happy / Focused (Yellow)   #facc15    │
+│ ● Supported (Pink)     #ec4899    │
+│ ● Frustrated / Excited (Fuchsia)  #e879f9    │
 │ ● Default   (MXN Blue) #00d4ff    │
 └────────────────────────────────────┘
 

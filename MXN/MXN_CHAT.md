@@ -494,3 +494,170 @@ This document MUST be updated when:
 **Last Feature Audit:** December 12, 2025  
 **Next Review Due:** December 19, 2025 (Weekly)  
 **Document Owner:** MagicWRX Development Team
+
+
+
+
+# 🎮 Emotional Vibe System
+**Arcade • Mood • Thought • Safe Sharing**
+
+This document defines a **clean, non-slang emotional color system** designed for:
+- Arcade-style UI
+- Mood & thought expression
+- Safe public sharing
+- Long-term brand stability
+
+All labels use **ultra-common everyday language**.
+
+---
+
+## 🌈 Color Spectrum Overview (Warm → Cool → Neutral)
+
+[ Angry ]
+🔴
+|
+[ Frustrated ]
+🟠
+|
+[ Stressed ]
+🟧
+|
+[ Happy ]
+🟡
+|
+[ Excited ]
+💗
+|
+[ Anxious ]
+🟣
+|
+[ Sad ]
+🔵
+|
+[ Calm ]
+🟦🟢
+|
+[ Relaxed ]
+🟢
+|
+[ Tired ]
+⚪
+|
+[ Focused ]
+🔷
+|
+[ Supported ]
+🌸
+
+---
+
+## 📊 Mood → Color Chart
+
+
+| # | Icon | Mood | Color Name | Hex |
+|---|------|------|----------|-----|
+| 1 | 🔴 | **Angry** | Arcade Red | `#EF4444` |
+| 2 | 🟠 | **Frustrated** | Burnt Orange | `#F97316` |
+| 3 | 🟧 | **Stressed** | Amber Orange | `#FB923C` |
+| 4 | 🟡 | **Happy** | Golden Yellow | `#FACC15` |
+| 5 | 💗 | **Excited** | Hot Pink | `#EC4899` |
+| 6 | 🟣 | **Anxious** | Soft Violet | `#A78BFA` |
+| 7 | 🔵 | **Sad** | Sky Blue | `#60A5FA` |
+| 8 | 🟢 | **Calm** | Teal Mint | `#2DD4BF` |
+| 9 | 🟢 | **Relaxed** | Soft Green | `#4ADE80` |
+|10 | ⚪ | **Tired** | Neutral Gray | `#6B7280` |
+|11 | 🔷 | **Focused** | Cool Indigo | `#6366F1` |
+|12 | 🌸 | **Supported** | Rose Soft | `#F472B6` |
+
+
+
+| # | Icon | Color | Mood | Color Name | Hex |
+|---|------|-------|------|----------|-----|
+| 1 | 🔴 | <span style="background-color: #EF4444; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Angry** | Arcade Red | `#EF4444` |
+| 2 | 🟠 | <span style="background-color: #F97316; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Frustrated** | Burnt Orange | `#F97316` |
+| 3 | 🟧 | <span style="background-color: #FB923C; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Stressed** | Amber Orange | `#FB923C` |
+| 4 | 🟡 | <span style="background-color: #FACC15; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Happy** | Golden Yellow | `#FACC15` |
+| 5 | 💗 | <span style="background-color: #EC4899; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Excited** | Hot Pink | `#EC4899` |
+| 6 | 🟣 | <span style="background-color: #A78BFA; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Anxious** | Soft Violet | `#A78BFA` |
+| 7 | 🔵 | <span style="background-color: #60A5FA; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Sad** | Sky Blue | `#60A5FA` |
+| 8 | 🟢 | <span style="background-color: #2DD4BF; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Calm** | Teal Mint | `#2DD4BF` |
+| 9 | 🟢 | <span style="background-color: #4ADE80; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Relaxed** | Soft Green | `#4ADE80` |
+|10 | ⚪ | <span style="background-color: #6B7280; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Tired** | Neutral Gray | `#6B7280` |
+|11 | 🔷 | <span style="background-color: #6366F1; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Focused** | Cool Indigo | `#6366F1` |
+|12 | 🌸 | <span style="background-color: #F472B6; width: 20px; height: 20px; display: inline-block; border-radius: 50%; border: 1px solid #333;"></span> | **Supported** | Rose Soft | `#F472B6` |
+
+---
+
+## 🎛️ Emotional Axes (Internal Model)
+
+Tone (Negative → Positive)
+───────────────────────────▶
+
+Angry     Happy     Supported
+|         |           |
+|         |           |
+▼         ▼           ▼
+Energy (High → Low)
+
+- **High Energy + Negative** → Angry, Frustrated
+- **High Energy + Positive** → Excited
+- **Low Energy + Negative** → Sad, Tired
+- **Low Energy + Positive** → Calm, Relaxed
+
+---
+
+## 🧩 Replacement Mapping (Slang → Stable)
+
+Chill     ──▶ Relaxed
+Hype      ──▶ Excited
+Wild      ──▶ Frustrated / Excited
+Creative  ──▶ Happy / Focused
+Support   ──▶ Supported
+Focus     ──▶ Focused
+
+---
+
+## 🛡️ Safety & Sharing Rules (Recommended)
+
+[ Private Use ]
+├─ Angry
+├─ Frustrated
+├─ Anxious
+└─ Sad
+
+[ Public / Shareable ]
+├─ Happy
+├─ Calm
+├─ Relaxed
+├─ Focused
+└─ Supported
+
+---
+
+## 🎨 UI Implementation Notes
+
+- Use **color + icon + label** (never color alone)
+- Use **70–85% opacity** for badges
+- Gray (`Tired`) overrides all blends
+- Avoid red in passive UI states
+
+---
+
+## ✅ Brand Goals Achieved
+
+✔ Arcade-friendly  
+✔ Emotionally intuitive  
+✔ Non-slang / timeless  
+✔ Safe for all ages  
+✔ Share-aware by design  
+
+---
+
+If you want next:
+- Tailwind / CSS variable tokens
+- Gradient blends between moods
+- Dark-mode palette
+- Emoji or icon mapping
+- Moderation rules by mood
+
+Just say the word.

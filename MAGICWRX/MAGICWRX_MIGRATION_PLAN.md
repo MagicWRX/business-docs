@@ -48,7 +48,7 @@ Migrate the MagicWRX platform from Firebase (Auth, Firestore, Storage) to Supaba
 - [ ] Enable Email/Password provider
 - [ ] Enable Google OAuth provider
   - Create new OAuth client ID in Google Cloud Console
-  - Configure redirect URLs: `http://localhost:3001/auth/callback`, `https://magicwrx.vercel.app/auth/callback`
+  - Configure redirect URLs: `http://localhost:3002/auth/callback`, `https://magicwrx.vercel.app/auth/callback`
 
 #### 1.2 User Migration Script
 - [ ] Export users from Firebase Auth (using firebase-admin)
