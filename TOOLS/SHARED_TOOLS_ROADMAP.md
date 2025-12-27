@@ -3,6 +3,88 @@
 ## Overview
 Plan for extracting legacy JavaScript tools from AmazinglyStrange into reusable SHARED packages.
 
+## Parallel AI Workstreams (SSOT)
+Use this document as the single source of truth for parallelizing work across multiple AI chats without destructive overlap.
+
+### Coordination rules
+- Each AI chat “claims” exactly one workstream below by adding its chat name/date and keeping edits confined to the listed files.
+- Do not edit another workstream’s files unless explicitly coordinating the handoff here first.
+- If a workstream needs shared decisions (schemas/contracts), write the decision into `DOCs/TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md` and link back here.
+
+### Active / Safe Parallel Workstreams
+These can be developed in parallel while `TOOLS_BLOG_ENGINE.md` evolves, because they touch different files/concerns.
+
+1) **Admin Layout (shared shell)**
+- Claimed by: GitHub Copilot — 2025-12-25
+- Scope: shared sidebar + route groupings + consistent admin chrome
+- Files: `SHARED/*` (admin layout package once created), plus `DOCs/TOOLS/TOOLS_ADMIN_LAYOUT.md`
+- Avoid: editing `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md` and blog-engine package components
+
+2) **Public Blog Display parity**
+- Claimed by: GitHub Copilot — 2025-12-26
+- Scope: decide/render path for public blog (index + post page) and sanitization strategy
+- Files: `DOCs/TOOLS/TOOLS_BLOG_DISPLAY.md` and public site routes (e.g. `Websites/amazingly-strange-website/src/app/blog/*`)
+- Avoid: changing blog-engine editor UI/CRUD; keep focus on public rendering
+
+3) **Monetization + Revenue Share docs**
+- Claimed by: (unclaimed — add chat name + date)
+- Scope: platform monetization model, payout splits, attribution, and integration points
+- Files: `DOCs/TOOLS/TOOL_MONETIZATION.md` and `DOCs/TOOLS/TOOL_REVENUE_SHARE.md`
+- Avoid: changing extracted tool packages; keep it SSOT/strategy
+
+4) **Image Utils extraction plan**
+- Claimed by: GitHub Copilot — 2025-12-25
+- Scope: formalize `image-utils` extraction, URL normalization rules, and storage backends
+- Files: `DOCs/TOOLS/TOOLS_IMAGE_UTILS.md` (and package only if explicitly started)
+- Avoid: editing existing tool UIs; focus on shared utility contract
+
+5) **Supabase schemas + migrations (cross-tool)**
+- Claimed by: (unclaimed — add chat name + date)
+- Scope: unify table schemas, optional columns, and migration scripts for parity
+- Files: `Websites/amazingly-strange-website/scripts/migration/*` and `DOCs/TOOLS/TOOLS_SUPABASE_SCHEMAS.md`
+- Avoid: UI/UX changes in tool packages
+
+6) **Tool doc tightening (non-blog)**
+- Claimed by: GitHub Copilot — 2025-12-26
+- Scope: confirm actual Hub/Admin routes + contracts for tools other than blog-engine
+- Files: `DOCs/TOOLS/TOOLS_*` excluding `TOOLS_BLOG_ENGINE.md`
+- Avoid: changing code; this is documentation-only
+
+7) **Blog Alignment (blog-engine + migration tooling)**
+- Claimed by: GitHub Copilot (GPT-5.2) — 2025-12-25
+- Scope: blog migration tooling + blog-engine documentation + SSOT coordination scaffolding
+- Coordination note: 2025-12-25 — Admin Layout chat is permitted to make **doc-only** tightening edits to `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md` (wording/placeholders only). No code changes outside its workstream.
+- Files:
+   - `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md`
+   - `Websites/amazingly-strange-website/scripts/migration/README.md`
+   - `Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js`
+- Avoid:
+   - public rendering decisions/implementation (use `DOCs/TOOLS/TOOLS_BLOG_DISPLAY.md`)
+   - schema contract ownership beyond documenting findings (use `DOCs/TOOLS/TOOLS_SUPABASE_SCHEMAS.md`)
+   - monetization decisions (use `DOCs/TOOLS/TOOL_MONETIZATION.md` + `DOCs/TOOLS/TOOL_REVENUE_SHARE.md`)
+
+## Suggested Development Order for AI Workstreams
+
+Based on dependencies, priority, and current status, here's the recommended sequence for tackling the unclaimed workstreams:
+
+1. **Public Blog Display parity** (Priority: High - depends on blog-engine completion)
+   - Why next: Builds on blog-engine extraction; enables public-facing blog functionality
+   - Dependencies: Blog Alignment workstream (currently in progress)
+
+2. **Supabase schemas + migrations (cross-tool)** (Priority: High - foundational for data consistency)
+   - Why next: Unifies data models across tools; critical for parity and migrations
+   - Dependencies: None direct, but informs all tool integrations
+
+3. **Tool doc tightening (non-blog)** (Priority: Medium - documentation cleanup)
+   - Why next: Ensures accurate contracts for remaining tools; low-risk parallel work
+   - Dependencies: None
+
+4. **Monetization + Revenue Share docs** (Priority: Medium - business logic)
+   - Why next: Strategic planning; can be developed independently
+   - Dependencies: None
+
+This order prioritizes functional dependencies first (blog display needs blog engine), then foundational data work (schemas), followed by documentation and business strategy tasks.
+
 ## Current Status
 
 ### ✅ Completed
@@ -63,6 +145,18 @@ Plan for extracting legacy JavaScript tools from AmazinglyStrange into reusable 
    - `BrandHeaderContainer` for brand header background settings
    - `HeaderSlidingImages` promo slider (timed slide/pause/fade loop)
    - `useHeaderSlider` hook for the slider sequencing
+
+10. **Image Utils** - Extracted to `@amazing/image-utils`
+   - URL resolution for Firebase, S3, local paths
+   - Image processing (resize, crop, optimize) with Canvas API
+   - CDN integration (Cloudinary, Imgix)
+   - TypeScript-first, backend-agnostic
+
+11. **Public Blog Display parity** - Implemented in `Websites/amazingly-strange-website/src/app/blog/`
+   - Blog index page with pagination and tag filtering
+   - Individual post pages with SEO meta tags
+   - HTML sanitization using DOMPurify
+   - Integration with `@amazing/blog-engine` and `@amazing/image-utils`
 
 ### 🚧 In Progress
 1. **Admin Layout** - Shared navigation/layout component
@@ -215,15 +309,11 @@ Plan for extracting legacy JavaScript tools from AmazinglyStrange into reusable 
 
 ---
 
-### Priority 3: Utility Modules
-
-#### Image Utils (`/js/image-utils.js`)
-**Extraction Plan**:
-- Package: `@amazing/image-utils`
-- Resize/crop helpers
-- Format conversion
-- Optimization utilities
-- Cloudinary/Imgix integration support
+9. **Image Utils** - Extracted to `@amazing/image-utils`
+   - URL resolution for Firebase, S3, local paths
+   - Image processing (resize, crop, optimize) with Canvas API
+   - CDN integration (Cloudinary, Imgix)
+   - TypeScript-first, backend-agnostic
 
 ---
 
