@@ -198,9 +198,9 @@ CREATE TABLE public.blog_posts (
 - For links: only allow `http(s)`, `mailto:`, `tel:`; mark external links `target="_blank" rel="noopener noreferrer"`.
 
 ## Migration / Cutover Checklist (detailed)
-1. Run `scripts/migration/02-export-firebase.js` to export legacy data to `exports/blog-posts.json`.
-2. Run `scripts/migration/10-migrate-blogposts-firestore-to-supabase.js --dry-run --limit 10` to verify transformations and tags coercion.
-3. Copy assets (`06-copy-assets.sh`), upload to Supabase storage if doing full asset migration (`09-upload-media-to-supabase.js`).
+1. Run `Websites/amazingly-strange-website/scripts/migration/02-export-firebase.js` to export legacy data to `exports/blog-posts.json`.
+2. Run `Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js --dry-run --limit 10` to verify transformations and tags coercion.
+3. Copy assets (`Websites/amazingly-strange-website/scripts/migration/06-copy-assets.sh`), upload to Supabase storage if doing full asset migration (`Websites/amazingly-strange-website/scripts/migration/09-upload-media-to-supabase.js`).
 4. Re-run `10-migrate...` without `--dry-run` to import into Supabase. Inspect logged `tagsType` to confirm tag column behavior.
 5. Run integration tests: adapter contract tests + E2E: create/edit/publish roundtrip.
 6. Smoke test public rendering on staging: index + post pages + image lightbox + analytics events.

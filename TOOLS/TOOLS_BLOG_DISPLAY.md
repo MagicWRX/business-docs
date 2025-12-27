@@ -18,10 +18,10 @@ Public-facing blog rendering for AmazinglyStrange parity (blog index + post page
 - Authoring UI (handled by `@amazing/blog-engine`)
 - Admin CRUD (handled by ADMIN integration)
 
-### Rendering Strategy Decision (Draft)
-Choose one and record the final decision here:
-1) Render stored HTML (sanitized/allowlisted) — faster to ship, compatible with current blog-engine output.
-2) Render stored structured blocks (safer, future-proof) — longer implementation.
+### Rendering Strategy Decision (Finalized)
+Decision: Render stored HTML (sanitized/allowlisted) — faster to ship, compatible with current blog-engine output.
+
+This has been implemented in `Websites/amazingly-strange-website/src/app/blog/` using DOMPurify for sanitization.
 
 ### Data Contract (Initial)
 Minimal fields needed for public rendering (confirm when inspecting `@amazing/blog-engine`):
