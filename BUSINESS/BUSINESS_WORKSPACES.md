@@ -6,18 +6,205 @@
 **Status:** Multi-Tenant Platform Architecture
 
 ---
+## Business Workspaces Entity Hierarchy
+1. Setup OAuth 2.0 Client IDs:
+
+   amazinglystrangemedia@gmail.com
+      amazinglystrange.com 
+         ✅ Authorized Redirect URI: https://asvtzicvufmiuudctkbe.supabase.co/auth/v1/callback
+
+         .env.local - 
+         Client ID:
+         61447...
+
+         Client Secret:
+         GOCS...
+
+   magicwrxstudio@gmail.com
+      magicwrx.com
+         Authorized Redirect URI: https://ujfcflnrtrkdgfclwelz.supabase.co/auth/v1/callback
+
+      mxn.chat
+         Authorized Redirect URI: https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback
+
+2. Setup Vercel
+   amazinglystrangemedia@gmail.com
+      amazinglystrange.com
+
+      Deployments:
+      https://amazinglystrange.vercel.app
+      https://amazinglystrange-git-master-amazinglystrange.vercel.app
+      https://amazinglystrange-j1l61y9lg-amazinglystrange.vercel.app
+
+      Domains:
+      https://amazinglystrange.vercel.app
+
+      
+   magicwrxstudio@gmail.com
+      magicwrx.com
+      mxn.chat
+
+3. Setup Supabase
+   amazinglystrangemedia@gmail.com
+      amazinglystrange.com
+      
+   magicwrxstudio@gmail.com
+      magicwrx.com
+      mxn.chat
+
+4. Setup Stripe
+      magicwrxstudio@gmail.com
+      - magicwrx purchases
+         - Blog
+         - Hosting
+         - Secure Login
+         - AdSense Revenue Sharing
+
+   How Do I manage Customers?
+   Revenue Sharing
+      AmazinglyStrange.com - Simple Online Store.
+
+5. Setup Brevo
+   magicwrxstudio@gmail.com
+   - admin@magicwrx.com
+   - admin@mxn.chat
+   - admin@amazinglystrange.com
+      - brian@amazinglystrange.com
+   - admin@brianlindahl.com
+      - brian@brianlindahl.com
+   
+   How Do I manage Customers
+   - admin@pixelextreme
+
+6. Setup CloudFlare
+   magicwrxstudio@gmail.com
+      DNS, MX Records
+      - magicwrx.com
+      - mxn.chat
+      - amazinglystrange.com
+
+   How Do I manage Customers
+   - pixelextreme.com
+
+7. Setup Google Adsense 
+   amazinglystrangemedia@gmail.com - Current Account tied to MonstersReign.com Mobile Games
+   - magicwrx.com shared revenue
+      - Websites
+      - Blog sites
+   - AmazinglyStrange.com
+      - Pages: About, Contact, Games, News, 
+      - Blog
+   - mxn.chat
+      - RoomsSidebar.tsx
+      - ChatInterface.tsx
+         - Vibe Lounge
+         - Thoughts
+
+8. Admob Advertiseing
+   amazinglystrangemedia@gmail.com - account tied to adsense.
+   - MonstersReign.com - Admob Banners
+      - SnakeBot
+      - Monster Trap
+      - Monster Dish Delivery
+      - Monster Bubble
+      - Monster Traffic Jam
+      - Monster Egg Match
+      - Fluff's Happy Match
+      - Murky Merge
+
+9. Google Analytics
+
+10. Google Search
+
+11. Google 
+
+
+## 
+
+
 ## Business Workspaces Prompt
-1. [ ] Setting up Staging Site in ADMIN 
-2. [ ] Setting up Demo Pages for SHARED tools.
-3. [ ] ADMIN Master and Tenant System
-4. [ ] Location-Filter Testing with in SHARED tools.
+
+1. [✅] Setting up Staging Site in ADMIN 
+2. [✅] Setting up Demo Pages for SHARED tools.
+3. [✅] ADMIN Master and Tenant System
+4. [✅] Location-Filter Testing with in SHARED tools.
 5. [ ] Stripe Setup
 6. [ ] Adsense Setup
 7. [ ] Google AUTH setup for BUSINESS Projects
 8. [ ] Clear Database Structure, and Scale Development
 9. [ ] Landing_01 thru Landing_12 Page for MagicWRX 
 10. [ ] Landing Pages intertwinded with Template-WRX and Layout-Manager.tsx and SHARED tools.
-11. [ ] Card Develpoment for SHARED Tools. d
+11. [ ] Card Develpoment for SHARED Tools? 
+12. [ ] Connect to figma.  Designers can implement their custom design is to base-templates.
+13. [ ] mxn.chat VIBE LOUNGE homepage is set to "mxn default blue ring" in the "VIBE TABS". mxn blue is equal to nuetural in mood.
+14. [ ] Amazingly Strange need's it's Blue Background for Page.
+15. [ ] Amazingly Strange Tools need to be functioning in SHARED workspaces. Each Tool needs a Demo Page for testing and Developing.
+
+16. [ ] Limit Location Filter to just Countries
+17. [ ] Setup Google OAuth 
+18. [ ] Setup CloudFlare + Brevo - Admin Emails
+      MagicWRX 1st May need to move Domains from SquareSpace which needs to wait till New Amazingly Strange Site is complete.
+19. [ ] Push mxn.chat to git 
+20. [ ] fix mxn.chat bubble color
+21. [ ] mxn.chat vibe selector
+22. [ ] mxn.cha vibe tap selector
+23. [ ] refined Layout-Manager.tsx
+
+
+## Prompt Workspace Checks
+1. BUSINESS_WORKSPACE.md, BUSINESS_EXECUTIVE.md, BUSINESS_ROADMAP.md, BUSiNESS_INDEX.md, BUSINESS_ADMIN.md, BUSINESS_TREE.md, BUSINESS_DATABASE.md
+2. MAGICWRX_EXECUTIVE.md, MAGICWRX__ROADMAP.md, MAGICWRX_INDEX.md, MAGICWRX__ADMIN.md, MAGICWRX__TREE.md, MAGICWRX__DATABASE.md
+3. MXN_EXECUTIVE.md, MXN_ROADMAP.md, MXN_INDEX.md, MXN_ADMIN.md, MXN_TREE.md, MXN_DATABASE.md
+4. AMS_EXECUTIVE.md, AMS_ROADMAP.md, AMS_INDEX.md AMS_ADMIN.md, AMS_TREE.md, AMS_DATABASE.md
+
+
+Read [](file:///Users/brianlindahl/Development/Business/ADMIN/GOOGLE_OAUTH_SETUP.md#1-1), lines 1 to 50
+
+### Does each project need its own Google Auth Client?
+
+**Yes, absolutely.**
+
+For security, reliability, and proper branding, **each distinct Supabase project** (Database) requires its own set of Google OAuth credentials (Client ID and Secret).
+
+Here is the breakdown based on your architecture:
+
+#### 1. MXN Chat (Priority: High)
+*   **Database:** MXN Chat (`opcsbfwqazyzsskuuooz`)
+*   **Needs:** A dedicated Google Cloud Project (or at least a dedicated OAuth Client credential within your main project).
+*   **Why:** Users logging into MXN Chat should see "Sign in to **MXN Chat**", not "MagicWRX".
+*   **Redirect URI:** `https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback` (This is the Supabase callback URL you put in Google Cloud).
+
+#### 2. MagicWRX / ADMIN / TOOLS (Priority: High)
+*   **Database:** MagicWRX (`ujfcflnrtrkdgfclwelz`)
+*   **Needs:** One shared Google OAuth Client is usually sufficient if they all share the same user base (Multi-tenant).
+*   **Why:** The ADMIN dashboard and the main MagicWRX site share the same `auth.users` table.
+*   **Redirect URI:** `https://ujfcflnrtrkdgfclwelz.supabase.co/auth/v1/callback`.
+
+#### 3. Amazingly Strange (Priority: Medium)
+*   **Database:** Amazingly Strange (`asvtzicvufmiuudctkbe`)
+*   **Needs:** A separate Google OAuth Client.
+*   **Why:** Completely separate business entity and user base.
+*   **Redirect URI:** `https://asvtzicvufmiuudctkbe.supabase.co/auth/v1/callback`.
+
+### Summary of Required Google Cloud Credentials
+
+You should create **3 separate OAuth 2.0 Client IDs** in your Google Cloud Console (`magicwrxstudio@gmail.com`):
+
+1.  **MXN Chat Client**
+    *   **Authorized Redirect URI:** `https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback`
+    *   **Copy ID/Secret to:** MXN Chat Supabase Dashboard -> Authentication -> Google.
+
+2.  **MagicWRX Platform Client**
+    *   **Authorized Redirect URI:** `https://ujfcflnrtrkdgfclwelz.supabase.co/auth/v1/callback`
+    *   **Copy ID/Secret to:** MagicWRX Supabase Dashboard -> Authentication -> Google.
+
+3.  **Amazingly Strange Client**
+    *   **Authorized Redirect URI:** `https://asvtzicvufmiuudctkbe.supabase.co/auth/v1/callback`
+    *   **Copy ID/Secret to:** Amazingly Strange Supabase Dashboard -> Authentication -> Google.
+
+**Crucial Detail:**
+In Google Cloud, the **Authorized Redirect URI** must point to the **Supabase Project URL**, NOT your website URL (e.g., `mxn.chat`). Supabase handles the handshake and then redirects back to your site based on the "Redirect URLs" list we discussed earlier.
+
 
 
 **New Architecture (Dec 2025):**
@@ -28,10 +215,66 @@
 	`/ADMIN/` manages all 3 platforms from one dashboard (http://localhost:3006)
 
 - **Shared Components**: 
-	`/SHARED/` library (auth-tool, blog-engine, layout-manager, media-library)
+	`/SHARED/` library (auth-tool, blog-engine, layout-manager, media-library, location-filter)
 
 ---
+## 🛠️ Development Scripts & Tools (SSOT)
 
+### 1. Master Build Script (`SHARED/build-shared.sh`)
+**Purpose:** Compiles all shared packages in dependency order.
+**Usage:**
+```bash
+./SHARED/build-shared.sh
+```
+**Packages Built:**
+- `location-filter`
+- `auth-tool`
+- `blog-engine`
+- `layout-manager`
+- `media-library`
+- `analytics-dashboard`
+- `contact-manager`
+- `gallery-components`
+- `header-components`
+- `page-editor`
+
+### 2. Workspace Launcher (`SHARED/start-all-local.sh`)
+**Purpose:** Starts all projects on their designated ports.
+**New Features:**
+- **Auto-Build:** Checks if shared packages are built before starting.
+- **Fresh Start:** `fresh` command rebuilds all shared tools first.
+
+**Commands:**
+```bash
+./SHARED/start-all-local.sh start        # Start all projects (auto-builds if needed)
+./SHARED/start-all-local.sh fresh        # Rebuild shared tools + start all
+./SHARED/start-all-local.sh start [name] # Start specific project (e.g., mxn-chat)
+./SHARED/start-all-local.sh stop         # Stop all projects
+```
+
+### 3. Admin Validation (`ADMIN/validate-setup.sh`)
+**Purpose:** Verifies the ADMIN environment is correctly configured.
+**Checks:**
+- Node/npm versions
+- `.env.local` variables (Supabase URLs)
+- **Shared Packages:** Verifies existence and `package.json` for all dependencies.
+- Critical file existence.
+
+**Usage:**
+```bash
+cd ADMIN && ./validate-setup.sh
+```
+
+### 4. Project Launchers
+Each project has a dedicated `start-local.sh` to ensure correct ports and environment.
+
+| Project | Script | Port | Notes |
+|---------|--------|------|-------|
+| **MXN Chat** | `mxn-chat/start-local.sh` | **3001** | Uses `dev-manager.sh` internally. |
+| **MagicWRX** | `MagicWRX/start-local.sh` | **3002** | **NEW:** Ensures port 3002 (was conflicting). |
+| **Hub** | `SHARED/start-all-local.sh` | **3000** | Runs the central hub. |
+
+---
 ## � Local Port Assignments (SSOT)
 
 | Port | Project | Location |
@@ -50,15 +293,19 @@
 
 ## SHARED Tools Hub (Build + Test Lab)
 
-**Purpose:** A dedicated playground for `@amazing/*` packages so features can be built/tested outside of `ADMIN`, and deployed independently for **staging vs production** validation.
+**Purpose:** A dedicated playground for `@amazing/*` packages AND the central launchpad for all local workspaces.
 
 **Local:**
 - Runs at **http://localhost:3000** from `SHARED/hub`
-- Start via: `bash SHARED/start-all-local.sh start hub`
+- Start via: `bash SHARED/start-all-local.sh start hub` (or just `start`)
+
+**Features:**
+- **Workspaces Dashboard:** Links to all running local projects (MXN, MagicWRX, Admin, etc.)
+- **Tool Playground:** Isolated testing environments for shared components (Gallery, Auth, etc.)
 
 **Relationship to ADMIN:**
 - `ADMIN` remains the **real integration surface** (multi-tenant, real backends).
-- The Hub is the **isolation surface** (mock backends by default, faster iteration, safer experiments).
+- The Hub is the **isolation surface** (mock backends by default) + **Navigation Center**.
 
 ### Environment Variables (Exact Names)
 
@@ -106,7 +353,8 @@
 
 **Practical note:** Google OAuth does not support wildcard subdomains well for Vercel previews; prefer a stable staging domain (or rely on PR previews without OAuth).
 
-## �🔐 ADMIN Login Credentials Guide
+---
+## 🔐 ADMIN Login Credentials Guide
 
 ### What's the Difference?
 
@@ -117,6 +365,337 @@
 **User Access** = Logging into **ADMIN App** (http://localhost:3006/login)
 - Use to: Manage platforms (MagicWRX, MXN, AmazinglyStrange content)
 - Login with: User created IN the Supabase project's Authentication tab
+
+---
+
+## 🎛️ Complete Setup Guide (Step-by-Step)
+
+### Overview: Three Core Services
+
+**All services use the `magicwrxstudio@gmail.com` account for:**
+- Google Cloud Console (OAuth management)
+- Vercel (deployment & hosting)
+- Stripe (all billing & payments)
+- Supabase (MagicWRX & MXN projects)
+
+**Exception:** `brian@amazinglystrange.com` manages AmazinglyStrange Supabase project
+
+---
+
+### Part 1: Google OAuth Setup
+
+**See complete guide:** [GOOGLE_OAUTH_SETUP.md](../../ADMIN/GOOGLE_OAUTH_SETUP.md)
+
+#### Quick Start: Create OAuth Clients
+
+1. **Login to Google Cloud Console**: https://console.cloud.google.com/
+   - Account: `magicwrxstudio@gmail.com`
+
+2. **Create Project** (if not exists):
+   - Name: "MagicWRX Business"
+   - Enable: Google+ API, Google OAuth2 API
+
+3. **Create OAuth Clients** (for each project):
+   
+   **MXN.CHAT:**
+   - Name: `mxn-auth-dev` (development)
+   - Redirect URIs: `http://localhost:3001/auth/callback`, `https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback`
+   - Name: `mxn-auth-prod` (production)
+   - Redirect URIs: `https://mxn.chat/auth/callback`, `https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback`
+
+   **MagicWRX:**
+   - Name: `magicwrx-auth-dev`
+   - Redirect URIs: `http://localhost:3002/auth/callback`, `https://ujfcflnrtrkdgfclwelz.supabase.co/auth/v1/callback`
+   - Name: `magicwrx-auth-prod`
+   - Redirect URIs: `https://magicwrx.com/auth/callback`, `https://ujfcflnrtrkdgfclwelz.supabase.co/auth/v1/callback`
+
+   **ADMIN:**
+   - Name: `admin-auth-dev`
+   - Redirect URIs: `http://localhost:3006/auth/callback`
+   - Name: `admin-auth-prod`
+   - Redirect URIs: `https://admin.magicwrx.com/auth/callback`
+
+4. **Save Client ID and Secret** for each client
+
+---
+
+### Part 2: Supabase Configuration
+
+#### Current Supabase Projects
+
+| Project | Account | Project Ref | URL |
+|---------|---------|-------------|-----|
+| **MagicWRX** | magicwrxstudio@gmail.com | ujfcflnrtrkdgfclwelz | https://ujfcflnrtrkdgfclwelz.supabase.co |
+| **MXN.CHAT** | magicwrxstudio@gmail.com | opcsbfwqazyzsskuuooz | https://opcsbfwqazyzsskuuooz.supabase.co |
+| **AmazinglyStrange** | brian@amazinglystrange.com | asvtzicvufmiuudctkbe | https://asvtzicvufmiuudctkbe.supabase.co |
+
+#### Configure Google OAuth in Each Project
+
+1. **Login to Supabase Dashboard**:
+   - Go to https://supabase.com/dashboard
+   - Login with appropriate account (see table above)
+
+2. **Select Project** (e.g., MXN.CHAT)
+
+3. **Enable Google Provider**:
+   - Go to **Authentication** → **Providers**
+   - Find **Google** and toggle ON
+   - Enter **Client ID** from Google Cloud Console
+   - Enter **Client Secret** from Google Cloud Console
+
+4. **Configure Redirect URLs**:
+   - Go to **Authentication** → **URL Configuration**
+   - **Site URL**: Production domain (e.g., `https://mxn.chat`)
+   - **Additional Redirect URLs**:
+     ```
+     http://localhost:3001/*
+     http://localhost:3001/auth/callback
+     https://mxn.chat/*
+     https://mxn.chat/auth/callback
+     ```
+
+5. **Repeat for MagicWRX and AmazinglyStrange projects**
+
+---
+
+### Part 3: Vercel Deployment
+
+#### Vercel Projects Setup
+
+1. **Login to Vercel**:
+   - Go to https://vercel.com
+   - Account: `magicwrxstudio@gmail.com`
+
+2. **Connect GitHub Repositories**:
+   - MXN.CHAT: Link to `mxn-chat` repo
+   - MagicWRX: Link to `MagicWRX` repo
+   - ADMIN: Link to `admin` repo
+   - AmazinglyStrange: Link to `amazingly-strange-website` repo
+
+3. **Configure Environment Variables** (for each project):
+
+   **Example: MXN.CHAT on Vercel:**
+   - Go to project → **Settings** → **Environment Variables**
+   - Add production variables:
+     ```
+     NEXT_PUBLIC_SUPABASE_URL = https://opcsbfwqazyzsskuuooz.supabase.co
+     NEXT_PUBLIC_SUPABASE_ANON_KEY = [from Supabase dashboard]
+     NEXT_PUBLIC_GOOGLE_CLIENT_ID = [from mxn-auth-prod]
+     GOOGLE_CLIENT_SECRET = [from mxn-auth-prod]
+     ```
+
+   **Example: MagicWRX on Vercel:**
+   - Add Supabase variables (same as above)
+   - Add Stripe variables:
+     ```
+     STRIPE_SECRET_KEY = sk_live_...
+     STRIPE_WEBHOOK_SECRET = whsec_...
+     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = pk_live_...
+     ```
+
+4. **Deploy**:
+   - Push to main branch → Vercel auto-deploys
+   - Or manually trigger deployment from Vercel dashboard
+
+---
+
+### Part 4: Stripe Integration (MagicWRX Only)
+
+**All billing is managed through `magicwrxstudio@gmail.com` Stripe account.**
+
+1. **Login to Stripe**:
+   - Go to https://dashboard.stripe.com
+   - Account: `magicwrxstudio@gmail.com`
+
+2. **Get API Keys**:
+   - Go to **Developers** → **API keys**
+   - Copy:
+     - Publishable key (pk_test_ or pk_live_)
+     - Secret key (sk_test_ or sk_live_)
+
+3. **Create Products & Pricing**:
+   - Go to **Products** → **Add product**
+   - Create tiers: Free, Starter, Pro, Enterprise
+   - Set recurring billing intervals
+
+4. **Setup Webhooks**:
+   - Go to **Developers** → **Webhooks** → **Add endpoint**
+   - Endpoint URL: `https://magicwrx.com/api/webhooks/stripe`
+   - Events to listen for:
+     - `customer.subscription.created`
+     - `customer.subscription.updated`
+     - `customer.subscription.deleted`
+     - `invoice.payment_succeeded`
+     - `invoice.payment_failed`
+   - Copy webhook signing secret (whsec_...)
+
+5. **Add to Vercel** (see Part 3 above)
+
+---
+
+### Part 5: Local Development Setup
+
+#### Install Dependencies
+
+```bash
+# ADMIN
+cd /Users/brianlindahl/Development/Business/ADMIN
+npm install
+npm run dev  # Runs on port 3006
+
+# MXN.CHAT
+cd /Users/brianlindahl/Development/Business/Websites/mxn-chat
+npm install
+npm run dev  # Runs on port 3001
+
+# MagicWRX
+cd /Users/brianlindahl/Development/Business/Websites/MagicWRX
+npm install
+npm run dev  # Runs on port 3002
+
+# Business HUB
+cd /Users/brianlindahl/Development/Business/SHARED/hub
+npm install
+npm run dev  # Runs on port 3000
+```
+
+#### Create .env.local Files
+
+**MXN.CHAT (.env.local):**
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://opcsbfwqazyzsskuuooz.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=[from Supabase dashboard]
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=[from mxn-auth-dev]
+GOOGLE_CLIENT_SECRET=[from mxn-auth-dev]
+```
+
+**MagicWRX (.env.local):**
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://ujfcflnrtrkdgfclwelz.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=[from Supabase dashboard]
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=[from magicwrx-auth-dev]
+GOOGLE_CLIENT_SECRET=[from magicwrx-auth-dev]
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+```
+
+**ADMIN (.env.local):**
+```bash
+# AmazinglyStrange
+NEXT_PUBLIC_AS_SUPABASE_URL=https://asvtzicvufmiuudctkbe.supabase.co
+NEXT_PUBLIC_AS_SUPABASE_ANON_KEY=[from AS Supabase]
+
+# MagicWRX
+NEXT_PUBLIC_MAGICWRX_SUPABASE_URL=https://ujfcflnrtrkdgfclwelz.supabase.co
+NEXT_PUBLIC_MAGICWRX_SUPABASE_ANON_KEY=[from MagicWRX Supabase]
+
+# MXN.CHAT
+NEXT_PUBLIC_MXN_SUPABASE_URL=https://opcsbfwqazyzsskuuooz.supabase.co
+NEXT_PUBLIC_MXN_SUPABASE_ANON_KEY=[from MXN Supabase]
+```
+
+---
+
+### Part 6: Testing
+
+#### Test Authentication Flow
+
+1. **Start Local Servers**:
+   ```bash
+   # Option 1: Start all projects
+   cd /Users/brianlindahl/Development/Business/SHARED
+   ./start-all-local.sh start
+
+   # Option 2: Start individual project
+   cd /Users/brianlindahl/Development/Business/Websites/mxn-chat
+   npm run dev
+   ```
+
+2. **Test Google OAuth**:
+   - Visit http://localhost:3001 (MXN) or http://localhost:3002 (MagicWRX)
+   - Click "Sign in with Google"
+   - Authorize with `magicwrxstudio@gmail.com`
+   - Verify redirect back to app
+   - Check Supabase dashboard for new user
+
+3. **Test ADMIN Dashboard**:
+   - Visit http://localhost:3006
+   - Login with email/password OR Google OAuth
+   - Verify site switcher works (brian@ sees AS, magicwrxstudio@ sees MagicWRX/MXN)
+   - Test platform-specific admin features
+
+4. **Test Stripe (MagicWRX)**:
+   - Use Stripe test cards: `4242 4242 4242 4242`
+   - Create test subscription
+   - Verify webhook delivery in Stripe dashboard
+   - Check subscription status updates in database
+
+---
+
+## 📋 Quick Reference: Account Access
+
+### Google Cloud Console
+- **URL**: https://console.cloud.google.com/
+- **Account**: `magicwrxstudio@gmail.com`
+- **Purpose**: OAuth client management
+- **Current Setup**: `Tools → Auth-Tool Credential` ✅ Complete
+- **Needs Setup**: MXN.CHAT, MagicWRX, ADMIN OAuth clients
+
+### Supabase Dashboard
+- **URL**: https://supabase.com/dashboard
+- **MagicWRX Account**: `magicwrxstudio@gmail.com`
+  - Projects: MagicWRX (ujfcflnrtrkdgfclwelz), MXN.CHAT (opcsbfwqazyzsskuuooz)
+- **AmazinglyStrange Account**: `brian@amazinglystrange.com`
+  - Project: AmazinglyStrange (asvtzicvufmiuudctkbe)
+
+### Vercel
+- **URL**: https://vercel.com
+- **Account**: `magicwrxstudio@gmail.com`
+- **Projects**: MXN.CHAT, MagicWRX, ADMIN, AmazinglyStrange, Hub
+
+### Stripe
+- **URL**: https://dashboard.stripe.com
+- **Account**: `magicwrxstudio@gmail.com`
+- **Purpose**: All billing & payments (MagicWRX subscriptions, revenue sharing)
+
+---
+
+## ✅ Setup Completion Checklist
+
+### Google OAuth
+- [x] `auth-tool` OAuth client created
+- [ ] `mxn-auth-dev` OAuth client created
+- [ ] `mxn-auth-prod` OAuth client created
+- [ ] `magicwrx-auth-dev` OAuth client created
+- [ ] `magicwrx-auth-prod` OAuth client created
+- [ ] `admin-auth-dev` OAuth client created
+- [ ] `admin-auth-prod` OAuth client created
+
+### Supabase Configuration
+- [ ] MXN.CHAT: Google provider configured (dev + prod)
+- [ ] MagicWRX: Google provider configured (dev + prod)
+- [ ] AmazinglyStrange: Google provider configured (optional)
+- [ ] All redirect URLs added to Supabase
+
+### Vercel Deployment
+- [ ] MXN.CHAT: Production env vars set
+- [ ] MagicWRX: Production env vars set (including Stripe)
+- [ ] ADMIN: Production env vars set (all 3 Supabase instances)
+- [ ] All projects deployed and accessible
+
+### Stripe Setup
+- [ ] API keys copied
+- [ ] Products & pricing tiers created
+- [ ] Webhook endpoint configured
+- [ ] Webhook signing secret added to Vercel
+
+### Local Development
+- [ ] All projects: .env.local files created
+- [ ] Dependencies installed (`npm install`)
+- [ ] Local servers start successfully
+- [ ] Google OAuth works locally
+- [ ] Database connections verified
 
 ---
 
