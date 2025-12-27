@@ -589,7 +589,7 @@ ALTER TABLE rooms ADD COLUMN vibe_settings JSONB DEFAULT '{}';
 const UI_LABELS = {
   room: 'Topic',
   rooms: 'Topics',
-  createRoom: 'Create Topic',
+	createRoom: 'Share Thought',
   deleteRoom: 'Delete Topic'
 };
 
