@@ -7,18 +7,26 @@
 
 ---
 ## Business Workspaces Entity Hierarchy
-1. Setup OAuth 2.0 Client IDs:
+## Google OAuth 2.0 Client IDs:
 
    amazinglystrangemedia@gmail.com
       amazinglystrange.com 
+         ✅ Vercel Redirect URLS:
+
+
          ✅ Authorized Redirect URI: https://asvtzicvufmiuudctkbe.supabase.co/auth/v1/callback
 
          .env.local - 
-         Client ID:
-         61447...
+            Cloud Flare - DNS
+            Brevo - admin@amazinglystrange.com
 
-         Client Secret:
-         GOCS...
+            Client ID:
+            61447...
+
+            Client Secret:
+            GOCS...
+
+
 
    magicwrxstudio@gmail.com
       magicwrx.com
@@ -27,7 +35,7 @@
       mxn.chat
          Authorized Redirect URI: https://opcsbfwqazyzsskuuooz.supabase.co/auth/v1/callback
 
-2. Setup Vercel
+## Vercel
    amazinglystrangemedia@gmail.com
       amazinglystrange.com
 
@@ -44,7 +52,7 @@
       magicwrx.com
       mxn.chat
 
-3. Setup Supabase
+## Supabase
    amazinglystrangemedia@gmail.com
       amazinglystrange.com
       
@@ -52,7 +60,7 @@
       magicwrx.com
       mxn.chat
 
-4. Setup Stripe
+## Stripe
       magicwrxstudio@gmail.com
       - magicwrx purchases
          - Blog
@@ -64,7 +72,7 @@
    Revenue Sharing
       AmazinglyStrange.com - Simple Online Store.
 
-5. Setup Brevo
+## Brevo
    magicwrxstudio@gmail.com
    - admin@magicwrx.com
    - admin@mxn.chat
@@ -76,7 +84,7 @@
    How Do I manage Customers
    - admin@pixelextreme
 
-6. Setup CloudFlare
+## CloudFlare
    magicwrxstudio@gmail.com
       DNS, MX Records
       - magicwrx.com
@@ -86,7 +94,7 @@
    How Do I manage Customers
    - pixelextreme.com
 
-7. Setup Google Adsense 
+## Google Adsense 
    amazinglystrangemedia@gmail.com - Current Account tied to MonstersReign.com Mobile Games
    - magicwrx.com shared revenue
       - Websites
@@ -100,7 +108,7 @@
          - Vibe Lounge
          - Thoughts
 
-8. Admob Advertiseing
+## Admob Advertiseing
    amazinglystrangemedia@gmail.com - account tied to adsense.
    - MonstersReign.com - Admob Banners
       - SnakeBot
@@ -112,9 +120,9 @@
       - Fluff's Happy Match
       - Murky Merge
 
-9. Google Analytics
+## Google Analytics
 
-10. Google Search
+## Google Search
 
 11. Google 
 

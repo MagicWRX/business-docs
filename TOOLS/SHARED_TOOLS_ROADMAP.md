@@ -16,9 +16,11 @@ These can be developed in parallel while `TOOLS_BLOG_ENGINE.md` evolves, because
 
 1) **Admin Layout (shared shell)**
 - Claimed by: GitHub Copilot — 2025-12-25
+- Status: ✅ Complete (Polished 2025-12-27)
 - Scope: shared sidebar + route groupings + consistent admin chrome
-- Files: `SHARED/*` (admin layout package once created), plus `DOCs/TOOLS/TOOLS_ADMIN_LAYOUT.md`
-- Avoid: editing `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md` and blog-engine package components
+- Files: `SHARED/admin-layout/*` and `DOCs/TOOLS/TOOLS_ADMIN_LAYOUT.md`
+- Package: `@amazing/admin-layout` v0.1.0
+- Avoid: editing blog-engine package components
 
 2) **Public Blog Display parity**
 - Claimed by: GitHub Copilot — 2025-12-26
@@ -62,6 +64,17 @@ These can be developed in parallel while `TOOLS_BLOG_ENGINE.md` evolves, because
    - public rendering decisions/implementation (use `DOCs/TOOLS/TOOLS_BLOG_DISPLAY.md`)
    - schema contract ownership beyond documenting findings (use `DOCs/TOOLS/TOOLS_SUPABASE_SCHEMAS.md`)
    - monetization decisions (use `DOCs/TOOLS/TOOL_MONETIZATION.md` + `DOCs/TOOLS/TOOL_REVENUE_SHARE.md`)
+
+8) **Email Domains (Customer branded sending — Option A)**
+- Claimed by: GitHub Copilot (GPT-5.2) — 2025-12-29
+- Scope: customer onboarding UI + DNS verification + sender identity management (no mailbox provisioning)
+- SSOT: `DOCs/TOOLS/TOOLS_EMAIL.md` and `DOCs/BUSINESS/MAGICWRX_CUSTOMER_BRANDED_EMAIL_OPTION_A.md`
+- Avoid: mailbox provisioning/reseller flows; keep it “send-as via Brevo” only
+
+Status (current):
+- ✅ ADMIN MVP implemented (Email Domains UI + TXT check endpoint)
+- ✅ `/api/dns/check-txt` hardened (auth required + light rate limiting)
+- 🔲 Customer self-serve onboarding UI (tenant-scoped) not implemented yet
 
 ## Suggested Development Order for AI Workstreams
 
@@ -159,12 +172,19 @@ This order prioritizes functional dependencies first (blog display needs blog en
    - Integration with `@amazing/blog-engine` and `@amazing/image-utils`
 
 ### 🚧 In Progress
-1. **Admin Layout** - Shared navigation/layout component
-   - Left sidebar with tool navigation
-   - Active state highlighting
-   - Collapsible design
+1. **Email Domains (Option A)**
+   - ADMIN MVP complete; customer self-serve onboarding remains
+
+### ✅ Recently Completed
+1. **Admin Layout** (2025-12-27)
+   - Collapsible sidebar with keyboard shortcuts
+   - localStorage persistence
+   - Section-based navigation
+   - Full TypeScript + tests
 
 ## Tools to Extract
+
+Note: This section is now primarily **historical inventory**. Most tools listed below have already been extracted and integrated (see **Current Status** above). Keep it as a reference for legacy names/paths.
 
 ### Priority 1: Core Admin Tools
 
@@ -283,7 +303,7 @@ This order prioritizes functional dependencies first (blog display needs blog en
 ---
 
 #### Blog Display (`/js/blog-display.js`)
-**Status**: Consider merging with blog-engine  
+**Status**: ✅ Complete (public blog display parity implemented)  
 **Features**:
 - Public-facing blog rendering
 - Pagination
@@ -309,11 +329,7 @@ This order prioritizes functional dependencies first (blog display needs blog en
 
 ---
 
-9. **Image Utils** - Extracted to `@amazing/image-utils`
-   - URL resolution for Firebase, S3, local paths
-   - Image processing (resize, crop, optimize) with Canvas API
-   - CDN integration (Cloudinary, Imgix)
-   - TypeScript-first, backend-agnostic
+Image Utils: ✅ complete (see **Current Status** above)
 
 ---
 
@@ -322,29 +338,11 @@ This order prioritizes functional dependencies first (blog display needs blog en
 
 ---
 
-## Integration Strategy
+## Integration Strategy (current)
 
-### Phase 1: Extract Core Admin Tools (Current)
-- Layout Manager ✅
-- Auth Tool ✅
-- Blog Engine ✅
-- Admin Layout 🚧
-- Media Manager (next)
+Status: ✅ extraction + ADMIN integration are complete for the currently listed tool packages.
 
-### Phase 2: Complete Admin Suite
-- Page Manager
-- Analytics Dashboard
-- Contact Manager
-
-### Phase 3: Frontend Components
-- Gallery components
-- Blog display
-- Header components
-
-### Phase 4: Utilities & Polish
-- Image utils
-- Testing & documentation
-- Performance optimization
+Remaining work is tracked as workstreams above (schemas, monetization docs, and Email Domains customer self-serve).
 
 ## Technical Approach
 
@@ -386,13 +384,11 @@ interface ToolProps {
 - **Dates**: date-fns
 - **State**: Built-in React hooks (avoid Redux/Zustand)
 
-## Next Steps
+## Next Steps (remaining / unclaimed)
 
-1. ✅ Complete Admin Layout with sidebar navigation
-2. ✅ Add Live Preview to Layout Manager
-3. 🔲 Extract Media Manager next
-4. 🔲 Document API patterns for each tool
-5. 🔲 Create integration examples for ADMIN app
+1. **Supabase schemas + migrations (cross-tool)** — claim workstream #5 and produce/confirm `TOOLS_SUPABASE_SCHEMAS.md`.
+2. **Monetization + Revenue Share docs** — claim workstream #3 and draft SSOT docs.
+3. **Email Domains (Option A) customer self-serve UI** — complete the tenant-scoped onboarding flow (workstream #8).
 
 ## Notes
 
