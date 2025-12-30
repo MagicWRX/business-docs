@@ -202,6 +202,28 @@ Since adding members to Vercel incurs a per-seat cost, use the following strateg
 	•	Maintain feature flags for experimental integrations
 	•	Document all changes in commit messages linking to SSOT entries
 
+---
+
+## Deployment Standards (Required)
+
+### A. No Local `file:` Dependencies in Production Builds
+- **Rule:** Any repo deployed by Vercel must build from the repo contents alone.
+- **Do not** use local-only dependency paths like `file:../../SHARED/...` in a Vercel-deployed repo unless the dependency directory is also inside the deployed repo/monorepo root.
+
+### B. Shared Package Strategy (Choose One)
+- **Preferred:** Monorepo + npm workspaces (Vercel project rooted at the monorepo)
+- **Alternative:** Publish shared packages (private registry)
+- **Fallback:** Vendor the shared package into the repo and ensure its runtime entrypoint exists in the build environment.
+
+### C. Vendoring Standard (If Used)
+- If the vendored package’s `package.json` uses `main: dist/index.js`, then `dist/**` must exist during the Vercel build.
+- If the app’s `.gitignore` ignores `dist/`, add an explicit allowlist exception for the vendored path (example: `!vendor/<pkg>/dist/**`).
+
+### D. Pre-Deploy Build Gate
+- Before pushing to `main`, run a clean build check:
+  - `npm ci && npm run build`
+- Goal: catch missing modules and packaging mistakes before Vercel.
+
 ⸻
 
 End of document.

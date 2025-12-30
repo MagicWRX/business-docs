@@ -73,6 +73,61 @@ Domain mismatch between Supabase configuration and actual site hosting:
 - Requires updates to Supabase Dashboard and Google Cloud Console
 - Should resolve Google Sign-In functionality on live site
 
+---
+
+### 11. Vercel Build Fails - Local `file:` Dependency / Ignored `dist/`
+**Date:** December 29–30, 2025
+**Status:** ✅ RESOLVED
+**Severity:** CRITICAL (Blocks production deployment)
+
+#### **Symptoms:**
+- Vercel deployment does not update production site after GitHub push.
+- Vercel build logs show:
+  - `Module not found: Can't resolve '@amazing/location-filter'`
+  - Import trace includes `./src/components/ChatInterface.tsx` and `./src/components/MessageList.tsx`.
+- Local development works because the dependency exists on disk.
+
+#### **Root Cause Analysis:**
+This was a packaging/deployment mismatch, not a branch mismatch.
+
+1. **Local-only dependency path**
+   - `mxn-chat/package.json` referenced `@amazing/location-filter` via a local filesystem path (example pattern: `file:../../SHARED/location-filter`).
+   - Vercel only checks out the Git repo being deployed, so that path does not exist in the build container.
+
+2. **Compiled entrypoint missing in the deployed repo**
+   - Even after vendoring the package into the repo (e.g., `vendor/location-filter`), the package’s `main` points to `dist/index.js`.
+   - `dist/` was ignored by the app’s `.gitignore`, so the compiled output was not present in Vercel.
+   - Result: webpack could not resolve the module.
+
+#### **Solution Implemented:**
+1. Vendor the shared package into the deployed repo:
+   - Add `vendor/location-filter/` into the MXN Chat repo.
+2. Update the dependency to a repo-relative path:
+   - Set `@amazing/location-filter` to `file:./vendor/location-filter`.
+3. Ensure the vendored package entrypoint exists in Vercel:
+   - Un-ignore and commit `vendor/location-filter/dist/**` (or change the package to build during install).
+
+#### **Files Modified:**
+- `mxn-chat/package.json` (dependency path)
+- `mxn-chat/.gitignore` (allow vendored `dist/` output)
+- `mxn-chat/vendor/location-filter/dist/**` (committed build output)
+
+#### **Verification Steps:**
+1. In the deployed repo (clean environment):
+   - `npm ci` (or `npm install`)
+   - `npm run build`
+2. In Vercel:
+   - Confirm the latest deployment uses the expected commit.
+   - Confirm the build completes with no `module not found` errors.
+
+#### **Prevention Standard (Do This Every Time):**
+- **No local filesystem dependencies in production deployments.** Do not use `file:../../...` paths for anything that must build on Vercel.
+- If using shared packages:
+  - Prefer **monorepo workspaces** (single Vercel project rooted at monorepo) OR
+  - Publish packages (private registry) OR
+  - Vendor packages into the repo **and commit the actual runtime entrypoint** (e.g., `dist/`).
+- Add a pre-deploy check: run `npm ci && npm run build` in a clean clone (or via CI) to catch missing modules before pushing.
+
 ## Clarify Updating Documents
 Ensure Documents are updated. Review chat and solved fix and add process, protocols to MXN_SOLUTIONS.md. Update MXN_INDEX.md, MXN_TREE, and MXN_SUPABASE_SCHEMA_SSOT.md with updates, fixes and corrections so faulty patterns and protocols can be avoided and improved.
 
