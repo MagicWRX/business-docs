@@ -1,0 +1,18 @@
+name: 'Block .bak files'
+
+on:
+  pull_request:
+    paths-ignore: ['DOCS_BACKUPS/**']
+
+jobs:
+  check-no-bak:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Run repository backup-file check
+        run: |
+          node DOCS/scripts/check_repo_no_bak.js

@@ -31,6 +31,10 @@ This doc explains how AI agents and automation should consume the DOCs SSOTs.
 3. Propose replacements and create a PR with changes and `DOCS_DOC_SCRIPT_MAP.md` attached.
 4. Run `doc_lint.js` in CI to ensure no blocking errors.
 
+## Pre-commit & CI checks
+- Agents should **never** introduce `.bak` or `.std.bak` files in PRs; move backup files into `DOCS_BACKUPS/` and commit the relocation instead.
+- Run `npm run check-repo-no-bak` in CI (or `node DOCS/scripts/check_repo_no_bak.js`) to block merges that introduce tracked `.bak` files.
+
 ## Contact
 - Owner: Docs Team
 - Slack: #docs
