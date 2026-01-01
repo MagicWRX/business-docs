@@ -205,7 +205,7 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ Firebase Storage + Firestore adapter
 - ✅ File size formatting and metadata display
 
-**Integration**: Used in `/ADMIN/src/app/amazinglystrange/media/page.tsx`
+**Integration**: Used in `ADMIN/src/app/amazinglystrange/media/page.tsx`
 
 ---
 
@@ -228,11 +228,11 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ REST API adapter
 - ✅ Firebase adapter stub (requires firebase package)
 
-**Integration**: Used in `/ADMIN/src/app/amazinglystrange/pages/page.tsx`
+**Integration**: Used in `ADMIN/src/app/amazinglystrange/pages/page.tsx`
 
 ---
 
-#### Analytics Manager (`/js/analytics-manager.js`)
+#### Analytics Manager (`Websites/amazingly-strange-website/amazingly-strange-website/public/js/analytics-manager.js`)
 **Status**: ✅ Complete  
 **Package**: `@amazing/analytics-dashboard`  
 **Size**: 384 lines (legacy) → 5 components + 2 backends  
@@ -252,11 +252,11 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ Mock backend with simulated real-time updates
 - ✅ REST API adapter with polling support
 
-**Integration**: Used in `/ADMIN/src/app/amazinglystrange/analytics/page.tsx`
+**Integration**: Used in `ADMIN/src/app/amazinglystrange/analytics/page.tsx`
 
 ---
 
-#### Contact Manager (`/js/contact-manager.js`)
+#### Contact Manager (`Websites/amazingly-strange-website/amazingly-strange-website/public/js/contact-manager.js`)
 **Status**: ✅ Complete  
 **Package**: `@amazing/contact-manager`  
 **Size**: 626 lines (legacy) → 5 components + 2 backends  
@@ -277,7 +277,7 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ Mock backend with 5 sample contacts
 - ✅ REST API adapter with polling
 
-**Integration**: Used in `/ADMIN/src/app/amazinglystrange/contacts/page.tsx`
+**Integration**: Used in `ADMIN/src/app/amazinglystrange/contacts/page.tsx`
 
 ---
 
@@ -298,11 +298,11 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ `GalleryLightbox` (overlay + keyboard + touch/swipe)
 - ✅ `ArtworkGallery` (hero + thumbnails + lightbox)
 
-**Integration**: Used in `/ADMIN/src/app/amazinglystrange/gallery/page.tsx`
+**Integration**: Used in `ADMIN/src/app/amazinglystrange/gallery/page.tsx`
 
 ---
 
-#### Blog Display (`/js/blog-display.js`)
+#### Blog Display (`Websites/amazingly-strange-website/amazingly-strange-website/public/js/blog-display.js`)
 **Status**: ✅ Complete (public blog display parity implemented)  
 **Features**:
 - Public-facing blog rendering
@@ -333,7 +333,7 @@ Image Utils: ✅ complete (see **Current Status** above)
 
 ---
 
-#### Font Loader (`/js/font-loader.js`)
+#### Font Loader (`Websites/amazingly-strange-website/amazingly-strange-website/public/js/font-loader.js`)
 **Status**: Low priority (Next.js has built-in font optimization)
 
 ---
@@ -353,7 +353,7 @@ Remaining work is tracked as workstreams above (schemas, monetization docs, and 
     /src/
       /components/  - React components
       /lib/         - Utility functions
-      /types.ts     - TypeScript definitions
+      ADMIN/node_modules/@jridgewell/gen-mapping/src/types.ts     - TypeScript definitions
     /dist/          - Compiled output
     package.json
     tsconfig.json

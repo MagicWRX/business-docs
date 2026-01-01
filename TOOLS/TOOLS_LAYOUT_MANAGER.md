@@ -15,10 +15,10 @@ The Layout Manager is a visual page layout builder extracted from AmazinglyStran
 The Layout Manager tool is integrated into the following *.tsx pages:
 
 ### ADMIN App
-- `/ADMIN/src/app/amazinglystrange/layout-manager/page.tsx` - Main layout manager page in the admin interface (redirects to `/login` when not authenticated)
+- `ADMIN/src/app/amazinglystrange/layout-manager/page.tsx` - Main layout manager page in the admin interface (redirects to `/login` when not authenticated)
 
 ### SHARED Hub
-- `/SHARED/hub/src/app/tools/layout-manager/page.tsx` - Demo/standalone version in the shared tools hub
+- `SHARED/hub/src/app/tools/layout-manager/page.tsx` - Demo/standalone version in the shared tools hub
 
 ## Page Breakdown (Linux ASCII Tree)
 

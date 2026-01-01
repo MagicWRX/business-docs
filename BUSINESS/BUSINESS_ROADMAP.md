@@ -480,7 +480,7 @@ Build a scalable Platform-as-a-Service (PaaS) ecosystem that enables unlimited c
   - [ ] Create basic directory structure
 
 - [ ] **Multi-Supabase Client Setup**
-  - [ ] Create `lib/supabase/factory.ts`
+  - [ ] Create `ADMIN/src/lib/supabase/factory.ts`
   - [ ] Configure environment variables for all 3 Supabase instances:
     - AmazinglyStrange Supabase (brian@amazinglystrange.com)
     - MagicWRX Supabase (magicwrxstudio@gmail.com)

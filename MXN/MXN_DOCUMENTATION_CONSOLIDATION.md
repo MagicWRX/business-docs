@@ -33,7 +33,7 @@
 
 **Created in /DOCs/MXN/:**
 - ✅ `MXN_INDEX.md` (v3.0.0) - AI_STANDARDS.md compliant index
-- ✅ `MXN_EMAIL_SETUP.md` (v3.0.0) - Migrated from mxn-chat/docs/ with enhancements
+- ✅ `MXN_EMAIL_SETUP.md` (v3.0.0) - Migrated from Websites/mxn-chat/docs with enhancements
 
 **Updated in /DOCs/MXN/:**
 - ✅ `MXN_INDEX.md` - Added deprecation notice, redirects to MXN_INDEX.md
@@ -95,7 +95,7 @@
 │   └── MXN/                                # MXN.CHAT SSOT
 │       ├── MXN_INDEX.md                    # ✅ NEW - Central index (v3.0.0)
 │       ├── MXN_INDEX.md                    # ✅ Updated - Redirects to DOC_INDEX
-│       ├── MXN_EMAIL_SETUP.md              # ✅ NEW - Migrated from mxn-chat/docs
+│       ├── MXN_EMAIL_SETUP.md              # ✅ NEW - Migrated from Websites/mxn-chat/docs
 │       ├── MXN_SECURITY.md                 # ✅ Existing (v2.0.0)
 │       ├── MXN_TREE.md                     # ✅ Existing (v2.0.0)
 │       ├── MXN_ROADMAP.md                  # ✅ Existing
@@ -140,8 +140,8 @@ Reference MXN_ROADMAP.md, MXN_TREE.md, MXN_SECURITY.md, MXN_EMAIL_SETUP.md.
 - ❌ `/mxn-chat/docs/MXN_INDEX.md`
 
 **New Reference:**
-- ✅ `/DOCs/MXN/MXN_INDEX.md` (start here)
-- ✅ `/DOCs/MXN/MXN_EMAIL_SETUP.md`
+- ✅ `DOCs/MXN/MXN_INDEX.md` (start here)
+- ✅ `DOCs/MXN/MXN_EMAIL_SETUP.md`
 
 ### For CI/CD Pipelines
 
@@ -213,7 +213,7 @@ Create `/mxn-chat/docs/archive/` for historical reference:
 4. ✅ Test inbox delivery (not spam)
 
 ### Short-term (Next Sprint)
-1. Delete deprecated files from `/mxn-chat/docs/` after validation
+1. Delete deprecated files from `Websites/mxn-chat/docs` after validation
 2. Update CI/CD to reference new docs location
 3. Archive legacy content if historical value
 4. Train team on new MXN_INDEX.md navigation

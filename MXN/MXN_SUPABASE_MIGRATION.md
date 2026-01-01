@@ -60,7 +60,7 @@ The migration includes:
 
 ### Dependencies
 - Removed: `firebase`
-- Added: `@supabase/supabase-js`, `@supabase/ssr`
+- Added: `ADMIN/node_modules/@supabase/supabase-js`, `@supabase/ssr`
 
 ### Database Schema
 - Users: UUID primary key, email unique

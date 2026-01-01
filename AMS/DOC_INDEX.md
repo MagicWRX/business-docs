@@ -116,7 +116,7 @@ This directory contains all documentation for **AmazinglyStrange.com**, the gami
 ## Related Documentation
 
 - **Business Level**: `/DOCs/BUSINESS/` - Overall business architecture
-- **Admin System**: `/DOCs/BUSINESS/BUSINESS_ADMIN.md` - Central admin dashboard
+- **Admin System**: `DOCs/BUSINESS/BUSINESS_ADMIN.md` - Central admin dashboard
 - **Shared Components**: `/SHARED/` directory (when extracted)
 
 ---

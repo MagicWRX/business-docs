@@ -49,7 +49,7 @@ flowchart TD
 ### 1. Authentication Service
 -   **Provider:** Supabase Auth (GoTrue)
 -   **Methods:** Email/Password, Google OAuth
--   **Integration:** `src/lib/supabase/client.ts`, `src/hooks/useSupabaseAuth.ts`
+-   **Integration:** `SHARED/auth-tool/src/lib/supabase/client.ts`, `src/hooks/useSupabaseAuth.ts`
 
 ### 2. Database Layer
 -   **Provider:** Supabase (PostgreSQL)

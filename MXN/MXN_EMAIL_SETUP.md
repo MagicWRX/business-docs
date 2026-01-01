@@ -63,7 +63,7 @@ You can **SEND** emails from `admin@mxn.chat`, but you **CANNOT RECEIVE** emails
 ```
 
 **Key Components:**
-- **API Route:** `/src/app/api/send-invite/route.ts` (server-side only)
+- **API Route:** `Websites/mxn-chat/src/app/api/send-invite/route.ts` (server-side only)
 - **Environment:** `BREVO_API_KEY` in `.env.local` (gitignored)
 - **Provider:** Brevo Transactional Email API v3
 - **Sender:** `admin@mxn.chat` (verified domain required)

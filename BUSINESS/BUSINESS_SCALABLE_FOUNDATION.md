@@ -62,7 +62,7 @@ This approach allows us to build features *once* in the Head/Shared Packages and
 
 ### Phase 1: The Core (Week 1)
 1.  **Security:** Add `middleware.ts` to `base-template` with security headers and Auth verification.
-2.  **SEO:** Configure dynamic `metadata` in `base-template/src/app/layout.tsx`.
+2.  **SEO:** Configure dynamic `metadata` in `Websites/base-template/src/app/layout.tsx`.
 3.  **AI:** Create a standalone `ai-assistant` package (or component folder) using Vercel AI SDK.
 
 ### Phase 2: The Assets (Week 2)

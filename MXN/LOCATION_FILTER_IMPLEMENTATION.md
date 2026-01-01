@@ -257,7 +257,7 @@ const filteredMessages = filterMessages(messages, {
 ```bash
 cd /Users/brianlindahl/Development/Business/Websites/mxn-chat
 supabase db push
-# Apply: /SHARED/location-filter/schema.sql
+# Apply: SHARED/location-filter/schema.sql
 ```
 
 ### Phase 2: Components ✅
@@ -319,7 +319,7 @@ npm run build
 
 ### Phase 4: Admin Dashboard ✅
 
-1. ✅ Create ADMIN components (`/ADMIN/src/components/location-manager/`)
+1. ✅ Create ADMIN components (`ADMIN/src/components/location-manager`)
 2. ✅ Build analytics view
 3. ✅ Build moderation tools
 4. ✅ Build privacy settings

@@ -540,7 +540,7 @@ SUCCESS VALIDATION CHECKLIST
    # Initialize fresh Next.js in target directory
    cd amazingly-strange-website
    npx create-next-app@latest . --typescript --tailwind --app
-   npm install @supabase/supabase-js @supabase/auth-helpers-nextjs
+   npm install ADMIN/node_modules/@supabase/supabase-js @supabase/auth-helpers-nextjs
    ```
 
 3. **📋 Roadmap Compliance:**

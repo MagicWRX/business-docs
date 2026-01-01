@@ -43,7 +43,7 @@ MagicWRX/
 ## 📁 Key Directories
 
 -   **`src/app`**: Contains the file-system based routing.
--   **`src/lib/supabase`**: Contains the Supabase client initialization for client and server.
+-   **`ADMIN/src/lib/supabase`**: Contains the Supabase client initialization for client and server.
 -   **`src/components`**: Shared UI components like buttons, cards, and inputs.
 -   **`public`**: Images and static files served from the root.
 

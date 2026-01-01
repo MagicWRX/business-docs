@@ -420,9 +420,9 @@ const logAction = async (action, details) => {
 
 ### Files Modified (October 2025)
 - ✅ `/public/admin.html` - Complete dashboard replacement
-- ✅ `/public/js/admin-dashboard.js` - Dashboard controller with Firebase integration
-- ✅ `/public/js/page-manager.js` - Page editing with image upload
-- ✅ `/public/js/media-manager.js` - Media library with blog-images integration
+- ✅ `Websites/amazingly-strange-website/amazingly-strange-website/public/js/admin-dashboard.js` - Dashboard controller with Firebase integration
+- ✅ `Websites/amazingly-strange-website/amazingly-strange-website/public/js/page-manager.js` - Page editing with image upload
+- ✅ `Websites/amazingly-strange-website/amazingly-strange-website/public/js/media-manager.js` - Media library with blog-images integration
 
 ### Firebase Integration
 - **Authentication:** Google Sign-in with custom claims verification

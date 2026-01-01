@@ -37,7 +37,7 @@ amazingly-strange-website/
 ├── src/
 │   ├── app/                       # Next.js App Router pages & layouts
 │   ├── components/                # Reusable React components
-│   └── lib/supabase/              # Supabase client factories
+│   └── ADMIN/src/lib/supabase              # Supabase client factories
 ├── public/                        # Static assets (images, badges)
 ├── scripts/                       # Database setup scripts
 ├── checkpoints/                   # Phase checklists

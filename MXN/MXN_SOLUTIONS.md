@@ -108,7 +108,7 @@ This was a packaging/deployment mismatch, not a branch mismatch.
    - Un-ignore and commit `vendor/location-filter/dist/**` (or change the package to build during install).
 
 #### **Files Modified:**
-- `mxn-chat/package.json` (dependency path)
+- `Websites/mxn-chat/package.json` (dependency path)
 - `mxn-chat/.gitignore` (allow vendored `dist/` output)
 - `mxn-chat/vendor/location-filter/dist/**` (committed build output)
 

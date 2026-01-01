@@ -21,7 +21,7 @@ You are working on **MagicWRX**, a Next.js 15+ business website builder platform
 ### 📂 Project Structure
 - `src/app`: Routes.
 - `src/components`: Reusable UI.
-- `src/lib/supabase`: Database clients.
+- `ADMIN/src/lib/supabase`: Database clients.
 - `DOCs/MAGICWRX`: Source of Truth documentation.
 
 ### 📝 Coding Standards

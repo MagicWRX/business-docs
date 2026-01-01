@@ -228,7 +228,7 @@ CREATE POLICY "Clients see own sites" ON client_sites
 ### **Installation in Projects**
 
 ```json
-// MagicWRX/package.json
+// Websites/MagicWRX/package.json
 {
   "dependencies": {
     "@amazing/auth-tool": "file:../../SHARED/auth-tool",
@@ -342,7 +342,7 @@ GOOGLE_ADSENSE_API_KEY=...
 ### Completed
 1. ✅ **Review architecture decision** (this document)
 2. ✅ **Create `/ADMIN/` Next.js project** - Completed and pushed to GitHub
-3. ✅ **Implement multi-Supabase client factory** - Factory pattern implemented in `lib/supabase/factory.ts`
+3. ✅ **Implement multi-Supabase client factory** - Factory pattern implemented in `ADMIN/src/lib/supabase/factory.ts`
 4. ✅ **Build site switcher UI** - Dashboard includes platform switcher dropdown
 5. ✅ **Build AmazinglyStrange admin features** - Blog and Media management pages created
 6. ✅ **Build MagicWRX admin** - Client management and billing dashboard created

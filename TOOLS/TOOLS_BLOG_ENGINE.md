@@ -37,11 +37,11 @@ Authoring UI (`@amazing/blog-engine`) plus migration tooling notes for moving le
 
 ## Connected Pages
 ### SHARED Hub
-- `/SHARED/hub/src/app/tools/blog-engine/page.tsx`
+- `SHARED/hub/src/app/tools/blog-engine/page.tsx`
 
 ### ADMIN App
-- `/ADMIN/src/app/blog/page.tsx` (uses `@amazing/blog-engine` `BlogManager`)
-- `/ADMIN/src/app/admin/amazinglystrange/blog/page.tsx` (uses `@amazing/blog-engine` backed by Supabase `blog_posts`)
+- `ADMIN/src/app/blog/page.tsx` (uses `@amazing/blog-engine` `BlogManager`)
+- `ADMIN/src/app/admin/amazinglystrange/blog/page.tsx` (uses `@amazing/blog-engine` backed by Supabase `blog_posts`)
 
 ## Parity Definition
 - Post CRUD: create/edit/delete
