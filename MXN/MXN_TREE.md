@@ -15,6 +15,7 @@ lastReviewed: "2026-01-01"
 tags:
   - "architecture"
   - "ssot"
+  - "../../../../mxn-chat/docs/EMAIL_SETUP.md"
 ---
 
 # MXN.CHAT Technical Architecture & File Structure (SSOT)
@@ -452,7 +453,7 @@ User → InviteFriendsDialog → /api/send-invite
 - **[MXN_ROADMAP.md](MXN_ROADMAP.md)** - Development phases and milestones
 - **[MXN_SYSTEM.md](MXN_SYSTEM.md)** - Complete system overview
 - **[MXN_INDEX.md](MXN_INDEX.md)** - Quick reference guide
-- **[/docs/EMAIL_SETUP.md](/mxn-chat/docs/EMAIL_SETUP.md)** - Email configuration guide
+- **[/docs/EMAIL_SETUP.md](CODE:`../../../../mxn-chat/docs/EMAIL_SETUP.md`)** - Email configuration guide
 
 ---
 

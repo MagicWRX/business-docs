@@ -13,7 +13,7 @@ To achieve scale while immediately integrating AI, Media, SEO, Security, and Com
 *   **The HEAD (Hub):** `MagicWRX` (Platform Core). Handles global auth (`auth-tool`), billing (Stripe Connect), centralized media storage, and AI orchestration.
 *   **The SPOKES (Instances):** User sites based on `base-template`. These are lightweight, high-performance Next.js apps that consume services from the Head via APIs/SDKs.
 
-This approach allows us to build features *once* in the Head/Shared Packages and deploy them to thousands of user sites instantly.
+This approach allows us to build features *once* in the CODE:`DOCs/BUSINESS/Head/Shared` Packages and deploy them to thousands of user sites instantly.
 
 ---
 
@@ -62,7 +62,7 @@ This approach allows us to build features *once* in the Head/Shared Packages and
 
 ### Phase 1: The Core (Week 1)
 1.  **Security:** Add `middleware.ts` to `base-template` with security headers and Auth verification.
-2.  **SEO:** Configure dynamic `metadata` in `Websites/base-template/src/app/layout.tsx`.
+2.  **SEO:** Configure dynamic `metadata` in `CODE:`DOCs/BUSINESS/Websites/base-template/src/app/layout.tsx``.
 3.  **AI:** Create a standalone `ai-assistant` package (or component folder) using Vercel AI SDK.
 
 ### Phase 2: The Assets (Week 2)

@@ -15,6 +15,7 @@ lastReviewed: "2026-01-01"
 tags:
   - "roadmap"
   - "planning"
+  - "../../../../src/contexts/ChatContext.ts"
 ---
 
 # MXN.CHAT Master Roadmap (SSOT)
@@ -288,7 +289,7 @@ Release target: Multi-Platform MVP 2.0
    ```
 
 2. **Review Auth State Listener:**
-   - File: `/src/contexts/ChatContext.tsx`
+   - File: `CODE:`../../../../src/contexts/ChatContext.ts`x`
    - Line: 168 - `supabase.auth.onAuthStateChange()`
    - Add console logging to track auth events
 

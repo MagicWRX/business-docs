@@ -21,7 +21,7 @@ Public-facing blog rendering for AmazinglyStrange parity (blog index + post page
 ### Rendering Strategy Decision (Finalized)
 Decision: Render stored HTML (sanitized/allowlisted) — faster to ship, compatible with current blog-engine output.
 
-This has been implemented in `Websites/amazingly-strange-website/src/app/blog/` using DOMPurify for sanitization.
+This has been implemented in `CODE:`DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog`` using DOMPurify for sanitization.
 
 ### Data Contract (Initial)
 Minimal fields needed for public rendering (confirm when inspecting `@amazing/blog-engine`):
@@ -64,7 +64,7 @@ The package exposes a `BlogPost` type with these fields — use this as the sour
 - Resolve/normalize relative image URLs using `@amazing/image-utils` when available.
 
 ### Routes / Implementation Target
-- Target site (Next.js): add routes under `Websites/amazingly-strange-website/src/app/blog/` for `index` and `[slug]`.
+- Target site (Next.js): add routes under `CODE:`DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog`` for `index` and `[slug]`.
 - Prefer SSR/SSG for SEO with incremental/static options.
 
 ### Testing Strategy
@@ -79,13 +79,13 @@ The package exposes a `BlogPost` type with these fields — use this as the sour
 ### Implementation Checklist
 - [x] Map `@amazing/blog-engine` model fields to public contract
 - [x] Implement sanitization util and unit tests
-- [x] Implement `BlogIndex` + `BlogPost` pages in `Websites/amazingly-strange-website/src/app/blog/`
+- [x] Implement `BlogIndex` + `BlogPost` pages in `CODE:`DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog``
 - [x] Create mock/rest adapter examples for public read operations
 - [x] Add e2e tests in `SHARED/hub` or website test suite
-- [x] Finalize docs and link back to `DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
+- [x] Finalize docs and link back to `CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md``
 
 ### Links
-- SSOT coordination: `DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
+- SSOT coordination: `CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md``
 - Authoring tool: `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md`
 
 ---

@@ -116,6 +116,14 @@ function check() {
     }
   }
 
+  // Write a machine-readable summary for CI consumers
+  const summary = { generatedAt: new Date().toISOString(), errors, warnings };
+  fs.writeFileSync(path.join(path.dirname(MAP_JSON), 'DOCS_DOC_LINT_REPORT.json'), JSON.stringify(summary, null, 2));
+
+  // Also create a human-friendly summary
+  const summaryMd = [`# DOC-LINT SUMMARY`, `Generated: ${summary.generatedAt}`, '', `## Errors (${errors.length})`, ...errors.map(e => `- ${e}`), '', `## Warnings (${warnings.length})`, ...warnings.map(w => `- ${w}`)];
+  fs.writeFileSync(path.join(path.dirname(MAP_JSON), 'DOCS_DOC_LINT_SUMMARY.md'), summaryMd.join('\n'));
+
   if (errors.length > 0) {
     console.error('\nDOC-LINT ERRORS:');
     for (const e of errors) console.error(' - ' + e);

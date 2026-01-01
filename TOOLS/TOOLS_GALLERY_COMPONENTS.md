@@ -9,10 +9,10 @@ Reusable frontend gallery primitives (grid/masonry/carousel/lightbox) extracted 
 
 ## Connected Pages
 ### ADMIN App
-- `ADMIN/src/app/amazinglystrange/gallery/page.tsx`
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/gallery/page.tsx``
 
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/gallery/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/gallery/page.tsx``
 
 ## What “Parity” Means Here
 - Layouts can render galleries from structured image lists.

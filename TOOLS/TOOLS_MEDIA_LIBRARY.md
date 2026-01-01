@@ -9,10 +9,10 @@ Media upload/browse tool extracted for AmazinglyStrange parity.
 
 ## Connected Pages
 ### ADMIN App
-- `ADMIN/src/app/amazinglystrange/media/page.tsx`
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/media/page.tsx``
 
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/media-library/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/media-library/page.tsx``
 
 ## Parity Definition
 - Upload (with validation), browse/search/filter

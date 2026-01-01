@@ -51,7 +51,7 @@ The Location Filter Tool enables MXN.CHAT users to filter "thoughts" and "vibes"
 ### Admin Components
 
 ```
-/ADMIN/src/components/location-manager/
+/CODE:`DOCs/MXN/ADMIN/src/components/location-manager`/
 ├── LocationManager.tsx        # Main admin dashboard
 ├── RegionAnalytics.tsx        # Usage statistics
 ├── LocationModeration.tsx     # Block/unblock regions
@@ -138,7 +138,7 @@ CREATE POLICY "Users can view active regions"
 
 ### Current PILL DROPDOWN (ChatInterface.tsx)
 
-**Location:** [ChatInterface.tsx](../../../mxn-chat/src/components/ChatInterface.tsx#L381-L402)
+**Location:** [ChatInterface.tsx](CODE:`../mxn-chat/src/components/ChatInterface.tsx#L381-L402`)
 
 **Current Code:**
 ```tsx
@@ -282,7 +282,7 @@ npm run build
    npm install file:../../SHARED/location-filter
    ```
 
-2. ⏳ Update [ChatInterface.tsx](../../../mxn-chat/src/components/ChatInterface.tsx):
+2. ⏳ Update [ChatInterface.tsx](CODE:`../mxn-chat/src/components/ChatInterface.tsx`):
    ```tsx
    // Replace lines 381-402 with LocationPillDropdown
    import { LocationPillDropdown } from '@amazing/location-filter';
@@ -319,7 +319,7 @@ npm run build
 
 ### Phase 4: Admin Dashboard ✅
 
-1. ✅ Create ADMIN components (`ADMIN/src/components/location-manager`)
+1. ✅ Create ADMIN components (`CODE:`DOCs/MXN/ADMIN/src/components/location-manager``)
 2. ✅ Build analytics view
 3. ✅ Build moderation tools
 4. ✅ Build privacy settings
@@ -582,8 +582,8 @@ npm install file:../../SHARED/location-filter
 ## 📞 Support
 
 For questions or issues:
-- Review: [SHARED/location-filter/README.md](../../../SHARED/location-filter/README.md)
-- Check: [ADMIN location-manager README](../../../ADMIN/src/components/location-manager/README.md)
+- Review: [SHARED/location-filter/README.md](CODE:`../SHARED/location-filter/README.md`)
+- Check: [ADMIN location-manager README](../../../CODE:`DOCs/MXN/ADMIN/src/components/location-manager`/README.md)
 - Contact: MagicWRX Studio Team
 
 ---

@@ -213,4 +213,4 @@ When the UI says “Add these DNS records”, the customer:
 
 ## Related tooling
 
-- DNS/SMTP review script (operator tool): [SHARED/review-smtp-setup.sh](../../SHARED/review-smtp-setup.sh)
+- DNS/SMTP review script (operator tool): [SHARED/review-smtp-setup.sh](CODE:`SHARED/review-smtp-setup.sh`)

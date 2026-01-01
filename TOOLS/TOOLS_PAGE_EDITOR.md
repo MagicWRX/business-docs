@@ -9,10 +9,10 @@ Page CRUD + metadata editing tool extracted for AmazinglyStrange parity.
 
 ## Connected Pages
 ### ADMIN App
-- `ADMIN/src/app/amazinglystrange/pages/page.tsx`
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/pages/page.tsx``
 
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/page-editor/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/page-editor/page.tsx``
 
 ## Parity Definition
 - Page CRUD: title/path/metadata

@@ -162,9 +162,9 @@ This section acknowledges and summarizes the comprehensive admin dashboard imple
 
 **File Structure:**
 - `/public/admin.html` - Main dashboard interface
-- `/public/js/admin-dashboard.js` - Dashboard controller
-- `/public/js/page-manager.js` - Page editing functionality
-- `/public/js/media-manager.js` - Media library management
+- `CODE:`../../../../public/js/admin-dashboard.js`` - Dashboard controller
+- `CODE:`../../../../public/js/page-manager.js`` - Page editing functionality
+- `CODE:`../../../../public/js/media-manager.js`` - Media library management
 
 ### 📱 Responsive Design
 
@@ -420,9 +420,9 @@ const logAction = async (action, details) => {
 
 ### Files Modified (October 2025)
 - ✅ `/public/admin.html` - Complete dashboard replacement
-- ✅ `Websites/amazingly-strange-website/amazingly-strange-website/public/js/admin-dashboard.js` - Dashboard controller with Firebase integration
-- ✅ `Websites/amazingly-strange-website/amazingly-strange-website/public/js/page-manager.js` - Page editing with image upload
-- ✅ `Websites/amazingly-strange-website/amazingly-strange-website/public/js/media-manager.js` - Media library with blog-images integration
+- ✅ `Websites/amazingly-strange-website/amazingly-strange-websiteCODE:`../../../../public/js/admin-dashboard.js`` - Dashboard controller with Firebase integration
+- ✅ `Websites/amazingly-strange-website/amazingly-strange-websiteCODE:`../../../../public/js/page-manager.js`` - Page editing with image upload
+- ✅ `Websites/amazingly-strange-website/amazingly-strange-websiteCODE:`../../../../public/js/media-manager.js`` - Media library with blog-images integration
 
 ### Firebase Integration
 - **Authentication:** Google Sign-in with custom claims verification

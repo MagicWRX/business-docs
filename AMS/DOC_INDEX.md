@@ -9,7 +9,7 @@
 
 ## Purpose
 
-This directory contains all documentation for **AmazinglyStrange.com**, the gaming community platform with blog functionality. Currently operates on two paths: legacy Firebase site and new Next.js/Supabase version.
+This directory contains all documentation for **AmazinglyStrange.com**, the gaming community platform with blog functionality. Currently operates on two paths: legacy Firebase site and new CODE:`DOCs/AMS/Next.js/Supabase` version.
 
 ---
 

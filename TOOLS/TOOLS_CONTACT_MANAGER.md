@@ -9,10 +9,10 @@ Contact submissions management extracted for AmazinglyStrange parity.
 
 ## Connected Pages
 ### ADMIN App
-- `ADMIN/src/app/amazinglystrange/contacts/page.tsx`
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/contacts/page.tsx``
 
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/contact-manager/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/contact-manager/page.tsx``
 
 ## Parity Definition
 - Inbox-style workflow: new → in-progress → resolved/archived

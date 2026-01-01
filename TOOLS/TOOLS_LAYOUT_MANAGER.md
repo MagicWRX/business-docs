@@ -15,10 +15,10 @@ The Layout Manager is a visual page layout builder extracted from AmazinglyStran
 The Layout Manager tool is integrated into the following *.tsx pages:
 
 ### ADMIN App
-- `ADMIN/src/app/amazinglystrange/layout-manager/page.tsx` - Main layout manager page in the admin interface (redirects to `/login` when not authenticated)
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/layout-manager/page.tsx`` - Main layout manager page in the admin interface (redirects to `/login` when not authenticated)
 
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/layout-manager/page.tsx` - Demo/standalone version in the shared tools hub
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/layout-manager/page.tsx`` - Demo/standalone version in the shared tools hub
 
 ## Page Breakdown (Linux ASCII Tree)
 
@@ -74,7 +74,7 @@ See also: `DOCs/TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md` (cross-tool plan)
 
 ## Parity Checklist (Aligned to Legacy Spec Phases)
 
-This checklist is explicitly aligned to the legacy spec phases in `Hosting/amazinglystrange/docs/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md`.
+This checklist is explicitly aligned to the legacy spec phases in `CODE:`DOCs/TOOLS/Hosting/amazinglystrange/docs/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md``.
 
 ### Phase 1 — Foundation (Legacy Phase 1)
 - [x] Layout model is stable: Page → Sections → Columns → Elements

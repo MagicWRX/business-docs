@@ -40,10 +40,10 @@ Shared admin shell (layout + navigation) used across ADMIN routes and SHARED Hub
 
 ## Connected Pages
 ### SHARED Hub
-- `/SHARED/hub/src/app/tools/admin-layout/page.tsx` - Demo with icons and persistence
+- `CODE:`../../../..CODE:`../../../../SHARED/hub/src/app/tools/admin-layout/page.ts`x`` - Demo with icons and persistence
 
 ### ADMIN App
-- Ready for integration in `ADMIN/src/app/layout.tsx` or route-specific layouts
+- Ready for integration in `CODE:`DOCs/TOOLS/ADMIN/src/app/layout.tsx`` or route-specific layouts
 - Package available: `@amazing/admin-layout`
 
 ## Usage Example
@@ -157,9 +157,9 @@ Optional localStorage support to remember sidebar state across sessions:
 
 ## Links
 - Package: `/SHARED/admin-layout/`
-- Demo: `SHARED/hub/src/app/tools/admin-layout/page.tsx`
+- Demo: `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/admin-layout/page.tsx``
 - README: `SHARED/admin-layout/README.md`
-- SSOT coordination: [DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md](../../DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md)
+- SSOT coordination: [DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md](CODE:`DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`)
 
 ## Installation
 

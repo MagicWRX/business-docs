@@ -41,5 +41,5 @@ Platform-level monetization model across sites/tools (Ads, subscriptions, affili
 - Where are payout rules defined (DB vs config)?
 
 ## Links
-- SSOT coordination: DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md
+- SSOT coordination: CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
 - Vision/exit criteria: DOCs/TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md

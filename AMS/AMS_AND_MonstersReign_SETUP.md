@@ -1,4 +1,4 @@
-Absolutely — here’s a clean, developer-friendly Markdown document you can drop right into your repo (e.g. /docs/firebase-hosting-setup.md).
+Absolutely — here’s a clean, developer-friendly Markdown document you can drop right into your repo (e.g. CODE:`../../../../docs/firebase-hosting-setup.md`).
 
 It summarizes exactly what you’ve done and includes explanations, DNS info, and deploy commands — written as a clear internal reference.
 

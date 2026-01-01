@@ -8,10 +8,10 @@ Location filtering UI/tooling (used to filter content by location/region) for Am
 
 ## Connected Pages
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/location-filter/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/location-filter/page.tsx``
 
 ### ADMIN App
-- No location-filter route found under `ADMIN/src/app/amazinglystrange` in this workspace.
+- No location-filter route found under `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange`` in this workspace.
 
 ## Parity Definition
 - Filter UI matches legacy behavior (selection model, defaults)

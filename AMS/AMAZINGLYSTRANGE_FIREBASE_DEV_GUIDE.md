@@ -8,7 +8,7 @@ Complete guide for local development using Firebase emulators and the `firebase-
 
 ### Test the Admin Dashboard
 ```bash
-./scripts/firebase-dev.sh test
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` test
 ```
 
 This command will:
@@ -29,7 +29,7 @@ The `firebase-dev.sh` script provides 9 convenient commands for managing Firebas
 Starts Auth, Firestore, Storage, and Hosting emulators in the background.
 
 ```bash
-./scripts/firebase-dev.sh start
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` start
 ```
 
 **What it does:**
@@ -54,7 +54,7 @@ Starts Auth, Firestore, Storage, and Hosting emulators in the background.
 Stops all running Firebase emulator processes.
 
 ```bash
-./scripts/firebase-dev.sh stop
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` stop
 ```
 
 **What it does:**
@@ -67,7 +67,7 @@ Stops all running Firebase emulator processes.
 Stops and restarts all emulators (useful after code changes).
 
 ```bash
-./scripts/firebase-dev.sh restart
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` restart
 ```
 
 **What it does:**
@@ -81,7 +81,7 @@ Stops and restarts all emulators (useful after code changes).
 Perfect for testing the admin dashboard! Starts emulators and opens admin page in browser.
 
 ```bash
-./scripts/firebase-dev.sh test
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` test
 ```
 
 **What it does:**
@@ -102,7 +102,7 @@ Perfect for testing the admin dashboard! Starts emulators and opens admin page i
 Creates an admin user with custom claims in the emulator.
 
 ```bash
-./scripts/firebase-dev.sh admin
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` admin
 ```
 
 **What it does:**
@@ -122,7 +122,7 @@ Creates an admin user with custom claims in the emulator.
 Shows detailed status of all Firebase emulators.
 
 ```bash
-./scripts/firebase-dev.sh status
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` status
 ```
 
 **Output example:**
@@ -143,7 +143,7 @@ Port Status:
 Stops emulators and removes all emulator data, logs, and cache.
 
 ```bash
-./scripts/firebase-dev.sh clean
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` clean
 ```
 
 **What it does:**
@@ -163,7 +163,7 @@ Stops emulators and removes all emulator data, logs, and cache.
 Shows recent emulator logs (last 50 lines).
 
 ```bash
-./scripts/firebase-dev.sh logs
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` logs
 ```
 
 **To follow logs in real-time:**
@@ -177,7 +177,7 @@ tail -f /tmp/firebase-emulator.log
 Opens the Firebase Emulator UI in your browser.
 
 ```bash
-./scripts/firebase-dev.sh ui
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` ui
 ```
 
 **Emulator UI provides:**
@@ -192,7 +192,7 @@ Opens the Firebase Emulator UI in your browser.
 Display all available commands with usage examples.
 
 ```bash
-./scripts/firebase-dev.sh help
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` help
 ```
 
 ---
@@ -235,7 +235,7 @@ Display all available commands with usage examples.
 
 ### 1. Test Admin Dashboard
 ```bash
-./scripts/firebase-dev.sh test
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` test
 ```
 
 **Steps:**
@@ -253,7 +253,7 @@ Display all available commands with usage examples.
 
 ### 2. Test Blog Display
 ```bash
-./scripts/firebase-dev.sh start
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` start
 ```
 
 **Steps:**
@@ -267,8 +267,8 @@ Display all available commands with usage examples.
 
 ### 3. Fresh Start (Clean Slate)
 ```bash
-./scripts/firebase-dev.sh clean
-./scripts/firebase-dev.sh test
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` clean
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` test
 ```
 
 **Use this when:**
@@ -282,13 +282,13 @@ Display all available commands with usage examples.
 ### 4. Code Changes Workflow
 ```bash
 # After making changes to JavaScript files
-./scripts/firebase-dev.sh restart
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` restart
 
 # After changing Firestore rules
-./scripts/firebase-dev.sh restart
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` restart
 
 # After changing storage rules
-./scripts/firebase-dev.sh restart
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` restart
 ```
 
 ---
@@ -301,10 +301,10 @@ Display all available commands with usage examples.
 pkill -f "firebase emulators"
 
 # Clean everything
-./scripts/firebase-dev.sh clean
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` clean
 
 # Start fresh
-./scripts/firebase-dev.sh start
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` start
 ```
 
 ### Port already in use
@@ -338,10 +338,10 @@ lsof -ti:9888 | xargs kill -9
 ### Emulators running but pages not loading
 ```bash
 # Check status
-./scripts/firebase-dev.sh status
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` status
 
 # View logs for errors
-./scripts/firebase-dev.sh logs
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` logs
 
 # Try accessing Emulator UI directly
 open http://127.0.0.1:9891
@@ -513,35 +513,35 @@ amazinglystrange/
 ### Common Commands
 ```bash
 # Start emulators
-./scripts/firebase-dev.sh start
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` start
 
 # Test admin dashboard (recommended!)
-./scripts/firebase-dev.sh test
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` test
 
 # Check status
-./scripts/firebase-dev.sh status
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` status
 
 # Stop emulators
-./scripts/firebase-dev.sh stop
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` stop
 
 # Clean restart
-./scripts/firebase-dev.sh clean
-./scripts/firebase-dev.sh start
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` clean
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` start
 
 # View logs
-./scripts/firebase-dev.sh logs
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` logs
 
 # Open Emulator UI
-./scripts/firebase-dev.sh ui
+SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` ui
 ```
 
 ### Alternative: Local HTTP Server (No Firebase)
 ```bash
 # Start simple HTTP server
-./scripts/serve-local.sh
+SCRIPT:`DOCs/AMS/scripts/serve-local.sh`
 
 # Custom port
-PORT=5500 ./scripts/serve-local.sh
+PORT=5500 SCRIPT:`DOCs/AMS/scripts/serve-local.sh`
 ```
 
 ---
@@ -550,14 +550,14 @@ PORT=5500 ./scripts/serve-local.sh
 
 - **[AMAZINGLYSTRANGE_ADMIN.md](./AMAZINGLYSTRANGE_ADMIN.md)** - Complete admin dashboard documentation
 - **[ADMIN_TESTING_GUIDE.md](../ADMIN_TESTING_GUIDE.md)** - Testing procedures and checklists
-- **[SCRIPTS_README.md](../SCRIPTS_README.md)** - All scripts reference guide
+- **[SCRIPTS_README.md](CODE:`DOCs/SCRIPTS_README.md`)** - All scripts reference guide
 - **[AMS_AI_PROMPT.md](./AMS_AI_PROMPT.md)** - AI development prompt template
 
 ---
 
 ## 🚀 Next Steps
 
-1. **Start testing:** `./scripts/firebase-dev.sh test`
+1. **Start testing:** `SCRIPT:`DOCs/AMS/scripts/firebase-dev.sh` test`
 2. **Create content:** Test the blog editor with images
 3. **Explore Emulator UI:** Browse Firestore and Storage data
 4. **Test authentication:** Sign in/out with different accounts

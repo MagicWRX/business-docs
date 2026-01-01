@@ -216,7 +216,7 @@ NEXT_PUBLIC_APP_URL_LOCAL=http://localhost:3004
 
 Create a unified development script that handles all projects:
 
-**Location:** `/Users/brianlindahl/Development/Business/start-all-local.sh`
+**Location:** `CODE:`start-all-local.sh``
 
 ```bash
 #!/bin/bash
@@ -386,7 +386,7 @@ esac
 
 Make it executable:
 ```bash
-chmod +x /Users/brianlindahl/Development/Business/start-all-local.sh
+chmod +x CODE:`start-all-local.sh`
 ```
 
 **Usage:**
@@ -531,7 +531,7 @@ jobs:
 
 Create a shared component library for code reuse:
 
-**Location:** `/Users/brianlindahl/Development/Business/Shared/`
+**Location:** `CODE:`Shared``
 
 ```
 Shared/

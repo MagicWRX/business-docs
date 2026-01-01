@@ -91,7 +91,7 @@ export default function TemplateNameDemo() {
             <Link href="/templates">← Back to Templates</Link>
             <div className="flex gap-4">
               <a href="http://localhost:XXXX" target="_blank">Live Preview →</a>
-              <Link href="/signup?template=template-name">Use This Template</Link>
+              <Link href="/sites/new?template=template-name">Use This Template</Link>
             </div>
           </div>
         </div>

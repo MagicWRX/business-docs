@@ -35,6 +35,6 @@ Defines how revenue is split across stakeholders (platform, creators, affiliates
 - How do we handle multi-currency?
 
 ## Links
-- SSOT coordination: DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md
+- SSOT coordination: CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
 - Vision/exit criteria: DOCs/TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md
 - Monetization SSOT: DOCs/TOOLS/TOOL_MONETIZATION.md

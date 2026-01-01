@@ -115,7 +115,7 @@
 
 **ADMIN Dashboard**:
 ```tsx
-// ADMIN/src/app/amazinglystrange/media/page.tsx
+// CODE:`DOCs/ADMIN/src/app/amazinglystrange/media/page.tsx`
 import { MediaLibrary, mockBackend } from '@amazing/media-library';
 
 <MediaLibrary
@@ -127,7 +127,7 @@ import { MediaLibrary, mockBackend } from '@amazing/media-library';
 
 **Package Installation**:
 ```json
-// ADMIN/package.json
+// CODE:`DOCs/ADMIN/package.json`
 "dependencies": {
   "@amazing/media-library": "file:../SHARED/media-library"
 }

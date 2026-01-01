@@ -8,12 +8,12 @@
 
 ## 🎯 Objectives Completed
 
-1. ✅ Identified documentation drift between `/mxn-chat/docs/` and `/DOCs/MXN/`
+1. ✅ Identified documentation drift between `CODE:`../../../../mxn-chat/docs`` and `/DOCs/MXN/`
 2. ✅ Consolidated authoritative documentation to `/DOCs/MXN/` (SSOT)
 3. ✅ Updated AI_STANDARDS.md and GENERIC_AI_PROMPT.md with MXN context
 4. ✅ Created compliant MXN_INDEX.md following AI_STANDARDS.md 5-layer structure
 5. ✅ Migrated EMAIL_SETUP.md with enhanced diagrams and architecture
-6. ✅ Deprecated redundant files in `/mxn-chat/docs/`
+6. ✅ Deprecated redundant files in `CODE:`../../../../mxn-chat/docs``
 
 ---
 
@@ -21,7 +21,7 @@
 
 ### Overlap Matrix
 
-| Document | mxn-chat/docs/ | DOCs/MXN/ | Resolution |
+| Document | CODE:`DOCs/MXN/mxn-chat/docs` | DOCs/MXN/ | Resolution |
 |----------|----------------|-----------|------------|
 | **INDEX** | MXN_INDEX.md (v1.0) | MXN_INDEX.md (v2.0.0) | Created MXN_INDEX.md (v3.0.0) |
 | **Email** | EMAIL_SETUP.md (545 lines) | ❌ Missing | Created MXN_EMAIL_SETUP.md |
@@ -33,7 +33,7 @@
 
 **Created in /DOCs/MXN/:**
 - ✅ `MXN_INDEX.md` (v3.0.0) - AI_STANDARDS.md compliant index
-- ✅ `MXN_EMAIL_SETUP.md` (v3.0.0) - Migrated from Websites/mxn-chat/docs with enhancements
+- ✅ `MXN_EMAIL_SETUP.md` (v3.0.0) - Migrated from CODE:`DOCs/MXN/Websites/mxn-chat/docs` with enhancements
 
 **Updated in /DOCs/MXN/:**
 - ✅ `MXN_INDEX.md` - Added deprecation notice, redirects to MXN_INDEX.md
@@ -42,7 +42,7 @@
 - ✅ `AI_STANDARDS.md` (v1.1.0) - Added MXN project context and directory structure
 - ✅ `GENERIC_AI_PROMPT.md` (v1.1.0) - Added MXN-specific prompt guidance
 
-**Created in /mxn-chat/docs/:**
+**Created in CODE:`../../../../mxn-chat/docs`:**
 - ✅ `README.md` - Redirect to SSOT location with migration status
 
 ---
@@ -95,7 +95,7 @@
 │   └── MXN/                                # MXN.CHAT SSOT
 │       ├── MXN_INDEX.md                    # ✅ NEW - Central index (v3.0.0)
 │       ├── MXN_INDEX.md                    # ✅ Updated - Redirects to DOC_INDEX
-│       ├── MXN_EMAIL_SETUP.md              # ✅ NEW - Migrated from Websites/mxn-chat/docs
+│       ├── MXN_EMAIL_SETUP.md              # ✅ NEW - Migrated from CODE:`DOCs/MXN/Websites/mxn-chat/docs`
 │       ├── MXN_SECURITY.md                 # ✅ Existing (v2.0.0)
 │       ├── MXN_TREE.md                     # ✅ Existing (v2.0.0)
 │       ├── MXN_ROADMAP.md                  # ✅ Existing
@@ -136,8 +136,8 @@ Reference MXN_ROADMAP.md, MXN_TREE.md, MXN_SECURITY.md, MXN_EMAIL_SETUP.md.
 ### For Developers
 
 **Old Reference:**
-- ❌ `/mxn-chat/docs/EMAIL_SETUP.md`
-- ❌ `/mxn-chat/docs/MXN_INDEX.md`
+- ❌ `CODE:`../../../../mxn-chat/docs`EMAIL_SETUP.md`
+- ❌ `CODE:`../../../../mxn-chat/docs`MXN_INDEX.md`
 
 **New Reference:**
 - ✅ `DOCs/MXN/MXN_INDEX.md` (start here)
@@ -148,7 +148,7 @@ Reference MXN_ROADMAP.md, MXN_TREE.md, MXN_SECURITY.md, MXN_EMAIL_SETUP.md.
 Update any automation that references:
 ```bash
 # Old
-./mxn-chat/docs/*.md
+.CODE:`../../../../mxn-chat/docs`*.md
 
 # New
 /DOCs/MXN/*.md
@@ -160,7 +160,7 @@ Update any automation that references:
 
 ### Safe to Delete (After Validation)
 
-**In /mxn-chat/docs/:**
+**In CODE:`../../../../mxn-chat/docs`:**
 - [ ] `BREVO_SETUP.md` (content merged into MXN_EMAIL_SETUP.md)
 - [ ] `CI_SETUP.md` (covered by MXN_DEPLOYMENT_CICD.md)
 - [ ] `DEPLOYMENT.md` (empty file)
@@ -174,7 +174,7 @@ Update any automation that references:
 
 ### Archive Recommended
 
-Create `/mxn-chat/docs/archive/` for historical reference:
+Create `CODE:`../../../../mxn-chat/docs`archive/` for historical reference:
 - `PROJECT_STATUS.md` (documents Firebase→Supabase migration)
 - `SECURITY_NOTES.md` (early security notes)
 
@@ -213,7 +213,7 @@ Create `/mxn-chat/docs/archive/` for historical reference:
 4. ✅ Test inbox delivery (not spam)
 
 ### Short-term (Next Sprint)
-1. Delete deprecated files from `Websites/mxn-chat/docs` after validation
+1. Delete deprecated files from `CODE:`DOCs/MXN/Websites/mxn-chat/docs`` after validation
 2. Update CI/CD to reference new docs location
 3. Archive legacy content if historical value
 4. Train team on new MXN_INDEX.md navigation
@@ -271,10 +271,10 @@ Create `/mxn-chat/docs/archive/` for historical reference:
 
 ## 🔗 References
 
-- [AI_STANDARDS.md](/Users/brianlindahl/Development/Business/DOCs/GENERIC/AI_STANDARDS.md)
-- [GENERIC_AI_PROMPT.md](/Users/brianlindahl/Development/Business/DOCs/GENERIC/GENERIC_AI_PROMPT.md)
-- [MXN_INDEX.md](/Users/brianlindahl/Development/Business/DOCs/MXN/MXN_INDEX.md)
-- [MXN_EMAIL_SETUP.md](/Users/brianlindahl/Development/Business/DOCs/MXN/MXN_EMAIL_SETUP.md)
+- [AI_STANDARDS.md](CODE:`DOCs/GENERIC/AI_STANDARDS.md`)
+- [GENERIC_AI_PROMPT.md](CODE:`DOCs/GENERIC/GENERIC_AI_PROMPT.md`)
+- [MXN_INDEX.md](CODE:`DOCs/MXN/MXN_INDEX.md`)
+- [MXN_EMAIL_SETUP.md](CODE:`DOCs/MXN/MXN_EMAIL_SETUP.md`)
 
 ---
 

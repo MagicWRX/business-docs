@@ -22,7 +22,7 @@ I'm working on the **Amazing Business Platform**, a multi-faceted ecosystem enco
 ### **Repositories**
 - **Primary**: MagicWRX/MagicWRX (GitHub)
 - **Location**: `/Users/brianlindahl/Development/Business/Websites/MagicWRX`
-- **Docs**: `/Users/brianlindahl/Development/Business/DOCs/`
+- **Docs**: `CODE:`DOCs``
 
 ### **Current Date**: October 12, 2025
 
@@ -268,7 +268,7 @@ Every significant code change or feature addition requires updates to the follow
 **Expected Output**:
 - Complete dashboard implementation
 - Responsive design (mobile-first)
-- Integration with Firebase/Supabase
+- Integration with CODE:`DOCs/BUSINESS/Firebase/Supabase`
 - Tests with 80%+ coverage
 
 ---
@@ -327,7 +327,7 @@ Every significant code change or feature addition requires updates to the follow
 
 ### **Before Starting**
 1. ✅ Read `DOCs/BUSINESS_ROADMAP.md` for strategic context
-2. ✅ Review relevant technical documentation in `MagicWRX/DOCs/`
+2. ✅ Review relevant technical documentation in `CODE:`DOCs/BUSINESS/MagicWRX/DOCs``
 3. ✅ Understand the current status and known issues
 4. ✅ Confirm which option (1-7) or custom task to pursue
 
@@ -525,12 +525,12 @@ All configured in `.env.local`:
 - `DOCs/BUSINESS_ROADMAP.md` - Strategic roadmap (primary reference)
 
 ### **Technical Implementation**
-- `MagicWRX/DOCs/FREEMIUM_PLATFORM_TRANSFORMATION.md` - Freemium model
-- `MagicWRX/DOCs/IMMEDIATE_IMPLEMENTATION_STEPS.md` - Week-by-week plan
-- `MagicWRX/DOCs/STRIPE_INTEGRATION_PLAN.md` - Payment integration
-- `MagicWRX/DOCs/STRIPE_INTEGRATION_SETUP.md` - Stripe configuration
-- `MagicWRX/DOCs/MAGIC_WRX_MASTER_CONTROL_GUIDE.md` - Operations guide
-- `MagicWRX/DOCs/SERVICE_STATUS_DASHBOARD.md` - Service health
+- `CODE:`DOCs/BUSINESS/MagicWRX/DOCs`FREEMIUM_PLATFORM_TRANSFORMATION.md` - Freemium model
+- `CODE:`DOCs/BUSINESS/MagicWRX/DOCs`IMMEDIATE_IMPLEMENTATION_STEPS.md` - Week-by-week plan
+- `CODE:`DOCs/BUSINESS/MagicWRX/DOCs`STRIPE_INTEGRATION_PLAN.md` - Payment integration
+- `CODE:`DOCs/BUSINESS/MagicWRX/DOCs`STRIPE_INTEGRATION_SETUP.md` - Stripe configuration
+- `CODE:`DOCs/BUSINESS/MagicWRX/DOCs`MAGIC_WRX_MASTER_CONTROL_GUIDE.md` - Operations guide
+- `CODE:`DOCs/BUSINESS/MagicWRX/DOCs`SERVICE_STATUS_DASHBOARD.md` - Service health
 
 ### **Test Results**
 - `MagicWRX/test-results.md` - Latest test run results

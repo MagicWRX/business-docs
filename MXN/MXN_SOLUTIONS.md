@@ -84,14 +84,14 @@ Domain mismatch between Supabase configuration and actual site hosting:
 - Vercel deployment does not update production site after GitHub push.
 - Vercel build logs show:
   - `Module not found: Can't resolve '@amazing/location-filter'`
-  - Import trace includes `./src/components/ChatInterface.tsx` and `./src/components/MessageList.tsx`.
+  - Import trace includes `CODE:`DOCs/MXN/src/components/ChatInterface.tsx`` and `CODE:`DOCs/MXN/src/components/MessageList.tsx``.
 - Local development works because the dependency exists on disk.
 
 #### **Root Cause Analysis:**
 This was a packaging/deployment mismatch, not a branch mismatch.
 
 1. **Local-only dependency path**
-   - `mxn-chat/package.json` referenced `@amazing/location-filter` via a local filesystem path (example pattern: `file:../../SHARED/location-filter`).
+   - `CODE:`DOCs/MXN/mxn-chat/package.json`` referenced `@amazing/location-filter` via a local filesystem path (example pattern: `file:../../SHARED/location-filter`).
    - Vercel only checks out the Git repo being deployed, so that path does not exist in the build container.
 
 2. **Compiled entrypoint missing in the deployed repo**
@@ -108,7 +108,7 @@ This was a packaging/deployment mismatch, not a branch mismatch.
    - Un-ignore and commit `vendor/location-filter/dist/**` (or change the package to build during install).
 
 #### **Files Modified:**
-- `Websites/mxn-chat/package.json` (dependency path)
+- `Websites/CODE:`DOCs/MXN/mxn-chat/package.json`` (dependency path)
 - `mxn-chat/.gitignore` (allow vendored `dist/` output)
 - `mxn-chat/vendor/location-filter/dist/**` (committed build output)
 

@@ -9,10 +9,10 @@ This doc tracks the extracted header/navigation components used to reproduce Ama
 
 ## Connected Pages
 ### ADMIN App
-- `ADMIN/src/app/amazinglystrange/header/page.tsx`
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/header/page.tsx``
 
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/header/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/header/page.tsx``
 
 ## What “Parity” Means Here
 - Brand navbar links + dropdown schema

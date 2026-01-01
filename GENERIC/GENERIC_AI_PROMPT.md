@@ -90,5 +90,5 @@ Return: findings ordered by severity, affected files, missing tests, doc drift.
 - Update "Date Created" and "Last Updated" each iteration.
 - Reference project-specific MXN_INDEX.md for current document locations.
 - Archive previous prompt versions in `/Docs/Archive/` if needed for audits.
-- For MXN.CHAT: Always check `/Docs/MXN/MXN_INDEX.md` before starting work.
+- For MXN.CHAT: Always check `CODE:`../../../../Docs/MXN/MXN_INDEX.md`` before starting work.
 - Cross-reference SECURITY.md for key management and E2E testing procedures.

@@ -1,4 +1,4 @@
-# 🔥 Amazingly Strange - Firebase to Vercel/Supabase Migration Guide
+# 🔥 Amazingly Strange - Firebase to CODE:`DOCs/AMS/Vercel/Supabase` Migration Guide
 
 **Document Date:** September 6, 2025  
 **Version:** 1.0.0  
@@ -498,7 +498,7 @@ await signInWithEmailAndPassword(auth, email, password);
 
 #### **Target Supabase Auth Setup**
 ```typescript
-// lib/supabase/auth.ts
+// CODE:`DOCs/AMS/lib/supabase/auth.ts`
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(

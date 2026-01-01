@@ -72,7 +72,7 @@ This SSOT is Lounge-specific and intentionally references other SSOTs:
 
 **Implementation reference:**
 - Header + sine wave component usage: `SineWaveSVG`
-- Source: `../../Websites/mxn-chat/src/components/ChatInterface.tsx`
+- Source: `CODE:`Websites/mxn-chat/src/components/ChatInterface.tsx``
 
 ### B) Controls Row (Location + Pagination + Vibe Tabs)
 
@@ -91,7 +91,7 @@ This SSOT is Lounge-specific and intentionally references other SSOTs:
 
 **Implementation reference:**
 - Location dropdown integration: `LocationPillDropdown`, `LocationSelector`, `useLocationFilter`
-- Vibe tab rendering + selection state in: `../../Websites/mxn-chat/src/components/ChatInterface.tsx`
+- Vibe tab rendering + selection state in: `CODE:`Websites/mxn-chat/src/components/ChatInterface.tsx``
 
 ### C) Thought Bubble Field (Plinko-Style)
 
@@ -109,7 +109,7 @@ The Lounge’s main canvas is a contained field where Thoughts appear as **float
 - Lounge uses the $e^{-age/24}$ decay curve with a floor at 60% of base size.
 
 **Implementation reference:**
-- Bubble rendering + dissipation: `../../Websites/mxn-chat/src/components/ChatInterface.tsx` (Thought Bubbles Area)
+- Bubble rendering + dissipation: `CODE:`Websites/mxn-chat/src/components/ChatInterface.tsx`` (Thought Bubbles Area)
 
 ### D) Floating Thought Window (Chat)
 
@@ -128,7 +128,7 @@ When a Thought is selected, a floating chat window appears:
 - Message input can attach a `locationTag` for privacy-preserving display/filtering.
 
 **Implementation reference:**
-- Floating thought window + `MessageList` + `MessageInput` integration: `../../Websites/mxn-chat/src/components/ChatInterface.tsx`
+- Floating thought window + `MessageList` + `MessageInput` integration: `CODE:`Websites/mxn-chat/src/components/ChatInterface.tsx``
 
 ---
 
@@ -155,7 +155,7 @@ The Lounge uses a **robust, privacy-first location filter** so users can discove
 - Default vibe is **MXN blue** and shows the word **“set”**.
 
 **Implementation reference:**
-- Alias-vibe sync and vibe indicator anchor/picker behavior: `../../Websites/mxn-chat/src/components/ChatInterface.tsx`
+- Alias-vibe sync and vibe indicator anchor/picker behavior: `CODE:`Websites/mxn-chat/src/components/ChatInterface.tsx``
 - Roadmap requirements context: [MXN_ROADMAP.md](MXN_ROADMAP.md)
 
 ---
@@ -165,9 +165,9 @@ The Lounge uses a **robust, privacy-first location filter** so users can discove
 To prevent “SSOT drift” across docs and code, this is the **ownership split**:
 
 - **Vibe Lounge layout + controls + bubble field + floating chat window:**
-	- `../../Websites/mxn-chat/src/components/ChatInterface.tsx`
+	- `CODE:`Websites/mxn-chat/src/components/ChatInterface.tsx``
 - **Thought list navigation (sidebar) + per-thought vibe rings:**
-	- `../../Websites/mxn-chat/src/components/RoomSidebar.tsx`
+	- `CODE:`Websites/mxn-chat/src/components/RoomSidebar.tsx``
 - **Vibe ring style rules and palette:**
 	- [MXN_VIBE_CONTROLLER.md](MXN_VIBE_CONTROLLER.md)
 - **Location filter schema + UI components + admin tooling:**

@@ -25,7 +25,7 @@ These can be developed in parallel while `TOOLS_BLOG_ENGINE.md` evolves, because
 2) **Public Blog Display parity**
 - Claimed by: GitHub Copilot — 2025-12-26
 - Scope: decide/render path for public blog (index + post page) and sanitization strategy
-- Files: `DOCs/TOOLS/TOOLS_BLOG_DISPLAY.md` and public site routes (e.g. `Websites/amazingly-strange-website/src/app/blog/*`)
+- Files: `DOCs/TOOLS/TOOLS_BLOG_DISPLAY.md` and public site routes (e.g. `CODE:`DOCs/TOOLS/CODE:`DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog`*``)
 - Avoid: changing blog-engine editor UI/CRUD; keep focus on public rendering
 
 3) **Monetization + Revenue Share docs**
@@ -43,7 +43,7 @@ These can be developed in parallel while `TOOLS_BLOG_ENGINE.md` evolves, because
 5) **Supabase schemas + migrations (cross-tool)**
 - Claimed by: (unclaimed — add chat name + date)
 - Scope: unify table schemas, optional columns, and migration scripts for parity
-- Files: `Websites/amazingly-strange-website/scripts/migration/*` and `DOCs/TOOLS/TOOLS_SUPABASE_SCHEMAS.md`
+- Files: `SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/*`` and `DOCs/TOOLS/TOOLS_SUPABASE_SCHEMAS.md`
 - Avoid: UI/UX changes in tool packages
 
 6) **Tool doc tightening (non-blog)**
@@ -58,8 +58,8 @@ These can be developed in parallel while `TOOLS_BLOG_ENGINE.md` evolves, because
 - Coordination note: 2025-12-25 — Admin Layout chat is permitted to make **doc-only** tightening edits to `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md` (wording/placeholders only). No code changes outside its workstream.
 - Files:
    - `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md`
-   - `Websites/amazingly-strange-website/scripts/migration/README.md`
-   - `Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js`
+   - `SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/README.md``
+   - `SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js``
 - Avoid:
    - public rendering decisions/implementation (use `DOCs/TOOLS/TOOLS_BLOG_DISPLAY.md`)
    - schema contract ownership beyond documenting findings (use `DOCs/TOOLS/TOOLS_SUPABASE_SCHEMAS.md`)
@@ -165,7 +165,7 @@ This order prioritizes functional dependencies first (blog display needs blog en
    - CDN integration (Cloudinary, Imgix)
    - TypeScript-first, backend-agnostic
 
-11. **Public Blog Display parity** - Implemented in `Websites/amazingly-strange-website/src/app/blog/`
+11. **Public Blog Display parity** - Implemented in `CODE:`DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog``
    - Blog index page with pagination and tag filtering
    - Individual post pages with SEO meta tags
    - HTML sanitization using DOMPurify
@@ -188,7 +188,7 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 
 ### Priority 1: Core Admin Tools
 
-#### Media Manager (`/admin/js/media-manager.js`)
+#### Media Manager (`CODE:`../../../../admin/js/media-manager.js``)
 **Status**: ✅ Complete  
 **Package**: `@amazing/media-library`  
 **Size**: 566 lines (legacy) → 4 components + 3 backends  
@@ -205,11 +205,11 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ Firebase Storage + Firestore adapter
 - ✅ File size formatting and metadata display
 
-**Integration**: Used in `ADMIN/src/app/amazinglystrange/media/page.tsx`
+**Integration**: Used in `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/media/page.tsx``
 
 ---
 
-#### Page Manager (`/admin/js/page-manager.js`)
+#### Page Manager (`CODE:`../../../../admin/js/page-manager.js``)
 **Status**: ✅ Complete  
 **Package**: `@amazing/page-editor`  
 **Size**: 422 lines (legacy) → 5 components + 3 backends  
@@ -228,7 +228,7 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ REST API adapter
 - ✅ Firebase adapter stub (requires firebase package)
 
-**Integration**: Used in `ADMIN/src/app/amazinglystrange/pages/page.tsx`
+**Integration**: Used in `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/pages/page.tsx``
 
 ---
 
@@ -252,7 +252,7 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ Mock backend with simulated real-time updates
 - ✅ REST API adapter with polling support
 
-**Integration**: Used in `ADMIN/src/app/amazinglystrange/analytics/page.tsx`
+**Integration**: Used in `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/analytics/page.tsx``
 
 ---
 
@@ -277,7 +277,7 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ Mock backend with 5 sample contacts
 - ✅ REST API adapter with polling
 
-**Integration**: Used in `ADMIN/src/app/amazinglystrange/contacts/page.tsx`
+**Integration**: Used in `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/contacts/page.tsx``
 
 ---
 
@@ -298,7 +298,7 @@ Note: This section is now primarily **historical inventory**. Most tools listed 
 - ✅ `GalleryLightbox` (overlay + keyboard + touch/swipe)
 - ✅ `ArtworkGallery` (hero + thumbnails + lightbox)
 
-**Integration**: Used in `ADMIN/src/app/amazinglystrange/gallery/page.tsx`
+**Integration**: Used in `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/gallery/page.tsx``
 
 ---
 
@@ -353,7 +353,7 @@ Remaining work is tracked as workstreams above (schemas, monetization docs, and 
     /src/
       /components/  - React components
       /lib/         - Utility functions
-      ADMIN/node_modules/@jridgewell/gen-mapping/src/types.ts     - TypeScript definitions
+      CODE:`DOCs/TOOLS/ADMIN/node_modules/@jridgewell/gen-mapping/src/types.ts`     - TypeScript definitions
     /dist/          - Compiled output
     package.json
     tsconfig.json

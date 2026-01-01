@@ -344,7 +344,7 @@ FIREBASE_SERVICE_ACCOUNT_KEY={...} # JSON object
 ### **Client Connection (Browser)**
 
 ```typescript
-// SHARED/auth-tool/src/lib/supabase/client.ts
+// CODE:`DOCs/AMS/SHARED/auth-tool/src/lib/supabase/client.ts`
 import { createClient } from '@supabase/supabase-js';
 import { Database } from '@/types/database';
 

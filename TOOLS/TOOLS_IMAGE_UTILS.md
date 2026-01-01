@@ -44,5 +44,5 @@ Shared image URL normalization and (optional) transform utilities to unify behav
 - Do we allow async resolution (SDK calls) or only deterministic rewrites? → Async for flexibility
 
 ## Links
-- SSOT coordination: DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md
+- SSOT coordination: CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
 - Vision/exit criteria: DOCs/TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md

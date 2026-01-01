@@ -372,7 +372,7 @@ Each project has a dedicated `start-local.sh` to ensure correct ports and enviro
 
 **User Access** = Logging into **ADMIN App** (http://localhost:3006/login)
 
-> Note: ADMIN runs on **http://localhost:3005** in this repo (see `ADMIN/package.json` and `SHARED/start-all-local.sh`).
+> Note: ADMIN runs on **http://localhost:3005** in this repo (see `CODE:`DOCs/BUSINESS/ADMIN/package.json`` and `SHARED/start-all-local.sh`).
 - Use to: Manage platforms (MagicWRX, MXN, AmazinglyStrange content)
 - Login with: User created IN the Supabase project's Authentication tab
 
@@ -564,7 +564,7 @@ npm install
 npm run dev  # Runs on port 3002
 
 # Business HUB
-cd /Users/brianlindahl/Development/Business/SHARED/hub
+cd CODE:`SHARED/hub`
 npm install
 npm run dev  # Runs on port 3000
 ```
@@ -614,7 +614,7 @@ NEXT_PUBLIC_MXN_SUPABASE_ANON_KEY=[from MXN Supabase]
 1. **Start Local Servers**:
    ```bash
    # Option 1: Start all projects
-   cd /Users/brianlindahl/Development/Business/SHARED
+   cd CODE:`SHARED`
    ./start-all-local.sh start
 
    # Option 2: Start individual project
@@ -800,9 +800,9 @@ This document provides a comprehensive overview of all active business workspace
 
 | Workspace | Title | Group | Purpose | Tech Stack | Status | Location |
 |-----------|-------|-------|---------|------------|--------|----------|
-| DOCs/ | Documentation Hub | Platform Ops | Central documentation, roadmaps and standards | Markdown | Active | `/Users/brianlindahl/Development/Business/DOCs/` |
+| DOCs/ | Documentation Hub | Platform Ops | Central documentation, roadmaps and standards | Markdown | Active | `CODE:`DOCs`` |
 | **ADMIN/** | **Master Admin Dashboard** | **Platform Ops** | **Multi-tenant admin for all platforms** | **Next.js 15, Supabase (3 instances)** | **In Progress** | `/Users/brianlindahl/Development/Business/ADMIN/` |
-| **SHARED/** | **Component Library** | **Platform Core** | **Reusable packages (auth, blog, layout, media)** | **TypeScript, React** | **In Progress** | `/Users/brianlindahl/Development/Business/SHARED/` |
+| **SHARED/** | **Component Library** | **Platform Core** | **Reusable packages (auth, blog, layout, media)** | **TypeScript, React** | **In Progress** | `CODE:`SHARED`/` |
 | mxn-chat/ | MXN Chat | Apps | Privacy-first chat platform with aliases and vibes | Next.js, Supabase | Live | `/Users/brianlindahl/Development/Business/Websites/mxn-chat/` |
 | MagicWRX/ | Magic WRX (Multi-Tenant Platform) | Platform Core | Multi-tenant SaaS platform for unlimited clients | Next.js, Supabase (multi-tenant RLS), Stripe | Live | `/Users/brianlindahl/Development/Business/Websites/MagicWRX/` |
 | base-template/ | Base Template (DRY) | Templates | Core dry template (recommended canonical starter) | Next.js 16, React 19, Tailwind | Live | `/Users/brianlindahl/Development/Business/Websites/base-template/` |
@@ -983,7 +983,7 @@ This document provides a comprehensive overview of all active business workspace
 
 **Key Features:**
 - Static homepage with interactive API testing
-- Serverless API endpoints (/api/hello, /api/supabase)
+- Serverless API endpoints (/api/hello, CODE:`../../../../api/supabase`)
 - Optional Supabase database queries
 - Environment variable configuration for Supabase
 - Basic Next.js project structure
@@ -1108,7 +1108,7 @@ supabase db remote set --project-ref $SUPABASE_PROJECT
 # Verify site is responding
 curl -I https://$SITE_DOMAIN
 # Verify Supabase connectivity
-node ./scripts/check-supabase-connection.js
+node SCRIPT:`DOCs/BUSINESS/scripts/check-supabase-connection.js`
 ```
 
 ### Quick Commands (copyable)

@@ -14,6 +14,11 @@ lastReviewed: "2026-01-01"
 tags:
   - "index"
   - "ssot"
+  - "DOCs/MXN"
+  - "../../../../mxn-chat/docs/EMAIL_SETUP.md"
+  - "../../../../mxn-chat/docs/SECURITY_NOTES.md"
+  - "../../../../mxn-chat/docs/MXN_INDEX.md"
+  - "../../../../mxn-chat/docs/MULTI_USER_CHAT_PLAN.md"
 ---
 
 # MXN.CHAT Master Index (SSOT)
@@ -241,7 +246,7 @@ supabase-debug-signup.sql     # Debug signup errors with detailed logging
 ### Repository
 - [GitHub Repository](https://github.com/MagicWRX/mxn-chat)
 - [Project Files](/Users/brianlindahl/Development/Business/Websites/mxn-chat/)
-- [Documentation Root](/Users/brianlindahl/Development/Business/DOCs/MXN/)
+- [Documentation Root](CODE:`DOCs/MXN`)
 
 ---
 
@@ -276,10 +281,10 @@ MXN_<CATEGORY>.md                  # Single-word topics
 ## 🗑️ Deprecated & Removed Documentation
 
 ### Consolidated into SSOT (December 12, 2025)
-- ❌ `/mxn-chat/docs/EMAIL_SETUP.md` → Moved to `DOCs/MXN/MXN_EMAIL_SETUP.md`
-- ❌ `/mxn-chat/docs/SECURITY_NOTES.md` → Consolidated into `MXN_SECURITY.md`
-- ❌ `/mxn-chat/docs/MXN_INDEX.md` → Removed (redundant, SSOT is in DOCs/MXN/)
-- ❌ `/mxn-chat/docs/MULTI_USER_CHAT_PLAN.md` → Consolidated into `MXN_ROADMAP.md`
+- ❌ `CODE:`../../../../mxn-chat/docs/EMAIL_SETUP.md`` → Moved to `DOCs/MXN/MXN_EMAIL_SETUP.md`
+- ❌ `CODE:`../../../../mxn-chat/docs/SECURITY_NOTES.md`` → Consolidated into `MXN_SECURITY.md`
+- ❌ `CODE:`../../../../mxn-chat/docs/MXN_INDEX.md`` → Removed (redundant, SSOT is in DOCs/MXN/)
+- ❌ `CODE:`../../../../mxn-chat/docs/MULTI_USER_CHAT_PLAN.md`` → Consolidated into `MXN_ROADMAP.md`
 - ❌ DOC_INDEX.md → Consolidated into MXN_INDEX.md
 
 ### Deleted (Outdated/Redundant)

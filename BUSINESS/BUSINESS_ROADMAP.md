@@ -11,7 +11,7 @@
 1. [x] MagicWRX is transitioning to SUPABASE. We need to follow up. - **COMPLETED**: Migration plan created (MAGICWRX_MIGRATION_PLAN.md), Phase 1 ready for implementation
 2. [x] Amazingly-Strange-Website has a different SUPABASE Account and may need separate .env.local files. - **COMPLETED**: Separate Supabase account configured for brian@AmazinglyStrange.com
 3. [x] MXN.CHAT Flagship App, Adjust planning and Direction. - **COMPLETED**: Successfully deployed live at https://www.mxn.chat with Supabase backend
-4. [x] Review /Users/brianlindahl/Development/Business/DOCs/MXN documents for refined direction. - **COMPLETED**: MXN.CHAT deployed and operational
+4. [x] Review CODE:`DOCs/MXN` documents for refined direction. - **COMPLETED**: MXN.CHAT deployed and operational
 5. [x] Two SUPABASE Account Solutions. MagicWRXStudios@gmail.com and brian@AmazinglyStrange.com I need to separate .env.local. - **COMPLETED**: Account separation implemented across all projects
 6. [x] Update ./start-local.sh for BUSINESS_WORKSPASE.md Testing. - **COMPLETED**: Unified start-all-local.sh created for all 5 projects (ports 3000-3004)
 7. [x] Platform Architecture Decision: Multi-Tenant vs Separate Databases. - **COMPLETED**: Multi-tenant RLS architecture chosen for MagicWRX to support unlimited clients on 2 Supabase projects
@@ -395,7 +395,7 @@ Build a scalable Platform-as-a-Service (PaaS) ecosystem that enables unlimited c
 ### **Priority 1: MXN.CHAT Admin Essentials** 🚨
 
 - [ ] **Verify Current Admin Works**
-  - Location: `/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/app/admin/`
+  - Location: `CODE:`Websites/mxn-chat/src/app/admin``
   - [ ] Test user management interface
   - [ ] Test message moderation (delete, ban)
   - [ ] Test room management
@@ -447,7 +447,7 @@ Build a scalable Platform-as-a-Service (PaaS) ecosystem that enables unlimited c
 ### **Week 1-2 (Early January): Create /SHARED/ Directory**
 
 - [ ] **Set Up /SHARED/ Structure**
-  - [ ] Create `/Users/brianlindahl/Development/Business/SHARED/` directory
+  - [ ] Create `CODE:`SHARED`` directory
   - [ ] Set up package.json for each component
   - [ ] Configure TypeScript
   - [ ] Create README templates
@@ -480,7 +480,7 @@ Build a scalable Platform-as-a-Service (PaaS) ecosystem that enables unlimited c
   - [ ] Create basic directory structure
 
 - [ ] **Multi-Supabase Client Setup**
-  - [ ] Create `ADMIN/src/lib/supabase/factory.ts`
+  - [ ] Create `CODE:`DOCs/BUSINESS/ADMIN/src/lib/supabase/factory.ts``
   - [ ] Configure environment variables for all 3 Supabase instances:
     - AmazinglyStrange Supabase (brian@amazinglystrange.com)
     - MagicWRX Supabase (magicwrxstudio@gmail.com)
@@ -1515,6 +1515,30 @@ test('complete user signup and subscription flow', async ({ page }) => {
    - Blocker: Gaming revenue growth
    - Priority: P2 - Sprint 2
    - Owner: Gaming Team
+
+---
+
+## Next Suggestions — Documentation "BRAIN" MVP
+
+Summary: Accelerate the DOCs -> "BRAIN" MVP so AI agents and workspace projects can immediately adopt and rely upon machine-readable knowledge. The following prioritized actions formalize what we've already started and convert DOCs into a first-class, CI-enforced knowledge system.
+
+- **Standardize & enforce frontmatter** (status: **completed** for key SSOTs) — owner: Documentation Lead (@brianlindahl). Roll out remaining SSOTs and ensure `owner`, `status`, `codeRefs`, `lastReviewed` present. Target: 1 week.
+
+- **Doc-lint CI & PR visibility** (status: **completed**) — owner: DevOps. We added `doc-lint` workflow and PR-commenting of `DOCS_DOC_SCRIPT_MAP.md` for visibility. Next: display concise summary with counts.
+
+- **Normalized references** (status: **completed**) — owner: Docs Automation. Bulk normalization script executed and backups created; review and cleanup required.
+
+- **Standardize code-reference format & conversion** (status: **in-progress**) — owner: Docs Lead. Define canonical reference schema (e.g., `CODE:Websites/...`, `SCRIPT:scripts/...`) and run a batch PR to convert remaining shorthand. Target: 1–2 weeks.
+
+- **Doc graph & visualization** (status: **not-started**) — owner: Docs Lead. Generate Mermaid `DOCS_GRAPH.md` from `relatedDocs` frontmatter and publish at docs root for quick navigation and onboarding. Target: 3 days.
+
+- **Automated doc review schedule & enforcement** (status: **not-started**) — owner: Documentation Lead. Weekly doc-lint summary, `lastReviewed` enforcement (fail PRs older than X days), and monthly doc audits. Target: 2 weeks.
+
+- **DOCS_TEMPLATE.md & AI Agent Onboarding guide** (status: **not-started**) — owner: Docs/AI Lead. Provide frontmatter template, linking rules, and a short guide with examples for AI agents to consume the SSOT. Target: 1 week.
+
+- **Backups cleanup** (status: **not-started**) — owner: Docs Automation. Consolidate `.bak` files into `DOCS_BACKUPS/` and remove once sign-off complete. Target: this week.
+
+These steps keep the MVP document system on-track and make the DOCs immediately consumable by AI Agents and other workspaces.
 
 ---
 

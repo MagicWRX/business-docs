@@ -9,10 +9,10 @@ Analytics dashboard extracted for AmazinglyStrange parity.
 
 ## Connected Pages
 ### ADMIN App
-- `ADMIN/src/app/amazinglystrange/analytics/page.tsx`
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/amazinglystrange/analytics/page.tsx``
 
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/analytics/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/analytics/page.tsx``
 
 ## Parity Definition
 - Core metrics visible (visitors, page views, sources)

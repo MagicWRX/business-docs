@@ -85,7 +85,7 @@ This guide provides step-by-step instructions for setting up Google Ads campaign
 
 3. **Install GA4 on MXN.CHAT:**
    - Add GA4 to your Next.js app
-   - Create `/lib/analytics.ts`:
+   - Create `CODE:`../../../../lib/analytics.ts``:
    ```typescript
    import { GoogleAnalytics } from '@next/third-parties/google'
 

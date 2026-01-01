@@ -29,6 +29,6 @@ Single place to define the canonical Supabase schemas used by extracted tools an
 - Track which environments have which migrations applied.
 
 ## Links
-- Migration scripts (site repo): Websites/amazingly-strange-website/scripts/migration/
-- SSOT coordination: DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md
+- Migration scripts (site repo): SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration`
+- SSOT coordination: CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
 - Vision/exit criteria: DOCs/TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md

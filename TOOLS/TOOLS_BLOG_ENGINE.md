@@ -3,7 +3,7 @@
 ## Workstream Ownership (SSOT)
 - Workstream: **Blog Alignment (blog-engine + migration tooling)**
 - Claimed by: GitHub Copilot (GPT-5.2) — 2025-12-25
-- Coordination hub: `DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
+- Coordination hub: `CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md``
 
 ### Document status
 - Status: draft (doc-only complete)
@@ -11,8 +11,8 @@
 
 ### This workstream edits
 - `DOCs/TOOLS/TOOLS_BLOG_ENGINE.md`
-- `Websites/amazingly-strange-website/scripts/migration/README.md`
-- `Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js`
+- `SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/README.md``
+- `SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js``
 
 ### Avoid / touchpoints
 - Public blog rendering parity: `DOCs/TOOLS/TOOLS_BLOG_DISPLAY.md` (+ site routes)
@@ -37,11 +37,11 @@ Authoring UI (`@amazing/blog-engine`) plus migration tooling notes for moving le
 
 ## Connected Pages
 ### SHARED Hub
-- `SHARED/hub/src/app/tools/blog-engine/page.tsx`
+- `CODE:`DOCs/TOOLS/SHARED/hub/src/app/tools/blog-engine/page.tsx``
 
 ### ADMIN App
-- `ADMIN/src/app/blog/page.tsx` (uses `@amazing/blog-engine` `BlogManager`)
-- `ADMIN/src/app/admin/amazinglystrange/blog/page.tsx` (uses `@amazing/blog-engine` backed by Supabase `blog_posts`)
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/blog/page.tsx`` (uses `@amazing/blog-engine` `BlogManager`)
+- `CODE:`DOCs/TOOLS/ADMIN/src/app/admin/amazinglystrange/blog/page.tsx`` (uses `@amazing/blog-engine` backed by Supabase `blog_posts`)
 
 ## Parity Definition
 - Post CRUD: create/edit/delete
@@ -198,9 +198,9 @@ CREATE TABLE public.blog_posts (
 - For links: only allow `http(s)`, `mailto:`, `tel:`; mark external links `target="_blank" rel="noopener noreferrer"`.
 
 ## Migration / Cutover Checklist (detailed)
-1. Run `Websites/amazingly-strange-website/scripts/migration/02-export-firebase.js` to export legacy data to `exports/blog-posts.json`.
-2. Run `Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js --dry-run --limit 10` to verify transformations and tags coercion.
-3. Copy assets (`Websites/amazingly-strange-website/scripts/migration/06-copy-assets.sh`), upload to Supabase storage if doing full asset migration (`Websites/amazingly-strange-website/scripts/migration/09-upload-media-to-supabase.js`).
+1. Run `SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/02-export-firebase.js`` to export legacy data to `exports/blog-posts.json`.
+2. Run `SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js` --dry-run --limit 10` to verify transformations and tags coercion.
+3. Copy assets (`SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/06-copy-assets.sh``), upload to Supabase storage if doing full asset migration (`SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/09-upload-media-to-supabase.js``).
 4. Re-run `10-migrate...` without `--dry-run` to import into Supabase. Inspect logged `tagsType` to confirm tag column behavior.
 5. Run integration tests: adapter contract tests + E2E: create/edit/publish roundtrip.
 6. Smoke test public rendering on staging: index + post pages + image lightbox + analytics events.
@@ -232,7 +232,7 @@ If these remain open, they should stay tracked here; otherwise promote answers i
 - Add adapter test harness to `SHARED/blog-engine` and a contract test in `SHARED/blog-engine/test`.
 
 ## Links
-- Migration runbook: Websites/amazingly-strange-website/scripts/migration/README.md
-- Migration script: Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js
-- SSOT coordination: DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md
+- Migration runbook: SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/README.md`
+- Migration script: SCRIPT:`DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js`
+- SSOT coordination: CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
 - Vision: DOCs/TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md

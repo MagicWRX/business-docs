@@ -125,7 +125,7 @@ NOW ➜ NEXT ➜ LATER
   
 - [ ] Integrate Supabase authentication for admin access
   - **Acceptance**: RLS policies enforce admin-only access, session persists 7 days
-  - **Component**: `src/lib/supabase/auth.ts`, `src/hooks/useAdminAuth.ts`
+  - **Component**: `CODE:`DOCs/AMS/src/lib/supabase/auth.ts``, `src/hooks/useAdminAuth.ts`
   - **Standards**: Immutable auth core, explicitness in error messages
   - **Testing**: Auth flow E2E tests, RLS policy validation
   
@@ -273,7 +273,7 @@ NOW ➜ NEXT ➜ LATER
   
 - [x] Integrate with Supabase Storage for file management
   - **Acceptance**: Automatic bucket creation, RLS policies for uploads, signed URLs for private files
-  - **Component**: `src/lib/storage/supabaseStorage.ts`
+  - **Component**: `CODE:`DOCs/AMS/src/lib/storage/supabaseStorage.ts``
   - **Standards**: Clean boundaries - storage abstraction layer, no direct storage calls from UI
   - **Data Flow**: Upload → bucket routing → RLS check → storage → signed URL → DB record
   - **Testing**: Bucket policies work, private files require auth, public files accessible

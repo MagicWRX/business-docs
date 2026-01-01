@@ -228,7 +228,7 @@ CREATE POLICY "Clients see own sites" ON client_sites
 ### **Installation in Projects**
 
 ```json
-// Websites/MagicWRX/package.json
+// CODE:`DOCs/BUSINESS/Websites/MagicWRX/package.json`
 {
   "dependencies": {
     "@amazing/auth-tool": "file:../../SHARED/auth-tool",
@@ -254,7 +254,7 @@ CREATE POLICY "Clients see own sites" ON client_sites
 - [ ] Move `auth-tool` to `/SHARED/auth-tool/` as npm package
 - [ ] Extract blog editor from AmazinglyStrange → `/SHARED/blog-engine/`
 - [ ] **🎯 PRIORITY: Extract layout manager from AmazinglyStrange → `/SHARED/layout-manager/`**
-  - Source: `/Hosting/amazinglystrange/public/admin/js/layout-manager.js`
+  - Source: `CODE:`../../../../Hosting/amazinglystrange/public/admin/js/layout-manager.js``
   - Features: Section/Column/Element hierarchy, template system, responsive design
   - See: [AMAZINGLYSTRANGE_LAYOUT_MANAGER.md](../../AMS/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md)
 - [ ] Extract media library → `/SHARED/media-library/`
@@ -316,15 +316,15 @@ GOOGLE_ADSENSE_API_KEY=...
 ## 📊 CURRENT STATUS
 
 ### **AmazinglyStrange.com**
-- ✅ Uses brian@amazinglystrange.com for GitHub/Vercel/Supabase
+- ✅ Uses brian@amazinglystrange.com for CODE:`DOCs/BUSINESS/GitHub/CODE:`DOCs/BUSINESS/Vercel/Supabase``
 - ✅ Uses magicwrxstudio@gmail.com for Stripe Account
-- 🚧 Migrating from Firebase to Vercel/Supabase
+- 🚧 Migrating from Firebase to CODE:`DOCs/BUSINESS/Vercel/Supabase`
 - ✅ Has static Firebase admin (to be replaced by /ADMIN/)
 - 📁 **Live Directory**: `/Users/brianlindahl/Development/Hosting/amazinglystrange` (Firebase)
-- 📁 **New Directory**: `/Users/brianlindahl/Development/Amazingly-Strange-Website` (Vercel/Supabase)
+- 📁 **New Directory**: `/Users/brianlindahl/Development/Amazingly-Strange-Website` (CODE:`DOCs/BUSINESS/Vercel/Supabase`)
 
 ### **MagicWRX.com**
-- ✅ Uses magicwrxstudio@gmail.com for Vercel/Supabase/Stripe
+- ✅ Uses magicwrxstudio@gmail.com for CODE:`DOCs/BUSINESS/Vercel/Supabase`/Stripe
 - 🚧 Multi-tenant architecture designed (not yet implemented)
 - ❌ No admin page (will be built in /ADMIN/)
 - 🚧 Needs multi-tenant schema migration
@@ -342,7 +342,7 @@ GOOGLE_ADSENSE_API_KEY=...
 ### Completed
 1. ✅ **Review architecture decision** (this document)
 2. ✅ **Create `/ADMIN/` Next.js project** - Completed and pushed to GitHub
-3. ✅ **Implement multi-Supabase client factory** - Factory pattern implemented in `ADMIN/src/lib/supabase/factory.ts`
+3. ✅ **Implement multi-Supabase client factory** - Factory pattern implemented in `CODE:`DOCs/BUSINESS/ADMIN/src/lib/supabase/factory.ts``
 4. ✅ **Build site switcher UI** - Dashboard includes platform switcher dropdown
 5. ✅ **Build AmazinglyStrange admin features** - Blog and Media management pages created
 6. ✅ **Build MagicWRX admin** - Client management and billing dashboard created

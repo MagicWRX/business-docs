@@ -2,7 +2,7 @@
 
 **Version:** 2.1 - **FIREBASE MIGRATION EDITION**  
 **Date:** September 6, 2025  
-**Status:** Migration Strategy - Firebase → Vercel/Supabase  
+**Status:** Migration Strategy - Firebase → CODE:`DOCs/AMS/Vercel/Supabase`  
 **Related Docs**: `AMAZINGLYSTRANGE_FIREBASE.md`, `AMS_AI_PROMPT.md`  
 
 ---
@@ -540,7 +540,7 @@ SUCCESS VALIDATION CHECKLIST
    # Initialize fresh Next.js in target directory
    cd amazingly-strange-website
    npx create-next-app@latest . --typescript --tailwind --app
-   npm install ADMIN/node_modules/@supabase/supabase-js @supabase/auth-helpers-nextjs
+   npm install CODE:`DOCs/AMS/ADMIN/node_modules/@supabase/supabase-js` @supabase/auth-helpers-nextjs
    ```
 
 3. **📋 Roadmap Compliance:**

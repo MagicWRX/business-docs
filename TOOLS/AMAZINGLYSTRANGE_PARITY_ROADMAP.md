@@ -9,11 +9,11 @@ Reproduce the AmazinglyStrange public site and admin capabilities using the extr
 - Round-trips do not lose data (edit → save → reload → render unchanged).
 
 ## Sources of truth
-- SHARED extraction status: `DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`
+- SHARED extraction status: `CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md``
 - Layout Manager phases/checklist: `DOCs/TOOLS/TOOLS_LAYOUT_MANAGER.md`
 
 ## Parallel Work (Coordination)
-- Parallel AI workstreams and file-ownership live in `DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md`.
+- Parallel AI workstreams and file-ownership live in `CODE:`DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md``.
 
 ## Tool Docs (This Folder)
 These are the “where/how” docs for each tool:
