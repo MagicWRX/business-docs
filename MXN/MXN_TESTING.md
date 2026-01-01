@@ -1,3 +1,22 @@
+---
+title: "MXN.CHAT Testing Framework & Tools (SSOT)"
+ssot: true
+owner: "brianlindahl"
+status: "active"
+codeRefs:
+  - "Websites/mxn-chat/scripts/test_rls.js"
+  - "Websites/mxn-chat/scripts/e2e_test.js"
+scripts:
+  - "Websites/mxn-chat/scripts/test_rls.js"
+  - "Websites/mxn-chat/scripts/e2e_test.js"
+relatedDocs:
+  - "MXN_ROADMAP.md"
+lastReviewed: "2026-01-01"
+tags:
+  - "testing"
+  - "ssot"
+---
+
 # MXN.CHAT Testing Framework & Tools (SSOT)
 
 ---

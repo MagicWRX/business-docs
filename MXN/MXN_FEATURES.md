@@ -1,3 +1,19 @@
+---
+title: "MXN.CHAT Exhaustive Feature Ideas & Enhancement Roadmap"
+ssot: true
+owner: "brianlindahl"
+status: "planning"
+codeRefs:
+  - "Websites/mxn-chat/src/components"
+relatedDocs:
+  - "MXN_ROADMAP.md"
+  - "MXN_INDEX.md"
+lastReviewed: "2026-01-01"
+tags:
+  - "features"
+  - "roadmap"
+---
+
 # MXN.CHAT Exhaustive Feature Ideas & Enhancement Roadmap
 
 **Document Date:** December 11, 2025  

@@ -12,14 +12,20 @@ MagicWRX/
 │   │   └── page.tsx               # Creative Portfolio template demo
 │   ├── gallery/
 │   │   └── page.tsx               # Creative Gallery template demo
+│   ├── ecommerce/
+│   │   └── page.tsx               # Online Store template demo (canonical route)
 │   ├── store/
-│   │   └── page.tsx               # Online Store template demo
+│   │   └── page.tsx               # Online Store template demo (legacy alias)
 │   ├── service/
 │   │   └── page.tsx               # Professional Services template demo
+│   ├── restaurant/
+│   │   └── page.tsx               # Restaurant & Cafe template demo (canonical route)
 │   ├── restuarant/
-│   │   └── page.tsx               # Restaurant & Cafe template demo
+│   │   └── page.tsx               # Restaurant & Cafe template demo (legacy alias)
+│   ├── saas/
+│   │   └── page.tsx               # SaaS Platform template demo (canonical route)
 │   ├── platforms/
-│   │   └── page.tsx               # SaaS Platform template demo
+│   │   └── page.tsx               # SaaS Platform template demo (legacy alias)
 │   ├── corporate/
 │   │   └── page.tsx               # Corporate Website template demo
 │   ├── 1/page.tsx                 # Legacy template demo (numbered)
@@ -31,35 +37,42 @@ MagicWRX/
 
 ## Template Pages & Live Previews
 
-1. **Creative Gallery**
-    - URL: `http://localhost:3002/templates/gallery`
-    - Code: `src/app/templates/gallery/page.tsx`
-    - Live Preview: `http://localhost:3004` (Base Template)
+Canonical template routes (these match the IDs used throughout the app):
 
-2. **Online Store**
-    - URL: `http://localhost:3002/templates/store`
-    - Code: `src/app/templates/store/page.tsx`
-    - Live Preview: `http://localhost:3002` (MagicWRX itself)
+1. **Creative Portfolio**
+  - URL: `http://localhost:3002/templates/portfolio`
+  - Code: `src/app/templates/portfolio/page.tsx`
+  - Live Preview: `http://localhost:3004` (Base Template)
+
+2. **Online Store (E-commerce)**
+  - URL: `http://localhost:3002/templates/ecommerce`
+  - Code: `src/app/templates/ecommerce/page.tsx` (canonical)
+  - Live Preview: `http://localhost:3002` (MagicWRX itself)
 
 3. **Professional Services**
-    - URL: `http://localhost:3002/templates/service`
-    - Code: `src/app/templates/service/page.tsx`
-    - Live Preview: `http://localhost:3006` (Template-WRX)
+  - URL: `http://localhost:3002/templates/service`
+  - Code: `src/app/templates/service/page.tsx`
+  - Live Preview: `http://localhost:3006` (Template-WRX)
 
 4. **Restaurant & Cafe**
-    - URL: `http://localhost:3002/templates/restuarant`
-    - Code: `src/app/templates/restuarant/page.tsx`
-    - Live Preview: `http://localhost:3003` (Amazingly Strange)
+  - URL: `http://localhost:3002/templates/restaurant`
+  - Code: `src/app/templates/restaurant/page.tsx` (canonical)
+  - Live Preview: `http://localhost:3003` (Amazingly Strange)
 
 5. **SaaS Platform**
-    - URL: `http://localhost:3002/templates/platforms`
-    - Code: `src/app/templates/platforms/page.tsx`
-    - Live Preview: `http://localhost:3001` (MXN Chat)
+  - URL: `http://localhost:3002/templates/saas`
+  - Code: `src/app/templates/saas/page.tsx` (canonical)
+  - Live Preview: `http://localhost:3001` (MXN Chat)
 
 6. **Corporate Website**
-    - URL: `http://localhost:3002/templates/corporate`
-    - Code: `src/app/templates/corporate/page.tsx`
-    - Live Preview: `http://localhost:3005` (Admin)
+  - URL: `http://localhost:3002/templates/corporate`
+  - Code: `src/app/templates/corporate/page.tsx`
+  - Live Preview: `http://localhost:3005` (Admin)
+
+Legacy alias routes (kept temporarily for backwards compatibility):
+- Store demo: `/templates/store` → canonical `/templates/ecommerce`
+- Restaurant demo typo: `/templates/restuarant` → canonical `/templates/restaurant`
+- SaaS demo alias: `/templates/platforms` → canonical `/templates/saas`
 
 ## Code Structure for Each Template Page
 

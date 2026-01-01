@@ -1,3 +1,22 @@
+---
+title: "MXN.CHAT Master Roadmap (SSOT)"
+ssot: true
+owner: "brianlindahl"
+status: "active"
+codeRefs:
+  - "Websites/MagicWRX/supabase/migrations"
+scripts:
+  - "scripts/deploy.sh"
+  - "scripts/health-check.sh"
+relatedDocs:
+  - "MXN_INDEX.md"
+  - "MXN_FEATURES.md"
+lastReviewed: "2026-01-01"
+tags:
+  - "roadmap"
+  - "planning"
+---
+
 # MXN.CHAT Master Roadmap (SSOT)
 
 **Document Date:** December 17, 2025 12:00 CST  
@@ -10,6 +29,22 @@
 ## Recently Completed Features (Monetization & UI)
 
 ### Alias & Monetization
+
+Step ONE mark mxn.com 'header'
+Step TWO mark navigation 'buttons'
+Step THREE mark 'USER STATUS' displays the Alias Name, Alias Profile Pick, Alias Online Status, Alias VIBE as determined from VIBE RING, default is neon blue and contains the word 'set'
+
+RoomSidebar.tsx needs "USER TITLE + STATUS" polish.
+1. [ ] the vibe indiator needs to be a circle. 
+2. [ ] Set ALL new users to mxn neon blue Circle. This represents defualt. 
+3. [ ] Inside the blue default circle add the work "set". 
+4. [ ] this is the this circle is the USERS "VIBE INDICATOR" for this USERS ALIAS.
+5. [ ] Each ALIAS has it's own VIBE and Each can be set and will remain set to the chosen VIBE until the USER decides to change it. 
+6. [ ] So Each USER records ALIAS' and VIBE INDICATOR status for that ALIAS.
+
+7. [ ] Every "THOUGHT" Created adopts the users ALIAS' VIBE INDICATOR color.  So the VIBE/EMOTION about this topic quickly deteremined by other users. example THOUGHT 'weather' could be sad, happy, netral, frustraned and so on.
+
+
 1. [✅] Users can add up to 3 Aliases (Standard).
 2. [✅] User Aliases reset every 30 days if unused.
 3. [✅] **Keep Alias ($1.99):** Pay to keep an alias permanently.

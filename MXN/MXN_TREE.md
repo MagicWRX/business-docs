@@ -1,3 +1,22 @@
+---
+title: "MXN.CHAT Technical Architecture & File Structure (SSOT)"
+ssot: true
+owner: "brianlindahl"
+status: "production"
+codeRefs:
+  - "Websites/mxn-chat/src"
+  - "Websites/MagicWRX/supabase/migrations"
+scripts:
+  - "scripts/check_db.js"
+relatedDocs:
+  - "MXN_INDEX.md"
+  - "MXN_ROADMAP.md"
+lastReviewed: "2026-01-01"
+tags:
+  - "architecture"
+  - "ssot"
+---
+
 # MXN.CHAT Technical Architecture & File Structure (SSOT)
 
 **Document Date:** December 17, 2025 12:00 CST  

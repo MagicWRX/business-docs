@@ -1,3 +1,19 @@
+---
+title: "MXN VIBE CONTROLLER (SSOT)"
+ssot: true
+owner: "brianlindahl"
+status: "active"
+codeRefs:
+  - "Websites/mxn-chat/src/components/ChatInterface.tsx"
+relatedDocs:
+  - "MXN_LOUNGE.md"
+  - "MXN_SELECTOR.md"
+lastReviewed: "2026-01-01"
+tags:
+  - "vibe"
+  - "styling"
+---
+
 # MXN VIBE CONTROLLER (SSOT)
 
 This document serves as the Single Source of Truth (SSOT) for the visual design and behavior of "Vibes" within the MXN.CHAT interface.

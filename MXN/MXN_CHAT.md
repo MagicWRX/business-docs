@@ -1,9 +1,28 @@
+---
+title: "MXN.CHAT Complete Feature & Capability Reference (SSOT)"
+ssot: true
+owner: "brianlindahl"
+status: "production"
+codeRefs:
+  - "Websites/mxn-chat/src"
+scripts:
+  - "scripts/init-rooms.js"
+relatedDocs:
+  - "MXN_LOUNGE.md"
+  - "MXN_SELECTOR.md"
+  - "MXN_VIBE_CONTROLLER.md"
+lastReviewed: "2026-01-01"
+tags:
+  - "features"
+  - "ssot"
+---
+
 # MXN.CHAT Complete Feature & Capability Reference (SSOT)
 
 **Document Date:** December 12, 2025  
-**Last Updated:** December 12, 2025  
-**Version:** 1.1.0  
-**Status:** Production Active (MVP 1.1.0)
+**Last Updated:** December 31, 2025  
+**Version:** 1.1.1 (Terminology SSOT Sync)  
+**Status:** Production Active (MVP 1.1.0) 
 
 ---
 Single Source of Truth for the MXN.CHAT
@@ -12,6 +31,51 @@ Single Source of Truth for the MXN.CHAT
 ## 🎯 Purpose
 
 This document serves as the Single Source of Truth (SSOT) for ALL features, capabilities, and functionality currently implemented in MXN.CHAT. Every feature listed here is deployed and operational.
+
+---
+
+## 📚 Canonical Terminology & Naming Map (SSOT)
+
+This section defines canonical terms to prevent double-meaning across docs, UI copy, and code. If a term conflicts with this section, update the conflicting doc/code.
+
+### System nouns (what things *are*)
+
+| Canonical Term | What It Means | UI / Docs synonyms (allowed) | Code / DB name (reference) |
+|---|---|---|---|
+| **Lounge** | The hub view where users browse/filter public Thoughts and enter one to chat. | Vibe Lounge, Lounge | Implemented in `ChatInterface.tsx` (hub background + controls + bubbles) |
+| **Thought** | A public topic a user can enter to chat; represented as a bubble in the Lounge. | Topic (preferred alt), Public Topic | `ChatRoom` in code; `rooms` table in DB |
+| **Room** | The underlying data model for a Thought/Topic (public) or private chat container. | (avoid in UI copy unless technical) | `ChatRoom`; `rooms` table |
+| **Message** | A single chat entry within a Room. | Chat message | `Message`; `messages` table |
+| **Vibe** | A mood label attached to an alias and (optionally) to a Thought. | Mood | Alias vibe stored on `aliases.vibe`; thought vibe typically in `rooms.metadata.vibe` |
+| **Alias** | A user persona identity used to post and appear anonymously. | Persona | `aliases` table; `User.aliases[]` |
+
+### UI primitives (how things *look* and *behave*)
+
+| Term | Canonical Meaning | Examples in MXN.CHAT |
+|---|---|---|
+| **Indicator** | A UI element that *shows state* (may or may not be interactive). | USER STATUS vibe indicator circle; online status dot |
+| **Selector** | A control that lets a user choose **one** value from a discrete set; typically an **indicator button** + an **overlay picker**. | Vibe Selector (ring stack picker); Location Selector (pill dropdown + selector modal) |
+| **Controller** | A control that *adjusts* a value continuously or as a boolean toggle; not “choose one from many”. | Notification sound toggle; Do Not Disturb toggle |
+| **Tab** | A navigation/filter affordance that switches view or filters content; typically a row of mutually exclusive options. | Lounge Vibe Tabs (filter Thoughts by vibe) |
+| **Circle** | A filled circular shape (solid interior). | Online status dot; avatar mask/crop |
+| **Ring** | A circular outline (stroke) with a transparent interior. | Vibe ring styling; unfilled vibe tabs in controller spec |
+| **Bubble** | A ring-rendered circle used as an interactive “Thought” in the Lounge. | Thought bubbles (Plinko field) |
+| **Pill** | A rounded-rectangle chip/button, usually with text. | Location pill dropdown |
+
+### Canonical phrasing rules (keep docs + UI consistent)
+
+- Prefer **Thought** or **Topic** in user-facing UI; use **Room** only when referring to code/DB.
+- Prefer **Vibe** for mood; do not use “channel” or “vibe” as a synonym for a Room.
+- Use **Vibe Tabs** for the Lounge filter row; use **Vibe Selector** for the USER STATUS “Adjust Your Vibe” control.
+- Use **Ring** when the interior is transparent; use **Circle** when filled.
+
+### Related SSOTs
+
+- Lounge SSOT: [MXN_LOUNGE.md](MXN_LOUNGE.md)
+- Selector SSOT: [MXN_SELECTOR.md](MXN_SELECTOR.md)
+- Vibe ring styling: [MXN_VIBE_CONTROLLER.md](MXN_VIBE_CONTROLLER.md)
+- Location filter system: [LOCATION_FILTER_IMPLEMENTATION.md](LOCATION_FILTER_IMPLEMENTATION.md)
+- Thought dissipation behavior: [TOPIC_DISSIPATION_SSOT.md](TOPIC_DISSIPATION_SSOT.md)
 
 ---
 
@@ -56,11 +120,11 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 ### 2. 💬 Chat & Messaging
 
 #### Real-time Messaging
-- ✅ Send text messages to chat vibes
+- ✅ Send text messages to Thoughts (Rooms)
 - ✅ Real-time message delivery (Supabase Realtime)
 - ✅ Live message updates without page refresh
 - ✅ Message timestamp with "time ago" formatting
-- ✅ Message history loading (last 100 messages per vibe)
+- ✅ Message history loading (last 100 messages per Thought)
 - ✅ Author identification with avatar and display name
 - ✅ Swipe-to-delete messages (mobile)
 - ✅ Message deletion (own messages only)
@@ -86,37 +150,37 @@ This document serves as the Single Source of Truth (SSOT) for ALL features, capa
 
 ---
 
-### 3. 🏠 Chat Rooms & Channels
+### 3. 🏠 Thoughts (Rooms)
 
-#### Room Management
-- ✅ Default vibes (General, Gaming, Off-Topic)
-- ✅ Create custom vibes/channels
-- ✅ Delete vibes (admin only)
-- ✅ Vibe descriptions
-- ✅ Public/private vibe types
-- ✅ Vibe member count display
+#### Thought Management
+- ✅ Default Thoughts (e.g., Welcome + defaults)
+- ✅ Create custom Thoughts (Topics)
+- ✅ Delete Thoughts (admin only)
+- ✅ Thought descriptions
+- ✅ Public/private Thought types
+- ✅ Thought member count display
 - ✅ Admin permission system
-- ✅ Auto-select first vibe on load
-- ✅ Vibe auto-deletion after 3 days (ephemeral)
+- ✅ Auto-select first Thought on load
+- ✅ Thought auto-deletion after 3 days (ephemeral)
 
-#### Vibe Navigation
-- ✅ Sidebar with vibe list
-- ✅ Active vibe highlighting
-- ✅ Vibe switching without page reload
-- ✅ Collapsible "Other Vibes" dropdown
-- ✅ #Welcome vibe always visible
-- ✅ Vibe icons with # prefix
-- ✅ Mobile-friendly vibe sidebar
+#### Thought Navigation
+- ✅ Sidebar with Thought list
+- ✅ Active Thought highlighting
+- ✅ Thought switching without page reload
+- ✅ Collapsible "Other Thoughts" dropdown
+- ✅ #Welcome Thought always visible
+- ✅ Thought icons with # prefix
+- ✅ Mobile-friendly Thought sidebar
 - ✅ Sidebar search for #topics (purple) and aliases (blue)
 
-#### Vibe Features
+#### Thought Features
 - ✅ Last activity tracking
-- ✅ Message count per vibe
-- ✅ Vibe creation timestamp
-- ✅ Vibe creator tracking
-- ✅ Default vibe designation
+- ✅ Message count per Thought
+- ✅ Thought creation timestamp
+- ✅ Thought creator tracking
+- ✅ Default Thought designation
 - ✅ Maximum member limits (100 default)
-- ✅ Vibe active/inactive status
+- ✅ Thought active/inactive status
 
 ---
 

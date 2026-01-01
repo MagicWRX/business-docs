@@ -1,3 +1,21 @@
+---
+title: "MXN.CHAT Master Index (SSOT)"
+ssot: true
+owner: "brianlindahl"
+status: "active"
+codeRefs:
+  - "DOCS/MXN"
+scripts:
+  - "scripts/dev-manager.sh"
+relatedDocs:
+  - "MXN_ROADMAP.md"
+  - "MXN_TREE.md"
+lastReviewed: "2026-01-01"
+tags:
+  - "index"
+  - "ssot"
+---
+
 # MXN.CHAT Master Index (SSOT)
 
 **Document Date:** December 17, 2025  

@@ -220,7 +220,7 @@ In Google Cloud, the **Authorized Redirect URI** must point to the **Supabase Pr
 	MagicWRX Supabase serves unlimited clients via Row-Level Security (RLS)
 	
 - **Centralized Admin**: 
-	`/ADMIN/` manages all 3 platforms from one dashboard (http://localhost:3006)
+   `/ADMIN/` manages all 3 platforms from one dashboard (http://localhost:3005)
 
 - **Shared Components**: 
 	`/SHARED/` library (auth-tool, blog-engine, layout-manager, media-library, location-filter)
@@ -292,8 +292,8 @@ Each project has a dedicated `start-local.sh` to ensure correct ports and enviro
 | **3002** | **MagicWRX** | `Websites/MagicWRX` |
 | **3003** | **Amazingly Strange** | `Amazingly-Strange-Website` |
 | **3004** | **Base Template** | `Websites/base-template` |
-| **3005** | **Template WRX** | `Websites/Template-WRX` |
-| **3006** | **Master ADMIN** | `ADMIN/` |
+| **3005** | **Master ADMIN** | `ADMIN/` |
+| **3006** | **Template WRX** | `Websites/Template-WRX` |
 | **3007** | **Auth Tool** | `Websites/auth-tool` |
 | **3008** | **Auth Tool Pkg** | `Websites/auth-tool-package` |
 
@@ -371,6 +371,8 @@ Each project has a dedicated `start-local.sh` to ensure correct ports and enviro
 - Login with: Your Supabase account email/password
 
 **User Access** = Logging into **ADMIN App** (http://localhost:3006/login)
+
+> Note: ADMIN runs on **http://localhost:3005** in this repo (see `ADMIN/package.json` and `SHARED/start-all-local.sh`).
 - Use to: Manage platforms (MagicWRX, MXN, AmazinglyStrange content)
 - Login with: User created IN the Supabase project's Authentication tab
 
@@ -419,7 +421,7 @@ Each project has a dedicated `start-local.sh` to ensure correct ports and enviro
 
    **ADMIN:**
    - Name: `admin-auth-dev`
-   - Redirect URIs: `http://localhost:3006/auth/callback`
+   - Redirect URIs: `http://localhost:3005/auth/callback`
    - Name: `admin-auth-prod`
    - Redirect URIs: `https://admin.magicwrx.com/auth/callback`
 
