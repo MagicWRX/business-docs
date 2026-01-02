@@ -4,7 +4,9 @@ const { execSync } = require('child_process');
 try {
   const out = execSync('git diff --cached --name-only', { encoding: 'utf8' });
   const files = out.split(/\r?\n/).filter(Boolean);
-  const bad = files.filter(f => /\.bak$|\.std\.bak$/.test(f));
+  const bad = files
+    .filter(f => /\.bak$|\.std\.bak$/.test(f))
+    .filter(f => !f.startsWith('DOCS_BACKUPS/'));
   if (bad.length) {
     console.error('\n\x1b[31mError: Found staged backup files that must not be committed:\x1b[0m');
     bad.forEach(f => console.error('  -', f));

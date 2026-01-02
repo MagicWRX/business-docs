@@ -15,4 +15,4 @@ jobs:
           node-version: '18'
       - name: Run repository backup-file check
         run: |
-          node DOCS/scripts/check_repo_no_bak.js
+          node scripts/check_repo_no_bak.js

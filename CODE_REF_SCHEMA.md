@@ -31,7 +31,7 @@ This file documents the canonical schema for referencing code from DOCs and the 
 
 ## Conversion PR process
 1. Branch from `main` with name `docs/code-refs-YYYYMMDD`.
-2. Run `DOCS/scripts/standardize_code_refs.js --dry-run` to propose edits.
+2. Run `scripts/standardize_code_refs.js --dry-run` to propose edits.
 3. Create a PR with proposed changes, include `DOCS_DOC_SCRIPT_MAP.md` for context and the dry-run summary.
 4. Reviewers validate a sample of changed docs; once approved, run without `--dry-run` and commit.
 5. Run `doc_lint.js` and ensure CI passes before merging.

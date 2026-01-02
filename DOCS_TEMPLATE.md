@@ -41,11 +41,11 @@ Describe the single source of truth for a feature, concept, or subsystem.
 - Frontmatter valid and includes `codeRefs` where applicable
 - Links validated by doc-lint
 
-> 🔧 Tip: run `node DOCS/scripts/doc_lint.js` locally to validate frontmatter and codeRefs before opening a PR.
+> 🔧 Tip: run `node scripts/doc_lint.js` locally to validate frontmatter and codeRefs before opening a PR.
 
 ## Pre-commit & CI checks
-- Add a local pre-commit check to block staged `.bak` files by running `node DOCS/scripts/check_no_bak.js` as a pre-commit hook (e.g., via Husky).
-- CI will run `node DOCS/scripts/check_repo_no_bak.js` on PRs to fail if any tracked `.bak` or `.std.bak` files exist.
+- Add a local pre-commit check to block staged `.bak` files by running `node scripts/check_no_bak.js` as a pre-commit hook (e.g., via Husky).
+- CI will run `node scripts/check_repo_no_bak.js` on PRs to fail if any tracked `.bak` or `.std.bak` files exist outside `DOCS_BACKUPS/`.
 - To enable local hooks with Husky:
   - `npm install --save-dev husky`
   - `npx husky install`

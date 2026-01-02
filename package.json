@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "check-no-bak": "node DOCS/scripts/check_no_bak.js",
-    "check-repo-no-bak": "node DOCS/scripts/check_repo_no_bak.js"
+    "check-no-bak": "node scripts/check_no_bak.js",
+    "check-repo-no-bak": "node scripts/check_repo_no_bak.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

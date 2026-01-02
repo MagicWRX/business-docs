@@ -4,7 +4,9 @@ const { execSync } = require('child_process');
 try {
   const out = execSync('git ls-files', { encoding: 'utf8' });
   const files = out.split(/\r?\n/).filter(Boolean);
-  const bad = files.filter(f => /\.bak$|\.std\.bak$/.test(f));
+  const bad = files
+    .filter(f => /\.bak$|\.std\.bak$/.test(f))
+    .filter(f => !f.startsWith('DOCS_BACKUPS/'));
   if (bad.length) {
     console.error('\n\x1b[31mError: Found tracked backup files in the repository — these should be moved into DOCS_BACKUPS/:\x1b[0m');
     bad.forEach(f => console.error('  -', f));
