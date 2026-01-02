@@ -260,6 +260,23 @@ In Google Cloud, the **Authorized Redirect URI** must point to the **Supabase Pr
 ./SHARED/start-all-local.sh stop         # Stop all projects
 ```
 
+**SSOT Note (Canonical Location):**
+- The system-level, source-controlled launcher now lives in **business-docs**:
+   - `DOCS/system/start-all-local.sh`
+- Rationale: `SHARED/` (root) is not a git repository, so “system scripts” should live in a tracked repo.
+
+**Preferred Commands (SSOT):**
+```bash
+./DOCS/system/start-all-local.sh start
+./DOCS/system/start-all-local.sh fresh
+./DOCS/system/start-all-local.sh start mxn-chat
+./DOCS/system/start-all-local.sh stop
+```
+
+**What it adds:**
+- Refreshes DOCs SSOT artifacts before launch (doc map + doc-lint), so Hub can display up-to-date status.
+- Passes `DOCS_ROOT` into the Hub runtime for local visual SSOT review.
+
 ### 3. Admin Validation (`ADMIN/validate-setup.sh`)
 **Purpose:** Verifies the ADMIN environment is correctly configured.
 **Checks:**
@@ -272,6 +289,23 @@ In Google Cloud, the **Authorized Redirect URI** must point to the **Supabase Pr
 ```bash
 cd ADMIN && ./validate-setup.sh
 ```
+
+### 3b. Multi-Repo Push Script (SSOT)
+**Purpose:** Pushes key workspaces to their GitHub remotes with a DOCs SSOT preflight.
+
+**Canonical Location (source-controlled):**
+- `DOCS/system/push-all-workspaces.sh`
+
+**Usage:**
+```bash
+./DOCS/system/push-all-workspaces.sh push
+./DOCS/system/push-all-workspaces.sh status
+./DOCS/system/push-all-workspaces.sh push docs
+```
+
+**Notes:**
+- Runs DOCs map + doc-lint preflight before committing/pushing DOCs.
+- Blocks accidental staging of `.bak`/`.std.bak` files outside `DOCS_BACKUPS/`.
 
 ### 4. Project Launchers
 Each project has a dedicated `start-local.sh` to ensure correct ports and environment.
