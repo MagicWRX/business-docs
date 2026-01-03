@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "check-no-bak": "node scripts/check_no_bak.js",
+    "check-repo-no-bak": "node scripts/check_repo_no_bak.js"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0"
+  }
+}

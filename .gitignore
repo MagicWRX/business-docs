@@ -79,6 +79,10 @@ web_modules/
 .env.production.local
 .env.local
 
+# Ignore backup files created by editors or scripts
+*.bak
+*.std.bak
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache

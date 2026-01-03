@@ -1,0 +1,1668 @@
+{
+  "generatedAt": "2026-01-01T15:09:41.533Z",
+  "totalRefs": 247,
+  "missingRefs": 239,
+  "report": {
+    "AMS/AMAZINGLYSTRANGE_ADMIN.md": [],
+    "AMS/AMAZINGLYSTRANGE_AI_PROMPT.md": [],
+    "AMS/AMAZINGLYSTRANGE_FIREBASE.md": [
+      {
+        "raw": "DOCs/AMS/Vercel/Supabase",
+        "line": 1,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/Vercel/Supabase"
+      },
+      {
+        "raw": "DOCs/AMS/lib/supabase/auth.ts",
+        "line": 501,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/lib/supabase/auth.ts"
+      }
+    ],
+    "AMS/AMAZINGLYSTRANGE_FIREBASE_DEV_GUIDE.md": [
+      {
+        "raw": "DOCs/AMS/scripts/firebase-dev.sh",
+        "line": 560,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/scripts/firebase-dev.sh"
+      },
+      {
+        "raw": "DOCs/AMS/scripts/serve-local.sh",
+        "line": 544,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/scripts/serve-local.sh"
+      },
+      {
+        "raw": "DOCs/SCRIPTS_README.md",
+        "line": 553,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/SCRIPTS_README.md"
+      }
+    ],
+    "AMS/AMAZINGLYSTRANGE_INDEX.md": [],
+    "AMS/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md": [],
+    "AMS/AMAZINGLYSTRANGE_ROADMAP.md": [],
+    "AMS/AMAZINGLYSTRANGE_RULES.md": [],
+    "AMS/AMAZINGLYSTRANGE_SEO_GUIDE.md": [],
+    "AMS/AMAZINGLYSTRANGE_TREE.md": [],
+    "AMS/AMAZINGLYSTRANGE_WEB_STANDARDS.md": [],
+    "AMS/AMS_AI_PROMPT.md": [],
+    "AMS/AMS_AI_STANDARDS.md": [],
+    "AMS/AMS_AND_MonstersReign_SETUP.md": [
+      {
+        "raw": "../../../../docs/firebase-hosting-setup.md",
+        "line": 1,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/docs/firebase-hosting-setup.md"
+      }
+    ],
+    "AMS/AMS_API.md": [],
+    "AMS/AMS_BRAND_HEADER.md": [],
+    "AMS/AMS_DEVELOPMENT.md": [],
+    "AMS/AMS_EXEC_SUMMARY.md": [],
+    "AMS/AMS_INDEX.md": [],
+    "AMS/AMS_OVERVIEW.md": [
+      {
+        "raw": "DOCs/AMS/ADMIN/src/lib/supabase",
+        "line": 40,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/ADMIN/src/lib/supabase"
+      }
+    ],
+    "AMS/AMS_RELEASE_RUNBOOK.md": [],
+    "AMS/AMS_ROADMAP.md": [
+      {
+        "raw": "DOCs/AMS/src/lib/supabase/auth.ts",
+        "line": 128,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/src/lib/supabase/auth.ts"
+      },
+      {
+        "raw": "DOCs/AMS/src/lib/storage/supabaseStorage.ts",
+        "line": 276,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/src/lib/storage/supabaseStorage.ts"
+      }
+    ],
+    "AMS/AMS_SETUP.md": [],
+    "AMS/AMS_STANDARDS.md": [],
+    "AMS/AMS_STATIC_BLOG.md": [],
+    "AMS/AMS_SUPABASE_DATABASE.md": [
+      {
+        "raw": "DOCs/AMS/SHARED/auth-tool/src/lib/supabase/client.ts",
+        "line": 347,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/SHARED/auth-tool/src/lib/supabase/client.ts"
+      }
+    ],
+    "AMS/AMS_WEB_ROADMAP.md": [
+      {
+        "raw": "DOCs/AMS/Vercel/Supabase",
+        "line": 5,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/Vercel/Supabase"
+      },
+      {
+        "raw": "DOCs/AMS/ADMIN/node_modules/@supabase/supabase-js",
+        "line": 543,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/ADMIN/node_modules/@supabase/supabase-js"
+      }
+    ],
+    "AMS/DOC_INDEX.md": [
+      {
+        "raw": "DOCs/AMS/Next.js/Supabase",
+        "line": 12,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/DOCs/AMS/Next.js/Supabase"
+      }
+    ],
+    "BUSINESS/BUSINESS_ADMIN.md": [
+      {
+        "raw": "DOCs/BUSINESS/Websites/MagicWRX/package.json",
+        "line": 231,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/Websites/MagicWRX/package.json"
+      },
+      {
+        "raw": "DOCs/BUSINESS/Vercel/Supabase",
+        "line": 327,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/Vercel/Supabase"
+      },
+      {
+        "raw": "DOCs/BUSINESS/ADMIN/src/lib/supabase/factory.ts",
+        "line": 345,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/ADMIN/src/lib/supabase/factory.ts"
+      }
+    ],
+    "BUSINESS/BUSINESS_AI_PROMPT.md": [
+      {
+        "raw": "DOCs/BUSINESS/Firebase/Supabase",
+        "line": 271,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/Firebase/Supabase"
+      },
+      {
+        "raw": "DOCs/BUSINESS/MagicWRX/DOCs",
+        "line": 533,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/MagicWRX/DOCs"
+      }
+    ],
+    "BUSINESS/BUSINESS_ARCHITECTURE_UPDATE_DEC2025.md": [],
+    "BUSINESS/BUSINESS_CHEAT_SHEET.md": [],
+    "BUSINESS/BUSINESS_CHECKLIST.md": [],
+    "BUSINESS/BUSINESS_DATABASE.md": [],
+    "BUSINESS/BUSINESS_EMAIL_BREVO.md": [],
+    "BUSINESS/BUSINESS_ENVIRONMENT_MGMT.md": [],
+    "BUSINESS/BUSINESS_ROADMAP.md": [
+      {
+        "raw": "Websites/mxn-chat/src/app/admin",
+        "line": 398,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/Websites/mxn-chat/src/app/admin"
+      },
+      {
+        "raw": "DOCs/BUSINESS/ADMIN/src/lib/supabase/factory.ts",
+        "line": 483,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/ADMIN/src/lib/supabase/factory.ts"
+      }
+    ],
+    "BUSINESS/BUSINESS_SCALABLE_FOUNDATION.md": [
+      {
+        "raw": "DOCs/BUSINESS/Head/Shared",
+        "line": 16,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/Head/Shared"
+      },
+      {
+        "raw": "DOCs/BUSINESS/Websites/base-template/src/app/layout.tsx",
+        "line": 65,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/Websites/base-template/src/app/layout.tsx"
+      }
+    ],
+    "BUSINESS/BUSINESS_VERCEL.md": [],
+    "BUSINESS/BUSINESS_WORKSPACES.md": [
+      {
+        "raw": "DOCs/BUSINESS/ADMIN/package.json",
+        "line": 375,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/ADMIN/package.json"
+      },
+      {
+        "raw": "../../../../api/supabase",
+        "line": 986,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/api/supabase"
+      },
+      {
+        "raw": "DOCs/BUSINESS/scripts/check-supabase-connection.js",
+        "line": 1111,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/DOCs/BUSINESS/scripts/check-supabase-connection.js"
+      }
+    ],
+    "BUSINESS/DOC_INDEX.md": [],
+    "BUSINESS/MAGICWRX_CUSTOMER_BRANDED_EMAIL_OPTION_A.md": [],
+    "CODE/CODE_LEDGER.md": [],
+    "CONSOLIDATION_SUMMARY.md": [],
+    "DOCS_DOC_SCRIPT_MAP.md": [
+      {
+        "raw": "DOCs/Vercel/Supabase",
+        "line": 286,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/Vercel/Supabase"
+      },
+      {
+        "raw": "DOCs/lib/supabase",
+        "line": 565,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/lib/supabase"
+      },
+      {
+        "raw": "DOCs/scripts/serve-local.sh",
+        "line": 260,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/scripts/serve-local.sh"
+      },
+      {
+        "raw": "DOCs/AMS/scripts/serve-local.sh",
+        "line": 261,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/AMS/scripts/serve-local.sh"
+      },
+      {
+        "raw": "DOCs/scripts/firebase-dev.sh",
+        "line": 263,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/scripts/firebase-dev.sh"
+      },
+      {
+        "raw": "DOCs/AMS/scripts/firebase-dev.sh",
+        "line": 264,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/AMS/scripts/firebase-dev.sh"
+      },
+      {
+        "raw": "../../../../docs/firebase-hosting-setup.md",
+        "line": 265,
+        "exists": false,
+        "checkedPath": "/Users/docs/firebase-hosting-setup.md"
+      },
+      {
+        "raw": "DOCs/src/lib/supabase",
+        "line": 559,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/src/lib/supabase"
+      },
+      {
+        "raw": "AMS/src/CODE:",
+        "line": 273,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/src/CODE:"
+      },
+      {
+        "raw": "DOCs/src/lib/storage/supabaseStorage.ts",
+        "line": 271,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/src/lib/storage/supabaseStorage.ts"
+      },
+      {
+        "raw": "SHARED/auth-tool/src/CODE:",
+        "line": 565,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/auth-tool/src/CODE:"
+      },
+      {
+        "raw": "AMS/SHARED/auth-tool/src/CODE:",
+        "line": 132,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/AMS/SHARED/auth-tool/src/CODE:"
+      },
+      {
+        "raw": "DOCs/@supabase/supabase-js",
+        "line": 739,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/@supabase/supabase-js"
+      },
+      {
+        "raw": "DOCs/Next.js/Supabase",
+        "line": 277,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/Next.js/Supabase"
+      },
+      {
+        "raw": "DOCs/MagicWRX/package.json",
+        "line": 280,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/MagicWRX/package.json"
+      },
+      {
+        "raw": "ADMIN/src/CODE:",
+        "line": 206,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/CODE:"
+      },
+      {
+        "raw": "BUSINESS/ADMIN/src/CODE:",
+        "line": 206,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/BUSINESS/ADMIN/src/CODE:"
+      },
+      {
+        "raw": "DOCs/Firebase/Supabase",
+        "line": 291,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/Firebase/Supabase"
+      },
+      {
+        "raw": "DOCs/MagicWRX/DOCs",
+        "line": 305,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/MagicWRX/DOCs"
+      },
+      {
+        "raw": "DOCs/BUSINESS/MagicWRX/DOCs",
+        "line": 293,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/BUSINESS/MagicWRX/DOCs"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/app/admin",
+        "line": 309,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/app/admin"
+      },
+      {
+        "raw": "DOCs/Head/Shared",
+        "line": 312,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/Head/Shared"
+      },
+      {
+        "raw": "DOCs/base-template/src/app/layout.tsx",
+        "line": 314,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/base-template/src/app/layout.tsx"
+      },
+      {
+        "raw": "../../../../api/supabase",
+        "line": 319,
+        "exists": false,
+        "checkedPath": "/Users/api/supabase"
+      },
+      {
+        "raw": "DOCs/scripts/check-supabase-connection.js",
+        "line": 320,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/scripts/check-supabase-connection.js"
+      },
+      {
+        "raw": "DOCs/BUSINESS/scripts/check-supabase-connection.js",
+        "line": 321,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/BUSINESS/scripts/check-supabase-connection.js"
+      },
+      {
+        "raw": "../SHARED/review-smtp-setup.sh",
+        "line": 322,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/SHARED/review-smtp-setup.sh"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Business/SCRIPTS_README.md",
+        "line": 262,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/SCRIPTS_README.md"
+      },
+      {
+        "raw": "lib/supabase",
+        "line": 266,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/lib/supabase"
+      },
+      {
+        "raw": "DOCs/AMS/lib/supabase",
+        "line": 267,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/AMS/lib/supabase"
+      },
+      {
+        "raw": "../../../../DOCs/BUSINESS/BUSINESS_ADMIN.md",
+        "line": 278,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/BUSINESS/BUSINESS_ADMIN.md"
+      },
+      {
+        "raw": "MagicWRX/DOCs",
+        "line": 292,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MagicWRX/DOCs"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/SHARED/review-smtp-setup.sh",
+        "line": 322,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/SHARED/review-smtp-setup.sh"
+      },
+      {
+        "raw": "../../../../Docs/MXN/MXN_INDEX.md",
+        "line": 475,
+        "exists": false,
+        "checkedPath": "/Users/Docs/MXN/MXN_INDEX.md"
+      },
+      {
+        "raw": "MAGICWRX/src/CODE:",
+        "line": 327,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MAGICWRX/src/CODE:"
+      },
+      {
+        "raw": "../../../../ADMIN/src/app/amazinglystrange",
+        "line": 890,
+        "exists": false,
+        "checkedPath": "/Users/ADMIN/src/app/amazinglystrange"
+      },
+      {
+        "raw": "../../mxn-chat/src/components/ChatInterface.tsx#L381-L402",
+        "line": 578,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/mxn-chat/src/components/ChatInterface.tsx#L381-L402"
+      },
+      {
+        "raw": "/Users/brianlindahl/mxn-chat/src/components/ChatInterface.tsx#L381-L402",
+        "line": 332,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/src/components/ChatInterface.tsx#L381-L402"
+      },
+      {
+        "raw": "/Users/brianlindahl/mxn-chat/src/components/ChatInterface.ts",
+        "line": 336,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/src/components/ChatInterface.ts"
+      },
+      {
+        "raw": "../mxn-chat/src/components/ChatInterface.tsx#L381-L402",
+        "line": 578,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/mxn-chat/src/components/ChatInterface.tsx#L381-L402"
+      },
+      {
+        "raw": "../mxn-chat/src/components/ChatInterface.ts",
+        "line": 579,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/mxn-chat/src/components/ChatInterface.ts"
+      },
+      {
+        "raw": "../../../../SHARED/location-filter/schema.sql",
+        "line": 335,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/location-filter/schema.sql"
+      },
+      {
+        "raw": "../../mxn-chat/src/components/ChatInterface.tsx",
+        "line": 579,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/mxn-chat/src/components/ChatInterface.tsx",
+        "line": 336,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "../../../../ADMIN/src/components/location-manager",
+        "line": 582,
+        "exists": false,
+        "checkedPath": "/Users/ADMIN/src/components/location-manager"
+      },
+      {
+        "raw": "../../SHARED/location-filter/README.md",
+        "line": 581,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/SHARED/location-filter/README.md"
+      },
+      {
+        "raw": "/Users/brianlindahl/SHARED/location-filter/README.md",
+        "line": 339,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/SHARED/location-filter/README.md"
+      },
+      {
+        "raw": "../SHARED/location-filter/README.md",
+        "line": 581,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/SHARED/location-filter/README.md"
+      },
+      {
+        "raw": "DOCs/mxn-chat/docs",
+        "line": 757,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/mxn-chat/docs"
+      },
+      {
+        "raw": "../../../../DOCs/MXN/MXN_INDEX.md",
+        "line": 350,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/MXN/MXN_INDEX.md"
+      },
+      {
+        "raw": "../../../../DOCs/MXN/MXN_EMAIL_SETUP.md",
+        "line": 351,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/MXN/MXN_EMAIL_SETUP.md"
+      },
+      {
+        "raw": "../../../../src/app/api/send-invite/route.ts",
+        "line": 664,
+        "exists": false,
+        "checkedPath": "/Users/src/app/api/send-invite/route.ts"
+      },
+      {
+        "raw": "../Websites/mxn-chat/src/components/ChatInterface.tsx",
+        "line": 711,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ChatInterface.tsx",
+        "line": 362,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ChatInterface.ts",
+        "line": 362,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ChatInterface.ts"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/ChatInterface.tsx",
+        "line": 711,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/ChatInterface.ts",
+        "line": 364,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/ChatInterface.ts"
+      },
+      {
+        "raw": "../Websites/mxn-chat/src/components/RoomSidebar.tsx",
+        "line": 695,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/components/RoomSidebar.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/RoomSidebar.tsx",
+        "line": 365,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/RoomSidebar.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/RoomSidebar.ts",
+        "line": 365,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/RoomSidebar.ts"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/RoomSidebar.tsx",
+        "line": 695,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/RoomSidebar.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/RoomSidebar.ts",
+        "line": 367,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/RoomSidebar.ts"
+      },
+      {
+        "raw": "../../../../src/contexts/ChatContext.ts",
+        "line": 701,
+        "exists": false,
+        "checkedPath": "/Users/src/contexts/ChatContext.ts"
+      },
+      {
+        "raw": "../Websites/mxn-chat/src/components/UserSettingsModal.tsx",
+        "line": 712,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/components/UserSettingsModal.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/UserSettingsModal.tsx",
+        "line": 369,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/UserSettingsModal.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/UserSettingsModal.ts",
+        "line": 369,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/UserSettingsModal.ts"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/UserSettingsModal.tsx",
+        "line": 712,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/UserSettingsModal.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/UserSettingsModal.ts",
+        "line": 371,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/UserSettingsModal.ts"
+      },
+      {
+        "raw": "../Websites/mxn-chat/src/components/ProfilePictureSelector.tsx",
+        "line": 713,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/components/ProfilePictureSelector.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ProfilePictureSelector.tsx",
+        "line": 372,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ProfilePictureSelector.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ProfilePictureSelector.ts",
+        "line": 372,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/ProfilePictureSelector.ts"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/ProfilePictureSelector.tsx",
+        "line": 713,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/ProfilePictureSelector.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/ProfilePictureSelector.ts",
+        "line": 374,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/ProfilePictureSelector.ts"
+      },
+      {
+        "raw": "../Websites/mxn-chat/src/components/NotificationSettings.tsx",
+        "line": 714,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/Websites/mxn-chat/src/components/NotificationSettings.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/NotificationSettings.tsx",
+        "line": 375,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/NotificationSettings.tsx"
+      },
+      {
+        "raw": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/NotificationSettings.ts",
+        "line": 375,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Websites/mxn-chat/src/components/NotificationSettings.ts"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/NotificationSettings.tsx",
+        "line": 714,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/NotificationSettings.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/NotificationSettings.ts",
+        "line": 377,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/mxn-chat/src/components/NotificationSettings.ts"
+      },
+      {
+        "raw": "DOCs/selector/src/**/*",
+        "line": 716,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/selector/src/**/*"
+      },
+      {
+        "raw": "DOCs/src/components/ChatInterface.tsx",
+        "line": 722,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "DOCs/MXN/src/components/ChatInterface.tsx",
+        "line": 722,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/MXN/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "DOCs/src/components/MessageList.tsx",
+        "line": 723,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/src/components/MessageList.tsx"
+      },
+      {
+        "raw": "DOCs/MXN/src/components/MessageList.tsx",
+        "line": 723,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/MXN/src/components/MessageList.tsx"
+      },
+      {
+        "raw": "DOCs/mxn-chat/package.json",
+        "line": 725,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/mxn-chat/package.json"
+      },
+      {
+        "raw": "DOCs/DOCs/CODE:",
+        "line": 910,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/DOCs/CODE:"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 910,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      },
+      {
+        "raw": "DOCs/Websites/amazingly-strange-website/src/app/blog",
+        "line": 816,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/Websites/amazingly-strange-website/src/app/blog"
+      },
+      {
+        "raw": "DOCs/Websites/amazingly-strange-website/scripts/migration",
+        "line": 897,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/Websites/amazingly-strange-website/scripts/migration"
+      },
+      {
+        "raw": "Websites/amazingly-strange-website/src/app/blog",
+        "line": 399,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/amazingly-strange-website/src/app/blog"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog",
+        "line": 816,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/admin-layout/page.ts",
+        "line": 802,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/admin-layout/page.ts"
+      },
+      {
+        "raw": "../../../../ADMIN/src/app/layout.ts",
+        "line": 801,
+        "exists": false,
+        "checkedPath": "/Users/ADMIN/src/app/layout.ts"
+      },
+      {
+        "raw": "../../../../SHARED/admin-layout/README.md",
+        "line": 420,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/admin-layout/README.md"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/analytics/page.ts",
+        "line": 810,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/analytics/page.ts"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/blog-engine/page.ts",
+        "line": 826,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/blog-engine/page.ts"
+      },
+      {
+        "raw": "../../../../ADMIN/src/app/blog/page.ts",
+        "line": 827,
+        "exists": false,
+        "checkedPath": "/Users/ADMIN/src/app/blog/page.ts"
+      },
+      {
+        "raw": "../../../../ADMIN/src/app/admin/amazinglystrange/blog/page.ts",
+        "line": 828,
+        "exists": false,
+        "checkedPath": "/Users/ADMIN/src/app/admin/amazinglystrange/blog/page.ts"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/contact-manager/page.ts",
+        "line": 838,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/contact-manager/page.ts"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/gallery/page.ts",
+        "line": 849,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/gallery/page.ts"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/header/page.ts",
+        "line": 856,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/header/page.ts"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/layout-manager/page.ts",
+        "line": 869,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/layout-manager/page.ts"
+      },
+      {
+        "raw": "DOCs/Hosting/amazinglystrange/docs/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md",
+        "line": 870,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/Hosting/amazinglystrange/docs/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/location-filter/page.ts",
+        "line": 876,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/location-filter/page.ts"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/media-library/page.ts",
+        "line": 884,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/media-library/page.ts"
+      },
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/page-editor/page.ts",
+        "line": 891,
+        "exists": false,
+        "checkedPath": "/Users/SHARED/hub/src/app/tools/page-editor/page.ts"
+      },
+      {
+        "raw": "Websites/amazingly-strange-website/scripts/migration",
+        "line": 457,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/Websites/amazingly-strange-website/scripts/migration"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration",
+        "line": 897,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration"
+      },
+      {
+        "raw": "../../../../DOCs/BUSINESS/DOC_INDEX.md",
+        "line": 459,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/BUSINESS/DOC_INDEX.md"
+      },
+      {
+        "raw": "../../../../DOCs/MAGICWRX/MAGICWRX_DOC_INDEX.md",
+        "line": 460,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/MAGICWRX/MAGICWRX_DOC_INDEX.md"
+      },
+      {
+        "raw": "../../../../DOCs/MXN/MXN_DOC_INDEX.md",
+        "line": 461,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/MXN/MXN_DOC_INDEX.md"
+      },
+      {
+        "raw": "../../../../DOCs/AMS/DOC_INDEX.md",
+        "line": 462,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/AMS/DOC_INDEX.md"
+      },
+      {
+        "raw": "../../../../DOCs/GENERIC/GENERIC_DOC_INDEX.md",
+        "line": 463,
+        "exists": false,
+        "checkedPath": "/Users/DOCs/GENERIC/GENERIC_DOC_INDEX.md"
+      },
+      {
+        "raw": "DOCs/docs/README.md",
+        "line": 944,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/docs/README.md"
+      },
+      {
+        "raw": "DOCs/node_modules/tailwind-merge/docs/README.md",
+        "line": 944,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/node_modules/tailwind-merge/docs/README.md"
+      },
+      {
+        "raw": "MAGICWRX/SHARED/auth-tool/src/CODE:",
+        "line": 565,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MAGICWRX/SHARED/auth-tool/src/CODE:"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange/media/page.tsx",
+        "line": 883,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange/media/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/components/location-manager",
+        "line": 580,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/components/location-manager"
+      },
+      {
+        "raw": "MXN/ADMIN/src/components/location-manager",
+        "line": 580,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/ADMIN/src/components/location-manager"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange/pages/page.tsx",
+        "line": 890,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange/pages/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange/analytics/page.tsx",
+        "line": 809,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange/analytics/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange/contacts/page.tsx",
+        "line": 837,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange/contacts/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange/gallery/page.tsx",
+        "line": 848,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange/gallery/page.tsx"
+      },
+      {
+        "raw": "ADMIN/node_modules/@jridgewell/gen-mapping/srcCODE:",
+        "line": 793,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/node_modules/@jridgewell/gen-mapping/srcCODE:"
+      },
+      {
+        "raw": "TOOLS/ADMIN/node_modules/@jridgewell/gen-mapping/srcCODE:",
+        "line": 793,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/ADMIN/node_modules/@jridgewell/gen-mapping/srcCODE:"
+      },
+      {
+        "raw": "ADMIN/src/app/layout.tsx",
+        "line": 801,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/layout.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/admin-layout/page.tsx",
+        "line": 802,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/admin-layout/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/analytics/page.tsx",
+        "line": 810,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/analytics/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/blog-engine/page.tsx",
+        "line": 826,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/blog-engine/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/blog/page.tsx",
+        "line": 827,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/blog/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/admin/amazinglystrange/blog/page.tsx",
+        "line": 828,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/admin/amazinglystrange/blog/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/contact-manager/page.tsx",
+        "line": 838,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/contact-manager/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/gallery/page.tsx",
+        "line": 849,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/gallery/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange/header/page.tsx",
+        "line": 855,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange/header/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/header/page.tsx",
+        "line": 856,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/header/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange/layout-manager/page.tsx",
+        "line": 868,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange/layout-manager/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/layout-manager/page.tsx",
+        "line": 869,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/layout-manager/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/location-filter/page.tsx",
+        "line": 876,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/location-filter/page.tsx"
+      },
+      {
+        "raw": "ADMIN/src/app/amazinglystrange",
+        "line": 877,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/ADMIN/src/app/amazinglystrange"
+      },
+      {
+        "raw": "TOOLS/ADMIN/src/app/amazinglystrange",
+        "line": 877,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/ADMIN/src/app/amazinglystrange"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/media-library/page.tsx",
+        "line": 884,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/media-library/page.tsx"
+      },
+      {
+        "raw": "SHARED/hub/src/app/tools/page-editor/page.tsx",
+        "line": 891,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/SHARED/hub/src/app/tools/page-editor/page.tsx"
+      }
+    ],
+    "GENERIC/AI_STANDARDS.md": [],
+    "GENERIC/GENERIC_AI_PROMPT.md": [
+      {
+        "raw": "../../../../Docs/MXN/MXN_INDEX.md",
+        "line": 93,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Docs/MXN/MXN_INDEX.md"
+      }
+    ],
+    "GENERIC/GENERIC_DOC_INDEX.md": [],
+    "GENERIC/GENERIC_ROADMAP.md": [],
+    "GENERIC/GENERIC_TITLE_OVERVIEW.md": [],
+    "MAGICWRX/ADSENSE_TOOLING.md": [],
+    "MAGICWRX/MAGICWRX_AI_PROMPT.md": [
+      {
+        "raw": "DOCs/MAGICWRX/ADMIN/src/lib/supabase",
+        "line": 24,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MAGICWRX/DOCs/MAGICWRX/ADMIN/src/lib/supabase"
+      }
+    ],
+    "MAGICWRX/MAGICWRX_AUTH_SETUP.md": [],
+    "MAGICWRX/MAGICWRX_DEPLOYMENT.md": [],
+    "MAGICWRX/MAGICWRX_DESIGN_SYSTEM_STRATEGY.md": [],
+    "MAGICWRX/MAGICWRX_DOC_INDEX.md": [],
+    "MAGICWRX/MAGICWRX_EXECUTIVE_V2.md": [],
+    "MAGICWRX/MAGICWRX_HARMONY.md": [],
+    "MAGICWRX/MAGICWRX_MIGRATION_PLAN.md": [],
+    "MAGICWRX/MAGICWRX_RECAPTCHA.md": [],
+    "MAGICWRX/MAGICWRX_ROADMAP.md": [],
+    "MAGICWRX/MAGICWRX_STANDARDS.md": [],
+    "MAGICWRX/MAGICWRX_SYSTEM.md": [],
+    "MAGICWRX/MAGICWRX_TECH_STACK.md": [],
+    "MAGICWRX/MAGICWRX_TEMPLATES.md": [],
+    "MAGICWRX/MAGICWRX_TITLE_OVERVIEW.md": [],
+    "MAGICWRX/MAGICWRX_TREE.md": [
+      {
+        "raw": "DOCs/MAGICWRX/ADMIN/src/lib/supabase",
+        "line": 46,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MAGICWRX/DOCs/MAGICWRX/ADMIN/src/lib/supabase"
+      }
+    ],
+    "MAGICWRX/MAGICWRX_sSYSTEM.md": [
+      {
+        "raw": "DOCs/MAGICWRX/SHARED/auth-tool/src/lib/supabase/client.ts",
+        "line": 52,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MAGICWRX/DOCs/MAGICWRX/SHARED/auth-tool/src/lib/supabase/client.ts"
+      }
+    ],
+    "MEDIA_LIBRARY_EXTRACTION_SUMMARY.md": [
+      {
+        "raw": "DOCs/ADMIN/src/app/amazinglystrange/media/page.tsx",
+        "line": 118,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/ADMIN/src/app/amazinglystrange/media/page.tsx"
+      },
+      {
+        "raw": "DOCs/ADMIN/package.json",
+        "line": 130,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/DOCs/ADMIN/package.json"
+      }
+    ],
+    "MXN/LOCATION_FILTER_IMPLEMENTATION.md": [
+      {
+        "raw": "DOCs/MXN/ADMIN/src/components/location-manager",
+        "line": 586,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/ADMIN/src/components/location-manager"
+      },
+      {
+        "raw": "../mxn-chat/src/components/ChatInterface.tsx#L381-L402",
+        "line": 141,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/mxn-chat/src/components/ChatInterface.tsx#L381-L402"
+      },
+      {
+        "raw": "../mxn-chat/src/components/ChatInterface.tsx",
+        "line": 285,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "../SHARED/location-filter/README.md",
+        "line": 585,
+        "exists": true,
+        "checkedPath": "/Users/brianlindahl/Development/Business/SHARED/location-filter/README.md"
+      },
+      {
+        "raw": "/README.md",
+        "line": 586,
+        "exists": false,
+        "checkedPath": "/README.md"
+      }
+    ],
+    "MXN/MVP_1.0/mxn_campaign_overview.md": [],
+    "MXN/MVP_1.0/mxn_pivot_scenarios.md": [],
+    "MXN/MVP_1.0/mxn_risk_mitigation.md": [],
+    "MXN/MVP_1.0/mxn_week_by_week.md": [],
+    "MXN/MXN_1.0_MARKETING.md": [],
+    "MXN/MXN_ABTESTING.md": [],
+    "MXN/MXN_ADMIN.md": [],
+    "MXN/MXN_ARCHITECTURE_DIAGRAM.md": [],
+    "MXN/MXN_AUTH_SETUP.md": [],
+    "MXN/MXN_BUSINESS_PLAN.md": [],
+    "MXN/MXN_CHAT.md": [],
+    "MXN/MXN_DEBUG.md": [],
+    "MXN/MXN_DEPLOYMENT_CICD.md": [],
+    "MXN/MXN_DESIGN.md": [],
+    "MXN/MXN_DOCUMENTATION_CONSOLIDATION.md": [
+      {
+        "raw": "../../../../mxn-chat/docs",
+        "line": 177,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/docs"
+      },
+      {
+        "raw": "DOCs/MXN/mxn-chat/docs",
+        "line": 24,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/mxn-chat/docs"
+      },
+      {
+        "raw": "DOCs/MXN/Websites/mxn-chat/docs",
+        "line": 216,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/Websites/mxn-chat/docs"
+      }
+    ],
+    "MXN/MXN_DOC_INDEX.md": [],
+    "MXN/MXN_EMAIL_SETUP.md": [
+      {
+        "raw": "DOCs/MXN/Websites/mxn-chat/src/app/api/send-invite/route.ts",
+        "line": 66,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/Websites/mxn-chat/src/app/api/send-invite/route.ts"
+      }
+    ],
+    "MXN/MXN_FEATURES.md": [],
+    "MXN/MXN_GOOGLE_ADS_SETUP.md": [],
+    "MXN/MXN_INDEX.md": [
+      {
+        "raw": "../../../../mxn-chat/docs/EMAIL_SETUP.md",
+        "line": 284,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/docs/EMAIL_SETUP.md"
+      },
+      {
+        "raw": "../../../../mxn-chat/docs/SECURITY_NOTES.md",
+        "line": 285,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/docs/SECURITY_NOTES.md"
+      },
+      {
+        "raw": "../../../../mxn-chat/docs/MXN_INDEX.md",
+        "line": 286,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/docs/MXN_INDEX.md"
+      },
+      {
+        "raw": "../../../../mxn-chat/docs/MULTI_USER_CHAT_PLAN.md",
+        "line": 287,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/docs/MULTI_USER_CHAT_PLAN.md"
+      }
+    ],
+    "MXN/MXN_LIFECYCLE.md": [],
+    "MXN/MXN_LOUNGE.md": [
+      {
+        "raw": "Websites/mxn-chat/src/components/ChatInterface.tsx",
+        "line": 168,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/Websites/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/RoomSidebar.tsx",
+        "line": 170,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/Websites/mxn-chat/src/components/RoomSidebar.tsx"
+      }
+    ],
+    "MXN/MXN_ROADMAP.md": [
+      {
+        "raw": "../../../../src/contexts/ChatContext.ts",
+        "line": 292,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/src/contexts/ChatContext.ts"
+      }
+    ],
+    "MXN/MXN_SECURITY.md": [],
+    "MXN/MXN_SELECTOR.md": [
+      {
+        "raw": "Websites/mxn-chat/src/components/ChatInterface.tsx",
+        "line": 119,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/Websites/mxn-chat/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/UserSettingsModal.tsx",
+        "line": 108,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/Websites/mxn-chat/src/components/UserSettingsModal.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/ProfilePictureSelector.tsx",
+        "line": 127,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/Websites/mxn-chat/src/components/ProfilePictureSelector.tsx"
+      },
+      {
+        "raw": "Websites/mxn-chat/src/components/NotificationSettings.tsx",
+        "line": 138,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/Websites/mxn-chat/src/components/NotificationSettings.tsx"
+      },
+      {
+        "raw": "DOCs/selector/src/**/*",
+        "line": 171,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/selector/src/**/*"
+      }
+    ],
+    "MXN/MXN_SOLUTIONS.md": [
+      {
+        "raw": "DOCs/MXN/src/components/ChatInterface.tsx",
+        "line": 87,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/src/components/ChatInterface.tsx"
+      },
+      {
+        "raw": "DOCs/MXN/src/components/MessageList.tsx",
+        "line": 87,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/src/components/MessageList.tsx"
+      },
+      {
+        "raw": "DOCs/MXN/mxn-chat/package.json",
+        "line": 111,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/mxn-chat/package.json"
+      }
+    ],
+    "MXN/MXN_SPECS.md": [],
+    "MXN/MXN_SUPABASE_DB_SSOT.md": [],
+    "MXN/MXN_SUPABASE_MIGRATION.md": [
+      {
+        "raw": "DOCs/MXN/ADMIN/node_modules/@supabase/supabase-js",
+        "line": 63,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/MXN/DOCs/MXN/ADMIN/node_modules/@supabase/supabase-js"
+      }
+    ],
+    "MXN/MXN_SUPABASE_SCHEMA.md": [],
+    "MXN/MXN_SYSTEM.md": [],
+    "MXN/MXN_TESTING.md": [],
+    "MXN/MXN_TREE.md": [
+      {
+        "raw": "../../../../mxn-chat/docs/EMAIL_SETUP.md",
+        "line": 456,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/mxn-chat/docs/EMAIL_SETUP.md"
+      }
+    ],
+    "MXN/MXN_VIBE_CONTROLLER.md": [],
+    "MXN/TOPIC_DISSIPATION_SSOT.md": [],
+    "README.md": [],
+    "TOOLS/AMAZINGLYSTRANGE_PARITY_ROADMAP.md": [
+      {
+        "raw": "DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 16,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      }
+    ],
+    "TOOLS/SHARED_TOOLS_ROADMAP.md": [
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog",
+        "line": 168,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/*",
+        "line": 46,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/*"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/README.md",
+        "line": 61,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/README.md"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js",
+        "line": 62,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/media/page.tsx",
+        "line": 208,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/media/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/pages/page.tsx",
+        "line": 231,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/pages/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/analytics/page.tsx",
+        "line": 255,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/analytics/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/contacts/page.tsx",
+        "line": 280,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/contacts/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/gallery/page.tsx",
+        "line": 301,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/gallery/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/node_modules/@jridgewell/gen-mapping/src/types.ts",
+        "line": 356,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/node_modules/@jridgewell/gen-mapping/src/types.ts"
+      }
+    ],
+    "TOOLS/TOOLS_ADMIN_LAYOUT.md": [
+      {
+        "raw": "../../../../SHARED/hub/src/app/tools/admin-layout/page.ts",
+        "line": 43,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/SHARED/hub/src/app/tools/admin-layout/page.ts"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/layout.tsx",
+        "line": 46,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/layout.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/admin-layout/page.tsx",
+        "line": 160,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/admin-layout/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 162,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      }
+    ],
+    "TOOLS/TOOLS_ANALYTICS_DASHBOARD.md": [
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/analytics/page.tsx",
+        "line": 12,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/analytics/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/analytics/page.tsx",
+        "line": 15,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/analytics/page.tsx"
+      }
+    ],
+    "TOOLS/TOOLS_BLOG_DISPLAY.md": [
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog",
+        "line": 82,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/src/app/blog"
+      },
+      {
+        "raw": "DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 88,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      }
+    ],
+    "TOOLS/TOOLS_BLOG_ENGINE.md": [
+      {
+        "raw": "DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 237,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/README.md",
+        "line": 235,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/README.md"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js",
+        "line": 236,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/10-migrate-blogposts-firestore-to-supabase.js"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/blog-engine/page.tsx",
+        "line": 40,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/blog-engine/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/blog/page.tsx",
+        "line": 43,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/blog/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/admin/amazinglystrange/blog/page.tsx",
+        "line": 44,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/admin/amazinglystrange/blog/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/02-export-firebase.js",
+        "line": 201,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/02-export-firebase.js"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/06-copy-assets.sh",
+        "line": 203,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/06-copy-assets.sh"
+      },
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/09-upload-media-to-supabase.js",
+        "line": 203,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration/09-upload-media-to-supabase.js"
+      }
+    ],
+    "TOOLS/TOOLS_CONTACT_MANAGER.md": [
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/contacts/page.tsx",
+        "line": 12,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/contacts/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/contact-manager/page.tsx",
+        "line": 15,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/contact-manager/page.tsx"
+      }
+    ],
+    "TOOLS/TOOLS_EMAIL.md": [],
+    "TOOLS/TOOLS_GALLERY_COMPONENTS.md": [
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/gallery/page.tsx",
+        "line": 12,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/gallery/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/gallery/page.tsx",
+        "line": 15,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/gallery/page.tsx"
+      }
+    ],
+    "TOOLS/TOOLS_HEADER_COMPONENTS.md": [
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/header/page.tsx",
+        "line": 12,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/header/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/header/page.tsx",
+        "line": 15,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/header/page.tsx"
+      }
+    ],
+    "TOOLS/TOOLS_IMAGE_UTILS.md": [
+      {
+        "raw": "DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 47,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      }
+    ],
+    "TOOLS/TOOLS_LAYOUT_MANAGER.md": [
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/layout-manager/page.tsx",
+        "line": 18,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/layout-manager/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/layout-manager/page.tsx",
+        "line": 21,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/layout-manager/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/Hosting/amazinglystrange/docs/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md",
+        "line": 77,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Hosting/amazinglystrange/docs/AMAZINGLYSTRANGE_LAYOUT_MANAGER.md"
+      }
+    ],
+    "TOOLS/TOOLS_LOCATION_FILTER.md": [
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/location-filter/page.tsx",
+        "line": 11,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/location-filter/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange",
+        "line": 14,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange"
+      }
+    ],
+    "TOOLS/TOOLS_MEDIA_LIBRARY.md": [
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/media/page.tsx",
+        "line": 12,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/media/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/media-library/page.tsx",
+        "line": 15,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/media-library/page.tsx"
+      }
+    ],
+    "TOOLS/TOOLS_PAGE_EDITOR.md": [
+      {
+        "raw": "DOCs/TOOLS/ADMIN/src/app/amazinglystrange/pages/page.tsx",
+        "line": 12,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/ADMIN/src/app/amazinglystrange/pages/page.tsx"
+      },
+      {
+        "raw": "DOCs/TOOLS/SHARED/hub/src/app/tools/page-editor/page.tsx",
+        "line": 15,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/SHARED/hub/src/app/tools/page-editor/page.tsx"
+      }
+    ],
+    "TOOLS/TOOLS_SUPABASE_SCHEMAS.md": [
+      {
+        "raw": "DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration",
+        "line": 32,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/Websites/amazingly-strange-website/scripts/migration"
+      },
+      {
+        "raw": "DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 33,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      }
+    ],
+    "TOOLS/TOOL_MONETIZATION.md": [
+      {
+        "raw": "DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 44,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      }
+    ],
+    "TOOLS/TOOL_REVENUE_SHARE.md": [
+      {
+        "raw": "DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md",
+        "line": 38,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/TOOLS/DOCs/TOOLS/DOCs/TOOLS/SHARED_TOOLS_ROADMAP.md"
+      }
+    ],
+    "VERIFICATION_REPORT.md": [],
+    "node_modules/@radix-ui/react-compose-refs/README.md": [],
+    "node_modules/@radix-ui/react-slot/README.md": [],
+    "node_modules/class-variance-authority/README.md": [],
+    "node_modules/clsx/readme.md": [],
+    "node_modules/react/README.md": [],
+    "node_modules/tailwind-merge/LICENSE.md": [],
+    "node_modules/tailwind-merge/README.md": [
+      {
+        "raw": "DOCs/node_modules/tailwind-merge/docs/README.md",
+        "line": 1,
+        "exists": false,
+        "checkedPath": "/Users/brianlindahl/Development/Business/DOCs/node_modules/tailwind-merge/DOCs/node_modules/tailwind-merge/docs/README.md"
+      }
+    ]
+  }
+}
